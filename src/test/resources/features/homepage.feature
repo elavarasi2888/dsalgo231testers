@@ -1,10 +1,10 @@
 Feature: Home page test cases
 
-  Background: User clicks the Get Started button on DS Algo portal page
+  Background:
     Given User opens the browser
-    Given user enters the correct DS Algo portal URL
-    Given user clicks the Get Started button on DS Algo portal page
-    Given user is at the Home page
+    Given User enters the correct DS Algo portal URL
+    Given User clicks the Get Started button on DS Algo portal page
+    Given User is at the Home page
 # Non-Functional tests
 
   Scenario: Verify NumpyNinja heading in homepage is visible
@@ -20,30 +20,29 @@ Feature: Home page test cases
     Then Datastructures drop down should be visible
 
   Scenario: Verify the Get Started buttons visible on the home page
-    Then User should be able to see 7 Get Started buttons for the folowing panel items:
-      | 1 | Data Structures-Introduction |
-      | 2 | Array                        |
-      | 3 | Linked List                  |
-      | 4 | Stack                        |
-      | 5 | Queue                        |
-      | 6 | Tree                         |
-      | 7 | Graph                        |
+    Then User should be able to see 7 Get Started buttons for the following panel items:
+      | Data Structures-Introduction |
+      | Array                        |
+      | Linked List                  |
+      | Stack                        |
+      | Queue                        |
+      | Tree                         |
+      | Graph                        |
 
   Scenario: Verify user is able to see options for Data Structures dropdown on home page
     When User clicks the Data Structures dropdown
     Then User should able to see the following 6 options:
-      | 1 | Arrays       |
-      | 2 | Linked List |
-      | 3 | Stack       |
-      | 4 | Queue       |
-      | 5 | Tree        |
-      | 6 | Graph       |
-      
+      | Arrays      |
+      | Linked List |
+      | Stack       |
+      | Queue       |
+      | Tree        |
+      | Graph       |
 # Functional tests
 
   Scenario Outline: Verify user able to see warning message by selecting an option from the drop down
-    When user selects following "<option>" from the drop down
-    Then user should able to see a warning message "You are not logged in"
+    When User selects following "<option>" from the drop down
+    Then User should able to see a warning message "You are not logged in"
 
     Examples:
       | option      |
@@ -55,8 +54,8 @@ Feature: Home page test cases
       | Graph       |
 
   Scenario Outline: Verify user able to see warning message by clicking Get Started button in the panel
-    When user clicks Get Started button of "<data-structure-item>" from panel
-    Then user should able to see a warning message as You are not logged in
+    When User clicks Get Started button of "<data-structure-item>" from panel
+    Then User should able to see a warning message as "You are not logged in"
 
     Examples:
       | data-structure-item          |
@@ -69,9 +68,9 @@ Feature: Home page test cases
       | Graph                        |
 
   Scenario: Verify user able to navigate to register page
-    When user clicks on the Register link in the home page
-    Then user should navigate to the Register page
+    When User clicks on the Register link in the home page
+    Then User should navigate to the Register page
 
   Scenario: Verify user able to navigate to Sign in page
-    When user clicks on the Sign in link in the home page
-    Then user should navigate to the Sign in page
+    When User clicks on the Sign in link in the home page
+    Then User should navigate to the Sign in page

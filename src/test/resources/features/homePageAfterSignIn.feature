@@ -1,15 +1,15 @@
 Feature: Home page functional test cases after user sign-in
 
-  Background: User sign-in to dsAlgo Portal
+  Background:
     Given User opens the browser
     Given User enters the correct DS Algo portal URL
     Given User clicks the Get Started button on DS Algo portal page
-    When user clicks on the Sign in link in the home page
-    When User clicks login button after entering valid username and valid password
-    Given User is at the Home page
+    Given User clicks on the Sign in link in the home page
+    Given User clicks login button after entering valid username and valid password
+    Given User is at the Home page after sign-in
 
   Scenario Outline: Verify that user able to navigate to respective page from drop down
-    When user selects an "<option>" from the drop down
+    When User selects an "<option>" from the drop down
     Then User should able to navigate to the corresponding page
 
     Examples:
@@ -22,7 +22,7 @@ Feature: Home page functional test cases after user sign-in
       | Graph       |
 
   Scenario Outline: Verify that user able to navigate to respective page from the panel
-    When user clicks "<data-structure-item>" from the panel
+    When User clicks "<data-structure-item>" from the panel
     Then User should able to navigate to the corresponding page
 
     Examples:

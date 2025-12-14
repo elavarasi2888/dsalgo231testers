@@ -1,20 +1,23 @@
 Feature: Tree feature test cases
+
+  Background:
+    Given User opens the browser
+    Given User enters the correct DS Algo portal URL
+    Given User clicks the Get Started button on DS Algo portal page
+    Given User is at the Home page after sign-in
 # Non-Functional tests
 
   Scenario: Verify that user is able to see the Tree header
-    Given user is on the Home page
-    When user clicks the Getting Started button in Tree Panel
-    Then user should see "Tree" header for Tree page
+    When User clicks the Getting Started button in Tree Panel
+    Then User should see "Tree" header for Tree page
 
   Scenario: Verify that user is able to see Topics covered header
-    Given user is on the Home page
-    When user clicks the Getting Started button in Tree Panel
-    Then user should see "Topics Covered" header for Tree page
+    When User clicks the Getting Started button in Tree Panel
+    Then User should see "Topics Covered" header for Tree page
 
   Scenario Outline: Verify user is able to see Tree topics link
-    Given: user is on the Home page
-  	When: user clicks the Getting Started button in Tree Panel
-  	Then: user should see "<tree-topic>" link of Tree page
+  	When: User clicks the Getting Started button in Tree Panel
+  	Then: User should see "<tree-topic>" link of Tree page
 
     Examples:
       | tree-topic                     |
@@ -33,9 +36,9 @@ Feature: Tree feature test cases
       | Implementation Of BST          |
 
   Scenario Outline: Verify user is able to see Tree topic page heading
-    Given user is on the Tree page
-    When user clicks "<tree-topic>" link on the Tree page
-    Then user should see "<tree-topic>" header of the respective Tree page
+    Given User is on the Tree page
+    When User clicks "<tree-topic>" link on the Tree page
+    Then User should see "<tree-topic>" header of the respective Tree page
 
     Examples:
       | tree-topic                     |
@@ -54,8 +57,8 @@ Feature: Tree feature test cases
       | Implementation Of BST          |
 
   Scenario Outline: Verify try here button is visible in the Tree topic page
-    Given user is on the Tree page
-    When user clicks "<tree-topic>" link on the Tree page
+    Given User is on the Tree page
+    When User clicks "<tree-topic>" link on the Tree page
     Then User should see try here button on the Tree page
 
     Examples:
@@ -76,9 +79,9 @@ Feature: Tree feature test cases
 # Functional tests
 
   Scenario Outline: Verify user is able to navigate to respective Tree page
-    Given user is on the Tree page
-    When user clicks "<tree-topic>" link on the Tree page
-    Then user should be directed to "<tree-topic-page>" of Tree data structure
+    Given User is on the Tree page
+    When User clicks "<tree-topic>" link on the Tree page
+    Then User should be directed to "<tree-topic-page>" of Tree data structure
 
     Examples:
       | tree-topic                     | tree-topic-page                |
@@ -97,9 +100,9 @@ Feature: Tree feature test cases
       | Implementation Of BST          | implementation-of-bst          |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
-    Given user is on the "<tree-topic>" page of Tree data structure
-    When user clicks Try Here button in the repsective Tree page
-    Then user should be redirected to try Editor page
+    Given User is on the "<tree-topic>" page of Tree data structure
+    When User clicks Try Here button in the repsective Tree page
+    Then User should be redirected to try Editor page
 
     Examples:
       | tree-topic                     |
