@@ -14,7 +14,7 @@ Feature: Linklist Functionality
       | Topic_links                     |
       | Introduction                    |
       | Creating Linked LIst            |
-      | Types of Linked List            |       
+      | Types of Linked List            |
       | Implement Linked List in Python |
       | Traversal                       |
       | Insertion                       |
@@ -22,8 +22,10 @@ Feature: Linklist Functionality
 
   Scenario Outline: Verify User navigate through Links and see Header in LinkedList page
     When User  clicks the "<links>" in a linklist page
-    Then User should see "<header>" 
-      | links                           | header                            |
+    Then User should see "<header>"
+
+    Examples:
+      | links                           | header                          |
       | Introduction                    | Introduction                    |
       | Creating Linked LIst            | Creating Linked LIst            |
       | Types of Linked List            | Types of Linked List            |
@@ -36,6 +38,8 @@ Feature: Linklist Functionality
     Given User is on the "<linklist_topics>"
     When User clicks Try here button in the "<linklist_topics>"
     Then User should navigate to Try Editor Run button to test
+
+    Examples:
       | linklist_topics                 |
       | Introduction                    |
       | Creating Linked LIst            |
@@ -47,8 +51,11 @@ Feature: Linklist Functionality
 
   Scenario Outline: Verify User should see a error,output and alert for input
     Given User is in the tryEditor page for "<linKlist_topics>"
-    When User write the "<code>" in Editor and click the Run Button
+    When User clicks Run button to verify the "<code>" in Editor
     Then User should able to see "<output_type>"
+
+    Examples:
+    
       | linKlist_topics                 | code           | output_type                                        |
       | Introduction                    | print("Hello") | Console                                            |
       | Introduction                    | print("Hello"  | SyntaxError: EOF in multi-line statement on line 2 |

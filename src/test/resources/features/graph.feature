@@ -18,6 +18,8 @@ Feature: Graph functionality
   Scenario Outline: Verify User navigate through Links and see Header in Graph page
     When User  clicks the "<links>" in Graph page
     Then User should see "<header>"
+
+    Examples:
       | links                 | header                |
       | Graph                 | Graph                 |
       | Graph Representations | Graph Representations |
@@ -26,14 +28,18 @@ Feature: Graph functionality
     Given User is on the "<graph_topics>"
     When User clicks Try here button in the "<graph_topics>"
     Then User should navigate to Try Editor Run button to test
+
+    Examples:
       | graph_topics          |
       | Graph                 |
       | Graph Representations |
 
   Scenario Outline: Verify User should see a error,output and alert for input
     Given User is in the tryEditor page for "<graph_topics>"
-    When User write the "<code>" in Editor and click the Run Button
+    When User clicks Run button to verify the "<code>" in Editor
     Then User should able to see "<output_type>"
+
+    Examples:
       | graph_topics          | code           | output_type                                        |
       | Graph                 | print("Hello") | Console                                            |
       | Graph                 | print("Hello"  | SyntaxError: EOF in multi-line statement on line 2 |
