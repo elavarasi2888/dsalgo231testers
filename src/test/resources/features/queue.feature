@@ -5,18 +5,17 @@ Feature: Queue feature test cases
     Given User enters the correct DS Algo portal URL
     Given User clicks the Get Started button on DS Algo portal page
     Given User is at the Home page after sign-in
+    Given User clicks the Getting Started button in Queue panel
+    Given User is on the Queue page
 # Non-Functional tests
 
   Scenario: Verify that user is able to see the Queue header
-    When User clicks the Getting Started button in Queue panel
     Then User should see "Queue" header for Queue page
 
   Scenario: Verify that user is able to see Topics covered header
-    When User clicks the Getting Started button in Queue Panel
     Then User should see "Topics Covered" header for Queue page
 
   Scenario Outline: Verify user is able to see Queue topics link
-    When User clicks the Getting Started button in Queue Panel
     Then User should see "<queue-topic>" link of Queue page
 
     Examples:
@@ -27,7 +26,6 @@ Feature: Queue feature test cases
       | Queue Operations                       |
 
   Scenario Outline: Verify user is able to see Queue topic page heading
-    Given User is on the Queue page
     When User clicks "<queue-topic>" link on the Queue page
     Then User should see "<queue-topic>" header of the respective Queue page
 
@@ -39,7 +37,6 @@ Feature: Queue feature test cases
       | Queue Operations                       |
 
   Scenario Outline: Verify try here button is visible in the Queue topic page
-    Given User is on the Queue page
     When User clicks "<queue-topic>" link on the Queue page
     Then User should see try here button on the Queue page
 
@@ -52,7 +49,6 @@ Feature: Queue feature test cases
 # Functional tests
 
   Scenario Outline: Verify user is able to navigate to respective Queue page
-    Given User is on the Queue page
     When User clicks "<queue-topic>" link on the Queue page
     Then User should be directed to "<queue-topic-page>" of Queue data structure
 
@@ -64,7 +60,7 @@ Feature: Queue feature test cases
       | Queue Operations                       | QueueOp                    |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
-    Given User is on the "<queue-topic>" page of Queue data structure
+    When User clicks "<queue-topic>" link on the Queue page
     When User clicks Try Here button in the repsective Queue page
     Then User should be redirected to try Editor page
 
