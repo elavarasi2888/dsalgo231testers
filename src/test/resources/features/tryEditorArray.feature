@@ -43,7 +43,3 @@ Scenario Outline:Validate python code execution
  	  | valid    | output displayed    |
       | invalid  | error message       |
       |empty code| alert with error message   |
-
-
-
-
