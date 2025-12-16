@@ -1,17 +1,19 @@
 Feature: Linklist Functionality
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User has signed In
-    Given User navigates to Home page
-    Given User is in the Linked List page
+    Given User clicks the Getting Started button in "Linked List" Panel
+    Given User is on "Linked List" page
+    
+  Scenario: Verify that User is able to see the Linked List page header
+    Then User should see "Linked List" header for Linkedlist  page
 
-  Scenario: Verify User is in the Linked List page
-    Then User should see Header with "Topics Covered"
-    Then User should see Topic_links under the topics covered
-      | Topic_links                     |
+  Scenario: Verify that User is able to see Topics covered header in Linked List page
+    Then User should see "Topics Covered" header for Linked List page
+    
+    
+  Scenario Outline: Verify User is able to see topics Linked List link
+    Then User should see "<Linkedlist_topics>" link of Linked List page
+      | Linkedlist_topics                     |
       | Introduction                    |
       | Creating Linked LIst            |
       | Types of Linked List            |
@@ -22,7 +24,7 @@ Feature: Linklist Functionality
 
   Scenario Outline: Verify User navigate through Links and see Header in LinkedList page
     When User  clicks the "<links>" in a linklist page
-    Then User should see "<header>"
+    Then User should see "<header>" header of the respective linklist page
 
     Examples:
       | links                           | header                          |
@@ -34,10 +36,9 @@ Feature: Linklist Functionality
       | Insertion                       | Insertion                       |
       | Deletion                        | Deletion                        |
 
-  Scenario Outline: User should be redirected to a page having an try Editor with Run button to test
-    Given User is on the "<linklist_topics>"
-    When User clicks Try here button in the "<linklist_topics>"
-    Then User should navigate to Try Editor Run button to test
+    Scenario Outline: Verify "Try here" button is visible in the linklist page
+    When User clicks "<linklist_topics>" link on the linklist page
+    Then User should see "Try here>>>" button on the linklist page
 
     Examples:
       | linklist_topics                 |
