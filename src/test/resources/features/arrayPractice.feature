@@ -1,9 +1,13 @@
-Feature:Practice Questions 
+#Author: Ela
+
+@arrayPractice
+Feature: Practice Questions 
 
 #non functional test cases
 
-Background: User clicks Get Started button on Homepage for Array tile
-Given User is on Array page
+Background:
+Given User clicks the Getting Started button in "Array" Panel
+Given User is on "Array" page
 Given User is on the Practice Questions page
 
 Scenario Outline: Verify user is able to see Practice Questions topics link
@@ -18,9 +22,9 @@ Examples:
       |  Find Numbers with Even Number of Digits |
       | Squares of a sorted Array 				|
 
-Scenario:Verify user is able to see Question and editor page 
+Scenario Outline: Verify user is able to see Question and editor page 
 When User clicks "<practice questions topics>" link
-Then User should see Question, run button and submit button
+Then User should see "QUESTION", "Run" button and "Submit" button
 
 Examples:
 

@@ -11,9 +11,7 @@ public class SignInPage {
 	By passwordField=By.id("id_password");
 	By signinButton=By.cssSelector("button[type='submit']");
 	By errorMsg=By.className("alert alert-primary");
-	
 
-	
 	// Constructor
 	public SignInPage(WebDriver driver)
     {
