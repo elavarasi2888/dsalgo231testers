@@ -30,7 +30,6 @@ Feature: Register functionality
 
   Scenario Outline: Verify error message for invalid, mismatched, or pre-registered data
     When User  clicks Register button after entering Username "<username>", Password "<password>", and Password Confirmation "<password_confirmation>"
-    #Then User clicks Register button
     Then The error message "<error_message>" appears
 
     Examples:
