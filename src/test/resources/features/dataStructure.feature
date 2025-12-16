@@ -1,48 +1,44 @@
 Feature: DataStruction Functionality
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User has signed In
-    Given User navigates to Home page
-    Given User is in the Data Structures - Introduction page
+    Given User clicks the Getting Started button in "Data Structures-Introduction page" Panel
+    Given User is on "Data Structures-Introduction page" page
 
-  Scenario: Verify User is in the Data Structure page
-    Then User should see Header with "Topics Covered"
-    Then User should see Topic_links under the topics covered
-      | Topic_links     |
+  Scenario: Verify that User is able to see the Data Structures-Introduction page header
+    Then User should see "Data Structures-Introduction page" header for Data Structures-Introduction page
+
+  Scenario: Verify that User is able to see Topics covered header
+    Then User should see "Topics Covered" header for Data Structures-Introduction page
+
+  Scenario Outline: Verify User is able to see Data Structures-Introduction topics link
+    Then User should see "<DS_topics>" link of Data Structure page
+
+    Examples:
+      | DS_topics       |
       | Time Complexity |
 
-  Scenario Outline: Verify User navigate through Links and see Header in Time Complexity page
+ Scenario Outline: Verify User navigate through Links and see Header in Time Complexity page
     When User  clicks the "<links>" in a Data Structure page
-    Then User should see "<header>"
+    Then User should see "<header>" header of the respective Data Structure page
 
     Examples:
       | links           | header          |
       | Time Complexity | Time Complexity |
 
-  Scenario Outline: User should be redirected to a page having an try Editor with Run button to test
-    Given User is on the "<dataStructure_topics>"
-    When User clicks Try here button in the "<dataStructure_topics>"
-    Then User should navigate to Try Editor Run button to test
+  Scenario Outline: Verify "Try here" button is visible in the Data Structures-Introduction topics page
+    When User clicks "<DS_topics>" link on the Data Structures-Introduction page
+    Then User should see "Try here>>>" button on the Data Structures-Introduction page
 
     Examples:
-      | dataStructure_topics |
-      | Time Complexity      |
+      | DS_topics       |
+      | Time Complexity |
+      
+# Ds pages functional test case
 
-  Scenario Outline: Verify User should see a error,output and alert for input
-    Given User is in the tryEditor page for "<dataStructure_topics>"
-    When User clicks Run button to verify the "<code>" in Editor
-    Then User should able to see "<output_type>"
+  Scenario Outline: Verify User is able to navigate to respective Data Structures-Introduction page
+    When User clicks "<DS_topics>" link on the Data Structures-Introduction page
+    Then User should be directed to "<DS_topics>" page containing "<Partial Link Text>"
 
     Examples:
-      | dataStructure_topics | code           | output_type                                        |
-      | Time Complexity      | print("Hello") | Console                                            |
-      | Time Complexity      | print("Hello"  | SyntaxError: EOF in multi-line statement on line 2 |
-      | Time Complexity      |               |                                                   |
-
-  Scenario: Verify User Should to practice page
-    Given User is in the Time Complexity page
-    When User clicks the Practice Questions link
-    Then User  should be redirected to Practice page
+      | DS_topics       | Partial Link Text |
+      | Time Complexity | time-complexity   |
