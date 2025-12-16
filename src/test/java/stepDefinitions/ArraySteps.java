@@ -5,20 +5,20 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ArraySteps {
-	@Given("User is on Array page")
-	public void user_is_on_array_page() {
+	
+	@Given("User clicks the Getting Started button in {string} Panel")
+	public void user_clicks_the_getting_started_button_in_panel(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Given("User is on {string} page")
+	public void user_is_on_page(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("User clicks the Getting Started button in Array Panel")
-	public void user_clicks_the_getting_started_button_in_array_panel() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("User should see Array header")
-	public void user_should_see_array_header() {
+	@Then("User should see {string} header for Array page")
+	public void user_should_see_header_for_array_page(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
@@ -47,16 +47,18 @@ public class ArraySteps {
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User should see try here button on the Array page")
-	public void user_should_see_try_here_button_on_the_array_page() {
+	@Then("User should see {string} button on the Array page")
+	public void user_should_see_button_on_the_array_page(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("User should be directed to {string} page of Array page")
-	public void user_should_be_directed_to_page_of_array_page(String string) {
+	@Then("User should be directed to {string} page containing {string}")
+	public void user_should_be_directed_to_page_containing(String string, String string2) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
 }
+
+
