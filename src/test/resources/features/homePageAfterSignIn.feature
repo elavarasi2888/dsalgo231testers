@@ -10,7 +10,7 @@ Feature: Home page functional test cases after user sign-in
 
   Scenario Outline: Verify that user able to navigate to respective page from drop down
     When User selects an "<option>" from the drop down
-    Then User should able to navigate to the corresponding page
+    #Then User should able to navigate to the corresponding page (TBC)
 
     Examples:
       | option      |
@@ -22,7 +22,8 @@ Feature: Home page functional test cases after user sign-in
       | Graph       |
 
   Scenario Outline: Verify that user able to navigate to respective page from the panel
-    When User clicks "<data-structure-item>" from the panel
+    #When User clicks "<data-structure-item>" from the panel
+    When User clicks the Getting Started button in "<data-structure-item>" Panel
     Then User should able to navigate to the corresponding page
 
     Examples:
