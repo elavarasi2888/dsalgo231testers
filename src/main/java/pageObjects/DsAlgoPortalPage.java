@@ -15,20 +15,20 @@ public class DsAlgoPortalPage {
 
 		this.driver = driver;
 	}
-	
+
 	public boolean isDsPortalHeadingVisible() {
-		boolean dsPortalHeadingStatus = driver.findElement(lblDsPortalHeading).isDisplayed();
-		return dsPortalHeadingStatus;
+		return driver.findElement(lblDsPortalHeading).isDisplayed();
+
 	}
 
 	public boolean isDsPortalParagraphVisible() {
-		boolean dsPortalParagraphStatus = driver.findElement(lblDsPortalParagraph).isDisplayed();
-		return dsPortalParagraphStatus;
+		return driver.findElement(lblDsPortalParagraph).isDisplayed();
+
 	}
 
 	public boolean isDsPortalGetStartedVisible() {
-		boolean dsPortalGetStartedStatus = driver.findElement(btnGetStartedDsPortal).isDisplayed();
-		return dsPortalGetStartedStatus;
+		return driver.findElement(btnGetStartedDsPortal).isDisplayed();
+
 	}
 
 	public void clickDsPortalGetStarted() {
