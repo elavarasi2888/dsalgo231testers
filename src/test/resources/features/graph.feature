@@ -1,49 +1,47 @@
 Feature: Graph functionality
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User has signed In
-    Given User navigates to Home page
-    Given User is in the Graph page
+    Given User clicks the Getting Started button in "Graph" Panel
+    Given User is on "Graph" page
 
-  Scenario: Verify User is in the Graph page
-    Then User should see Header with "Topics Covered"
-    Then User should see Topic_links under the topics covered
-      | Topic_links           |
+  Scenario: Verify that User is able to see the Graph page header
+    Then User should see "Graph" header for Graph page
+
+  Scenario: Verify that User is able to see Topics covered header in Graph page
+    Then User should see "Topics Covered" header for Graph page
+
+  Scenario Outline: Verify User is able to see topics Graph link
+    Then User should see "<Graph_topics>" link of Graph page
+
+    Examples:
+      | Graph_topics          |
       | Graph                 |
       | Graph Representations |
 
-  Scenario Outline: Verify User navigate through Links and see Header in Graph page
+  Scenario Outline: Verify User is able to see Graph topic page heading
     When User  clicks the "<links>" in Graph page
-    Then User should see "<header>"
+    Then User should see "<header>" header of the respective Graph page
 
     Examples:
       | links                 | header                |
       | Graph                 | Graph                 |
       | Graph Representations | Graph Representations |
 
-  Scenario Outline: User should be redirected to a page having an try Editor with Run button to test
-    Given User is on the "<graph_topics>"
-    When User clicks Try here button in the "<graph_topics>"
-    Then User should navigate to Try Editor Run button to test
+  Scenario Outline: Verify "Try here" button is visible in the Graph page
+    When User clicks "<Graph_topics>" link on the Graph page
+    Then User should see "Try here>>>" button on the Graph page
 
     Examples:
-      | graph_topics          |
+      | Graph_topics          |
       | Graph                 |
       | Graph Representations |
+# Graph pages functional test case
 
-  Scenario Outline: Verify User should see a error,output and alert for input
-    Given User is in the tryEditor page for "<graph_topics>"
-    When User clicks Run button to verify the "<code>" in Editor
-    Then User should able to see "<output_type>"
+  Scenario Outline: Verify User is able to navigate to respective Data Structures-Introduction page
+    When User clicks "<Graph_topics>" link on the Data Structures-Introduction page
+    Then User should be directed to "<Graph_topics>" page containing "<Partial Link Text>"
 
     Examples:
-      | graph_topics          | code           | output_type                                        |
-      | Graph                 | print("Hello") | Console                                            |
-      | Graph                 | print("Hello"  | SyntaxError: EOF in multi-line statement on line 2 |
-      | Graph                 |                |                                                    |
-      | Graph Representations | print("Hello") | Console                                            |
-      | Graph Representations | print("Hello"  | SyntaxError: EOF in multi-line statement on line 2 |
-      | Graph Representations |                |                                                    |
+      | Graph_topics          | Partial Link Text     |
+      | Graph                 | graph                 |
+      | Graph Representations | graph-representations |
