@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="0" failed="10" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-21T19:41:10 EST" name="Default suite" finished-at="2025-12-21T19:42:14 EST" duration-ms="63572">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-12-21T19:41:10 EST" name="Default test" finished-at="2025-12-21T19:42:14 EST" duration-ms="63572">
+      <class name="testRunner.runner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:10 EST" name="setUpClass" finished-at="2025-12-21T19:41:10 EST" duration-ms="415" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2582b0ef]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:10 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:17 EST" duration-ms="6976" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that User is able to see the Graph page header"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header for Graph page")
+public void user_should_see_header_for_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header for Graph page")
+public void user_should_see_header_for_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:17 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:24 EST" duration-ms="6260" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that User is able to see Topics covered header in Graph page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} having link for Graph page")
+public void user_should_see_having_link_for_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} having link for Graph page")
+public void user_should_see_having_link_for_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:24 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:30 EST" duration-ms="6279" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User is able to see topics Graph link"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} link of Graph page")
+public void user_should_see_link_of_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} link of Graph page")
+public void user_should_see_link_of_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:30 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:36 EST" duration-ms="6224" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User is able to see topics Graph link"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} link of Graph page")
+public void user_should_see_link_of_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} link of Graph page")
+public void user_should_see_link_of_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:36 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:42 EST" duration-ms="6285" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User navigate through Links and see Header in Graph page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User  clicks the {string} in Graph page")
+public void user_clicks_the_in_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header of the respective Graph page")
+public void user_should_see_header_of_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User  clicks the {string} in Graph page")
+public void user_clicks_the_in_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header of the respective Graph page")
+public void user_should_see_header_of_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:42 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:49 EST" duration-ms="6243" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User navigate through Links and see Header in Graph page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User  clicks the {string} in Graph page")
+public void user_clicks_the_in_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header of the respective Graph page")
+public void user_should_see_header_of_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User  clicks the {string} in Graph page")
+public void user_clicks_the_in_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} header of the respective Graph page")
+public void user_should_see_header_of_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:49 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:41:55 EST" duration-ms="6264" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify "Try here" button is visible in the Graph topics page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} button for the respective Graph page")
+public void user_should_see_button_for_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} button for the respective Graph page")
+public void user_should_see_button_for_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:41:55 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:42:01 EST" duration-ms="6164" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify "Try here" button is visible in the Graph topics page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} button for the respective Graph page")
+public void user_should_see_button_for_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see {string} button for the respective Graph page")
+public void user_should_see_button_for_the_respective_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:42:01 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:42:07 EST" duration-ms="6161" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User is able to navigate to respective Graph page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should be redirected to {string} page containing {string}")
+public void user_should_be_redirected_to_page_containing(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should be redirected to {string} page containing {string}")
+public void user_should_be_redirected_to_page_containing(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:42:07 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-12-21T19:42:14 EST" duration-ms="6248" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User is able to navigate to respective Graph page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Graph functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should be redirected to {string} page containing {string}")
+public void user_should_be_redirected_to_page_containing(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'User is on "Graph" page' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on {string} page")
+public void user_is_on_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User clicks {string} link on the Graph page")
+public void user_clicks_link_on_the_graph_page(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should be redirected to {string} page containing {string}")
+public void user_should_be_redirected_to_page_containing(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at ✽.User is on "Graph" page(file:///C:/Users/praka/Documents/vishakha_git/DsAlgo231_Cucumber/dsalgo231testers/src/test/resources/features/graph.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.runner@544fa968]" started-at="2025-12-21T19:42:14 EST" name="tearDownClass" finished-at="2025-12-21T19:42:14 EST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testRunner.runner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

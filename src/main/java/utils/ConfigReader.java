@@ -27,7 +27,7 @@ public class ConfigReader {
 
 		prop = new Properties();
 
-		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties");
+		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
 		prop.load(file);
 
 		return prop;

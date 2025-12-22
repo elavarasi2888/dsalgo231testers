@@ -17,7 +17,7 @@ public class Hooks {
 	Properties prop;
 	ConfigReader configReader = new ConfigReader();
 
-	@Before("not @linkedList")
+	@Before()
 	public void beforeScenario() throws IOException {
 
 		LoggerFactory.getLogger().info("In setup()..");

@@ -1,0 +1,976 @@
+18:19:40.390 [main] INFO  - In setup()..
+18:19:40.402 [main] INFO  - In tearDown()..
+18:19:40.425 [main] INFO  - In setup()..
+18:19:40.429 [main] INFO  - In tearDown()..
+18:19:40.436 [main] INFO  - In setup()..
+18:19:40.440 [main] INFO  - In tearDown()..
+18:19:40.451 [main] INFO  - In setup()..
+18:19:40.456 [main] INFO  - In tearDown()..
+18:19:40.463 [main] INFO  - In setup()..
+18:19:40.466 [main] INFO  - In tearDown()..
+18:19:40.471 [main] INFO  - In setup()..
+18:19:40.474 [main] INFO  - In tearDown()..
+18:19:40.480 [main] INFO  - In setup()..
+18:19:40.484 [main] INFO  - In tearDown()..
+18:19:40.489 [main] INFO  - In setup()..
+18:19:40.492 [main] INFO  - In tearDown()..
+18:19:40.498 [main] INFO  - In setup()..
+18:19:40.501 [main] INFO  - In tearDown()..
+18:19:40.506 [main] INFO  - In setup()..
+18:19:40.507 [main] INFO  - In tearDown()..
+18:19:40.512 [main] INFO  - In setup()..
+18:19:40.514 [main] INFO  - In tearDown()..
+18:19:40.519 [main] INFO  - In setup()..
+18:19:40.523 [main] INFO  - In tearDown()..
+20:58:30.877 [main] INFO  - In setup()..
+20:58:30.885 [main] INFO  - In tearDown()..
+20:58:30.905 [main] INFO  - In setup()..
+20:58:30.910 [main] INFO  - In tearDown()..
+20:58:30.916 [main] INFO  - In setup()..
+20:58:30.926 [main] INFO  - In tearDown()..
+20:58:30.934 [main] INFO  - In setup()..
+20:58:30.939 [main] INFO  - In tearDown()..
+20:58:30.946 [main] INFO  - In setup()..
+20:58:30.950 [main] INFO  - In tearDown()..
+20:58:30.955 [main] INFO  - In setup()..
+20:58:30.959 [main] INFO  - In tearDown()..
+20:58:30.965 [main] INFO  - In setup()..
+20:58:30.968 [main] INFO  - In tearDown()..
+20:58:30.973 [main] INFO  - In setup()..
+20:58:30.977 [main] INFO  - In tearDown()..
+20:58:30.982 [main] INFO  - In setup()..
+20:58:30.985 [main] INFO  - In tearDown()..
+20:58:30.991 [main] INFO  - In setup()..
+20:58:30.994 [main] INFO  - In tearDown()..
+20:58:30.999 [main] INFO  - In setup()..
+20:58:31.003 [main] INFO  - In tearDown()..
+20:58:31.008 [main] INFO  - In setup()..
+20:58:31.012 [main] INFO  - In tearDown()..
+21:20:09.045 [main] INFO  - In setup()..
+21:20:09.056 [main] INFO  - In tearDown()..
+21:20:09.076 [main] INFO  - In setup()..
+21:20:09.083 [main] INFO  - In tearDown()..
+21:20:09.091 [main] INFO  - In setup()..
+21:20:09.094 [main] INFO  - In tearDown()..
+21:20:09.106 [main] INFO  - In setup()..
+21:20:09.111 [main] INFO  - In tearDown()..
+21:20:09.117 [main] INFO  - In setup()..
+21:20:09.121 [main] INFO  - In tearDown()..
+21:20:09.127 [main] INFO  - In setup()..
+21:20:09.130 [main] INFO  - In tearDown()..
+21:20:09.136 [main] INFO  - In setup()..
+21:20:09.139 [main] INFO  - In tearDown()..
+21:20:09.144 [main] INFO  - In setup()..
+21:20:09.146 [main] INFO  - In tearDown()..
+21:20:09.151 [main] INFO  - In setup()..
+21:20:09.154 [main] INFO  - In tearDown()..
+21:20:09.158 [main] INFO  - In setup()..
+21:20:09.160 [main] INFO  - In tearDown()..
+21:20:09.164 [main] INFO  - In setup()..
+21:20:09.168 [main] INFO  - In tearDown()..
+21:20:09.174 [main] INFO  - In setup()..
+21:20:09.177 [main] INFO  - In tearDown()..
+21:26:03.394 [main] INFO  - In setup()..
+21:26:03.403 [main] INFO  - In tearDown()..
+21:26:03.422 [main] INFO  - In setup()..
+21:26:03.427 [main] INFO  - In tearDown()..
+21:26:03.435 [main] INFO  - In setup()..
+21:26:03.445 [main] INFO  - In tearDown()..
+21:26:03.453 [main] INFO  - In setup()..
+21:26:03.457 [main] INFO  - In tearDown()..
+21:26:03.463 [main] INFO  - In setup()..
+21:26:03.467 [main] INFO  - In tearDown()..
+21:26:03.473 [main] INFO  - In setup()..
+21:26:03.476 [main] INFO  - In tearDown()..
+21:26:03.481 [main] INFO  - In setup()..
+21:26:03.485 [main] INFO  - In tearDown()..
+21:26:03.490 [main] INFO  - In setup()..
+21:26:03.492 [main] INFO  - In tearDown()..
+21:26:03.497 [main] INFO  - In setup()..
+21:26:03.502 [main] INFO  - In tearDown()..
+21:26:03.507 [main] INFO  - In setup()..
+21:26:03.510 [main] INFO  - In tearDown()..
+21:26:03.515 [main] INFO  - In setup()..
+21:26:03.517 [main] INFO  - In tearDown()..
+21:26:03.522 [main] INFO  - In setup()..
+21:26:03.526 [main] INFO  - In tearDown()..
+21:28:30.941 [main] INFO  - In setup()..
+21:28:30.951 [main] INFO  - In tearDown()..
+21:28:30.967 [main] INFO  - In setup()..
+21:28:30.971 [main] INFO  - In tearDown()..
+21:28:30.978 [main] INFO  - In setup()..
+21:28:30.985 [main] INFO  - In tearDown()..
+21:28:30.994 [main] INFO  - In setup()..
+21:28:30.999 [main] INFO  - In tearDown()..
+21:28:31.007 [main] INFO  - In setup()..
+21:28:31.012 [main] INFO  - In tearDown()..
+21:28:31.022 [main] INFO  - In setup()..
+21:28:31.026 [main] INFO  - In tearDown()..
+21:28:31.033 [main] INFO  - In setup()..
+21:28:31.037 [main] INFO  - In tearDown()..
+21:28:31.044 [main] INFO  - In setup()..
+21:28:31.050 [main] INFO  - In tearDown()..
+21:28:31.059 [main] INFO  - In setup()..
+21:28:31.062 [main] INFO  - In tearDown()..
+21:28:31.067 [main] INFO  - In setup()..
+21:28:31.070 [main] INFO  - In tearDown()..
+21:28:31.084 [main] INFO  - In setup()..
+21:28:31.093 [main] INFO  - In tearDown()..
+21:28:31.103 [main] INFO  - In setup()..
+21:28:31.107 [main] INFO  - In tearDown()..
+22:39:12.944 [main] INFO  - In setup()..
+22:39:12.956 [main] INFO  - In tearDown()..
+22:39:12.981 [main] INFO  - In setup()..
+22:39:12.986 [main] INFO  - In tearDown()..
+22:39:12.997 [main] INFO  - In setup()..
+22:39:13.005 [main] INFO  - In tearDown()..
+22:39:13.015 [main] INFO  - In setup()..
+22:39:13.017 [main] INFO  - In tearDown()..
+22:39:13.027 [main] INFO  - In setup()..
+22:39:13.031 [main] INFO  - In tearDown()..
+22:39:13.042 [main] INFO  - In setup()..
+22:39:13.045 [main] INFO  - In tearDown()..
+22:39:13.053 [main] INFO  - In setup()..
+22:39:13.056 [main] INFO  - In tearDown()..
+22:39:13.066 [main] INFO  - In setup()..
+22:39:13.069 [main] INFO  - In tearDown()..
+22:39:13.080 [main] INFO  - In setup()..
+22:39:13.083 [main] INFO  - In tearDown()..
+22:39:13.094 [main] INFO  - In setup()..
+22:39:13.097 [main] INFO  - In tearDown()..
+22:39:13.109 [main] INFO  - In setup()..
+22:39:13.112 [main] INFO  - In tearDown()..
+22:39:13.121 [main] INFO  - In setup()..
+22:39:13.124 [main] INFO  - In tearDown()..
+23:09:36.051 [main] INFO  - In setup()..
+23:09:36.065 [main] INFO  - In tearDown()..
+23:09:36.087 [main] INFO  - In setup()..
+23:09:36.090 [main] INFO  - In tearDown()..
+23:09:36.099 [main] INFO  - In setup()..
+23:09:36.103 [main] INFO  - In tearDown()..
+23:09:36.115 [main] INFO  - In setup()..
+23:09:36.118 [main] INFO  - In tearDown()..
+23:09:36.129 [main] INFO  - In setup()..
+23:09:36.133 [main] INFO  - In tearDown()..
+23:09:36.141 [main] INFO  - In setup()..
+23:09:36.145 [main] INFO  - In tearDown()..
+23:09:36.153 [main] INFO  - In setup()..
+23:09:36.156 [main] INFO  - In tearDown()..
+23:09:36.165 [main] INFO  - In setup()..
+23:09:36.168 [main] INFO  - In tearDown()..
+23:09:36.176 [main] INFO  - In setup()..
+23:09:36.180 [main] INFO  - In tearDown()..
+23:09:36.186 [main] INFO  - In setup()..
+23:09:36.189 [main] INFO  - In tearDown()..
+23:09:36.198 [main] INFO  - In setup()..
+23:09:36.201 [main] INFO  - In tearDown()..
+23:09:36.209 [main] INFO  - In setup()..
+23:09:36.214 [main] INFO  - In tearDown()..
+23:12:16.161 [main] INFO  - In setup()..
+23:12:16.173 [main] INFO  - In tearDown()..
+23:12:16.198 [main] INFO  - In setup()..
+23:12:16.201 [main] INFO  - In tearDown()..
+23:12:16.212 [main] INFO  - In setup()..
+23:12:16.221 [main] INFO  - In tearDown()..
+23:12:16.230 [main] INFO  - In setup()..
+23:12:16.233 [main] INFO  - In tearDown()..
+23:12:16.245 [main] INFO  - In setup()..
+23:12:16.248 [main] INFO  - In tearDown()..
+23:12:16.256 [main] INFO  - In setup()..
+23:12:16.259 [main] INFO  - In tearDown()..
+23:12:16.266 [main] INFO  - In setup()..
+23:12:16.269 [main] INFO  - In tearDown()..
+23:12:16.279 [main] INFO  - In setup()..
+23:12:16.282 [main] INFO  - In tearDown()..
+23:12:16.289 [main] INFO  - In setup()..
+23:12:16.291 [main] INFO  - In tearDown()..
+23:12:16.299 [main] INFO  - In setup()..
+23:12:16.300 [main] INFO  - In tearDown()..
+23:12:16.308 [main] INFO  - In setup()..
+23:12:16.311 [main] INFO  - In tearDown()..
+23:12:16.318 [main] INFO  - In setup()..
+23:12:16.321 [main] INFO  - In tearDown()..
+23:34:26.536 [main] INFO  - In setup()..
+23:34:26.546 [main] INFO  - In tearDown()..
+23:34:26.563 [main] INFO  - In setup()..
+23:34:26.567 [main] INFO  - In tearDown()..
+23:34:26.577 [main] INFO  - In setup()..
+23:34:26.585 [main] INFO  - In tearDown()..
+23:34:26.592 [main] INFO  - In setup()..
+23:34:26.595 [main] INFO  - In tearDown()..
+23:34:26.602 [main] INFO  - In setup()..
+23:34:26.607 [main] INFO  - In tearDown()..
+23:34:26.612 [main] INFO  - In setup()..
+23:34:26.616 [main] INFO  - In tearDown()..
+23:34:26.622 [main] INFO  - In setup()..
+23:34:26.626 [main] INFO  - In tearDown()..
+23:34:26.631 [main] INFO  - In setup()..
+23:34:26.634 [main] INFO  - In tearDown()..
+23:34:26.638 [main] INFO  - In setup()..
+23:34:26.641 [main] INFO  - In tearDown()..
+23:34:26.647 [main] INFO  - In setup()..
+23:34:26.650 [main] INFO  - In tearDown()..
+23:34:26.653 [main] INFO  - In setup()..
+23:34:26.655 [main] INFO  - In tearDown()..
+23:34:26.660 [main] INFO  - In setup()..
+23:34:26.664 [main] INFO  - In tearDown()..
+23:49:21.062 [main] INFO  - In setup()..
+23:49:21.071 [main] INFO  - In tearDown()..
+23:49:21.089 [main] INFO  - In setup()..
+23:49:21.093 [main] INFO  - In tearDown()..
+23:49:21.101 [main] INFO  - In setup()..
+23:49:21.105 [main] INFO  - In tearDown()..
+23:49:21.116 [main] INFO  - In setup()..
+23:49:21.119 [main] INFO  - In tearDown()..
+23:49:21.126 [main] INFO  - In setup()..
+23:49:21.129 [main] INFO  - In tearDown()..
+23:49:21.135 [main] INFO  - In setup()..
+23:49:21.139 [main] INFO  - In tearDown()..
+23:49:21.145 [main] INFO  - In setup()..
+23:49:21.149 [main] INFO  - In tearDown()..
+23:49:21.154 [main] INFO  - In setup()..
+23:49:21.157 [main] INFO  - In tearDown()..
+23:49:21.162 [main] INFO  - In setup()..
+23:49:21.164 [main] INFO  - In tearDown()..
+23:49:21.168 [main] INFO  - In setup()..
+23:49:21.171 [main] INFO  - In tearDown()..
+23:49:21.176 [main] INFO  - In setup()..
+23:49:21.178 [main] INFO  - In tearDown()..
+23:49:21.182 [main] INFO  - In setup()..
+23:49:21.186 [main] INFO  - In tearDown()..
+15:38:39.799 [main] INFO  - In setup()..
+15:38:39.812 [main] INFO  - In tearDown()..
+15:38:39.827 [main] INFO  - In setup()..
+15:38:39.830 [main] INFO  - In tearDown()..
+15:38:39.835 [main] INFO  - In setup()..
+15:38:39.839 [main] INFO  - In tearDown()..
+15:38:39.844 [main] INFO  - In setup()..
+15:38:39.847 [main] INFO  - In tearDown()..
+15:38:39.852 [main] INFO  - In setup()..
+15:38:39.855 [main] INFO  - In tearDown()..
+15:40:10.347 [main] INFO  - In setup()..
+15:40:10.364 [main] INFO  - In tearDown()..
+15:40:10.421 [main] INFO  - In setup()..
+15:40:10.425 [main] INFO  - In tearDown()..
+15:40:10.431 [main] INFO  - In setup()..
+15:40:10.435 [main] INFO  - In tearDown()..
+15:40:10.440 [main] INFO  - In setup()..
+15:40:10.444 [main] INFO  - In tearDown()..
+15:40:10.448 [main] INFO  - In setup()..
+15:40:10.452 [main] INFO  - In tearDown()..
+18:17:01.026 [main] INFO  - In setup()..
+18:17:01.035 [main] INFO  - In tearDown()..
+18:17:01.047 [main] INFO  - In setup()..
+18:17:01.050 [main] INFO  - In tearDown()..
+18:17:01.053 [main] INFO  - In setup()..
+18:17:01.056 [main] INFO  - In tearDown()..
+18:17:01.060 [main] INFO  - In setup()..
+18:17:01.063 [main] INFO  - In tearDown()..
+18:17:01.065 [main] INFO  - In setup()..
+18:17:01.067 [main] INFO  - In tearDown()..
+18:18:13.575 [main] INFO  - In setup()..
+18:18:13.583 [main] INFO  - In tearDown()..
+18:18:13.598 [main] INFO  - In setup()..
+18:18:13.607 [main] INFO  - In tearDown()..
+18:18:13.612 [main] INFO  - In setup()..
+18:18:13.616 [main] INFO  - In tearDown()..
+18:18:13.620 [main] INFO  - In setup()..
+18:18:13.623 [main] INFO  - In tearDown()..
+18:18:13.626 [main] INFO  - In setup()..
+18:18:13.628 [main] INFO  - In tearDown()..
+18:19:49.055 [main] INFO  - In setup()..
+18:19:49.064 [main] INFO  - In tearDown()..
+18:19:49.075 [main] INFO  - In setup()..
+18:19:49.078 [main] INFO  - In tearDown()..
+18:19:49.082 [main] INFO  - In setup()..
+18:19:49.085 [main] INFO  - In tearDown()..
+18:19:49.090 [main] INFO  - In setup()..
+18:19:49.093 [main] INFO  - In tearDown()..
+18:19:49.097 [main] INFO  - In setup()..
+18:19:49.099 [main] INFO  - In tearDown()..
+18:24:21.200 [main] INFO  - In setup()..
+18:24:21.208 [main] INFO  - In tearDown()..
+18:24:21.244 [main] INFO  - In setup()..
+18:24:21.247 [main] INFO  - In tearDown()..
+18:24:21.250 [main] INFO  - In setup()..
+18:24:21.252 [main] INFO  - In tearDown()..
+18:24:21.254 [main] INFO  - In setup()..
+18:24:21.256 [main] INFO  - In tearDown()..
+18:24:21.258 [main] INFO  - In setup()..
+18:24:21.260 [main] INFO  - In tearDown()..
+18:28:47.950 [main] INFO  - In setup()..
+18:28:47.955 [main] INFO  - In setup(), browser value edge
+18:28:47.963 [main] INFO  - In launchBrowser() - browser value-edge
+18:28:49.936 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:28:50.498 [main] INFO  - DONE setup()..
+18:28:55.512 [main] INFO  - In tearDown()..
+18:28:55.741 [main] INFO  - DONE tearDown()..
+18:28:55.746 [main] INFO  - In setup()..
+18:28:55.747 [main] INFO  - In setup(), browser value edge
+18:28:55.747 [main] INFO  - In launchBrowser() - browser value-edge
+18:28:56.447 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:28:56.763 [main] INFO  - DONE setup()..
+18:29:01.769 [main] INFO  - In tearDown()..
+18:29:01.950 [main] INFO  - DONE tearDown()..
+18:29:01.956 [main] INFO  - In setup()..
+18:29:01.957 [main] INFO  - In setup(), browser value edge
+18:29:01.957 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:02.668 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:02.999 [main] INFO  - DONE setup()..
+18:29:08.016 [main] INFO  - In tearDown()..
+18:29:08.234 [main] INFO  - DONE tearDown()..
+18:29:08.238 [main] INFO  - In setup()..
+18:29:08.238 [main] INFO  - In setup(), browser value edge
+18:29:08.239 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:08.935 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:09.262 [main] INFO  - DONE setup()..
+18:29:14.281 [main] INFO  - In tearDown()..
+18:29:14.468 [main] INFO  - DONE tearDown()..
+18:29:14.471 [main] INFO  - In setup()..
+18:29:14.471 [main] INFO  - In setup(), browser value edge
+18:29:14.471 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:15.151 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:15.469 [main] INFO  - DONE setup()..
+18:29:20.478 [main] INFO  - In tearDown()..
+18:29:20.568 [main] INFO  - DONE tearDown()..
+18:29:20.571 [main] INFO  - In setup()..
+18:29:20.571 [main] INFO  - In setup(), browser value edge
+18:29:20.571 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:21.262 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:21.584 [main] INFO  - DONE setup()..
+18:29:26.593 [main] INFO  - In tearDown()..
+18:29:26.780 [main] INFO  - DONE tearDown()..
+18:29:26.783 [main] INFO  - In setup()..
+18:29:26.783 [main] INFO  - In setup(), browser value edge
+18:29:26.783 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:27.510 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:27.869 [main] INFO  - DONE setup()..
+18:29:32.873 [main] INFO  - In tearDown()..
+18:29:33.092 [main] INFO  - DONE tearDown()..
+18:29:33.096 [main] INFO  - In setup()..
+18:29:33.096 [main] INFO  - In setup(), browser value edge
+18:29:33.096 [main] INFO  - In launchBrowser() - browser value-edge
+18:29:33.855 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:29:34.040 [main] INFO  - DONE setup()..
+18:31:09.858 [main] INFO  - In setup()..
+18:31:09.863 [main] INFO  - In setup(), browser value edge
+18:31:09.871 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:10.930 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:11.270 [main] INFO  - DONE setup()..
+18:31:16.286 [main] INFO  - In tearDown()..
+18:31:16.537 [main] INFO  - DONE tearDown()..
+18:31:16.552 [main] INFO  - In setup()..
+18:31:16.553 [main] INFO  - In setup(), browser value edge
+18:31:16.553 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:17.253 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:17.571 [main] INFO  - DONE setup()..
+18:31:22.588 [main] INFO  - In tearDown()..
+18:31:22.790 [main] INFO  - DONE tearDown()..
+18:31:22.794 [main] INFO  - In setup()..
+18:31:22.795 [main] INFO  - In setup(), browser value edge
+18:31:22.795 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:23.508 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:23.852 [main] INFO  - DONE setup()..
+18:31:28.871 [main] INFO  - In tearDown()..
+18:31:29.028 [main] INFO  - DONE tearDown()..
+18:31:29.031 [main] INFO  - In setup()..
+18:31:29.032 [main] INFO  - In setup(), browser value edge
+18:31:29.032 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:29.763 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:30.094 [main] INFO  - DONE setup()..
+18:31:35.102 [main] INFO  - In tearDown()..
+18:31:35.309 [main] INFO  - DONE tearDown()..
+18:31:35.312 [main] INFO  - In setup()..
+18:31:35.313 [main] INFO  - In setup(), browser value edge
+18:31:35.313 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:36.003 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:36.361 [main] INFO  - DONE setup()..
+18:31:41.366 [main] INFO  - In tearDown()..
+18:31:41.568 [main] INFO  - DONE tearDown()..
+18:31:41.572 [main] INFO  - In setup()..
+18:31:41.573 [main] INFO  - In setup(), browser value edge
+18:31:41.573 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:42.284 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:42.592 [main] INFO  - DONE setup()..
+18:31:47.613 [main] INFO  - In tearDown()..
+18:31:47.800 [main] INFO  - DONE tearDown()..
+18:31:47.804 [main] INFO  - In setup()..
+18:31:47.804 [main] INFO  - In setup(), browser value edge
+18:31:47.804 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:48.509 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:48.846 [main] INFO  - DONE setup()..
+18:31:53.864 [main] INFO  - In tearDown()..
+18:31:54.035 [main] INFO  - DONE tearDown()..
+18:31:54.038 [main] INFO  - In setup()..
+18:31:54.039 [main] INFO  - In setup(), browser value edge
+18:31:54.039 [main] INFO  - In launchBrowser() - browser value-edge
+18:31:54.763 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:31:55.103 [main] INFO  - DONE setup()..
+18:32:00.110 [main] INFO  - In tearDown()..
+18:32:00.270 [main] INFO  - DONE tearDown()..
+18:32:00.273 [main] INFO  - In setup()..
+18:32:00.273 [main] INFO  - In setup(), browser value edge
+18:32:00.273 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:00.944 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:01.295 [main] INFO  - DONE setup()..
+18:32:06.305 [main] INFO  - In tearDown()..
+18:32:06.494 [main] INFO  - DONE tearDown()..
+18:32:06.497 [main] INFO  - In setup()..
+18:32:06.498 [main] INFO  - In setup(), browser value edge
+18:32:06.498 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:07.208 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:07.530 [main] INFO  - DONE setup()..
+18:32:12.537 [main] INFO  - In tearDown()..
+18:32:12.741 [main] INFO  - DONE tearDown()..
+18:32:12.744 [main] INFO  - In setup()..
+18:32:12.744 [main] INFO  - In setup(), browser value edge
+18:32:12.745 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:13.429 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:13.780 [main] INFO  - DONE setup()..
+18:32:18.801 [main] INFO  - In tearDown()..
+18:32:19.022 [main] INFO  - DONE tearDown()..
+18:32:19.025 [main] INFO  - In setup()..
+18:32:19.025 [main] INFO  - In setup(), browser value edge
+18:32:19.025 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:19.757 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:20.076 [main] INFO  - DONE setup()..
+18:32:25.084 [main] INFO  - In tearDown()..
+18:32:25.160 [main] INFO  - DONE tearDown()..
+18:32:25.163 [main] INFO  - In setup()..
+18:32:25.163 [main] INFO  - In setup(), browser value edge
+18:32:25.163 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:25.845 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:26.178 [main] INFO  - DONE setup()..
+18:32:31.185 [main] INFO  - In tearDown()..
+18:32:31.279 [main] INFO  - DONE tearDown()..
+18:32:31.282 [main] INFO  - In setup()..
+18:32:31.283 [main] INFO  - In setup(), browser value edge
+18:32:31.283 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:31.972 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:32.306 [main] INFO  - DONE setup()..
+18:32:37.321 [main] INFO  - In tearDown()..
+18:32:37.398 [main] INFO  - DONE tearDown()..
+18:32:37.400 [main] INFO  - In setup()..
+18:32:37.401 [main] INFO  - In setup(), browser value edge
+18:32:37.401 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:38.090 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:38.420 [main] INFO  - DONE setup()..
+18:32:43.425 [main] INFO  - In tearDown()..
+18:32:43.595 [main] INFO  - DONE tearDown()..
+18:32:43.598 [main] INFO  - In setup()..
+18:32:43.599 [main] INFO  - In setup(), browser value edge
+18:32:43.599 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:44.309 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:44.650 [main] INFO  - DONE setup()..
+18:32:49.655 [main] INFO  - In tearDown()..
+18:32:49.857 [main] INFO  - DONE tearDown()..
+18:32:49.860 [main] INFO  - In setup()..
+18:32:49.861 [main] INFO  - In setup(), browser value edge
+18:32:49.861 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:50.499 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:50.832 [main] INFO  - DONE setup()..
+18:32:55.840 [main] INFO  - In tearDown()..
+18:32:56.037 [main] INFO  - DONE tearDown()..
+18:32:56.042 [main] INFO  - In setup()..
+18:32:56.042 [main] INFO  - In setup(), browser value edge
+18:32:56.042 [main] INFO  - In launchBrowser() - browser value-edge
+18:32:56.754 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:32:57.084 [main] INFO  - DONE setup()..
+18:33:02.100 [main] INFO  - In tearDown()..
+18:33:02.291 [main] INFO  - DONE tearDown()..
+18:33:02.293 [main] INFO  - In setup()..
+18:33:02.294 [main] INFO  - In setup(), browser value edge
+18:33:02.294 [main] INFO  - In launchBrowser() - browser value-edge
+18:33:02.978 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:33:03.307 [main] INFO  - DONE setup()..
+18:33:08.313 [main] INFO  - In tearDown()..
+18:33:08.388 [main] INFO  - DONE tearDown()..
+18:33:08.390 [main] INFO  - In setup()..
+18:33:08.391 [main] INFO  - In setup(), browser value edge
+18:33:08.391 [main] INFO  - In launchBrowser() - browser value-edge
+18:33:09.049 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:33:09.553 [main] INFO  - DONE setup()..
+18:33:14.566 [main] INFO  - In tearDown()..
+18:33:14.643 [main] INFO  - DONE tearDown()..
+18:33:14.645 [main] INFO  - In setup()..
+18:33:14.646 [main] INFO  - In setup(), browser value edge
+18:33:14.646 [main] INFO  - In launchBrowser() - browser value-edge
+18:33:15.334 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:33:15.657 [main] INFO  - DONE setup()..
+18:33:20.665 [main] INFO  - In tearDown()..
+18:33:20.759 [main] INFO  - DONE tearDown()..
+18:33:20.763 [main] INFO  - In setup()..
+18:33:20.763 [main] INFO  - In setup(), browser value edge
+18:33:20.763 [main] INFO  - In launchBrowser() - browser value-edge
+18:33:21.444 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:33:21.770 [main] INFO  - DONE setup()..
+18:33:26.780 [main] INFO  - In tearDown()..
+18:33:26.965 [main] INFO  - DONE tearDown()..
+18:33:26.992 [main] INFO  - In setup()..
+18:33:26.992 [main] INFO  - In setup(), browser value edge
+18:33:26.992 [main] INFO  - In launchBrowser() - browser value-edge
+18:35:59.175 [main] INFO  - In setup()..
+18:35:59.179 [main] INFO  - In setup(), browser value edge
+18:35:59.188 [main] INFO  - In launchBrowser() - browser value-edge
+18:36:00.208 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:36:00.545 [main] INFO  - DONE setup()..
+18:36:05.565 [main] INFO  - In tearDown()..
+18:36:05.762 [main] INFO  - DONE tearDown()..
+18:36:05.777 [main] INFO  - In setup()..
+18:36:05.779 [main] INFO  - In setup(), browser value edge
+18:36:05.780 [main] INFO  - In launchBrowser() - browser value-edge
+18:36:06.506 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:36:06.831 [main] INFO  - DONE setup()..
+18:36:11.847 [main] INFO  - In tearDown()..
+18:36:12.032 [main] INFO  - DONE tearDown()..
+18:36:12.036 [main] INFO  - In setup()..
+18:36:12.036 [main] INFO  - In setup(), browser value edge
+18:36:12.037 [main] INFO  - In launchBrowser() - browser value-edge
+18:36:12.703 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:36:13.036 [main] INFO  - DONE setup()..
+18:36:18.050 [main] INFO  - In tearDown()..
+18:36:18.236 [main] INFO  - DONE tearDown()..
+18:36:18.247 [main] INFO  - In setup()..
+18:36:18.248 [main] INFO  - In setup(), browser value edge
+18:36:18.248 [main] INFO  - In launchBrowser() - browser value-edge
+18:36:18.904 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:36:19.244 [main] INFO  - DONE setup()..
+18:36:24.251 [main] INFO  - In tearDown()..
+18:36:24.436 [main] INFO  - DONE tearDown()..
+18:38:25.658 [main] INFO  - In setup()..
+18:38:25.663 [main] INFO  - In setup(), browser value edge
+18:38:25.668 [main] INFO  - In launchBrowser() - browser value-edge
+18:38:26.750 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:38:27.113 [main] INFO  - DONE setup()..
+18:38:32.129 [main] INFO  - In tearDown()..
+18:38:32.302 [main] INFO  - DONE tearDown()..
+18:38:32.306 [main] INFO  - In setup()..
+18:38:32.307 [main] INFO  - In setup(), browser value edge
+18:38:32.307 [main] INFO  - In launchBrowser() - browser value-edge
+18:38:33.043 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:38:33.356 [main] INFO  - DONE setup()..
+18:38:38.377 [main] INFO  - In tearDown()..
+18:38:38.547 [main] INFO  - DONE tearDown()..
+18:38:38.552 [main] INFO  - In setup()..
+18:38:38.552 [main] INFO  - In setup(), browser value edge
+18:38:38.552 [main] INFO  - In launchBrowser() - browser value-edge
+18:38:39.268 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:38:39.619 [main] INFO  - DONE setup()..
+18:38:44.631 [main] INFO  - In tearDown()..
+18:38:44.876 [main] INFO  - DONE tearDown()..
+18:38:44.881 [main] INFO  - In setup()..
+18:38:44.882 [main] INFO  - In setup(), browser value edge
+18:38:44.882 [main] INFO  - In launchBrowser() - browser value-edge
+18:38:45.634 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:38:45.967 [main] INFO  - DONE setup()..
+18:38:50.989 [main] INFO  - In tearDown()..
+18:38:51.187 [main] INFO  - DONE tearDown()..
+18:38:51.191 [main] INFO  - In setup()..
+18:38:51.192 [main] INFO  - In setup(), browser value edge
+18:38:51.192 [main] INFO  - In launchBrowser() - browser value-edge
+18:38:51.841 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+18:38:52.166 [main] INFO  - DONE setup()..
+18:38:57.174 [main] INFO  - In tearDown()..
+18:38:57.375 [main] INFO  - DONE tearDown()..
+22:21:53.335 [main] INFO  - In setup()..
+22:21:53.342 [main] INFO  - In setup(), browser value edge
+22:21:53.348 [main] INFO  - In launchBrowser() - browser value-edge
+22:21:55.177 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:21:56.323 [main] INFO  - DONE setup()..
+22:22:01.356 [main] INFO  - In tearDown()..
+22:22:01.616 [main] INFO  - DONE tearDown()..
+22:22:01.667 [main] INFO  - In setup()..
+22:22:01.668 [main] INFO  - In setup(), browser value edge
+22:22:01.668 [main] INFO  - In launchBrowser() - browser value-edge
+22:22:02.739 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:22:02.901 [main] INFO  - DONE setup()..
+22:22:07.914 [main] INFO  - In tearDown()..
+22:22:08.311 [main] INFO  - DONE tearDown()..
+22:22:08.322 [main] INFO  - In setup()..
+22:22:08.323 [main] INFO  - In setup(), browser value edge
+22:22:08.324 [main] INFO  - In launchBrowser() - browser value-edge
+22:22:09.381 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:22:09.858 [main] INFO  - DONE setup()..
+22:22:14.877 [main] INFO  - In tearDown()..
+22:22:15.137 [main] INFO  - DONE tearDown()..
+22:22:15.147 [main] INFO  - In setup()..
+22:22:15.148 [main] INFO  - In setup(), browser value edge
+22:22:15.148 [main] INFO  - In launchBrowser() - browser value-edge
+22:22:16.308 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:22:16.750 [main] INFO  - DONE setup()..
+22:22:21.766 [main] INFO  - In tearDown()..
+22:22:22.041 [main] INFO  - DONE tearDown()..
+22:22:22.049 [main] INFO  - In setup()..
+22:22:22.050 [main] INFO  - In setup(), browser value edge
+22:22:22.051 [main] INFO  - In launchBrowser() - browser value-edge
+22:22:23.213 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:22:23.673 [main] INFO  - DONE setup()..
+22:22:28.701 [main] INFO  - In tearDown()..
+22:22:29.086 [main] INFO  - DONE tearDown()..
+22:33:48.425 [main] INFO  - In setup()..
+22:33:48.433 [main] INFO  - In setup(), browser value edge
+22:33:48.440 [main] INFO  - In launchBrowser() - browser value-edge
+22:33:49.951 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:33:50.474 [main] INFO  - DONE setup()..
+22:33:55.492 [main] INFO  - In tearDown()..
+22:33:55.773 [main] INFO  - DONE tearDown()..
+22:33:55.785 [main] INFO  - In setup()..
+22:33:55.786 [main] INFO  - In setup(), browser value edge
+22:33:55.786 [main] INFO  - In launchBrowser() - browser value-edge
+22:33:56.885 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:33:57.406 [main] INFO  - DONE setup()..
+22:34:02.424 [main] INFO  - In tearDown()..
+22:34:02.793 [main] INFO  - DONE tearDown()..
+22:34:02.803 [main] INFO  - In setup()..
+22:34:02.804 [main] INFO  - In setup(), browser value edge
+22:34:02.804 [main] INFO  - In launchBrowser() - browser value-edge
+22:34:03.794 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:34:04.337 [main] INFO  - DONE setup()..
+22:34:09.343 [main] INFO  - In tearDown()..
+22:34:09.733 [main] INFO  - DONE tearDown()..
+22:34:09.743 [main] INFO  - In setup()..
+22:34:09.744 [main] INFO  - In setup(), browser value edge
+22:34:09.745 [main] INFO  - In launchBrowser() - browser value-edge
+22:34:10.830 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:34:11.296 [main] INFO  - DONE setup()..
+22:34:16.310 [main] INFO  - In tearDown()..
+22:34:16.692 [main] INFO  - DONE tearDown()..
+22:34:16.700 [main] INFO  - In setup()..
+22:34:16.701 [main] INFO  - In setup(), browser value edge
+22:34:16.701 [main] INFO  - In launchBrowser() - browser value-edge
+22:34:17.716 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:34:18.184 [main] INFO  - DONE setup()..
+22:34:23.196 [main] INFO  - In tearDown()..
+22:34:23.461 [main] INFO  - DONE tearDown()..
+22:47:22.200 [main] INFO  - In setup()..
+22:47:22.206 [main] INFO  - In setup(), browser value edge
+22:47:22.215 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:23.697 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:24.635 [main] INFO  - DONE setup()..
+22:47:29.668 [main] INFO  - In tearDown()..
+22:47:29.924 [main] INFO  - DONE tearDown()..
+22:47:29.935 [main] INFO  - In setup()..
+22:47:29.936 [main] INFO  - In setup(), browser value edge
+22:47:29.937 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:30.952 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:31.420 [main] INFO  - DONE setup()..
+22:47:36.433 [main] INFO  - In tearDown()..
+22:47:36.746 [main] INFO  - DONE tearDown()..
+22:47:36.754 [main] INFO  - In setup()..
+22:47:36.755 [main] INFO  - In setup(), browser value edge
+22:47:36.755 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:37.761 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:38.279 [main] INFO  - DONE setup()..
+22:47:43.283 [main] INFO  - In tearDown()..
+22:47:43.681 [main] INFO  - DONE tearDown()..
+22:47:43.694 [main] INFO  - In setup()..
+22:47:43.695 [main] INFO  - In setup(), browser value edge
+22:47:43.696 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:44.788 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:45.277 [main] INFO  - DONE setup()..
+22:47:50.290 [main] INFO  - In tearDown()..
+22:47:50.566 [main] INFO  - DONE tearDown()..
+22:47:50.573 [main] INFO  - In setup()..
+22:47:50.574 [main] INFO  - In setup(), browser value edge
+22:47:50.574 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:51.635 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:52.140 [main] INFO  - DONE setup()..
+22:47:57.150 [main] INFO  - In tearDown()..
+22:47:57.506 [main] INFO  - DONE tearDown()..
+22:47:57.512 [main] INFO  - In setup()..
+22:47:57.513 [main] INFO  - In setup(), browser value edge
+22:47:57.513 [main] INFO  - In launchBrowser() - browser value-edge
+22:47:58.565 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:47:59.011 [main] INFO  - DONE setup()..
+22:48:04.016 [main] INFO  - In tearDown()..
+22:48:04.388 [main] INFO  - DONE tearDown()..
+22:48:04.396 [main] INFO  - In setup()..
+22:48:04.398 [main] INFO  - In setup(), browser value edge
+22:48:04.398 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:05.543 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:05.997 [main] INFO  - DONE setup()..
+22:48:11.005 [main] INFO  - In tearDown()..
+22:48:11.272 [main] INFO  - DONE tearDown()..
+22:48:11.280 [main] INFO  - In setup()..
+22:48:11.281 [main] INFO  - In setup(), browser value edge
+22:48:11.282 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:12.438 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:12.881 [main] INFO  - DONE setup()..
+22:48:17.894 [main] INFO  - In tearDown()..
+22:48:18.299 [main] INFO  - DONE tearDown()..
+22:48:18.308 [main] INFO  - In setup()..
+22:48:18.308 [main] INFO  - In setup(), browser value edge
+22:48:18.309 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:19.430 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:20.114 [main] INFO  - DONE setup()..
+22:48:25.126 [main] INFO  - In tearDown()..
+22:48:25.502 [main] INFO  - DONE tearDown()..
+22:48:25.511 [main] INFO  - In setup()..
+22:48:25.512 [main] INFO  - In setup(), browser value edge
+22:48:25.512 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:26.484 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:26.938 [main] INFO  - DONE setup()..
+22:48:31.953 [main] INFO  - In tearDown()..
+22:48:32.327 [main] INFO  - DONE tearDown()..
+22:48:32.334 [main] INFO  - In setup()..
+22:48:32.335 [main] INFO  - In setup(), browser value edge
+22:48:32.335 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:33.434 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:33.903 [main] INFO  - DONE setup()..
+22:48:38.922 [main] INFO  - In tearDown()..
+22:48:39.301 [main] INFO  - DONE tearDown()..
+22:48:39.310 [main] INFO  - In setup()..
+22:48:39.311 [main] INFO  - In setup(), browser value edge
+22:48:39.311 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:40.384 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:40.837 [main] INFO  - DONE setup()..
+22:48:45.863 [main] INFO  - In tearDown()..
+22:48:46.232 [main] INFO  - DONE tearDown()..
+22:48:46.239 [main] INFO  - In setup()..
+22:48:46.240 [main] INFO  - In setup(), browser value edge
+22:48:46.241 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:47.143 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:47.595 [main] INFO  - DONE setup()..
+22:48:52.607 [main] INFO  - In tearDown()..
+22:48:52.937 [main] INFO  - DONE tearDown()..
+22:48:52.946 [main] INFO  - In setup()..
+22:48:52.947 [main] INFO  - In setup(), browser value edge
+22:48:52.947 [main] INFO  - In launchBrowser() - browser value-edge
+22:48:54.021 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:48:54.441 [main] INFO  - DONE setup()..
+22:48:59.455 [main] INFO  - In tearDown()..
+22:48:59.731 [main] INFO  - DONE tearDown()..
+22:48:59.737 [main] INFO  - In setup()..
+22:48:59.738 [main] INFO  - In setup(), browser value edge
+22:48:59.738 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:00.832 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:01.258 [main] INFO  - DONE setup()..
+22:49:06.272 [main] INFO  - In tearDown()..
+22:49:06.527 [main] INFO  - DONE tearDown()..
+22:49:06.532 [main] INFO  - In setup()..
+22:49:06.533 [main] INFO  - In setup(), browser value edge
+22:49:06.533 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:07.545 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:07.957 [main] INFO  - DONE setup()..
+22:49:12.963 [main] INFO  - In tearDown()..
+22:49:13.269 [main] INFO  - DONE tearDown()..
+22:49:13.278 [main] INFO  - In setup()..
+22:49:13.278 [main] INFO  - In setup(), browser value edge
+22:49:13.279 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:14.333 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:14.765 [main] INFO  - DONE setup()..
+22:49:19.773 [main] INFO  - In tearDown()..
+22:49:20.138 [main] INFO  - DONE tearDown()..
+22:49:20.145 [main] INFO  - In setup()..
+22:49:20.146 [main] INFO  - In setup(), browser value edge
+22:49:20.146 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:21.231 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:21.682 [main] INFO  - DONE setup()..
+22:49:26.703 [main] INFO  - In tearDown()..
+22:49:27.098 [main] INFO  - DONE tearDown()..
+22:49:27.106 [main] INFO  - In setup()..
+22:49:27.107 [main] INFO  - In setup(), browser value edge
+22:49:27.107 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:28.129 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:28.693 [main] INFO  - DONE setup()..
+22:49:33.701 [main] INFO  - In tearDown()..
+22:49:34.044 [main] INFO  - DONE tearDown()..
+22:49:34.049 [main] INFO  - In setup()..
+22:49:34.050 [main] INFO  - In setup(), browser value edge
+22:49:34.050 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:35.133 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:35.666 [main] INFO  - DONE setup()..
+22:49:40.682 [main] INFO  - In tearDown()..
+22:49:41.055 [main] INFO  - DONE tearDown()..
+22:49:41.061 [main] INFO  - In setup()..
+22:49:41.062 [main] INFO  - In setup(), browser value edge
+22:49:41.062 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:42.137 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:42.623 [main] INFO  - DONE setup()..
+22:49:47.633 [main] INFO  - In tearDown()..
+22:49:47.979 [main] INFO  - DONE tearDown()..
+22:49:47.986 [main] INFO  - In setup()..
+22:49:47.987 [main] INFO  - In setup(), browser value edge
+22:49:47.987 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:49.160 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:49.626 [main] INFO  - DONE setup()..
+22:49:54.633 [main] INFO  - In tearDown()..
+22:49:55.003 [main] INFO  - DONE tearDown()..
+22:49:55.011 [main] INFO  - In setup()..
+22:49:55.012 [main] INFO  - In setup(), browser value edge
+22:49:55.012 [main] INFO  - In launchBrowser() - browser value-edge
+22:49:56.163 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:49:56.727 [main] INFO  - DONE setup()..
+22:50:01.762 [main] INFO  - In tearDown()..
+22:50:02.012 [main] INFO  - DONE tearDown()..
+22:50:02.019 [main] INFO  - In setup()..
+22:50:02.020 [main] INFO  - In setup(), browser value edge
+22:50:02.021 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:03.133 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:03.798 [main] INFO  - DONE setup()..
+22:50:08.802 [main] INFO  - In tearDown()..
+22:50:09.128 [main] INFO  - DONE tearDown()..
+22:50:09.135 [main] INFO  - In setup()..
+22:50:09.135 [main] INFO  - In setup(), browser value edge
+22:50:09.136 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:10.165 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:10.575 [main] INFO  - DONE setup()..
+22:50:15.588 [main] INFO  - In tearDown()..
+22:50:15.965 [main] INFO  - DONE tearDown()..
+22:50:15.973 [main] INFO  - In setup()..
+22:50:15.973 [main] INFO  - In setup(), browser value edge
+22:50:15.974 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:17.056 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:17.665 [main] INFO  - DONE setup()..
+22:50:22.678 [main] INFO  - In tearDown()..
+22:50:23.072 [main] INFO  - DONE tearDown()..
+22:50:23.080 [main] INFO  - In setup()..
+22:50:23.081 [main] INFO  - In setup(), browser value edge
+22:50:23.081 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:24.096 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:24.576 [main] INFO  - DONE setup()..
+22:50:29.596 [main] INFO  - In tearDown()..
+22:50:29.910 [main] INFO  - DONE tearDown()..
+22:50:29.916 [main] INFO  - In setup()..
+22:50:29.917 [main] INFO  - In setup(), browser value edge
+22:50:29.917 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:30.987 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:31.403 [main] INFO  - DONE setup()..
+22:50:36.418 [main] INFO  - In tearDown()..
+22:50:36.759 [main] INFO  - DONE tearDown()..
+22:50:36.763 [main] INFO  - In setup()..
+22:50:36.763 [main] INFO  - In setup(), browser value edge
+22:50:36.763 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:37.834 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:38.531 [main] INFO  - DONE setup()..
+22:50:43.550 [main] INFO  - In tearDown()..
+22:50:43.904 [main] INFO  - DONE tearDown()..
+22:50:43.909 [main] INFO  - In setup()..
+22:50:43.910 [main] INFO  - In setup(), browser value edge
+22:50:43.911 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:45.010 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:45.837 [main] INFO  - DONE setup()..
+22:50:50.846 [main] INFO  - In tearDown()..
+22:50:51.206 [main] INFO  - DONE tearDown()..
+22:50:51.211 [main] INFO  - In setup()..
+22:50:51.212 [main] INFO  - In setup(), browser value edge
+22:50:51.212 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:52.326 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:52.821 [main] INFO  - DONE setup()..
+22:50:57.832 [main] INFO  - In tearDown()..
+22:50:58.099 [main] INFO  - DONE tearDown()..
+22:50:58.105 [main] INFO  - In setup()..
+22:50:58.106 [main] INFO  - In setup(), browser value edge
+22:50:58.106 [main] INFO  - In launchBrowser() - browser value-edge
+22:50:59.185 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:50:59.948 [main] INFO  - DONE setup()..
+22:51:04.969 [main] INFO  - In tearDown()..
+22:51:05.342 [main] INFO  - DONE tearDown()..
+22:51:05.348 [main] INFO  - In setup()..
+22:51:05.349 [main] INFO  - In setup(), browser value edge
+22:51:05.350 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:06.401 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:06.906 [main] INFO  - DONE setup()..
+22:51:11.908 [main] INFO  - In tearDown()..
+22:51:12.295 [main] INFO  - DONE tearDown()..
+22:51:12.301 [main] INFO  - In setup()..
+22:51:12.302 [main] INFO  - In setup(), browser value edge
+22:51:12.302 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:13.228 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:13.691 [main] INFO  - DONE setup()..
+22:51:18.703 [main] INFO  - In tearDown()..
+22:51:19.062 [main] INFO  - DONE tearDown()..
+22:51:19.066 [main] INFO  - In setup()..
+22:51:19.066 [main] INFO  - In setup(), browser value edge
+22:51:19.067 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:20.223 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:20.648 [main] INFO  - DONE setup()..
+22:51:25.667 [main] INFO  - In tearDown()..
+22:51:25.989 [main] INFO  - DONE tearDown()..
+22:51:25.994 [main] INFO  - In setup()..
+22:51:25.995 [main] INFO  - In setup(), browser value edge
+22:51:25.995 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:27.064 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:27.489 [main] INFO  - DONE setup()..
+22:51:32.496 [main] INFO  - In tearDown()..
+22:51:32.749 [main] INFO  - DONE tearDown()..
+22:51:32.756 [main] INFO  - In setup()..
+22:51:32.757 [main] INFO  - In setup(), browser value edge
+22:51:32.757 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:33.831 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:34.266 [main] INFO  - DONE setup()..
+22:51:39.279 [main] INFO  - In tearDown()..
+22:51:39.512 [main] INFO  - DONE tearDown()..
+22:51:39.519 [main] INFO  - In setup()..
+22:51:39.520 [main] INFO  - In setup(), browser value edge
+22:51:39.520 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:40.651 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:41.087 [main] INFO  - DONE setup()..
+22:51:46.106 [main] INFO  - In tearDown()..
+22:51:46.459 [main] INFO  - DONE tearDown()..
+22:51:46.465 [main] INFO  - In setup()..
+22:51:46.466 [main] INFO  - In setup(), browser value edge
+22:51:46.466 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:47.507 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:47.908 [main] INFO  - DONE setup()..
+22:51:52.931 [main] INFO  - In tearDown()..
+22:51:53.188 [main] INFO  - DONE tearDown()..
+22:51:53.191 [main] INFO  - In setup()..
+22:51:53.192 [main] INFO  - In setup(), browser value edge
+22:51:53.192 [main] INFO  - In launchBrowser() - browser value-edge
+22:51:54.295 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:51:54.907 [main] INFO  - DONE setup()..
+22:51:59.933 [main] INFO  - In tearDown()..
+22:52:00.301 [main] INFO  - DONE tearDown()..
+22:52:00.306 [main] INFO  - In setup()..
+22:52:00.307 [main] INFO  - In setup(), browser value edge
+22:52:00.307 [main] INFO  - In launchBrowser() - browser value-edge
+22:52:01.378 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:52:01.815 [main] INFO  - DONE setup()..
+22:52:06.831 [main] INFO  - In tearDown()..
+22:52:07.108 [main] INFO  - DONE tearDown()..
+22:52:07.112 [main] INFO  - In setup()..
+22:52:07.113 [main] INFO  - In setup(), browser value edge
+22:52:07.113 [main] INFO  - In launchBrowser() - browser value-edge
+22:52:08.187 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:52:08.606 [main] INFO  - DONE setup()..
+22:52:13.619 [main] INFO  - In tearDown()..
+22:52:13.884 [main] INFO  - DONE tearDown()..
+22:52:13.889 [main] INFO  - In setup()..
+22:52:13.890 [main] INFO  - In setup(), browser value edge
+22:52:13.890 [main] INFO  - In launchBrowser() - browser value-edge
+22:52:15.023 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:52:15.480 [main] INFO  - DONE setup()..
+22:52:20.495 [main] INFO  - In tearDown()..
+22:52:20.753 [main] INFO  - DONE tearDown()..
+22:57:48.485 [main] INFO  - In setup()..
+22:57:48.491 [main] INFO  - In setup(), browser value edge
+22:57:48.501 [main] INFO  - In launchBrowser() - browser value-edge
+22:57:49.977 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:57:50.597 [main] INFO  - DONE setup()..
+22:57:55.635 [main] INFO  - In tearDown()..
+22:57:55.971 [main] INFO  - DONE tearDown()..
+22:57:55.979 [main] INFO  - In setup()..
+22:57:55.979 [main] INFO  - In setup(), browser value edge
+22:57:55.979 [main] INFO  - In launchBrowser() - browser value-edge
+22:57:56.841 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:57:57.230 [main] INFO  - DONE setup()..
+22:58:02.253 [main] INFO  - In tearDown()..
+22:58:02.505 [main] INFO  - DONE tearDown()..
+22:58:02.514 [main] INFO  - In setup()..
+22:58:02.515 [main] INFO  - In setup(), browser value edge
+22:58:02.515 [main] INFO  - In launchBrowser() - browser value-edge
+22:58:03.404 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:58:03.762 [main] INFO  - DONE setup()..
+22:58:08.776 [main] INFO  - In tearDown()..
+22:58:09.113 [main] INFO  - DONE tearDown()..
+22:58:09.122 [main] INFO  - In setup()..
+22:58:09.123 [main] INFO  - In setup(), browser value edge
+22:58:09.124 [main] INFO  - In launchBrowser() - browser value-edge
+22:58:10.007 [main] INFO  - app url-https://dsportalapp.herokuapp.com/home
+22:58:12.357 [main] INFO  - DONE setup()..
+22:58:17.383 [main] INFO  - In tearDown()..
+22:58:17.712 [main] INFO  - DONE tearDown()..
+22:58:17.718 [main] INFO  - In setup()..
+22:58:17.718 [main] INFO  - In setup(), browser value edge
+22:58:17.718 [main] INFO  - In launchBrowser() - browser value-edge
