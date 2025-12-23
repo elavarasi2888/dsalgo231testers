@@ -1,5 +1,5 @@
 # Author: Ela
-@array
+@ArrayPage
 Feature: Array - non functional test case
 
   Background:

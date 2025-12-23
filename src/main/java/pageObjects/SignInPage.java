@@ -6,23 +6,20 @@ import org.openqa.selenium.WebDriver;
 public class SignInPage {
 	WebDriver driver;
 
-	By usernameField = By.id("id_username");
-	By passwordField = By.id("id_password");
-	By signinButton = By.cssSelector("button[type='submit']");
-	By registerLink = By.linkText("Register");
+	By usernameField = By.name("username");
+	By passwordField = By.name("password");
+	By signinButton = By.xpath("//form//input[@type='submit']");
+	By registerLink = By.xpath("//a[normalize-space()='Register']");
 
-	By errorMsg = By.className("alert alert-primary");
-	By usernameError = By.id("username_error");
-	By passwordError = By.id("password_error");
-	By generalError = By.id("generalError");
+	By errorMsg = By.xpath("//div[contains(@class,'alert-primary')]");
+	
 
 	// Constructor
 	public SignInPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	// -------------------- Sign in page Validations
-	// --------------------------------------
+	// -------------------- Sign in page Validations--------------------------------------------------
 	public boolean isLoginPageDisplayed() {
 		return driver.getCurrentUrl().contains("login");
 	}
@@ -42,7 +39,7 @@ public class SignInPage {
 	public boolean isRegisterOptionVisible() {
 		return driver.findElement(registerLink).isDisplayed();
 	}
-	// -------------------- Page Chaining --------------------
+	// -------------------- Page Chaining ---------------------------------------------------------
 
 	/* VALID LOGIN → Navigates to HomePage */
 	public HomePage login(String username, String password) {
@@ -65,7 +62,7 @@ public class SignInPage {
 		driver.findElement(registerLink).click();
 		return new Register(driver);
 	}
-	// ----------------------Actions performed--------------------------
+	// ----------------------Actions performed----------------------------------------------
 
 	public void enterUsername(String username) {
 		driver.findElement(usernameField).sendKeys(username);
@@ -93,18 +90,6 @@ public class SignInPage {
 		return driver.findElement(errorMsg).getText();
 	}
 
-	public String getUsernameErrorMessage() {
-		return driver.findElement(usernameError).getText();
-	}
-
-	public String getPasswordErrorMessage() {
-		return driver.findElement(passwordError).getText();
-	}
-
-	public String getGeneralErrorMessage() {
-		return driver.findElement(generalError).getText();
-	}
-
 	// Get browser validation message for username field
 	public String getUsernameValidationMessage() {
 		return driver.findElement(usernameField).getAttribute("validationMessage");
@@ -119,15 +104,15 @@ public class SignInPage {
 	public String getErrorMessageBelowTextbox(String fieldName) {
 		switch (fieldName.toLowerCase()) {
 		case "username":
-			return getUsernameErrorMessage();
+			return getErrorMsgText();
 		case "password":
-			return getPasswordErrorMessage();
+			return getErrorMsgText();
 		default:
 			throw new IllegalArgumentException("Invalid field name: " + fieldName);
 		}
 	}
 
-	// ===== Registration Page Check =====
+	// --------------- Registration Page Check----------------------------------------------------------
 	public boolean isRegistrationPageDisplayed() {
 		return driver.getCurrentUrl().contains("register");
 	}

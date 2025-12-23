@@ -23,12 +23,14 @@ import pageObjects.SignInPage;
 import utils.ConfigReader;
 import utils.ExcelReader;
 
-public class SignInSteps {
+public class SignInSteps 
+{
 	HomePage homePage;
 	SignInPage signinpage;
 	WebDriver driver;
 
-	public SignInSteps() {
+	public SignInSteps() 
+	{
 		driver = DriverManager.getDriver();
 		signinpage = new SignInPage(driver);
 
@@ -100,12 +102,15 @@ public class SignInSteps {
 		String actualErrMsg;
 
 		if (location.equalsIgnoreCase("Username")) {
-			actualErrMsg = signinpage.getUsernameErrorMessage();
-		} else if (location.equalsIgnoreCase("Password")) {
-			actualErrMsg = signinpage.getPasswordErrorMessage();
-		} else {
-			// General error message displayed somewhere on the page
-			actualErrMsg = signinpage.getGeneralErrorMessage();
+			actualErrMsg = signinpage.getErrorMsgText();
+		} 
+		else if (location.equalsIgnoreCase("Password")) {
+			actualErrMsg = signinpage.getErrorMsgText();
+		} 
+		else 
+		{
+			
+			actualErrMsg = signinpage.getErrorMsgText();
 		}
 
 		Assert.assertEquals(expectedErrMsg, actualErrMsg);
