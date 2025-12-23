@@ -1,36 +1,42 @@
 package utils;
 
+import factory.LoggerFactory;
+
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
 
-	private static String browserType = null;
-	private static String appURL;
-	Properties prop;
+    private static String browserType = null;
+    private static String applicationURL;
+    Properties prop = null;
 
-	public static String getAppUrl() {
-		return appURL;
-	}
+    public static String getAppUrl() {
+        return applicationURL;
+    }
 
-	public static String getBrowserType() {
-		return browserType;
-	}
+    private void setAppUrl(String appURL) {
+        applicationURL = appURL;
+    }
 
-	public static void setBrowserType(String browser) {
-		browserType = browser;
-	}
+    public static String getBrowserType() {
+        return browserType;
+    }
 
-	// public void loadProperties() throws IOException {
-	public Properties loadProperties() throws IOException {
+    public static void setBrowserType(String browser) {
+        browserType = browser;
+    }
 
-		prop = new Properties();
+    public Properties loadProperties() {
+        try {
+            prop = new Properties();
+            FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
+            prop.load(file);
+            setAppUrl(prop.getProperty("appURL"));
+        } catch (Exception e) {
+            LoggerFactory.getLogger().error("Unexcepted error occurred when loading configuration. {}", e.getMessage());
+        }
 
-		FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
-		prop.load(file);
-
-		return prop;
-		// appURL = prop.getProperty("appURL");
-	}
+        return prop;
+    }
 }

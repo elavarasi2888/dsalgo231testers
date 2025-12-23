@@ -9,61 +9,58 @@ import factory.DriverManager;
 import factory.LoggerFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import pageObjects.DsAlgoPortalPage;
+import pageObjects.HomePage;
+import pageObjects.SignInPage;
 import utils.ConfigReader;
 
 public class Hooks {
 
-	WebDriver driver;
-	Properties prop;
-	ConfigReader configReader = new ConfigReader();
+    Properties prop;
+    ConfigReader configReader;
+    String browser;
+    WebDriver driver;
 
-	@Before()
-	public void beforeScenario() throws IOException {
+    @Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
+    public void beforeScenario() throws IOException {
+        configReader = new ConfigReader();
+        prop = configReader.loadProperties();
 
-		LoggerFactory.getLogger().info("In setup()..");
-		prop = configReader.loadProperties();
+        if (ConfigReader.getBrowserType() != null) {
+            browser = ConfigReader.getBrowserType();
+        } else {
+            browser = prop.getProperty("browser");
+        }
 
-		String browser = null;
-		// if browser values are found in the testng.xml
-		if (ConfigReader.getBrowserType() != null) {
-			browser = ConfigReader.getBrowserType();
-		} else {
-			// we will go with default browser value in config.properties
+        driver = DriverManager.initBrowser(browser);
+    }
 
-			browser = prop.getProperty("browser");
-		}
+    @Before("@DataStructure")
+    public void preStep() throws IOException {
+        configReader = new ConfigReader();
+        prop = configReader.loadProperties();
 
-		LoggerFactory.getLogger().info("In setup(), browser value {}", browser);
-		driver = DriverManager.initBrowser(browser);
+        if (ConfigReader.getBrowserType() != null) {
+            browser = ConfigReader.getBrowserType();
+        } else {
+            browser = prop.getProperty("browser");
+        }
 
-		String appURL = prop.getProperty("dsAppURL");
-		LoggerFactory.getLogger().info("app url-{}", appURL);
-		// DriverManager.getDriver().get(ConfigReader.getAppUrl());
-		driver.get(appURL);
-		LoggerFactory.getLogger().info("DONE setup()..");
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
-	}
+        driver = DriverManager.initBrowser(browser);
 
-	/*
-	 * @Before("@linkedList") public void beforeScenario2()throws IOException {
-	 * 
-	 * LoggerFactory.getLogger().info("User launches to dsalgo page");
-	 * LoggerFactory.getLogger().info("User navigates to home page");
-	 * LoggerFactory.getLogger().info("User navigates to sign in page");
-	 * LoggerFactory.getLogger().info("User signs in");
-	 * LoggerFactory.getLogger().info("User comes back to home page");
-	 * //LoggerFactory.getLogger().info("User launches to dsalgo page"); }
-	 */
+        String appURL = ConfigReader.getAppUrl();
+        driver.get(appURL);
 
-	@After
-	public void tearDown() {
-		LoggerFactory.getLogger().info("In tearDown()..");
-		DriverManager.getDriver().quit();
-		LoggerFactory.getLogger().info("DONE tearDown()..");
-	}
+        DsAlgoPortalPage dsAlgoPortal = new DsAlgoPortalPage(driver);
+        HomePage homePage = dsAlgoPortal.clickDsPortalGetStarted();
+        SignInPage signInPage = homePage.clickSignInLink();
+        //add steps for sign-in
 
+    }
+
+    @After
+    public void tearDown() {
+        DriverManager.getDriver().quit();
+        LoggerFactory.getLogger().info("DONE tearDown()..");
+    }
 }

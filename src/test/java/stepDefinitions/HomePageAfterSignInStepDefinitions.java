@@ -1,34 +1,83 @@
 package stepDefinitions;
 
+import factory.DriverManager;
+import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import pageObjects.*;
 
 public class HomePageAfterSignInStepDefinitions {
 
-	@Given("User clicks login button after entering valid username and valid password")
-	public void user_clicks_login_button_after_entering_valid_username_and_valid_password() {
+    HomePage homePage;
+    WebDriver driver;
 
-	}
+    public HomePageAfterSignInStepDefinitions() {
+        driver = DriverManager.getDriver();
+        homePage = new HomePage(driver);
+    }
 
-	@Given("User is at the Home page after sign-in")
-	public void user_is_at_the_home_page_after_sign_in() {
+    //temporary
+    @Given("User clicks login button after entering valid username and valid password")
+    public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
 
-	}
+        String username = "dsalgo231";
+        String password = "automation2025#";
 
-	@When("User selects an {string} from the drop down")
-	public void user_selects_an_from_the_drop_down(String string) {
+        homePage = loginPage.login(username, password);
+    }
 
-	}
+    @Given("User is at the Home page after sign-in")
+    public void user_is_at_the_home_page_after_sign_in() {
+        LoggerFactory.getLogger().info("User {} signed-in to {}",
+                homePage.getCurrentSignedInUserName(), homePage.getHomePageURL());
+    }
 
-	@Then("User should able to navigate to the corresponding page")
-	public void user_should_able_to_navigate_to_the_corresponding_page() {
+    @When("User selects following {string} from the drop down after sign-in")
+    public void userSelectsFollowingFromTheDropDownAfterSignIn(String dropdownItem) {
+        homePage.selectDataStructureItemFromDropdown(dropdownItem.trim());
+    }
 
-	}
+    @Then("User should able to navigate to {string}")
+    public void userShouldAbleToNavigateTo(String dsPage) {
+        String currentPageURL = null;
+        String dataStructurePageName = dsPage.toLowerCase().trim();
 
-	@When("User clicks {string} from the panel")
-	public void user_clicks_from_the_panel(String string) {
+        switch (dataStructurePageName) {
+            case "data-structures-introduction":
+                currentPageURL = new DataStructure(driver).getDataStructurePageURL();
+                break;
+            case "array":
+                currentPageURL = new ArrayPage(driver).getArrayPageURL();
+                break;
+            case "linked-list":
+                currentPageURL = new LinkedList(driver).getLinkedListPageURL();
+                break;
+            case "stack":
+                currentPageURL = new StackPage(driver).getStackPageURL();
+                break;
+            case "queue":
+                currentPageURL = new QueuePage(driver).getQueuePageURL();
+                break;
+            case "tree":
+                currentPageURL = new TreePage(driver).getTreePageURL();
+                break;
+            case "graph":
+                currentPageURL = new GraphPage(driver).getGraphPageURL();
+                break;
+            default:
+                LoggerFactory.getLogger().warn("Data Structure page name does not exists");
+                break;
+        }
 
-	}
+        Assert.assertTrue(currentPageURL.contains(dataStructurePageName));
+    }
 
+    @When("User clicks Get Started button of {string} from panel after sign-in")
+    public void userClicksGetStartedButtonOfFromPanelAfterSignIn(String panelItem) {
+        homePage.clickGetStartedButton(panelItem);
+    }
 }
