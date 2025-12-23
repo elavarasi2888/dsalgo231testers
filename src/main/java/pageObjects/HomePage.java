@@ -1,109 +1,122 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
-	
-	private WebDriver driver;
 
-	By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
-	By lnkRegister = By.xpath("//a[normalize-space()='Register']");
-	By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
-	By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
-	By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
-	By btnGetStarted = By.xpath("//a[text()='Get Started']");
-	By msgErrorMsg = By.xpath("//div[@role='alert']");
-	By a = By.xpath("//h5[@class='card-title']");
-	By drpDataStructues = By.xpath("//a[normalize-space()='Data Structures']");
-	By drpItemOptions = By.xpath("//div[@class='dropdown-menu show']//a");
-	By msgDserrmsg = By.xpath("//div[@class='alert alert-primary']");
+    private WebDriver driver;
 
-	public HomePage(WebDriver driver) {
+    By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
+    By lnkRegister = By.xpath("//a[normalize-space()='Register']");
+    By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
+    By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
+    By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
+    By msgError = By.xpath("//div[@role='alert']");
+    By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
+    By lblSignedInUserName = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
+    By msgUserLoggedIn = By.xpath("//div[@role='alert']");
 
-		this.driver = driver;
-	}
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-	public boolean isNumpyNinjaHeaderVisible() {
-		return driver.findElement(lnkNumpyNinja).isDisplayed();
-	}
+    public boolean isNumpyNinjaHeaderVisible() {
+        return driver.findElement(lnkNumpyNinja).isDisplayed();
+    }
 
-	public boolean isRegisterLinkVisible() {
-		return driver.findElement(lnkRegister).isDisplayed();
-	}
+    public boolean isRegisterLinkVisible() {
+        return driver.findElement(lnkRegister).isDisplayed();
+    }
 
-	public boolean isSignInLinkVisible() {
-		return driver.findElement(lnkSignIn).isDisplayed();
-	}
+    public boolean isSignInLinkVisible() {
+        return driver.findElement(lnkSignIn).isDisplayed();
+    }
 
-	public boolean isDataStructuresDropDownVisible() {
-		return driver.findElement(drpDataStructures).isDisplayed();
-	}
+    public boolean isDataStructuresDropDownVisible() {
+        return driver.findElement(drpDataStructures).isDisplayed();
+    }
 
-	public boolean isGetStartedButtonOnDsAlgoPortalVisible() {
-		return driver.findElement(btnGetStarted).isDisplayed();
-	}
+    public void clickDataStructureDropDown() {
+        driver.findElement(drpDataStructures).click();
+    }
 
-	public String getErrorMsgOnDsAlgoGetStartedButton() {
-		return driver.findElement(msgErrorMsg).getText();
-	}
+    public List<String> getPanelDataStructuresItems() {
+        List<WebElement> dataStructureItems = driver.findElements(pnlDataStructureItems);
+        List<String> dataStructureItemsNames = new ArrayList<>();
 
-	//page chaining TBD
-	public void selectDataStructues(String dstype , boolean signedIn) {
-		driver.findElement(drpDataStructues).click();
-		List<WebElement> options = driver.findElements(drpItemOptions);
+        for (int i = 0; i < dataStructureItems.size(); i++) {
+            String item = dataStructureItems.get(i).getText();
+            dataStructureItemsNames.add(item);
+        }
 
-		for (int i = 0; i < options.size(); i++) {
-			//LoggerFactory.getLogger().info(options.get(i).getText());
+        return dataStructureItemsNames;
+    }
 
-			String option = options.get(i).getText();
+    public List<String> getDataStructureDropDownItems() {
+        List<WebElement> dataStructureDropDownItems = driver.findElements(drpDataStructureOptions);
+        List<String> itemsList = new ArrayList<>();
 
-			if (option.equals(dstype)) {
-				options.get(i).click();
-				
-				//signedIn == true --> return object of the destination page
-				
-				//signedIn == false --> return error msg text
-				
-				return;
-			}
-		}
-	}
-	
+        for (int i = 0; i < dataStructureDropDownItems.size(); i++) {
+            String item = dataStructureDropDownItems.get(i).getText();
+            itemsList.add(item);
+        }
 
-	public void clickGetStarted(String dstype) {
+        return itemsList;
+    }
 
-		String xpathDef = "//a[@href='" + dstype + "']";
+    public void selectDataStructureItemFromDropdown(String dsType) {
+        driver.findElement(drpDataStructures).click();
+        List<WebElement> dataStructureOptions = driver.findElements(drpDataStructureOptions);
 
-		By a = By.xpath(xpathDef);
-		driver.findElement(a).click();
-	}
+        for (int i = 0; i < dataStructureOptions.size(); i++) {
+            String option = dataStructureOptions.get(i).getText();
+            if (option.equals(dsType)) {
+                dataStructureOptions.get(i).click();
+                return;
+            }
+        }
+    }
 
-	public int getDataStructuresSize() {
-		List<WebElement> options = driver.findElements(btnGetStarted);
-		return options.size();
-	}
+    public void clickGetStartedButton(String dsType) {
+        By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
+        driver.findElement(btnGetStarted).click();
+    }
 
-	public List<String> getDataStructures() {
-		List<WebElement> options = driver.findElements(a);
+    public String getErrorMessage() {
+        return driver.findElement(msgError).getText();
+    }
 
-		List<String> names = new ArrayList<>();
+    public Register clickRegisterLink() {
+        driver.findElement(lnkRegister).click();
+        Register registerPage = new Register(driver);
+        return registerPage;
+    }
 
-		for (int i = 0; i < options.size(); i++) {
-			String option = options.get(i).getText().toLowerCase();
-			names.add(option);
-		}
+    public SignInPage clickSignInLink() {
+        driver.findElement(lnkSignIn).click();
+        SignInPage signInPage = new SignInPage(driver);
+        return signInPage;
+    }
 
-		return names;
-	}
+    public String getCurrentSignedInUserName() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        String currentSignedInUser = wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).getText();
+        return currentSignedInUser;
+    }
 
+    public String getHomePageURL() {
+        return driver.getCurrentUrl();
+    }
 
-	public String errorMsg() {
-
-		return driver.findElement(msgDserrmsg).getText();
-	}
+    public String getUserLoggedInMessage() {
+        return driver.findElement(msgUserLoggedIn).getText();
+    }
 }
