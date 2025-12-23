@@ -1,10 +1,7 @@
+@Register
 Feature: Register functionality
 
-  Background: The User on the Register page
-  # Given User opens the browser
-    # Given User enters the correct DS Algo portal URL
-    # Given User clicks the Get Started button on DS Algo portal page
-    # When User clicks on the Register link in the home page
+  Background:
     Given User is at the Register page
 
   Scenario: Verify that User is able to navigate on Login Page with login link from register page
@@ -12,7 +9,7 @@ Feature: Register functionality
     Then User should be redirected to Login Page
 
   Scenario Outline: User navigates to home page after registration with valid inputs
-    When User clicks Register button after entering the Valid data from given sheetName "<sheetName>" and rowNumber <rowNumber>
+    When User clicks Register button after entering the Valid data from given "<ScenarioName>"
     Then User should be redirected to Home Page of DS Algo with message "New Account Created. You are logged in"
 
     Examples:

@@ -11,16 +11,23 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.DataStructure;
+import pageObjects.HomePage;
 
 public class DataStructureStepDef {
 
-	private DataStructure dataStructurePage;
+   HomePage homePage;
+   DataStructure dataStructurePage;
 
 	WebDriver driver;
 
 	public DataStructureStepDef() {
 
 		driver = DriverManager.getDriver();
+		dataStructurePage = new DataStructure(driver);
+	}
+	@Given("User is at the Home page after sign-in")
+	public void user_is_at_the_home_page_after_sign_in() {
+     
 	}
 
 	@Given("User clicks the Getting Started button in {string} Panel")
@@ -33,16 +40,16 @@ public class DataStructureStepDef {
 	public void user_is_on_page(String expectedPanel) {
 		dataStructurePage = new DataStructure(DriverManager.getDriver());
 	
-		String actualUrl = driver.getCurrentUrl();
+		String actualUrl = dataStructurePage.getDataStructurePageURL();
 		Assert.assertTrue(actualUrl.toLowerCase().contains(expectedPanel.toLowerCase()));
 		LoggerFactory.getLogger().info("User is on the DataStructure-Introduction page");
 
 	}
 
 	@Then("User should see {string} header for Data Structures-Introduction page")
-	public void user_should_see_header_for_data_structures_introduction_page(String expectedHeader) {
-		String actualHeader = dataStructurePage.getHeaderTitle();
-		Assert.assertEquals(actualHeader, expectedHeader);
+	public void user_should_see_header_for_data_structures_introduction_page(String expectedDsHeader) {
+		String actualDsHeader = dataStructurePage.getHeaderTitle();
+		Assert.assertEquals(actualDsHeader, expectedDsHeader);
 		LoggerFactory.getLogger().info("User see the Data Structure-Introduction Header");
 	}
 

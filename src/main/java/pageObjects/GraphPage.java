@@ -18,14 +18,14 @@ public class GraphPage {
 	public GraphPage(WebDriver driver){
 		this.driver = driver;
 	}
-	
-	public void clickGetStarted(String graphType) {
+	public void clickGetStarted(String dsType) {
 
-		String xpathDef = "//a[@href='" + graphType + "']";
+		String xpathDef = "//a[@href='" + dsType + "']";
 
 		By getStartedBtn = By.xpath(xpathDef);
 		driver.findElement(getStartedBtn).click();
 	}
+	
 	public String getHeaderTitle() {
 		String linkedListTitle = driver.findElement(headerGraph).getText();
 		return linkedListTitle;
@@ -62,5 +62,10 @@ public class GraphPage {
 		String btnText= driver.findElement(tryHereBtn).getText();
 		return btnText;
 		
+	}
+
+	public String getGraphPageURL() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

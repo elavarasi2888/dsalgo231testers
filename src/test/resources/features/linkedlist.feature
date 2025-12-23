@@ -1,7 +1,8 @@
 Feature: Linklist Functionality
 
-  #Background:
-   # Given User clicks the Getting Started button in "Linked List" Panel
+    Background:
+    Given User is at the Home page after sign-in
+    Given User clicks the Getting Started button in "Graph" Panel
     Given User is on "Linked List" page
 
   Scenario: Verify that User is able to see the "Linked List" page header
