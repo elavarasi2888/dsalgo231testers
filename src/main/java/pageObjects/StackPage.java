@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class StackPage {
-	WebDriver driver;
-
 	
+	WebDriver driver;	
 	
-	By stackink=By.linkText("Stack");
+	By pageHeader=By.tagName("h4");
+	By topicsCoveredHeader = By.xpath("//p[text()='Topics Covered']");
 	By operationstack=By.xpath("//a[contains(text(),'Operations in Stack')]");
 	By implementation=By.xpath("//a[contains(text(),'Implementation')]");
 	By applications=By.xpath("//a[contains(text(),'Applications')]");
@@ -20,29 +20,74 @@ public class StackPage {
 	    {
 	        this.driver = driver;
 	    }
-		
+		 // ---------------- Actions ----------------
+
+	    public boolean isOnStackPage() {
+	       // return driver.getCurrentUrl().contains("stack");
+	        return driver.getTitle().equalsIgnoreCase("stack");
+	    }
+
+	    public String getPageHeader() {
+	        return driver.findElement(pageHeader).getText();
+	    }
+
+	    public String getTopicsCoveredHeader() {
+	        return driver.findElement(topicsCoveredHeader).getText();
+	    }
+
+	    public boolean isTryHereVisible() {
+	        return driver.findElement(tryHereBtn).isDisplayed();
+	    }
+
+	    public String getTopicHeader() {
+	        return driver.findElement(pageHeader).getText();
+	    }
+
+	    public boolean isUrlContains(String text) {
+	        return driver.getCurrentUrl().contains(text.replace(" ", "").toLowerCase());
+	    }
+	    
+	    public boolean isOperationsInStackDisplayed() {
+	    	return driver.findElement(operationstack).isDisplayed();
+		}
+
+		public boolean isImplementationDisplayed() {
+		 	return driver.findElement(implementation).isDisplayed();
+		}
+
+		public boolean IsApplicationsDisplayed() {
+		 	return driver.findElement(applications).isDisplayed();
+		}
+	    
+
+// ================== Actions ===========================================================
+
+		   
 		void clickStack()
 		{
-			driver.findElement(stackink).click();
+			driver.findElement(pageHeader).click();
 		}	
 
-		void clickOperations()
+		public void clickOperations()
 		{
 			driver.findElement(operationstack).click();
 			clickTryHere();
 		}
-		void clickImplementation()
+		public void clickImplementation()
 		{
 			driver.findElement(implementation).click();
 			clickTryHere();
 		}
-		void clickApplications()
+		public void clickApplications()
 		{
 			driver.findElement(applications).click();
 			clickTryHere();
-		}
+		}		
+		 
 		public void clickTryHere() 
-		{
-			driver.findElement(tryHereBtn).click();
-		}
+		 {
+		        driver.findElement(tryHereBtn).click();
+		    }
+		
 }
+
