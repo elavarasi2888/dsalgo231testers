@@ -1,3 +1,4 @@
+@ArrayTryEditorPage
 Feature: Try Editor functionality 
   
   Background:

@@ -1,6 +1,6 @@
 #Author: Ela
 
-@arrayPractice
+@ArrayPractice
 Feature: Practice Questions 
 
 #non functional test cases
