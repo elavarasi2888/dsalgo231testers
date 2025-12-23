@@ -1,3 +1,4 @@
+@HomePageSignIn
 Feature: Home page functional test cases after user sign-in
 
   Background:
@@ -9,29 +10,27 @@ Feature: Home page functional test cases after user sign-in
     Given User is at the Home page after sign-in
 
   Scenario Outline: Verify that user able to navigate to respective page from drop down
-    When User selects an "<option>" from the drop down
-    #Then User should able to navigate to the corresponding page (TBC)
-
+    When User selects following "<option>" from the drop down after sign-in
+    Then User should able to navigate to "<corresponding-page>"
     Examples:
-      | option      |
-      | Arrays      |
-      | Linked List |
-      | Stack       |
-      | Queue       |
-      | Tree        |
-      | Graph       |
+      | option      | corresponding-page |
+      | Arrays      | array              |
+      | Linked List | linked-list        |
+      | Stack       | stack              |
+      | Queue       | queue              |
+      | Tree        | tree               |
+      | Graph       | graph              |
 
   Scenario Outline: Verify that user able to navigate to respective page from the panel
-    #When User clicks "<data-structure-item>" from the panel
-    When User clicks the Getting Started button in "<data-structure-item>" Panel
-    Then User should able to navigate to the corresponding page
+    When User clicks Get Started button of "<data-structure-item>" from panel after sign-in
+    Then User should able to navigate to "<corresponding-page>"
 
     Examples:
-      | data-structure-item          |
-      | Data Structures-Introduction |
-      | Array                        |
-      | Linked List                  |
-      | Stack                        |
-      | Queue                        |
-      | Tree                         |
-      | Graph                        |
+      | data-structure-item          | corresponding-page           |
+      | Data Structures-Introduction | data-structures-introduction |
+      | Array                        | array                        |
+      | Linked List                  | linked-list                  |
+      | Stack                        | stack                        |
+      | Queue                        | queue                        |
+      | Tree                         | tree                         |
+      | Graph                        | graph                        |

@@ -1,10 +1,10 @@
+@HomePage
 Feature: Home page test cases
 
   Background:
     Given User opens the browser
     Given User enters the correct DS Algo portal URL
     Given User clicks the Get Started button on DS Algo portal page
-    Given User is at the Home page
 # Non-Functional tests
 
   Scenario: Verify NumpyNinja heading in homepage is visible
@@ -31,7 +31,7 @@ Feature: Home page test cases
 
   Scenario: Verify user is able to see options for Data Structures dropdown on home page
     When User clicks the Data Structures dropdown
-    Then User should able to see the following 6 options:
+    Then User should able to see the following 6 dropdown options:
       | Arrays      |
       | Linked List |
       | Stack       |
@@ -55,8 +55,7 @@ Feature: Home page test cases
 
   Scenario Outline: Verify user able to see warning message by clicking Get Started button in the panel
     When User clicks Get Started button of "<data-structure-item>" from panel
-    Then User should able to see a warning message as "You are not logged in"
-
+    Then User should able to see a warning message "You are not logged in"
     Examples:
       | data-structure-item          |
       | Data Structures-Introduction |

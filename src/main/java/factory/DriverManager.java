@@ -12,29 +12,27 @@ import utils.BrowserOptions;
 
 public class DriverManager {
 
-	private static BrowserOptions browserOptions = new BrowserOptions();
-	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+    private static final BrowserOptions browserOptions = new BrowserOptions();
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-	public static ChromeOptions co = browserOptions.chromeOption();
-	public static EdgeOptions ed = browserOptions.edgeOption();
-	public static FirefoxOptions fo = browserOptions.firefoxOption();
+    public static ChromeOptions co = browserOptions.chromeOption();
+    public static EdgeOptions ed = browserOptions.edgeOption();
+    public static FirefoxOptions fo = browserOptions.firefoxOption();
 
-	public static WebDriver initBrowser(String browser) {
+    public static WebDriver initBrowser(String browser) {
+        LoggerFactory.getLogger().info("In initBrowser(), browser value - {}", browser);
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver.set(new ChromeDriver(co));
+        } else if (browser.equalsIgnoreCase("edge")) {
+            driver.set(new EdgeDriver(ed));
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver.set(new FirefoxDriver(fo));
+        }
 
-		LoggerFactory.getLogger().info("In launchBrowser() - browser value-{}", browser);
-		if (browser.equalsIgnoreCase("chrome")) {
-			driver.set(new ChromeDriver(co));
-		} else if (browser.equalsIgnoreCase("edge")) {
-			driver.set(new EdgeDriver(ed));
-		} else if (browser.equalsIgnoreCase("firefox")) {
-			driver.set(new FirefoxDriver(fo));
-		}
+        return getDriver();
+    }
 
-		return getDriver();
-	}
-
-	public static WebDriver getDriver() {
-		return driver.get();
-	}
-
+    public static WebDriver getDriver() {
+        return driver.get();
+    }
 }

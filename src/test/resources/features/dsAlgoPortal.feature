@@ -1,3 +1,4 @@
+@DsAlgoPortal
 Feature: Ds Algo portal test cases
 
   Background:

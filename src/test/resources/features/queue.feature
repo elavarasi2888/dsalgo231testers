@@ -1,11 +1,12 @@
+@DataStructure @Queue
 Feature: Queue feature test cases
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
+#    Given User opens the browser
+#    Given User enters the correct DS Algo portal URL
+#    Given User clicks the Get Started button on DS Algo portal page
     Given User is at the Home page after sign-in
-    Given User clicks the Getting Started button in Queue panel
+    Given User clicks Get Started button of "Queue" from panel after sign-in
     Given User is on the Queue page
 # Non-Functional tests
 
