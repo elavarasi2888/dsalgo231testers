@@ -1,7 +1,8 @@
 Feature: Graph functionality
 
   Background:
-    #Given User clicks the Getting Started button in "Graph" Panel
+    Given User is at the Home page after sign-in
+    Given User clicks the Getting Started button in "Graph" Panel
     Given User is on "Graph" page
 
   Scenario: Verify that User is able to see the Graph page header
