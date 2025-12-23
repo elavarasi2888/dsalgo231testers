@@ -19,16 +19,15 @@ public class HomePageAfterSignInStepDefinitions {
         homePage = new HomePage(driver);
     }
 
-    //temporary
     @Given("User clicks login button after entering valid username and valid password")
-    public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
+	public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
+		SignInPage signInPage = new SignInPage(driver);
 
-        String username = "dsalgo231";
-        String password = "automation2025#";
+		String username = "dsalgo231";
+		String password = "automation2025#";
 
-        homePage = loginPage.login(username, password);
-    }
+		homePage = signInPage.login(username, password);
+	}
 
     @Given("User is at the Home page after sign-in")
     public void user_is_at_the_home_page_after_sign_in() {
