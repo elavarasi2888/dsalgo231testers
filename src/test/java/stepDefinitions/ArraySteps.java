@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import org.apache.logging.log4j.core.util.Assert;
+import org.openqa.selenium.WebDriver;
 
 import factory.DriverManager;
 import io.cucumber.java.en.Given;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
+import pageObjects.SignInPage;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -16,6 +18,14 @@ public class ArraySteps {
 	
 	ArrayPage arrayPage=new ArrayPage(DriverManager.getDriver());
 	HomePage homePage = new HomePage(DriverManager.getDriver());
+	
+	 WebDriver driver;
+	 
+	 public ArraySteps(){
+		 driver = DriverManager.getDriver();
+		 arrayPage=new ArrayPage(driver);
+		 
+	 }
 	
 	//----------------------background-----------------------------------
 	@Given("User clicks the Getting Started button in {string} Panel")

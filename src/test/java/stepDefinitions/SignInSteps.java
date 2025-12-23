@@ -3,140 +3,122 @@ package stepDefinitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
+import factory.LoggerFactory;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
+import pageObjects.Register;
 import pageObjects.SignInPage;
 import utils.ConfigReader;
+import utils.ExcelReader;
 
 public class SignInSteps {
-	 HomePage homePage;
-	 SignInPage signinpage;
-	 WebDriver driver;
-	 
-	 @Before
-	    public void setUp() {
-	        DriverManager.getDriver();
-	        homePage = new HomePage(DriverManager.getDriver());
-	        signinpage = new SignInPage(DriverManager.getDriver());
-	    }
+	HomePage homePage;
+	SignInPage signinpage;
+	WebDriver driver;
 
-/*	 
-@Given("User opens the browser")
-public void user_opens_the_browser() {
-	 DriverManager.getDriver();
-}
+	public SignInSteps() {
+		driver = DriverManager.getDriver();
+		signinpage = new SignInPage(driver);
 
-@Given("User enters the correct DS Algo portal URL")
-public void user_enters_the_correct_ds_algo_portal_url() {
-	  DriverManager.getDriver().get(ConfigReader.getAppUrl());
-}
+	}
 
-@Given("User clicks the Get Started button on DS Algo portal page")
-public void user_clicks_the_get_started_button_on_ds_algo_portal_page() {
-	// homePage.clickGetStarted();
-}
+	@Given("User is on Sign in Page")
+	public void user_is_on_sign_in_page() {
 
-@When("user clicks on the Sign in link in the home page")
-public void user_clicks_on_the_sign_in_link_in_the_home_page() {
-     //homePage.clickSignIn();
-}
-*/
-	 
-@Given("User is on Sign in Page")
-public void user_is_on_sign_in_page() {
-	driver.get("https://dsportalapp.herokuapp.com/login");
-	Assert.assertTrue(signinpage.isLoginPageDisplayed());
-}
+		Assert.assertTrue(signinpage.isLoginPageDisplayed());
+		LoggerFactory.getLogger().info("User is at the Sign in page");
+	}
 
-@Then("Username textbox should be visible")
-public void username_textbox_should_be_visible() {
-	Assert.assertTrue(signinpage.isUsernameFieldVisible());
-	
-}
+	@Then("Username textbox should be visible")
+	public void username_textbox_should_be_visible() {
+		Assert.assertTrue(signinpage.isUsernameFieldVisible());
 
-@Then("Password textbox should be visible")
-public void password_textbox_should_be_visible() {
-	  Assert.assertTrue(signinpage.isPasswordFieldVisible());
-}
+	}
 
-@Then("Login button should be visible")
-public void login_button_should_be_visible() {
-	Assert.assertTrue(signinpage.isSignInButtonVisible());
-}
+	@Then("Password textbox should be visible")
+	public void password_textbox_should_be_visible() {
+		Assert.assertTrue(signinpage.isPasswordFieldVisible());
+	}
 
-@Then("Register option in sign in page should be visible")
-public void register_option_in_sign_in_page_should_be_visible() {
-	 Assert.assertTrue(signinpage.isRegisterOptionVisible());
-}
+	@Then("Login button should be visible")
+	public void login_button_should_be_visible() {
+		Assert.assertTrue(signinpage.isSignInButtonVisible());
+	}
 
-@When("User clicks login button after entering valid username and valid password")
-public void user_clicks_login_button_after_entering_valid_username_and_valid_password() {
-	 // Replace these with valid credentials 
-    String validUsername = "validUser";
-    String validPassword = "validPass";
+	@Then("Register option in sign in page should be visible")
+	public void register_option_in_sign_in_page_should_be_visible() {
+		Assert.assertTrue(signinpage.isRegisterOptionVisible());
+	}
 
-    signinpage.enterUsername(validUsername);
-    signinpage.enterPassword(validPassword);
-    signinpage.clickSignIn();
-}
+	@When("User clicks login button after entering valid username and valid password from the given sheet {string} and rowNumber {int}")
+	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet_and_row_number(
+			String sheetName, int rowNumber) throws InvalidFormatException, IOException {
 
-@Then("User should land in Home Page with message {string}")
-public void user_should_land_in_home_page_with_message(String string) {
-	//homepage work
-}
+		ExcelReader reader = new ExcelReader();
+		List<Map<String, String>> testdata = reader.getData("/src/test/resources/excelTestData/testdata1.xlsx",
+				sheetName);
+		String validUsername = testdata.get(rowNumber).get("Username");
+		String validPassword = testdata.get(rowNumber).get("Password");
+		homePage = signinpage.login(validUsername, validPassword);
+	}
 
-@When("User clicks login button after entering invalid {string} and {string}")
-public void user_clicks_login_button_after_entering_invalid_and(String username, String password) {
-	 signinpage.clearUsername();
-     signinpage.clearPassword();
+	@Then("User should land in Home Page with message {string}")
+	public void user_should_land_in_home_page_with_message(String expectedMessage) {
+		String actualMessage = homePage.getCurrentSignedInUserName(); // method in HomePage
+		assertEquals(actualMessage, expectedMessage);
+	}
 
-     if (!username.isEmpty()) {
-         signinpage.enterUsername(username);
-     }
+	@When("User clicks login button after entering the data from given sheetName {string}")
+	public void user_clicks_login_button_after_entering_invalid_and(String sheetName)
+			throws InvalidFormatException, IOException {
 
-     if (!password.isEmpty()) {
-         signinpage.enterPassword(password);
-     }
+		ExcelReader reader = new ExcelReader();
 
-     signinpage.clickSignIn();
-}
+		List<Map<String, String>> testData = reader.getData("src/test/resources/excelTestData/testdata1.xlsx",
+				sheetName);
 
-@Then("The error message {string} appears below {string} textbox")
-public void the_error_message_appears_below_textbox(String expectedErrMsg, String location) {
-	 String actualErrMsg;
+		String userName = testData.get(0).get("Username");
+		String password = testData.get(0).get("Password");
 
-	    if(location.equalsIgnoreCase("Username")) {
-	        actualErrMsg = signinpage.getUsernameErrorMessage();
-	    } else if(location.equalsIgnoreCase("Password")) {
-	        actualErrMsg = signinpage.getPasswordErrorMessage();
-	    } else {
-	        // General error message displayed somewhere on the page
-	        actualErrMsg = signinpage.getGeneralErrorMessage();
-	    }
+		homePage = signinpage.login(userName, password);
+	}
 
-	    assertEquals(expectedErrMsg, actualErrMsg);
-}
+	@Then("The error message {string} appears below {string} textbox")
+	public void the_error_message_appears_below_textbox(String expectedErrMsg, String location) {
+		String actualErrMsg;
 
-@When("User clicks register button")
-public void user_clicks_register_button() {
-	signinpage.clickRegister();
-}
+		if (location.equalsIgnoreCase("Username")) {
+			actualErrMsg = signinpage.getUsernameErrorMessage();
+		} else if (location.equalsIgnoreCase("Password")) {
+			actualErrMsg = signinpage.getPasswordErrorMessage();
+		} else {
+			// General error message displayed somewhere on the page
+			actualErrMsg = signinpage.getGeneralErrorMessage();
+		}
 
-@Then("User should be redirected to Registration page")
-public void user_should_be_redirected_to_registration_page() {
-	 assertTrue(signinpage.isRegistrationPageDisplayed());
-}
+		Assert.assertEquals(expectedErrMsg, actualErrMsg);
+	}
+
+	@When("User clicks register button")
+	public void user_clicks_register_button() {
+		signinpage.clickRegister();
+	}
+
+	@Then("User should be redirected to Registration page")
+	public void user_should_be_redirected_to_registration_page() {
+		Assert.assertTrue(signinpage.isRegistrationPageDisplayed());
+	}
 
 }
-
-
-
-   
-  
