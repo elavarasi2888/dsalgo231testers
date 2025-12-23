@@ -1,3 +1,4 @@
+@SignOutPage
 Feature: Sign out functionality
 # Functional test case
 
