@@ -14,31 +14,38 @@ public class ArrayModulePage {
 
     // ------------------- Array Page Locators -------------------
 
-    private By arrayHeader = By.tagName("h1");
-    private By topicsCoveredHeader = By.xpath("//h2[contains(text(),'Topics Covered')]");
-    private By tryHereButton = By.xpath("//a[contains(text(),'Try here')]");
-
-    // Array Topics Links
-    private By arraysInPythonLink = By.linkText("Arrays in Python");
-    private By arraysUsingListLink = By.linkText("Arrays Using List");
-    private By basicOperationsInListLink = By.linkText("Basic Operations in Lists");
-    private By applicationsOfArrayLink = By.linkText("Applications of Array");
+   
+    By pageHeader = By.xpath("//h4[text()='Array']"); 
+	By tryHereButton=By.xpath ("//a[text()='Try here>>>']]");
+	By topicsCoveredHeader = By.xpath("//p[contains(text(),'Topics Covered')]"); 
+	 By arraysInPython = By.xpath("//a[contains(text(),'Arrays in Python')]");
+	 By arraysUsingList = By.xpath("//a[contains(text(),'Arrays Using List')]");
+	  By arraysBasicOperationInList = By.xpath("//a[contains(text(),'Basic Operations in Lists')]");
+	  By arraysApplicationOfArray = By.xpath("//a[contains(text(),'Applications of Array')]");
+	
 
     // ------------------- Practice Questions Locators -------------------
 
-    private By searchTheArrayLink = By.linkText("Search the array");
-    private By maxConsecutiveOnesLink = By.linkText("Max Consecutive Ones");
-    private By findNumbersWithEvenDigitsLink = By.linkText("Find Numbers with Even Number of Digits");
-    private By squaresOfSortedArrayLink = By.linkText("Squares of a sorted Array");
+	  By practiceQuestionsInArray = By.xpath("//a[contains(text(),'Practice Questions')]");
+	  By searchTheArrayLink = By.xpath("//a[contains(text(),'Search the array')]");
+	  By maxConsecutiveOnesLink = By.xpath("//a[contains(text(),'Max Consecutive Ones')]");
+	  By findNumbersWithEvenDigitsLink =
+	         By.xpath("//a[contains(text(),'Find Numbers with Even Number of Digits')]");
+	  By squaresOfSortedArrayLink =
+	         By.xpath("//a[contains(text(),'Squares of  a Sorted Array')]");
 
     // Editor & buttons
-    private By editorTextArea = By.id("editor");
-    private By runButton = By.xpath("//button[contains(text(),'Run')]");
-    private By submitButton = By.xpath("//button[contains(text(),'Submit')]");
-    private By questionText = By.xpath("//div[contains(@class,'question-title')]");
-    private By outputArea = By.id("output");
-    private By errorMessage = By.id("error"); // replace with actual id/class if different
+	  By editorTextArea = By.id("editor");
+	  By runButton = By.xpath("//button[contains(text(),'Run')]");
+	  By submitButton = By.xpath("//button[contains(text(),'Submit')]");
 
+	  // Output / error
+	    By outputArea = By.id("output");
+	    By errorMessage = By.id("error");
+
+	    // Question text
+	    By questionText = By.xpath("//div[contains(@class,'question')]");
+   
     // ------------------- Array Page Actions -------------------
 
     public boolean isOnArrayPage() {
@@ -46,11 +53,11 @@ public class ArrayModulePage {
     }
 
     public boolean isHeaderVisible() {
-        return driver.findElement(arrayHeader).isDisplayed();
+        return driver.findElement(pageHeader).isDisplayed();
     }
 
     public String getHeaderText() {
-        return driver.findElement(arrayHeader).getText();
+        return driver.findElement(pageHeader).getText();
     }
 
     public boolean isTopicsCoveredHeaderVisible() {
@@ -68,35 +75,35 @@ public class ArrayModulePage {
     // ------------------- Array Topics Actions -------------------
 
     public void clickArraysInPython() {
-        driver.findElement(arraysInPythonLink).click();
+        driver.findElement(arraysInPython).click();
     }
 
     public void clickArraysUsingList() {
-        driver.findElement(arraysUsingListLink).click();
+        driver.findElement(arraysUsingList).click();
     }
 
     public void clickBasicOperationsInList() {
-        driver.findElement(basicOperationsInListLink).click();
+        driver.findElement(arraysBasicOperationInList).click();
     }
 
     public void clickApplicationsOfArray() {
-        driver.findElement(applicationsOfArrayLink).click();
+        driver.findElement(arraysApplicationOfArray).click();
     }
 
     public boolean isArraysInPythonDisplayed() {
-        return driver.findElement(arraysInPythonLink).isDisplayed();
+        return driver.findElement(arraysInPython).isDisplayed();
     }
 
     public boolean isArraysUsingListDisplayed() {
-        return driver.findElement(arraysUsingListLink).isDisplayed();
+        return driver.findElement(arraysUsingList).isDisplayed();
     }
 
     public boolean isBasicOperationsInListDisplayed() {
-        return driver.findElement(basicOperationsInListLink).isDisplayed();
+        return driver.findElement(arraysBasicOperationInList).isDisplayed();
     }
 
     public boolean isApplicationsOfArrayDisplayed() {
-        return driver.findElement(applicationsOfArrayLink).isDisplayed();
+        return driver.findElement(arraysApplicationOfArray).isDisplayed();
     }
 
     // ------------------- Practice Questions Actions -------------------
