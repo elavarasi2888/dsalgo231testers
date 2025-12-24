@@ -18,17 +18,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
-import pageObjects.RegisterPage;
+import pageObjects.Register;
 import pageObjects.SignInPage;
 import utils.ConfigReader;
 import utils.ExcelReader;
+import utils.ExcelReader1;
 
-public class SignInSteps {
+public class SignInSteps 
+{
 	HomePage homePage;
 	SignInPage signinpage;
 	WebDriver driver;
 
-	public SignInSteps() {
+	public SignInSteps() 
+	{
 		driver = DriverManager.getDriver();
 		signinpage = new SignInPage(driver);
 
@@ -64,14 +67,14 @@ public class SignInSteps {
 
 	@When("User clicks login button after entering valid username and valid password from the given sheet {string} and rowNumber {int}")
 	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet_and_row_number(
-			String sheetName, int rowNumber) throws InvalidFormatException, IOException {
+			String ScenarioName) throws InvalidFormatException, IOException {
 
-		/*ExcelReader reader = new ExcelReader();
-		List<Map<String, String>> testdata = reader.getData("/src/test/resources/excelTestData/testdata1.xlsx",
-				sheetName);
-		String validUsername = testdata.get(rowNumber).get("Username");
-		String validPassword = testdata.get(rowNumber).get("Password");
-		homePage = signinpage.login(validUsername, validPassword);*/
+		ExcelReader1 reader = new ExcelReader1();
+		String sheetName = "login_valid";
+		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
+		signinpage.enterUsername(testData.get("Username"));
+		signinpage.enterPassword(testData.get("Password"));
+		signinpage.clickSignIn();
 	}
 
 	@Then("User should land in Home Page with message {string}")
@@ -81,36 +84,22 @@ public class SignInSteps {
 	}
 
 	@When("User clicks login button after entering the data from given sheetName {string}")
-	public void user_clicks_login_button_after_entering_invalid_and(String sheetName)
+	public void user_clicks_login_button_after_entering_invalid_and(String ScenarioName)
 			throws InvalidFormatException, IOException {
-
-		/*
-		 * ExcelReader reader = new ExcelReader();
-		 * 
-		 * List<Map<String, String>> testData =
-		 * reader.getData("src/test/resources/excelTestData/testdata1.xlsx", sheetName);
-		 * 
-		 * String userName = testData.get(0).get("Username"); String password =
-		 * testData.get(0).get("Password");
-		 * 
-		 * homePage = signinpage.login(userName, password);
-		 */
+		ExcelReader1 reader = new ExcelReader1();
+		String sheetName = "login_invalid";
+		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
+		signinpage.enterUsername(testData.get("Username"));
+		signinpage.enterPassword(testData.get("Password"));
+		signinpage.clickSignIn();		
 	}
 
 	@Then("The error message {string} appears below {string} textbox")
 	public void the_error_message_appears_below_textbox(String expectedErrMsg, String location) {
-		String actualErrMsg;
-
-		if (location.equalsIgnoreCase("Username")) {
-			actualErrMsg = signinpage.getUsernameErrorMessage();
-		} else if (location.equalsIgnoreCase("Password")) {
-			actualErrMsg = signinpage.getPasswordErrorMessage();
-		} else {
-			// General error message displayed somewhere on the page
-			actualErrMsg = signinpage.getGeneralErrorMessage();
-		}
-
-		Assert.assertEquals(expectedErrMsg, actualErrMsg);
+		
+		 String actualErrMsg = signinpage.getErrorMsgText();
+	        Assert.assertEquals(actualErrMsg, expectedErrMsg);     
+	        
 	}
 
 	@When("User clicks register button")

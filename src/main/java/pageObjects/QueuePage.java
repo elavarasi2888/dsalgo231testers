@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,37 +8,55 @@ import org.openqa.selenium.WebElement;
 
 public class QueuePage {
 
-	private WebDriver driver;
+    private WebDriver driver;
 
-	public QueuePage(WebDriver driver) {
+    private By headerQueue = By.xpath("//h4[normalize-space()='Queue']");
+    private By headerTopicsCoveredQueue = By.xpath("//p[@class='bg-secondary text-white']");
+    private By lnkQueueLinks = By.xpath("//a[@class='list-group-item']");
+    private By headerQueueLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
+    private By btnTryHereQueueLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
 
-		this.driver = driver;
-	}
+    public QueuePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-	By headerQueue = By.xpath("//h4[normalize-space()='Queue']");
-	By headerTopicsCoveredQueue = By.xpath("//p[@class='bg-secondary text-white']");
-	By lnkQueueLinks = By.xpath("//a[@class='list-group-item']");
+    public boolean isQueueHeaderVisible() {
+        return driver.findElement(headerQueue).isDisplayed();
+    }
 
-	public boolean isQueueHeaderVisible() {
-		return driver.findElement(headerQueue).isDisplayed();
-	}
+    public boolean isTopicsCoveredHeaderForQueueVisible() {
+        return driver.findElement(headerTopicsCoveredQueue).isDisplayed();
+    }
 
-	public boolean isTopicsCoveredHeaderQueueVisible() {
-		return driver.findElement(headerTopicsCoveredQueue).isDisplayed();
-	}
+    public boolean isQueueLinkVisible(String queueTopicLink) {
+        List<WebElement> queueLinks = driver.findElements(lnkQueueLinks);
 
-	public List<String> queueLinksVisible() {
-		List<String> a = new ArrayList<>();
-		List<WebElement> queueLinks = driver.findElements(lnkQueueLinks);
-		for (WebElement q : queueLinks) {
-			a.add(q.getText().toLowerCase());
-		}
-		return a;
-	}
+        for (WebElement q : queueLinks) {
+            if (q.getText().equals(queueTopicLink))
+                return true;
+        }
 
-	public String getQueuePageURL() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        return false;
+    }
 
+    public void clickQueueTopicLink(String queueTopicLink) {
+        By linkPath = By.xpath("//a[text() = '" + queueTopicLink + "']");
+        driver.findElement(linkPath).click();
+    }
+
+    public String getQueueLinkTopicHeader() {
+        return driver.findElement(headerQueueLinkTopic).getText();
+    }
+
+    public boolean isTryHereButtonOnQueueLinkPageVisible() {
+        return driver.findElement(btnTryHereQueueLinkPage).isDisplayed();
+    }
+
+    public void clickTryHereInQueueLinkPage() {
+        driver.findElement(btnTryHereQueueLinkPage).click();
+    }
+
+    public String getQueuePageURL() {
+        return driver.getCurrentUrl();
+    }
 }

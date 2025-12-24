@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import factory.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,15 +15,14 @@ public class HomePage {
 
     private WebDriver driver;
 
-    By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
-    By lnkRegister = By.xpath("//a[normalize-space()='Register']");
-    By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
-    By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
-    By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
-    By msgError = By.xpath("//div[@role='alert']");
-    By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
-    By lblSignedInUserName = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
-    By msgUserLoggedIn = By.xpath("//div[@role='alert']");
+    private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
+    private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
+    private By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
+    private By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
+    private By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
+    private By msgError = By.xpath("//div[@role='alert']");
+    private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
+    private By msgUserLoggedIn = By.xpath("//div[@role='alert']");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -52,8 +52,8 @@ public class HomePage {
         List<WebElement> dataStructureItems = driver.findElements(pnlDataStructureItems);
         List<String> dataStructureItemsNames = new ArrayList<>();
 
-        for (int i = 0; i < dataStructureItems.size(); i++) {
-            String item = dataStructureItems.get(i).getText();
+        for (WebElement dataStructureItem : dataStructureItems) {
+            String item = dataStructureItem.getText();
             dataStructureItemsNames.add(item);
         }
 
@@ -64,8 +64,8 @@ public class HomePage {
         List<WebElement> dataStructureDropDownItems = driver.findElements(drpDataStructureOptions);
         List<String> itemsList = new ArrayList<>();
 
-        for (int i = 0; i < dataStructureDropDownItems.size(); i++) {
-            String item = dataStructureDropDownItems.get(i).getText();
+        for (WebElement dataStructureDropDownItem : dataStructureDropDownItems) {
+            String item = dataStructureDropDownItem.getText();
             itemsList.add(item);
         }
 
@@ -76,10 +76,10 @@ public class HomePage {
         driver.findElement(drpDataStructures).click();
         List<WebElement> dataStructureOptions = driver.findElements(drpDataStructureOptions);
 
-        for (int i = 0; i < dataStructureOptions.size(); i++) {
-            String option = dataStructureOptions.get(i).getText();
+        for (WebElement dataStructureOption : dataStructureOptions) {
+            String option = dataStructureOption.getText();
             if (option.equals(dsType)) {
-                dataStructureOptions.get(i).click();
+                dataStructureOption.click();
                 return;
             }
         }
@@ -90,33 +90,78 @@ public class HomePage {
         driver.findElement(btnGetStarted).click();
     }
 
+    public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
+        By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
+        driver.findElement(btnGetStarted).click();
+
+        Object pageObject = null;
+
+        String dataStructurePageName = dsPage.trim().toLowerCase();
+
+        switch (dataStructurePageName) {
+            case "data-structures-introduction":
+                pageObject = new DataStructure(driver);
+                break;
+            case "array":
+                pageObject = new ArrayPage(driver);
+                break;
+            case "linked-list":
+                pageObject = new LinkedList(driver);
+                break;
+            case "stack":
+                pageObject = new StackPage(driver);
+                break;
+            case "queue":
+                pageObject = new QueuePage(driver);
+                break;
+            case "tree":
+                pageObject = new TreePage(driver);
+                break;
+            case "graph":
+                pageObject = new GraphPage(driver);
+                break;
+            default:
+                LoggerFactory.getLogger().error("Given Data Structure page name does not exist");
+                break;
+        }
+
+        return pageObject;
+    }
+
     public String getErrorMessage() {
         return driver.findElement(msgError).getText();
     }
 
-    public RegisterPage clickRegisterLink() {
+    public Register clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        RegisterPage registerPage = new RegisterPage(driver);
-        return registerPage;
+        return new Register(driver);
     }
 
     public SignInPage clickSignInLink() {
         driver.findElement(lnkSignIn).click();
-        SignInPage signInPage = new SignInPage(driver);
-        return signInPage;
-    }
-
-    public String getCurrentSignedInUserName() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        String currentSignedInUser = wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).getText();
-        return currentSignedInUser;
-    }
-
-    public String getHomePageURL() {
-        return driver.getCurrentUrl();
+        return new SignInPage(driver);
     }
 
     public String getUserLoggedInMessage() {
         return driver.findElement(msgUserLoggedIn).getText();
+    }
+
+    public boolean isUserNameVisibleAfterSignIn(String userName) {
+
+        if (userName == null || userName.isEmpty()) {
+            return false;
+        }
+
+        String userNameCapitalizeFirstLetter = userName.trim().substring(0, 1).toUpperCase() + userName.trim().substring(1);
+
+        By lblSignedInUserName = By.xpath("//a[normalize-space()='" + userNameCapitalizeFirstLetter + "']");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName));
+        return driver.findElement(lblSignedInUserName).isDisplayed();
+    }
+
+    public String getHomePageURL() {
+        return driver.getCurrentUrl();
     }
 }

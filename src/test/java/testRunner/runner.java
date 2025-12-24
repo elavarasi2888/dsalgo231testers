@@ -8,10 +8,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"hooks", "stepDefinitions"},
-        //tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn",
-        tags = "@wip",
+        tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
         plugin = {"pretty", "html:reports/cucumber-reports.html"},
-        dryRun = true,
+        dryRun = false,
         monochrome = true)
 public class runner extends AbstractTestNGCucumberTests {
 
