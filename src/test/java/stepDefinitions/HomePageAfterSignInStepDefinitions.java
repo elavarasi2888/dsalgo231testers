@@ -13,6 +13,7 @@ public class HomePageAfterSignInStepDefinitions {
 
     HomePage homePage;
     WebDriver driver;
+    String userName;
 
     public HomePageAfterSignInStepDefinitions() {
         driver = DriverManager.getDriver();
@@ -23,16 +24,16 @@ public class HomePageAfterSignInStepDefinitions {
     public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
         SignInPage signInPage = new SignInPage(driver);
 
-        String username = "dsalgo231";
+        userName = "dsalgo231";
         String password = "automation2025#";
 
-        homePage = signInPage.login(username, password);
+        homePage = signInPage.login(userName, password);
     }
 
     @Given("User is at the Home page after sign-in")
     public void user_is_at_the_home_page_after_sign_in() {
-        String currentSignedInUser = homePage.getCurrentSignedInUserName();
-        LoggerFactory.getLogger().info("User {} signed-in to {}", currentSignedInUser, driver.getCurrentUrl());
+        LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}", userName,
+                homePage.isUserNameVisibleAfterSignIn(userName));
     }
 
     @When("User selects following {string} from the drop down after sign-in")

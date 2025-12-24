@@ -3,16 +3,15 @@ Feature: Tree feature test cases
 
   Background:
     Given User is at the Home page after sign-in
-    Given User clicks the Get Started button from "Tree" Panel
-    Given User is on the Tree page
+    Given User clicks Get Started button from Tree panel
 
  # Non-Functional tests
 
   Scenario: Verify that user is able to see the Tree header
-    Then User should see "Tree" header for Tree page
+    Then User should see Tree header for Tree page
 
   Scenario: Verify that user is able to see Topics covered header
-    Then User should see "Topics Covered" header for Tree page
+    Then User should see Topics Covered header for Tree page
 
   Scenario Outline: Verify user is able to see Tree topics link
     Then User should see "<tree-topic>" link of Tree page
@@ -96,7 +95,7 @@ Feature: Tree feature test cases
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<tree-topic>" link on the Tree page
-    When User clicks Try Here button in the repsective Tree page
+    When User clicks Try Here button in the respective Tree page
     Then User should be redirected to try Editor page
 
     Examples:
