@@ -22,6 +22,7 @@ import pageObjects.Register;
 import pageObjects.SignInPage;
 import utils.ConfigReader;
 import utils.ExcelReader;
+import utils.ExcelReader1;
 
 public class SignInSteps 
 {
@@ -66,14 +67,14 @@ public class SignInSteps
 
 	@When("User clicks login button after entering valid username and valid password from the given sheet {string} and rowNumber {int}")
 	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet_and_row_number(
-			String sheetName, int rowNumber) throws InvalidFormatException, IOException {
+			String ScenarioName) throws InvalidFormatException, IOException {
 
-		ExcelReader reader = new ExcelReader();
-		List<Map<String, String>> testdata = reader.getData("/src/test/resources/excelTestData/testdata1.xlsx",
-				sheetName);
-		String validUsername = testdata.get(rowNumber).get("Username");
-		String validPassword = testdata.get(rowNumber).get("Password");
-		homePage = signinpage.login(validUsername, validPassword);
+		ExcelReader1 reader = new ExcelReader1();
+		String sheetName = "login_valid";
+		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
+		signinpage.enterUsername(testData.get("Username"));
+		signinpage.enterPassword(testData.get("Password"));
+		signinpage.clickSignIn();
 	}
 
 	@Then("User should land in Home Page with message {string}")
@@ -83,18 +84,14 @@ public class SignInSteps
 	}
 
 	@When("User clicks login button after entering the data from given sheetName {string}")
-	public void user_clicks_login_button_after_entering_invalid_and(String sheetName)
+	public void user_clicks_login_button_after_entering_invalid_and(String ScenarioName)
 			throws InvalidFormatException, IOException {
-
-		ExcelReader reader = new ExcelReader();
-
-		List<Map<String, String>> testData = reader.getData("src/test/resources/excelTestData/testdata1.xlsx",
-				sheetName);
-
-		String userName = testData.get(0).get("Username");
-		String password = testData.get(0).get("Password");
-
-		homePage = signinpage.login(userName, password);
+		ExcelReader1 reader = new ExcelReader1();
+		String sheetName = "login_invalid";
+		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
+		signinpage.enterUsername(testData.get("Username"));
+		signinpage.enterPassword(testData.get("Password"));
+		signinpage.clickSignIn();		
 	}
 
 	@Then("The error message {string} appears below {string} textbox")

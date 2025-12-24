@@ -23,14 +23,14 @@ Feature: Sign in functionality of DS Algo
 # Functional test case-----------------------------------------------
 
   Scenario Outline: Verify that user able to land on Home page after entering valid Username and Password fields
-    When User clicks login button after entering valid username and valid password from the given sheet "<sheetName>" and rowNumber "<rowNumber>"
+    When User clicks login button after entering valid username and valid password from the given sheet "<sheetName>"
     Then User should land in Home Page with message "You are logged in"
   # application and testers123 are valid username and password
   # dsalgo231 and automation2025# are valid username and password
 
     Examples:
-      | sheetName   | rowNumber |
-      | login_valid | 2         |
+      | sheetName   |
+      | login_valid | 
 
   Scenario Outline: Sign in with Invalid data for scenario "<ScenarioName>"
     When User clicks login button after entering the data from given sheetName "<sheetName>"
