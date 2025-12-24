@@ -25,12 +25,17 @@ public class Register {
 		this.driver = driver;
 
 	}
-
-	public void enterCredentials(String userName, String passWord, String passwordConfirmation) {
+	public void enterUserName(String userName) {
 		driver.findElement(userTxt).sendKeys(userName);
+	}
+	public void enterpassWord(String passWord) {
 		driver.findElement(passwordTxt).sendKeys(passWord);
+	}
+	public void enterPasswordConfirmation(String passwordConfirmation) {
 		driver.findElement(confirmPasswrdTxt).sendKeys(passwordConfirmation);
 	}
+
+	
 
 	public void registerBtn() {
 		driver.findElement(registerBtn).click();
@@ -74,8 +79,8 @@ public class Register {
 
 	}
 
-	public String getRegisterPageUrl() {
-		
+
+	public String getRegisterPageURL() {
 		return driver.getCurrentUrl();
 	}
 }

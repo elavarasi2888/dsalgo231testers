@@ -62,5 +62,9 @@ public class LinkedList {
 		return btnText;
 		
 	}
+	public String getLinkedListPageURL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
