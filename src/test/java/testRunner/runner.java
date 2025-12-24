@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"hooks", "stepDefinitions"},
-        tags = "@HomePageSignIn",
+        tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
         plugin = {"pretty", "html:reports/cucumber-reports.html"},
         dryRun = false,
         monochrome = true)
@@ -20,4 +20,3 @@ public class runner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 }
-//@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree

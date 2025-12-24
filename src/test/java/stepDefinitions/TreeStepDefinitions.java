@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,9 +22,9 @@ public class TreeStepDefinitions {
         treePage = new TreePage(driver);
     }
 
-    @Given("User clicks the Get Started button from {string} Panel")
-    public void userClicksTheGetStartedButtonFromPanel(String panelName) {
-        treePage = (TreePage) homePage.clickGetStartedButtonOfGivenDsType(panelName);
+    @Given("User clicks Get Started button from Tree panel")
+    public void userClicksGetStartedButtonFromTreePanel() {
+        treePage = (TreePage) homePage.clickGetStartedButtonOfGivenDsType("Tree");
     }
 
     @Given("User is on the Tree page")
@@ -34,25 +33,24 @@ public class TreeStepDefinitions {
                 driver.getCurrentUrl());
     }
 
-    @Then("User should see {string} header for Tree page")
-    public void user_should_see_header_for_tree_page(String header) {
-        if (header.equalsIgnoreCase("tree"))
-            Assert.assertTrue(treePage.isTreeHeaderVisible());
+    @Then("User should see Tree header for Tree page")
+    public void userShouldSeeTreeHeaderForTreePage() {
+        Assert.assertTrue(treePage.isTreeHeaderVisible());
+    }
 
-        if (header.equalsIgnoreCase("Topics Covered"))
-            Assert.assertTrue(treePage.isTopicsCoveredHeaderTreeVisible());
-
+    @Then("User should see Topics Covered header for Tree page")
+    public void userShouldSeeTopicsCoveredHeaderForTreePage() {
+        Assert.assertTrue(treePage.isTopicsCoveredHeaderTreeVisible());
     }
 
     @Then("User should see {string} link of Tree page")
     public void userShouldSeeLinkOfTreePage(String string) {
-        Assert.assertTrue(treePage.isTreeLinksVisible(string));
+        Assert.assertTrue(treePage.isTreeLinkVisible(string));
     }
 
     @When("User clicks {string} link on the Tree page")
     public void user_clicks_link_on_the_tree_page(String string) {
         treePage.clickTreeTopicLink(string);
-
     }
 
     @Then("User should see {string} header of the respective Tree page")
@@ -66,17 +64,14 @@ public class TreeStepDefinitions {
         Assert.assertTrue(treePage.isTryHereButtonOnTreeLinkPageVisible());
     }
 
+    @When("User clicks Try Here button in the respective Tree page")
+    public void userClicksTryHereButtonInTheRespectiveTreePage() {
+        treePage.clickTryHereInTreeLinkPage();
+    }
+
     @Then("User should be directed to {string} of Tree data structure")
     public void user_should_be_directed_to_of_tree_data_structure(String treeTopicPage) {
         String currentURL = driver.getCurrentUrl();
         Assert.assertTrue(currentURL.contains(treeTopicPage));
-
     }
-
-    @When("User clicks Try Here button in the repsective Tree page")
-    public void user_clicks_try_here_button_in_the_repsective_tree_page() {
-        treePage.clickTryHereInTreeLinkPage();
-
-    }
-
 }

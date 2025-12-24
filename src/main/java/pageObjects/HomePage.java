@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
-    private final WebDriver driver;
+    private WebDriver driver;
 
     private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
     private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
@@ -22,11 +22,7 @@ public class HomePage {
     private By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
     private By msgError = By.xpath("//div[@role='alert']");
     private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
-    // By lblSignedInUserName = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
-    //By lblSignedInUserName = By.xpath("//ul//a[2]");
-    private By lblSignedInUserName = By.xpath("//a[normalize-space()='Dsalgo231']");
-
-    By msgUserLoggedIn = By.xpath("//div[@role='alert']");
+    private By msgUserLoggedIn = By.xpath("//div[@role='alert']");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -148,19 +144,19 @@ public class HomePage {
         return signInPage;
     }
 
-    public String getCurrentSignedInUserName() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    public String getUserLoggedInMessage() {
+        return driver.findElement(msgUserLoggedIn).getText();
+    }
 
+    public boolean isUserNameVisibleAfterSignIn(String username){
+        By lblSignedInUserName = By.xpath("//a[normalize-space()='"+username.trim()+"']");
 
-        String currentSignedInUser = wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).getText();
-        return currentSignedInUser;
+        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName));
+        return driver.findElement(lblSignedInUserName).isDisplayed();
     }
 
     public String getHomePageURL() {
         return driver.getCurrentUrl();
-    }
-
-    public String getUserLoggedInMessage() {
-        return driver.findElement(msgUserLoggedIn).getText();
     }
 }

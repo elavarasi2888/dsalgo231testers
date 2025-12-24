@@ -21,9 +21,9 @@ public class QueueStepDefinitions {
         queuePage = new QueuePage(driver);
     }
 
-    @Given("User clicks Get Started button from {string} panel")
-    public void userClicksGetStartedButtonFromPanel(String panelName) {
-        queuePage = (QueuePage) homePage.clickGetStartedButtonOfGivenDsType(panelName);
+    @Given("User clicks Get Started button from Queue panel")
+    public void userClicksGetStartedButtonFromQueuePanel() {
+        queuePage = (QueuePage) homePage.clickGetStartedButtonOfGivenDsType("Queue");
     }
 
     @Then("User should see Queue header for Queue page")
@@ -43,7 +43,6 @@ public class QueueStepDefinitions {
 
     @When("User clicks {string} link on the Queue page")
     public void user_clicks_link_on_the_queue_page(String string) {
-
         queuePage.clickQueueTopicLink(string);
     }
 
@@ -62,7 +61,6 @@ public class QueueStepDefinitions {
     public void user_should_be_directed_to_of_queue_data_structure(String queueTopicPage) {
         String currentURL = driver.getCurrentUrl();
         Assert.assertTrue(currentURL.contains(queueTopicPage));
-
     }
 
     @When("User clicks Try Here button in the respective Queue page")

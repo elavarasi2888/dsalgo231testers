@@ -10,11 +10,11 @@ public class QueuePage {
 
     private WebDriver driver;
 
-    By headerQueue = By.xpath("//h4[normalize-space()='Queue']");
-    By headerTopicsCoveredQueue = By.xpath("//p[@class='bg-secondary text-white']");
-    By lnkQueueLinks = By.xpath("//a[@class='list-group-item']");
-    By headerQueueLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
-    By btnTryHereQueueLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+    private By headerQueue = By.xpath("//h4[normalize-space()='Queue']");
+    private By headerTopicsCoveredQueue = By.xpath("//p[@class='bg-secondary text-white']");
+    private By lnkQueueLinks = By.xpath("//a[@class='list-group-item']");
+    private By headerQueueLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
+    private By btnTryHereQueueLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
 
     public QueuePage(WebDriver driver) {
         this.driver = driver;
