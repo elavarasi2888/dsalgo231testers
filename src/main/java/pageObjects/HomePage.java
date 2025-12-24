@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import factory.LoggerFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,16 +13,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
-    By lnkRegister = By.xpath("//a[normalize-space()='Register']");
-    By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
-    By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
-    By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
-    By msgError = By.xpath("//div[@role='alert']");
-    By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
-    By lblSignedInUserName = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
+    private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
+    private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
+    private By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
+    private By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
+    private By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
+    private By msgError = By.xpath("//div[@role='alert']");
+    private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
+    // By lblSignedInUserName = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
+    //By lblSignedInUserName = By.xpath("//ul//a[2]");
+    private By lblSignedInUserName = By.xpath("//a[normalize-space()='Dsalgo231']");
+
     By msgUserLoggedIn = By.xpath("//div[@role='alert']");
 
     public HomePage(WebDriver driver) {
@@ -90,6 +94,44 @@ public class HomePage {
         driver.findElement(btnGetStarted).click();
     }
 
+    public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
+        By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
+        driver.findElement(btnGetStarted).click();
+
+        Object pageObject = null;
+
+        String dataStructurePageName = dsPage.trim().toLowerCase();
+
+        switch (dataStructurePageName) {
+            case "data-structures-introduction":
+                pageObject = new DataStructure(driver);
+                break;
+            case "array":
+                pageObject = new ArrayPage(driver);
+                break;
+            case "linked-list":
+                pageObject = new LinkedList(driver);
+                break;
+            case "stack":
+                pageObject = new StackPage(driver);
+                break;
+            case "queue":
+                pageObject = new QueuePage(driver);
+                break;
+            case "tree":
+                pageObject = new TreePage(driver);
+                break;
+            case "graph":
+                pageObject = new GraphPage(driver);
+                break;
+            default:
+                LoggerFactory.getLogger().error("Given Data Structure page name does not exist");
+                break;
+        }
+
+        return pageObject;
+    }
+
     public String getErrorMessage() {
         return driver.findElement(msgError).getText();
     }
@@ -107,7 +149,9 @@ public class HomePage {
     }
 
     public String getCurrentSignedInUserName() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+
         String currentSignedInUser = wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).getText();
         return currentSignedInUser;
     }

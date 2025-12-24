@@ -20,19 +20,19 @@ public class HomePageAfterSignInStepDefinitions {
     }
 
     @Given("User clicks login button after entering valid username and valid password")
-	public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
-		SignInPage signInPage = new SignInPage(driver);
+    public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
+        SignInPage signInPage = new SignInPage(driver);
 
-		String username = "dsalgo231";
-		String password = "automation2025#";
+        String username = "dsalgo231";
+        String password = "automation2025#";
 
-		homePage = signInPage.login(username, password);
-	}
+        homePage = signInPage.login(username, password);
+    }
 
     @Given("User is at the Home page after sign-in")
     public void user_is_at_the_home_page_after_sign_in() {
-        LoggerFactory.getLogger().info("User {} signed-in to {}",
-                homePage.getCurrentSignedInUserName(), homePage.getHomePageURL());
+        String currentSignedInUser = homePage.getCurrentSignedInUserName();
+        LoggerFactory.getLogger().info("User {} signed-in to {}", currentSignedInUser, driver.getCurrentUrl());
     }
 
     @When("User selects following {string} from the drop down after sign-in")
@@ -68,7 +68,7 @@ public class HomePageAfterSignInStepDefinitions {
                 currentPageURL = new GraphPage(driver).getGraphPageURL();
                 break;
             default:
-                LoggerFactory.getLogger().warn("Data Structure page name does not exists");
+                LoggerFactory.getLogger().warn("Data Structure page name does not exist.");
                 break;
         }
 

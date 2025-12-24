@@ -1,13 +1,12 @@
+@DataStructure @Tree
 Feature: Tree feature test cases
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
     Given User is at the Home page after sign-in
-    Given User clicks the Getting Started button in Tree Panel
+    Given User clicks the Get Started button from "Tree" Panel
     Given User is on the Tree page
-# Non-Functional tests
+
+ # Non-Functional tests
 
   Scenario: Verify that user is able to see the Tree header
     Then User should see "Tree" header for Tree page
@@ -16,7 +15,7 @@ Feature: Tree feature test cases
     Then User should see "Topics Covered" header for Tree page
 
   Scenario Outline: Verify user is able to see Tree topics link
-   	Then: User should see "<tree-topic>" link of Tree page
+    Then User should see "<tree-topic>" link of Tree page
 
     Examples:
       | tree-topic                     |
@@ -96,7 +95,7 @@ Feature: Tree feature test cases
       | Implementation Of BST          | implementation-of-bst          |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
-    When User clicks "<queue-topic>" link on the Queue page
+    When User clicks "<tree-topic>" link on the Tree page
     When User clicks Try Here button in the repsective Tree page
     Then User should be redirected to try Editor page
 
