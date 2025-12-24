@@ -99,21 +99,10 @@ public class SignInSteps
 
 	@Then("The error message {string} appears below {string} textbox")
 	public void the_error_message_appears_below_textbox(String expectedErrMsg, String location) {
-		String actualErrMsg;
-
-		if (location.equalsIgnoreCase("Username")) {
-			actualErrMsg = signinpage.getErrorMsgText();
-		} 
-		else if (location.equalsIgnoreCase("Password")) {
-			actualErrMsg = signinpage.getErrorMsgText();
-		} 
-		else 
-		{
-			
-			actualErrMsg = signinpage.getErrorMsgText();
-		}
-
-		Assert.assertEquals(expectedErrMsg, actualErrMsg);
+		
+		 String actualErrMsg = signinpage.getErrorMsgText();
+	        Assert.assertEquals(actualErrMsg, expectedErrMsg);     
+	        
 	}
 
 	@When("User clicks register button")
