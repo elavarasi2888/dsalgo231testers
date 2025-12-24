@@ -1,3 +1,4 @@
+@DataStructure @linklist
 Feature: Linklist Functionality
 
     Background:

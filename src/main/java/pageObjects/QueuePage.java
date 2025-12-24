@@ -37,4 +37,9 @@ public class QueuePage {
 		return a;
 	}
 
+	public String getQueuePageURL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

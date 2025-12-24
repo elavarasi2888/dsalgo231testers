@@ -10,5 +10,10 @@ public class TreePage {
 		this.driver = driver;
 	}
 
+	public String getTreePageURL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

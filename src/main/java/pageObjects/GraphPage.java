@@ -65,7 +65,7 @@ public class GraphPage {
 	}
 
 	public String getGraphPageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return driver.getCurrentUrl();
 	}
 }

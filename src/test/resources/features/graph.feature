@@ -1,3 +1,4 @@
+@DataStructure @graph
 Feature: Graph functionality
 
   Background:

@@ -1,6 +1,8 @@
+@DataStructure
 Feature: DataStruction Functionality
 
   Background:
+    Given User is at the Home page after sign-in
     Given User clicks the Getting Started button in "Data Structures-Introduction" Panel
     Given User is on "Data Structures-Introduction" page
 

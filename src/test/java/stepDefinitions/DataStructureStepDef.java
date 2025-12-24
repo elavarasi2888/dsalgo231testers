@@ -70,8 +70,8 @@ public class DataStructureStepDef {
 	}
 
 	@When("User  clicks the {string} in a Data Structure page")
-	public void user_clicks_the_in_a_data_structure_page(String expectedLink) {
-		dataStructurePage.clickTopicLink(expectedLink);
+	public void user_clicks_the_in_a_data_structure_page(String expectedTopicLink) {
+		dataStructurePage.clickTopicLink(expectedTopicLink);
 		LoggerFactory.getLogger().info("User clicks the Time Comeplexity Link to verify Header a Data Structure page");
 
 	}
@@ -85,16 +85,16 @@ public class DataStructureStepDef {
 	}
 
 	@When("User clicks {string} link on the Data Structures-Introduction page")
-	public void user_clicks_link_on_the_data_structures_introduction_page(String expectedLink) {
-		dataStructurePage.clickTopicLink(expectedLink);
+	public void user_clicks_link_on_the_data_structures_introduction_page(String expectedTopicLink) {
+		dataStructurePage.clickTopicLink(expectedTopicLink);
 		LoggerFactory.getLogger().info("User clicks the Time Comeplexity Link to verify Try Here button");
 
 	}
 
 	@Then("User should see {string} button for the respective Data Structure page")
-	public void user_should_see_button_for_the_respective_data_structure_page(String buttonText) {
-		String actualbtnTxt = dataStructurePage.tryHereBtn();
-		Assert.assertEquals(actualbtnTxt, buttonText);
+	public void user_should_see_button_for_the_respective_data_structure_page(String buttonTryHereText) {
+		String actualTryHerebtnTxt = dataStructurePage.tryHereBtn();
+		Assert.assertEquals(actualTryHerebtnTxt, buttonTryHereText);
 		LoggerFactory.getLogger().info("User should see Try Here button on Time complexity page");
 	}
 
@@ -106,9 +106,9 @@ public class DataStructureStepDef {
 
 	@Then("User should be directed to {string} page containing {string}")
 	public void user_should_be_directed_to_page_containing(String expectedLink, String partialLinkText) {
-		String actualurl = driver.getCurrentUrl();
-		Assert.assertTrue(actualurl.toLowerCase().contains(partialLinkText.toLowerCase()));
-		LoggerFactory.getLogger().info("User verified the Url");
+		String actualLinkurl = driver.getCurrentUrl();
+		Assert.assertTrue(actualLinkurl.toLowerCase().contains(partialLinkText.toLowerCase()));
+		LoggerFactory.getLogger().info("User verified the Url" + expectedLink);
 
 	}
 

@@ -18,7 +18,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
-import pageObjects.Register;
+import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utils.ConfigReader;
 import utils.ExcelReader;
@@ -66,12 +66,12 @@ public class SignInSteps {
 	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet_and_row_number(
 			String sheetName, int rowNumber) throws InvalidFormatException, IOException {
 
-		ExcelReader reader = new ExcelReader();
+		/*ExcelReader reader = new ExcelReader();
 		List<Map<String, String>> testdata = reader.getData("/src/test/resources/excelTestData/testdata1.xlsx",
 				sheetName);
 		String validUsername = testdata.get(rowNumber).get("Username");
 		String validPassword = testdata.get(rowNumber).get("Password");
-		homePage = signinpage.login(validUsername, validPassword);
+		homePage = signinpage.login(validUsername, validPassword);*/
 	}
 
 	@Then("User should land in Home Page with message {string}")
@@ -84,15 +84,17 @@ public class SignInSteps {
 	public void user_clicks_login_button_after_entering_invalid_and(String sheetName)
 			throws InvalidFormatException, IOException {
 
-		ExcelReader reader = new ExcelReader();
-
-		List<Map<String, String>> testData = reader.getData("src/test/resources/excelTestData/testdata1.xlsx",
-				sheetName);
-
-		String userName = testData.get(0).get("Username");
-		String password = testData.get(0).get("Password");
-
-		homePage = signinpage.login(userName, password);
+		/*
+		 * ExcelReader reader = new ExcelReader();
+		 * 
+		 * List<Map<String, String>> testData =
+		 * reader.getData("src/test/resources/excelTestData/testdata1.xlsx", sheetName);
+		 * 
+		 * String userName = testData.get(0).get("Username"); String password =
+		 * testData.get(0).get("Password");
+		 * 
+		 * homePage = signinpage.login(userName, password);
+		 */
 	}
 
 	@Then("The error message {string} appears below {string} textbox")

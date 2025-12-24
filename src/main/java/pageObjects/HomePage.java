@@ -94,9 +94,9 @@ public class HomePage {
         return driver.findElement(msgError).getText();
     }
 
-    public Register clickRegisterLink() {
+    public RegisterPage clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        Register registerPage = new Register(driver);
+        RegisterPage registerPage = new RegisterPage(driver);
         return registerPage;
     }
 

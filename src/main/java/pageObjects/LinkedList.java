@@ -63,8 +63,7 @@ public class LinkedList {
 		
 	}
 	public String getLinkedListPageURL() {
-		// TODO Auto-generated method stub
-		return null;
+	return driver.getCurrentUrl();
 	}
 
 }

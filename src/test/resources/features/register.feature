@@ -16,7 +16,8 @@ Feature: Register functionality
     Examples:
       | sheetName      |
       | Register_valid |
-
+	
+	@wip
   Scenario Outline: User enters invalid registration data
     When User clicks Register button after entering the data from given "<ScenarioName>"
     Then The error message "<error_message>" appears below the "<field_name>"

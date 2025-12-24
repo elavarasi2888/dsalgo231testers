@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import factory.LoggerFactory;
 
-public class Register {
+public class RegisterPage {
 	WebDriver driver;
 	By userTxt = By.name("username");
 	By passwordTxt = By.name("password1");
@@ -20,7 +20,7 @@ public class Register {
 	By errorMsg = By.xpath("//div[@role='alert']");
 	By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
 
-	public Register(WebDriver driver) {
+	public RegisterPage(WebDriver driver) {
 
 		this.driver = driver;
 

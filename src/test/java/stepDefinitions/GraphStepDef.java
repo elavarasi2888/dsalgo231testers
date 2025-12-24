@@ -10,13 +10,21 @@ import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.DataStructure;
 import pageObjects.GraphPage;
+import pageObjects.HomePage;
 
 public class GraphStepDef {
-	WebDriver driver;
-	private GraphPage graphPage;
+	  HomePage homePage;
+	   GraphPage graphPage;
+     WebDriver driver;
 	public GraphStepDef() {
-		
+		driver = DriverManager.getDriver();
+		graphPage = new GraphPage(driver);
+	}
+	@Given("User is at the Home page after sign-in")
+	public void user_is_at_the_home_page_after_sign_in() {
+	
 	}
 	@Given("User clicks the Getting Started button in {string} Panel")
 	public void user_clicks_the_getting_started_button_in_panel(String expectedPanel) {
@@ -25,10 +33,9 @@ public class GraphStepDef {
 	}
 	@Given("User is on {string} page")
 	public void user_is_on_page(String expectedPanel) {
-		graphPage = new GraphPage(DriverManager.getDriver());
-		String expectedPanel1 = expectedPanel.toLowerCase();
-		String actualUrl = driver.getCurrentUrl();
-		Assert.assertTrue(actualUrl.contains(expectedPanel1));
+		
+		String actualUrl = graphPage.getGraphPageURL();
+		Assert.assertTrue(actualUrl.contains(expectedPanel.toLowerCase()));
 		LoggerFactory.getLogger().info("User is on the Graph page");
 	}
 

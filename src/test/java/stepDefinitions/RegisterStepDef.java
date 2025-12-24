@@ -16,21 +16,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
-import pageObjects.Register;
+import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utils.ExcelReader;
 
 public class RegisterStepDef {
 
 	WebDriver driver;
-	Register registerPage;
+	RegisterPage registerPage;
 	SignInPage signInPage;
 	HomePage homePage;
 	
 
 	public RegisterStepDef() {
 		driver = DriverManager.getDriver();
-		registerPage = new Register(driver);
+		registerPage = new RegisterPage(driver);
 	}
 	
     @Given("User is at the Register page")
@@ -92,6 +92,7 @@ public class RegisterStepDef {
 	LoggerFactory.getLogger().info("User at the Home page");
 
 	}
+	
 
 	@Then("The error message {string} appears below the {string}")
 	public void the_error_message_appears_below_the(String expectedErrorMessage, String fieldName) {
