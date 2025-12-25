@@ -1,8 +1,11 @@
+@DataStructure
 Feature: DataStruction Functionality
 
   Background:
-    Given User clicks the Getting Started button in "Data Structures-Introduction" Panel
-    Given User is on "Data Structures-Introduction" page
+   Given User is at the Home page after sign-in
+    Given User clicks Get Started button of "Data Structures-Introduction" from panel after sign-in
+    Given User is on the Data Structures-Introduction page
+   
 
   Scenario: Verify that User is able to see the "Data Structures-Introduction" header
     Then User should see "Data Structures-Introduction" header for Data Structures-Introduction page

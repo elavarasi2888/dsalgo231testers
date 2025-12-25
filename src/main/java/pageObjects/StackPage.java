@@ -88,6 +88,11 @@ public class StackPage {
 		 {
 		        driver.findElement(tryHereBtn).click();
 		    }
+
+		public String getStackPageURL() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 }
 

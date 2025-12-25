@@ -68,6 +68,11 @@ public class DataStructure {
 		return btnText;
 		
 	}
+
+	public String getDataStructurePageURL() {
+		
+		return driver.getCurrentUrl();
+	}
 }
 
 

@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.HomePage;
-import pageObjects.Register;
+import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 public class HomePageStepDefinitions {
 
     HomePage homePage;
-    Register registerPage;
+    RegisterPage registerPage;
     SignInPage signInPage;
     WebDriver driver;
 

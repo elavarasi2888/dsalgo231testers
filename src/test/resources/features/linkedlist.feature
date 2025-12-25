@@ -1,9 +1,10 @@
+@DataStructure @linklist
 Feature: Linklist Functionality
 
     Background:
     Given User is at the Home page after sign-in
-    Given User clicks the Getting Started button in "Graph" Panel
-    Given User is on "Linked List" page
+    Given User clicks the Getting Started button in "Linked List" Panel
+    Given User is on Linked List page
 
   Scenario: Verify that User is able to see the "Linked List" page header
     Then User should see "Linked List" header for Linkedlist page
