@@ -12,7 +12,7 @@ public class LinkedList {
 	By headerLinkedList = By.xpath("//h4[@class='bg-secondary text-white']");
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink = By.xpath("//a[@class='list-group-item']");
-	By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
 	By tryHerebtn = By.xpath("//a[text()='Try here>>>']");
 	
 	public LinkedList(WebDriver driver) {
@@ -33,7 +33,7 @@ public class LinkedList {
 		String topicsHeader = driver.findElement(headerTopics).getText();
 		return topicsHeader;
 	}
-	public List<String> getTopics() {
+	public List<String> TopicsLinkelistVisible() {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
 		ArrayList<String> topic = new ArrayList<>();
 		for (WebElement link : topicsName) {
@@ -42,6 +42,7 @@ public class LinkedList {
 		return topic;
 
 	}
+	
 	public void clickTopicLink(String linksName) {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
 
@@ -52,8 +53,11 @@ public class LinkedList {
 			}
 		}
 	}
+	public boolean isTopicCoveredVisible() {
+		return driver.findElement(headerTopics).isDisplayed();
+	}
 	public String getHeaderForLinks() {
-		String timeComplexityH = driver.findElement(verifyLinksHeader).getText();
+		String timeComplexityH = driver.findElement(verifyTopicLinksHeader).getText();
 		return timeComplexityH;
 
 	}

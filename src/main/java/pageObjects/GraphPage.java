@@ -34,7 +34,7 @@ public class GraphPage {
 		String topicsHeader = driver.findElement(headerTopics).getText();
 		return topicsHeader;
 	}
-	public List<String> getTopics() {
+	public List<String> TopicsGraphVisible() {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
 		ArrayList<String> topic = new ArrayList<>();
 		for (WebElement link : topicsName) {

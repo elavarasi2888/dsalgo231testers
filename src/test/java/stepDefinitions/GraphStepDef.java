@@ -24,18 +24,19 @@ public class GraphStepDef {
 	}
 	@Given("User is at the Home page after sign-in")
 	public void user_is_at_the_home_page_after_sign_in() {
-	
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
+
 	@Given("User clicks the Getting Started button in {string} Panel")
 	public void user_clicks_the_getting_started_button_in_panel(String expectedPanel) {
 		graphPage.clickGetStarted(expectedPanel.toLowerCase());
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in Graph panel");
 	}
-	@Given("User is on {string} page")
-	public void user_is_on_page(String expectedPanel) {
-		
-		String actualUrl = graphPage.getGraphPageURL();
-		Assert.assertTrue(actualUrl.contains(expectedPanel.toLowerCase()));
+	@Given("User is on Graph page")
+	public void user_is_on_graph_page() {
+		String expectedGraphUrl = "/graph/"; // keep this in constant class inside Utils package
+		Assert.assertTrue(graphPage.getGraphPageURL().endsWith(expectedGraphUrl));
 		LoggerFactory.getLogger().info("User is on the Graph page");
 	}
 
@@ -55,7 +56,7 @@ public class GraphStepDef {
 
 	@Then("User should see {string} link of Graph page")
 	public void user_should_see_link_of_graph_page(String expectedTopics) {
-		List<String> actualTopic = graphPage.getTopics();
+		List<String> actualTopic = graphPage.TopicsGraphVisible();
 		Assert.assertTrue(actualTopic.contains(expectedTopics));
 		LoggerFactory.getLogger().info("User Can see Topics Covered For Graph");
 	}
@@ -93,6 +94,10 @@ public class GraphStepDef {
 		Assert.assertTrue(actualurl.toLowerCase().contains(partialLinkText.toLowerCase()));
 		LoggerFactory.getLogger().info("User verified the Url"+ expectedLink);
 	}
+	
+	
+	
+
 	
 
 

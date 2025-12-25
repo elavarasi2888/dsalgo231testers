@@ -65,20 +65,29 @@ public class RegisterPage {
 	public WebElement getFieldLocation(String fieldName) {
 
 		switch (fieldName.toLowerCase()) {
-		case "Username":
+		case "username":
 			return driver.findElement(userTxt);
-		case "Password":
+		case "password":
 			return driver.findElement(passwordTxt);
-		case "Password confirmation":
+		case "password confirmation":
 			return driver.findElement(confirmPasswrdTxt);
 		default:
 			LoggerFactory.getLogger().info("Invalid fieldName");
 
 		}
 		return driver.findElement(errorMsg);
+		
 
 	}
-
+	
+	/*ela
+	 * public boolean isAtLoginPage() { return
+	 * driver.getCurrentUrl().contains("/login"); }
+	 */
+	public String getRegisteredUserErrorMsg() {
+		return driver.findElement(errorMsg).getText();
+		
+	}
 
 	public String getRegisterPageURL() {
 		return driver.getCurrentUrl();
