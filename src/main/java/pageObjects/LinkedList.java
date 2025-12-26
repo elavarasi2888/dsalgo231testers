@@ -13,25 +13,19 @@ public class LinkedList {
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink = By.xpath("//a[@class='list-group-item']");
 	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	By tryHerebtn = By.xpath("//a[text()='Try here>>>']");
+	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
 	
 	public LinkedList(WebDriver driver) {
 		this.driver = driver;
 	}
-	public void clickGetStarted(String LinkedList) {
-
-		String xpathDef = "//a[@href='" + LinkedList + "']";
-
-		By getStartedBtn = By.xpath(xpathDef);
-		driver.findElement(getStartedBtn).click();
+	
+	public boolean HeaderTitleVisisble() {
+		return driver.findElement(headerLinkedList).isDisplayed();
+		
 	}
-	public String getHeaderTitle() {
-		String linkedListTitle = driver.findElement(headerLinkedList).getText();
-		return linkedListTitle;
-	}
-	public String getTitleForLinks() {
-		String topicsHeader = driver.findElement(headerTopics).getText();
-		return topicsHeader;
+	public boolean TopicCoveredTitleForLinks() {
+		return driver.findElement(headerTopics).isDisplayed();
+		
 	}
 	public List<String> TopicsLinkelistVisible() {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
@@ -61,9 +55,13 @@ public class LinkedList {
 		return timeComplexityH;
 
 	}
-	public String tryHereBtn() {
-		String btnText= driver.findElement(tryHerebtn).getText();
-		return btnText;
+	public boolean tryHereBtn() {
+		return driver.findElement(tryHereBtn).isDisplayed();
+		
+		
+	}
+	public void tryHereBtnForLinks() {
+		 driver.findElement(tryHereBtn).click();
 		
 	}
 	public String getLinkedListPageURL() {

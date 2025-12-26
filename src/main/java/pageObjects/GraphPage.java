@@ -13,26 +13,27 @@ public class GraphPage {
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink  = By.xpath("//a[@class='list-group-item']");
 	By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
+	By tryHereBtn = By.xpath("//a[normalize-space()='Try here>>>']");
 	
 	public GraphPage(WebDriver driver){
 		this.driver = driver;
 	}
-	public void clickGetStarted(String dsType) {
-
-		String xpathDef = "//a[@href='" + dsType + "']";
-
-		By getStartedBtn = By.xpath(xpathDef);
-		driver.findElement(getStartedBtn).click();
-	}
+	/*
+	 * public void clickGetStarted(String dsType) {
+	 * 
+	 * String xpathDef = "//a[@href='" + dsType + "']";
+	 * 
+	 * By getStartedBtn = By.xpath(xpathDef);
+	 * driver.findElement(getStartedBtn).click(); }
+	 */
 	
-	public String getHeaderTitle() {
-		String linkedListTitle = driver.findElement(headerGraph).getText();
-		return linkedListTitle;
+	public boolean HeaderTitleVisible() {
+		return  driver.findElement(headerGraph).isDisplayed();
+		
 	}
-	public String getTitleForLinks() {
-		String topicsHeader = driver.findElement(headerTopics).getText();
-		return topicsHeader;
+	public boolean TopicHeaderVisible() {
+		return  driver.findElement(headerTopics).isDisplayed();
+		
 	}
 	public List<String> TopicsGraphVisible() {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
@@ -58,9 +59,13 @@ public class GraphPage {
 		return timeComplexityH;
 
 	}
-	public String tryHereBtn() {
-		String btnText= driver.findElement(tryHereBtn).getText();
-		return btnText;
+	public boolean tryHereBtn() {
+		return driver.findElement(tryHereBtn).isDisplayed();
+		
+		
+	}
+	public void tryHereBtnForLinks() {
+		 driver.findElement(tryHereBtn).click();
 		
 	}
 
