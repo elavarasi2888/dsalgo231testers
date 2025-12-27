@@ -1,7 +1,9 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class SignInPage {
 	WebDriver driver;
@@ -42,12 +44,27 @@ public class SignInPage {
 
 	/* VALID LOGIN → Navigates to HomePage */
 	public HomePage login(String username, String password) {
-		clearUsername();
+	/*
+	 	clearUsername();
 		clearPassword();
 		driver.findElement(usernameField).sendKeys(username);
 		driver.findElement(passwordField).sendKeys(password);
 		driver.findElement(signinButton).click();
 		return new HomePage(driver);
+	*/
+		By txtUsername = By.xpath("//input[@id='id_username']");
+        By txtPassword = By.xpath("//input[@id='id_password']");
+        By loginButton=By.xpath("//input[@value='Login']");
+
+        driver.findElement(txtUsername).sendKeys(username);
+        driver.findElement(txtPassword).sendKeys(password);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement a = driver.findElement(loginButton);
+        js.executeScript("arguments[0].click();", a);
+
+        return new HomePage(driver);
+		
 	}
 
 	/* INVALID LOGIN → Stays on SignInPage */
@@ -118,7 +135,7 @@ public class SignInPage {
 	}
 
 	public String getSignInPageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		  return "https://dsalgoportal.com/signin";
+		
 	}
 }

@@ -1,5 +1,4 @@
-# Author: Ela
-@ArrayPage
+@DataStructure @ArrayPage
 Feature: Array - non functional test case
 
   Background:

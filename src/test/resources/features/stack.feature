@@ -1,8 +1,10 @@
+@DataStructure @StackPage
 Feature: Stack test cases
 
-Background: User clicks Get Started button on Homepage for Stack tile#
+Background: 
+#Given User clicks Get Started button on Homepage for Stack tile#
 #Given User is on Stack page
-Given User clicks the Getting Started button in "Stack" Panel
+Given User clicks the Getting Started button in Stack Panel
 Given User is on "Stack" page
 
 #non functional test cases

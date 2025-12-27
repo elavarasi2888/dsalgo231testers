@@ -21,13 +21,13 @@ public class StackSteps {
 		stackPage = new StackPage(driver);
 	}
 	// ---------------- Background ----------------
-
-	@Given("User clicks the Getting Started button in {string} Panel")
-	public void user_clicks_getting_started_button(String panelName) {
-		stackPage = (StackPage) homePage.clickGetStartedButtonOfGivenDsType(panelName);
+	//User clicks Get Started button from Tree panel
+	@Given("User clicks the Getting Started button in Stack Panel")
+	public void user_clicks_the_getting_started_button_in_stack_panel() {
+		stackPage = (StackPage) homePage.clickGetStartedButtonOfGivenDsType("Stack");		
 	}
 
-	@Given("User is on Stack page")
+	@Given("User is on {string} page")
 	public void user_is_on_stack_page(String panelName) {
 		Assert.assertTrue(stackPage.isOnStackPage(), "User is not on Stack page");
 	}

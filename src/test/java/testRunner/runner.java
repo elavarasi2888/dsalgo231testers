@@ -5,12 +5,14 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src/test/resources/features",
-		// features = "src/test/resources/features/signIn.feature",
+@CucumberOptions(
+		features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
-		tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @RegisterPage",
-		// tags="@SignInPage",
-
+		//tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @RegisterPage or @SignInPage",
+		//tags="@SignInPage",
+		//tags="@StackPage",
+		tags="@Queue",
+		//tags="@ArrayPage",
 		plugin = { "pretty", "html:reports/cucumber-reports.html" }, dryRun = false, monochrome = true)
 
 public class runner extends AbstractTestNGCucumberTests {
