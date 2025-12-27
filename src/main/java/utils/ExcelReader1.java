@@ -17,7 +17,7 @@ public class ExcelReader1 {
 	private Workbook workbook;
 	private DataFormatter formatter = new DataFormatter();
 	public ExcelReader1() throws IOException {
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/excelTestData/testdata1.xlsx");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/excelTestData/signInTestData.xlsx");
             workbook = new XSSFWorkbook(fis);
     }
 	 public Map<String, String> getDataByScenarioName(String sheetName, String scenarioName) {

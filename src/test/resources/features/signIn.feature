@@ -2,10 +2,10 @@
 Feature: Sign in functionality of DS Algo
 
   Background: User clicks the Get Started button on DS Algo portal page
-  # Given User opens the browser
-    # Given User enters the correct DS Algo portal URL
-    # Given User clicks the Get Started button on DS Algo portal page
-    # Given Registered user clicks on the Sign in link in the home page
+    Given User opens the browser
+    Given User enters the correct DS Algo portal URL
+    Given User clicks the Get Started button on DS Algo portal page
+    Given User clicks on the Sign in link in the home page
     Given User is on Sign in Page
 # non functional test case------------------------------------
 
@@ -20,6 +20,7 @@ Feature: Sign in functionality of DS Algo
 
   Scenario: Verify there is a register button option in the sign in page
     Then Register option in sign in page should be visible
+    
 # Functional test case-----------------------------------------------
 
   Scenario Outline: Verify that user able to land on Home page after entering valid Username and Password fields
@@ -30,7 +31,7 @@ Feature: Sign in functionality of DS Algo
 
     Examples:
       | sheetName   |
-      | login_valid | 
+      | login_valid |
 
   Scenario Outline: Sign in with Invalid data for scenario "<ScenarioName>"
     When User clicks login button after entering the data from given sheetName "<sheetName>"

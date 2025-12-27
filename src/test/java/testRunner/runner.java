@@ -6,9 +6,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/signIn.feature",
         glue = {"hooks", "stepDefinitions"},
-        tags = "@HomePageSignIn",
+       tags = "@SignInPage",
         plugin = {"pretty", "html:reports/cucumber-reports.html"},
         dryRun = false,
         monochrome = true)

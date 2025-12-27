@@ -1,6 +1,7 @@
 @Register
 Feature: Register functionality
-
+	
+	
     Given User is at the Register page
 
   Scenario: Verify that User is able to navigate on Login Page with login link from register page

@@ -36,7 +36,6 @@ public class SignInSteps
 		signinpage = new SignInPage(driver);
 
 	}
-
 	@Given("User is on Sign in Page")
 	public void user_is_on_sign_in_page() {
 
@@ -65,8 +64,8 @@ public class SignInSteps
 		Assert.assertTrue(signinpage.isRegisterOptionVisible());
 	}
 
-	@When("User clicks login button after entering valid username and valid password from the given sheet {string} and rowNumber {int}")
-	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet_and_row_number(
+	@When("User clicks login button after entering valid username and valid password from the given sheet {string} {int}")
+	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet(
 			String ScenarioName) throws InvalidFormatException, IOException {
 
 		ExcelReader1 reader = new ExcelReader1();
@@ -113,3 +112,4 @@ public class SignInSteps
 	}
 
 }
+

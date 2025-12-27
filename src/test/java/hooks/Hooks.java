@@ -21,7 +21,7 @@ public class Hooks {
     String browser;
     WebDriver driver;
 
-    @Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
+    @Before("@DsAlgoPortal or @HomePage or @Register or SignInPage or @HomePageSignIn")
     public void beforeScenario() throws IOException {
         configReader = new ConfigReader();
         prop = configReader.loadProperties();
@@ -61,7 +61,10 @@ public class Hooks {
 
     @After
     public void tearDown() {
-        DriverManager.getDriver().quit();
+    	if (DriverManager.getDriver() != null) {
+            DriverManager.getDriver().quit();
+        }
+       // DriverManager.getDriver().quit();
         LoggerFactory.getLogger().info("DONE tearDown()..");
     }
 }
