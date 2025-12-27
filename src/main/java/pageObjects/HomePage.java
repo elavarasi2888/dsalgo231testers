@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import factory.LoggerFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
+
     private WebDriver driver;
+
     private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
     private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
     private By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
@@ -21,6 +21,7 @@ public class HomePage {
     private By msgError = By.xpath("//div[@role='alert']");
     private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
     private By msgUserLoggedIn = By.xpath("//div[@role='alert']");
+    private By lblSignedInUser = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -84,13 +85,17 @@ public class HomePage {
     }
 
     public void clickGetStartedButton(String dsType) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
-        driver.findElement(btnGetStarted).click();
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
+        element.click();
     }
 
     public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
-        driver.findElement(btnGetStarted).click();
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
+        element.click();
 
         Object pageObject = null;
 
@@ -130,9 +135,9 @@ public class HomePage {
         return driver.findElement(msgError).getText();
     }
 
-    public RegisterPage clickRegisterLink() {
+    public Register clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        return new RegisterPage(driver);
+        return new Register(driver);
     }
 
     public SignInPage clickSignInLink() {
@@ -150,13 +155,15 @@ public class HomePage {
             return false;
         }
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         String userNameCapitalizeFirstLetter = userName.trim().substring(0, 1).toUpperCase() + userName.trim().substring(1);
-
         By lblSignedInUserName = By.xpath("//a[normalize-space()='" + userNameCapitalizeFirstLetter + "']");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName));
-        return driver.findElement(lblSignedInUserName).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).isDisplayed();
+    }
+
+    public String getCurrentSignedInUserName() {
+        return driver.findElement(lblSignedInUser).getText();
     }
 
     public String getHomePageURL() {

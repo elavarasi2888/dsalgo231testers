@@ -16,10 +16,10 @@ import java.util.List;
 
 public class HomePageStepDefinitions {
 
-    HomePage homePage;
-    RegisterPage registerPage;
-    SignInPage signInPage;
-    WebDriver driver;
+    private HomePage homePage;
+    private RegisterPage registerPage;
+    private SignInPage signInPage;
+    private WebDriver driver;
 
     public HomePageStepDefinitions() {
         driver = DriverManager.getDriver();

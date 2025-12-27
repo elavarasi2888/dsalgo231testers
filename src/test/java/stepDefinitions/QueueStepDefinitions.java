@@ -11,9 +11,9 @@ import pageObjects.QueuePage;
 
 public class QueueStepDefinitions {
 
-    WebDriver driver;
-    HomePage homePage;
-    QueuePage queuePage;
+    private WebDriver driver;
+    private HomePage homePage;
+    private QueuePage queuePage;
 
     public QueueStepDefinitions() {
         driver = DriverManager.getDriver();
