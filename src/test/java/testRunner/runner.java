@@ -7,12 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 		features = "src/test/resources/features",
-		glue = { "hooks", "stepDefinitions" },
-		//tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @RegisterPage or @SignInPage",
-		//tags="@SignInPage",
-		//tags="@StackPage",
-		tags="@Queue",
-		//tags="@ArrayPage",
+		glue = { "hooks", "stepDefinitions" },		
 		plugin = { "pretty", "html:reports/cucumber-reports.html" }, dryRun = false, monochrome = true)
 
 public class runner extends AbstractTestNGCucumberTests {
@@ -22,3 +17,8 @@ public class runner extends AbstractTestNGCucumberTests {
 		return super.scenarios();
 	}
 }
+
+//tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @RegisterPage or @SignInPage",
+		//tags="@SignInPage",
+		//tags="@StackPage",
+		//tags="@ArrayPage",
