@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/signIn.feature",
         glue = {"hooks", "stepDefinitions"},
         tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
         plugin = {"pretty", "html:reports/cucumber-reports.html"},

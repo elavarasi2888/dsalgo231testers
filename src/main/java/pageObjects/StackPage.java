@@ -13,7 +13,7 @@ public class StackPage {
 	By implementation=By.xpath("//a[contains(text(),'Implementation')]");
 	By applications=By.xpath("//a[contains(text(),'Applications')]");
 	By pracquest=By.xpath("//a[contains(text(),'Practice Questions')]");
-	By tryHereBtn=By.xpath ("//a[contains(text(),'Try Here')]");
+	By tryHereBtn=By.xpath ("//a[text()='Try here>>>']");
 
 	// Constructor
 		public StackPage(WebDriver driver)

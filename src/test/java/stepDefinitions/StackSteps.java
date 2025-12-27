@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import factory.DriverManager;
+import pageObjects.HomePage;
 import pageObjects.StackPage;
 
 import static org.testng.Assert.assertEquals;
@@ -11,13 +12,14 @@ import static org.testng.Assert.assertTrue;
 
 public class StackSteps {
 	StackPage stackPage = new StackPage(DriverManager.getDriver());
-
+	HomePage homePage = new HomePage(DriverManager.getDriver());
 	// ---------------- Background ----------------
 
 	@Given("User clicks the Getting Started button in {string} Panel")
 	public void user_clicks_getting_started_button(String panelName) {
-		// homePage.clickGettingStarted(panelName);
-	}
+		stackPage = (StackPage)homePage.clickGetStartedButtonOfGivenDsType(panelName);
+		}
+	
 
 	@Given("User is on Stack page")
 	public void user_is_on_stack_page(String panelName) {

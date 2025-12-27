@@ -10,16 +10,17 @@ import org.openqa.selenium.WebElement;
 
 public class ArrayPage {
 	WebDriver driver;
-	WebElement arrayPageHeading;
-	WebElement arrayHeader;
+	//WebElement arrayPageHeading;
+	//WebElement arrayHeader;
 	
 	// ================== By Locators ==================
    
-    By tryHereButton = By.xpath("//a[contains(text(),'Try here')]");
-    By allLinks = By.tagName("a");	
-    By pageHeader = By.xpath("//h4[text()='Array']"); 
-   	By arraylink=By.linkText("Array");	
-	By tryHereBtn=By.xpath ("//a[contains(text(),'Try Here')]");
+    //By tryHereButton = By.xpath("//a[contains(text(),'Try here')]");
+    //By allLinks = By.tagName("a");	    
+   //	By arraylink=By.linkText("Array");
+	
+	By pageHeader = By.xpath("//h4[text()='Array']"); 
+	By tryHereButton=By.xpath ("//a[text()='Try here>>>']]");
 	By topicsCoveredHeader = By.xpath("//p[contains(text(),'Topics Covered')]"); 
 	 By arraysInPython = By.xpath("//a[contains(text(),'Arrays in Python')]");
 	 By arraysUsingList = By.xpath("//a[contains(text(),'Arrays Using List')]");

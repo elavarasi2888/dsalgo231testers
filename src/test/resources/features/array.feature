@@ -3,9 +3,9 @@
 Feature: Array - non functional test case
 
   Background:
-  # Given User is on Array page
-    Given User clicks the Getting Started button in "Array" Panel
-    Given User is on "Array" page
+  Given User is at the Home page after sign-in
+   Given User clicks Get Started button from "Array" panel
+    
 # non functional test cases
 
   Scenario: Verify that user is able to see the Array header
