@@ -103,13 +103,13 @@ public class HomePage {
 
         switch (dataStructurePageName) {
             case "data-structures-introduction":
-                pageObject = new DataStructure(driver);
+                pageObject = new DataStructurePage(driver);
                 break;
             case "array":
                 pageObject = new ArrayPage(driver);
                 break;
             case "linked-list":
-                pageObject = new LinkedList(driver);
+                pageObject = new LinkedListPage(driver);
                 break;
             case "stack":
                 pageObject = new StackPage(driver);

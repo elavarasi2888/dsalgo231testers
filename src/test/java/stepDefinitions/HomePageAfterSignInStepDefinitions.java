@@ -47,13 +47,13 @@ public class HomePageAfterSignInStepDefinitions {
 
         switch (dataStructurePageName) {
             case "data-structures-introduction":
-                currentPageURL = new DataStructure(driver).getDataStructurePageURL();
+                currentPageURL = new DataStructurePage(driver).getDataStructurePageURL();
                 break;
             case "array":
                 currentPageURL = new ArrayPage(driver).getArrayPageURL();
                 break;
             case "linked-list":
-                currentPageURL = new LinkedList(driver).getLinkedListPageURL();
+                currentPageURL = new LinkedListPage(driver).getLinkedListPageURL();
                 break;
             case "stack":
                 currentPageURL = new StackPage(driver).getStackPageURL();

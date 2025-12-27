@@ -8,23 +8,23 @@ import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.DataStructure;
+import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
-import pageObjects.LinkedList;
+import pageObjects.LinkedListPage;
 
-public class LinkedListStepDef {
-	private LinkedList linkedListPage;
+public class LinkedListStepDefinition {
+	private LinkedListPage linkedListPage;
 	WebDriver driver;
 	HomePage homePage;
 
-	public LinkedListStepDef() {
+	public LinkedListStepDefinition() {
 		driver = DriverManager.getDriver();
-		linkedListPage = new LinkedList(driver);
+		linkedListPage = new LinkedListPage(driver);
 	}
 
 	@Given("User clicks the Getting Started button in Linked List Panel")
 	public void user_clicks_the_getting_started_button_in_linked_list_panel() {
-		linkedListPage = (LinkedList) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
+		linkedListPage = (LinkedListPage) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in LinkedList panel");
 	}
 
@@ -82,10 +82,14 @@ public class LinkedListStepDef {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	@Then("User should be redirected to try Editor page")
-	public void user_should_be_redirected_to_try_editor_page() {
-		Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("tryEditor"));
-		LoggerFactory.getLogger().info("User should be redirected to try Editor page");
-	}
+	/*
+	 * @Then("User should be redirected to try Editor page for respective linklist page"
+	 * ) public void
+	 * user_should_be_redirected_to_try_editor_page_for_respective_linklist_page() {
+	 * Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("tryEditor"))
+	 * ;
+	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
+	 * ); }
+	 */
 
 }
