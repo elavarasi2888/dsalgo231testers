@@ -20,8 +20,14 @@ public class Hooks {
     ConfigReader configReader;
     String browser;
     WebDriver driver;
+    
+    @Before
+    public void setUp() {
+       DriverManager.getDriver();
+    	// DriverManager.initDriver();  
+    }
 
-    @Before("@DsAlgoPortal or @HomePage or @Register or SignInPage or @HomePageSignIn")
+    @Before("@DsAlgoPortal or @HomePage or @Register or @SignInPage or @HomePageSignIn")
     public void beforeScenario() throws IOException {
         configReader = new ConfigReader();
         prop = configReader.loadProperties();
