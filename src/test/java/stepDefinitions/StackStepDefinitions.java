@@ -10,18 +10,18 @@ import pageObjects.StackPage;
 
 import org.openqa.selenium.WebDriver;
 
-public class StackSteps {
+public class StackStepDefinitions {
 	StackPage stackPage;
 	HomePage homePage;
 	WebDriver driver;
 
-	public StackSteps() {
+	public StackStepDefinitions() {
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
 		stackPage = new StackPage(driver);
 	}
 	// ---------------- Background ----------------
-	//User clicks Get Started button from Tree panel
+	
 	@Given("User clicks the Getting Started button in Stack Panel")
 	public void user_clicks_the_getting_started_button_in_stack_panel() {
 		stackPage = (StackPage) homePage.clickGetStartedButtonOfGivenDsType("Stack");		
