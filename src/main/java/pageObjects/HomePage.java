@@ -12,9 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
-
     private WebDriver driver;
-
     private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
     private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
     private By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
@@ -132,9 +130,9 @@ public class HomePage {
         return driver.findElement(msgError).getText();
     }
 
-    public Register clickRegisterLink() {
+    public RegisterPage clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        return new Register(driver);
+        return new RegisterPage(driver);
     }
 
     public SignInPage clickSignInLink() {

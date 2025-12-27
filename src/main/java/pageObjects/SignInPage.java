@@ -8,11 +8,10 @@ public class SignInPage {
 
 	By usernameField = By.name("username");
 	By passwordField = By.name("password");
+	By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
 	By signinButton = By.xpath("//form//input[@type='submit']");
 	By registerLink = By.xpath("//a[normalize-space()='Register']");
-
-	By errorMsg = By.xpath("//div[contains(@class,'alert-primary')]");
-	
+	By errorMsg = By.xpath("//div[contains(@class,'alert-primary')]");	
 
 	// Constructor
 	public SignInPage(WebDriver driver) {
@@ -54,7 +53,8 @@ public class SignInPage {
 	/* INVALID LOGIN → Stays on SignInPage */
 	public SignInPage clickSignIn() {
 		driver.findElement(signinButton).click();
-		return this;
+	    return this;
+		
 	}
 
 	/* Navigates to Register Page */
