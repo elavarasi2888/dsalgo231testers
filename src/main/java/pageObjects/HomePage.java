@@ -135,9 +135,9 @@ public class HomePage {
         return driver.findElement(msgError).getText();
     }
 
-    public Register clickRegisterLink() {
+    public RegisterPage clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        return new Register(driver);
+        return new RegisterPage(driver);
     }
 
     public SignInPage clickSignInLink() {
