@@ -11,9 +11,9 @@ import pageObjects.*;
 
 public class HomePageAfterSignInStepDefinitions {
 
-    HomePage homePage;
-    WebDriver driver;
-    String userName;
+    private HomePage homePage;
+    private WebDriver driver;
+    private String userName;
 
     public HomePageAfterSignInStepDefinitions() {
         driver = DriverManager.getDriver();
@@ -26,7 +26,6 @@ public class HomePageAfterSignInStepDefinitions {
 
         userName = "dsalgo231";
         String password = "automation2025#";
-
         homePage = signInPage.login(userName, password);
     }
 

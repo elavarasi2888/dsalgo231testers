@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class TreePage {
+
     private WebDriver driver;
 
     private By headerTree = By.xpath("//h4[normalize-space()='Tree']");

@@ -12,14 +12,13 @@ import pageObjects.HomePage;
 import utils.ConfigReader;
 
 import java.io.IOException;
-import java.util.Properties;
 
 public class DsAlgoPortalStepDefinitions {
 
-    DsAlgoPortalPage dsAlgoPortal;
-    HomePage homePage;
-    String appURL = null;
-    WebDriver driver;
+    private DsAlgoPortalPage dsAlgoPortal;
+    private HomePage homePage;
+    private String appURL = null;
+    private WebDriver driver;
 
     @Given("User opens the browser")
     public void user_opens_the_browser() throws IOException {
