@@ -108,6 +108,11 @@ public class ArrayPage {
         driver.findElement(tryHereButton).click();
     }
 
+	public String getArrayPageURL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
        
 }	
 	

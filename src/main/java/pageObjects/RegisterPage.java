@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import factory.LoggerFactory;
 
-public class Register {
+public class RegisterPage {
 	WebDriver driver;
 	By userTxt = By.name("username");
 	By passwordTxt = By.name("password1");
@@ -20,7 +20,7 @@ public class Register {
 	By errorMsg = By.xpath("//div[@role='alert']");
 	By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
 
-	public Register(WebDriver driver) {
+	public RegisterPage(WebDriver driver) {
 
 		this.driver = driver;
 
@@ -65,20 +65,29 @@ public class Register {
 	public WebElement getFieldLocation(String fieldName) {
 
 		switch (fieldName.toLowerCase()) {
-		case "Username":
+		case "username":
 			return driver.findElement(userTxt);
-		case "Password":
+		case "password":
 			return driver.findElement(passwordTxt);
-		case "Password confirmation":
+		case "password confirmation":
 			return driver.findElement(confirmPasswrdTxt);
 		default:
 			LoggerFactory.getLogger().info("Invalid fieldName");
 
 		}
 		return driver.findElement(errorMsg);
+		
 
 	}
-
+	
+	/*ela
+	 * public boolean isAtLoginPage() { return
+	 * driver.getCurrentUrl().contains("/login"); }
+	 */
+	public String getRegisteredUserErrorMsg() {
+		return driver.findElement(errorMsg).getText();
+		
+	}
 
 	public String getRegisterPageURL() {
 		return driver.getCurrentUrl();

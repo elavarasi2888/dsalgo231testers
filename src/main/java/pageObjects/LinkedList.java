@@ -12,28 +12,22 @@ public class LinkedList {
 	By headerLinkedList = By.xpath("//h4[@class='bg-secondary text-white']");
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink = By.xpath("//a[@class='list-group-item']");
-	By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	By tryHerebtn = By.xpath("//a[text()='Try here>>>']");
+	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
 	
 	public LinkedList(WebDriver driver) {
 		this.driver = driver;
 	}
-	public void clickGetStarted(String LinkedList) {
-
-		String xpathDef = "//a[@href='" + LinkedList + "']";
-
-		By getStartedBtn = By.xpath(xpathDef);
-		driver.findElement(getStartedBtn).click();
+	
+	public boolean HeaderTitleVisisble() {
+		return driver.findElement(headerLinkedList).isDisplayed();
+		
 	}
-	public String getHeaderTitle() {
-		String linkedListTitle = driver.findElement(headerLinkedList).getText();
-		return linkedListTitle;
+	public boolean TopicCoveredTitleForLinks() {
+		return driver.findElement(headerTopics).isDisplayed();
+		
 	}
-	public String getTitleForLinks() {
-		String topicsHeader = driver.findElement(headerTopics).getText();
-		return topicsHeader;
-	}
-	public List<String> getTopics() {
+	public List<String> TopicsLinkelistVisible() {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
 		ArrayList<String> topic = new ArrayList<>();
 		for (WebElement link : topicsName) {
@@ -42,6 +36,7 @@ public class LinkedList {
 		return topic;
 
 	}
+	
 	public void clickTopicLink(String linksName) {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
 
@@ -52,19 +47,25 @@ public class LinkedList {
 			}
 		}
 	}
+	public boolean isTopicCoveredVisible() {
+		return driver.findElement(headerTopics).isDisplayed();
+	}
 	public String getHeaderForLinks() {
-		String timeComplexityH = driver.findElement(verifyLinksHeader).getText();
+		String timeComplexityH = driver.findElement(verifyTopicLinksHeader).getText();
 		return timeComplexityH;
 
 	}
-	public String tryHereBtn() {
-		String btnText= driver.findElement(tryHerebtn).getText();
-		return btnText;
+	public boolean tryHereBtn() {
+		return driver.findElement(tryHereBtn).isDisplayed();
+		
+		
+	}
+	public void tryHereBtnForLinks() {
+		 driver.findElement(tryHereBtn).click();
 		
 	}
 	public String getLinkedListPageURL() {
-		// TODO Auto-generated method stub
-		return null;
+	return driver.getCurrentUrl();
 	}
 
 }

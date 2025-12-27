@@ -19,22 +19,15 @@ public class DataStructure {
 		this.driver = driver;
 	}
 
-	public void clickGetStarted(String dsType) {
-
-		String xpathDef = "//a[@href='" + dsType + "']";
-
-		By getStartedBtn = By.xpath(xpathDef);
-		driver.findElement(getStartedBtn).click();
+	
+	public boolean HeaderTitleVisible() {
+		return driver.findElement(headerDS).isDisplayed();
+		
 	}
 
-	public String getHeaderTitle() {
-		String dsTitle = driver.findElement(headerDS).getText();
-		return dsTitle;
-	}
-
-	public String getTitleForLinks() {
-		String topicsHeader = driver.findElement(headerTopics).getText();
-		return topicsHeader;
+	public boolean TopicCoveredTitleForLinksVisisble() {
+		return driver.findElement(headerTopics).isDisplayed();
+		 
 	}
 
 	public List<String> getTopics() {
@@ -63,10 +56,19 @@ public class DataStructure {
 		return timeComplexityH;
 
 	}
-	public String tryHereBtn() {
-		String btnText= driver.findElement(tryHereBtn).getText();
-		return btnText;
+	public boolean tryHereBtn() {
+		return driver.findElement(tryHereBtn).isDisplayed();
+	
 		
+	}
+	public void tryHereBtnForLinks() {
+		 driver.findElement(tryHereBtn).click();
+		
+	}
+
+	public String getDataStructurePageURL() {
+		
+		return driver.getCurrentUrl();
 	}
 
 	

@@ -58,9 +58,9 @@ public class SignInPage {
 	}
 
 	/* Navigates to Register Page */
-	public Register clickRegister() {
+	public RegisterPage clickRegister() {
 		driver.findElement(registerLink).click();
-		return new Register(driver);
+		return new RegisterPage(driver);
 	}
 	// ----------------------Actions performed----------------------------------------------
 
@@ -115,5 +115,10 @@ public class SignInPage {
 	// --------------- Registration Page Check----------------------------------------------------------
 	public boolean isRegistrationPageDisplayed() {
 		return driver.getCurrentUrl().contains("register");
+	}
+
+	public String getSignInPageURL() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
