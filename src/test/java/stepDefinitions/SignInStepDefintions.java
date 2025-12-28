@@ -25,38 +25,15 @@ public class SignInStepDefintions {
 
 	public SignInStepDefintions() {
 		driver = DriverManager.getDriver();
-		signinpage = new SignInPage(driver);
 		homePage = new HomePage(driver);
-
-	}
-  
-	@Then("Username textbox should be visible")
-	public void username_textbox_should_be_visible() {
-		Assert.assertTrue(signinpage.isUsernameFieldVisible());
-
+		signinpage = new SignInPage(driver);
 	}
 
-	@Then("Password textbox should be visible")
-	public void password_textbox_should_be_visible() {
-		Assert.assertTrue(signinpage.isPasswordFieldVisible());
-	}
-
-	@Then("Login button should be visible")
-	public void login_button_should_be_visible() {
-		Assert.assertTrue(signinpage.isSignInButtonVisible());
-	}
-
-	@Then("Register option in sign in page should be visible")
-	public void register_option_in_sign_in_page_should_be_visible() {
-		Assert.assertTrue(signinpage.isRegisterOptionVisible());
-	}
-
-	@When("User clicks login button after entering valid username and valid password from the given sheet {string}")
-	public void user_clicks_login_button_after_entering_valid_username_and_valid_password_from_the_given_sheet(
-			String ScenarioName) throws InvalidFormatException, IOException {
-
+	@When("User clicks login button after entering valid data from the given {string}")
+	public void user_clicks_login_button_after_entering_valid_data_from_the_given(String ScenarioName)
+			throws InvalidFormatException, IOException {
 		ExcelReader1 reader = new ExcelReader1();
-		String sheetName = "login_valid";
+		String sheetName = "login_invalid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		signinpage.enterUsername(testData.get("Username"));
 		signinpage.enterPassword(testData.get("Password"));
@@ -66,14 +43,12 @@ public class SignInStepDefintions {
 
 	@Then("User should land in Home Page with message {string}")
 	public void user_should_land_in_home_page_with_message(String expectedMessage) {
-		// String actualMessage = homePage.getCurrentSignedInUserName(); // method in
-		// HomePage
 		String actualMessage = homePage.getUserLoggedInMessage();
 		assertEquals(actualMessage, expectedMessage);
 	}
 
-	@When("User clicks login button after entering the data from given sheetName {string}")
-	public void user_clicks_login_button_after_entering_invalid_and(String ScenarioName)
+	@When("User clicks login button after entering the data from given {string}")
+	public void user_clicks_login_button_after_entering_the_data_from_given(String ScenarioName)
 			throws InvalidFormatException, IOException {
 		ExcelReader1 reader = new ExcelReader1();
 		String sheetName = "login_invalid";
@@ -83,17 +58,24 @@ public class SignInStepDefintions {
 		signinpage.clickSignIn();
 	}
 
-	@Then("The error message {string} appears below {string} textbox")
-	public void the_error_message_appears_below_textbox(String expectedErrMsg, String location) {
+	@Then("User get the error message {string}")
+	public void user_get_the_error_message(String expectedErrMsg) {
+		String actualErrMsg;
 
-		String actualErrMsg = signinpage.getErrorMsgText();
+		if (expectedErrMsg.equals("Please fill out this field.")) {
+			// HTML5 browser validation
+			actualErrMsg = signinpage.getBrowserValidationMessage();
+		} else {
+			// Server-side application validation
+			actualErrMsg = signinpage.getApplicationErrorMessage();
+		}
+
 		Assert.assertEquals(actualErrMsg, expectedErrMsg);
-
 	}
 
-	@When("User clicks register button")
-	public void user_clicks_register_button() {
-		signinpage.clickRegister();		
+	@When("User clicks register button in the login page")
+	public void user_clicks_register_button_in_the_login_page() {
+		signinpage.clickRegister();
 	}
 
 	@Then("User should be redirected to Registration page")
