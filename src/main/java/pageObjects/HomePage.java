@@ -104,13 +104,13 @@ public class HomePage {
 
         switch (dataStructurePageName) {
             case "data structures-introduction":
-                pageObject = new DataStructure(driver);
+                pageObject = new DataStructurePage(driver);
                 break;
             case "array":
                 pageObject = new ArrayPage(driver);
                 break;
             case "linked list":
-                pageObject = new LinkedList(driver);
+                pageObject = new LinkedListPage(driver);
                 break;
             case "stack":
                 pageObject = new StackPage(driver);
@@ -136,9 +136,9 @@ public class HomePage {
         return driver.findElement(msgError).getText();
     }
 
-    public Register clickRegisterLink() {
+    public RegisterPage clickRegisterLink() {
         driver.findElement(lnkRegister).click();
-        return new Register(driver);
+        return new RegisterPage(driver);
     }
 
     public SignInPage clickSignInLink() {
