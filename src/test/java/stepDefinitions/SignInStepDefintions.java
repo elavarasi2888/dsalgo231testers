@@ -29,18 +29,7 @@ public class SignInStepDefintions {
 		homePage = new HomePage(driver);
 
 	}
-    /*
-	@Given("User clicks on the Sign in link in the home page")
-	public void user_clicks_on_the_sign_in_link_in_the_home_page() {		
-		signinpage= homePage.clickSignInLink();		
-	}
-	*/
-	@Given("User is on Sign in Page")
-	public void user_is_on_sign_in_page() {
-		Assert.assertTrue(signinpage.isUsernameFieldVisible(), "Username textbox is not visible");
-		LoggerFactory.getLogger().info("User is at the Sign in page");
-	}
-
+  
 	@Then("Username textbox should be visible")
 	public void username_textbox_should_be_visible() {
 		Assert.assertTrue(signinpage.isUsernameFieldVisible());
