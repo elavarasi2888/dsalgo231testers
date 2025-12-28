@@ -49,7 +49,7 @@ Feature: Graph functionality
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<Graph_topics>" link on the Graph page
     When User clicks Try Here button in the respective Graph page
-    Then User should be redirected to try Editor page for respective Graph page
+    Then User should be redirected to try Editor page
 
     Examples:
       | Graph_topics          |

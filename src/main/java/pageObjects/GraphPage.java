@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class GraphPage {
-	WebDriver driver;
+	private WebDriver driver;
 	By headerGraph = By.xpath("//h4[@class='bg-secondary text-white']");
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink  = By.xpath("//a[@class='list-group-item']");

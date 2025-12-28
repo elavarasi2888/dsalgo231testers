@@ -24,13 +24,15 @@ public class DataStructureStepDefinition {
 	public DataStructureStepDefinition() {
 
 		driver = DriverManager.getDriver();
+		homePage= new HomePage(driver);
 		dataStructurePage = new DataStructurePage(driver);
 	}
 
 	
 	@Given("User clicks Get Started button of Data Structures-Introduction panel")
 	public void user_clicks_get_started_button_of_data_structures_introduction_panel() {
-		dataStructurePage = (DataStructurePage) homePage.clickGetStartedButtonOfGivenDsType("Data Structures-Introduction");
+		String xyz ="Data Structures-Introduction";
+		dataStructurePage = (DataStructurePage)homePage.clickGetStartedButtonOfGivenDsType(xyz.trim());
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in DS-introduction panel");
 	}
 

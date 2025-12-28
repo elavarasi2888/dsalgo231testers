@@ -19,6 +19,7 @@ public class LinkedListStepDefinition {
 
 	public LinkedListStepDefinition() {
 		driver = DriverManager.getDriver();
+		homePage= new HomePage(driver);
 		linkedListPage = new LinkedListPage(driver);
 	}
 

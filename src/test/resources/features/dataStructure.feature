@@ -45,7 +45,7 @@ Feature: DataStruction Functionality
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<DS_topics>" link on the DataStructure page
     When User clicks Try Here button in the respective DataStructure page
-    Then User should be redirected to try Editor page for respective DataStructure page
+    Then User should be redirected to try Editor page
 
     Examples:
       | Graph_topics    |

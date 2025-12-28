@@ -22,12 +22,13 @@ public class GraphStepDefinition {
 
 	public GraphStepDefinition() {
 		driver = DriverManager.getDriver();
+		homePage=new HomePage(driver);
 		graphPage = new GraphPage(driver);
 	}
 
 	@Given("User clicks the Getting Started button in Graph Panel")
 	public void user_clicks_the_getting_started_button_in_graph_panel() {
-		graphPage = (GraphPage) homePage.clickGetStartedButtonOfGivenDsType("Graph");
+		graphPage = (GraphPage)homePage.clickGetStartedButtonOfGivenDsType("Graph");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in Graph panel");
 	}
 

@@ -1,14 +1,19 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import factory.LoggerFactory;
 
 public class RegisterPage {
-	WebDriver driver;
+	private WebDriver driver;
 	By userTxt = By.name("username");
 	By passwordTxt = By.name("password1");
 	By confirmPasswrdTxt = By.name("password2");
@@ -17,7 +22,7 @@ public class RegisterPage {
 	By registerLink = By.xpath("//a[normalize-space()='Register']");
 	By signInLink = By.xpath("//a[normalize-space()='Sign in']");
 	By successRegMsg = By.xpath("//div[@role='alert']");
-	By errorMsg = By.xpath("//div[@role='alert']");
+	By errorMsg = By.xpath("//div[@class='alert alert-primary']");
 	By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
 
 	public RegisterPage(WebDriver driver) {
@@ -25,17 +30,18 @@ public class RegisterPage {
 		this.driver = driver;
 
 	}
+
 	public void enterUserName(String userName) {
 		driver.findElement(userTxt).sendKeys(userName);
 	}
+
 	public void enterpassWord(String passWord) {
 		driver.findElement(passwordTxt).sendKeys(passWord);
 	}
+
 	public void enterPasswordConfirmation(String passwordConfirmation) {
 		driver.findElement(confirmPasswrdTxt).sendKeys(passwordConfirmation);
 	}
-
-	
 
 	public void registerBtn() {
 		driver.findElement(registerBtn).click();
@@ -47,7 +53,7 @@ public class RegisterPage {
 	}
 
 	public String getRegisterMsg() {
-		
+
 		String UserRegisterMsg = driver.findElement(successRegMsg).getText();
 		return UserRegisterMsg;
 	}
@@ -55,8 +61,6 @@ public class RegisterPage {
 	public void homeRegisterLink() {
 		driver.findElement(registerLink).click();
 	}
-
-	
 
 	public void clickDsPortalGetStarted() {
 		driver.findElement(btnGetStartedDsPortal).click();
@@ -71,22 +75,27 @@ public class RegisterPage {
 			return driver.findElement(passwordTxt);
 		case "password confirmation":
 			return driver.findElement(confirmPasswrdTxt);
+		case "login":
+			return driver.findElement(errorMsg);
 		default:
-			LoggerFactory.getLogger().info("Invalid fieldName");
+			throw new IllegalArgumentException("Invalid FieldName:" + fieldName);
 
 		}
-		return driver.findElement(errorMsg);
-		
 
 	}
-	
-	/*ela
-	 * public boolean isAtLoginPage() { return
-	 * driver.getCurrentUrl().contains("/login"); }
-	 */
+
+	public String getloginPageUrl() {
+
+		return driver.getCurrentUrl();
+
+	}
+
 	public String getRegisteredUserErrorMsg() {
-		return driver.findElement(errorMsg).getText();
-		
+
+		 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsg));
+	       return element.getText().trim();
+
 	}
 
 	public String getRegisterPageURL() {

@@ -32,3 +32,4 @@ public class Runner extends AbstractTestNGCucumberTests {
         ConfigReader.setBrowserType(browser);
     }
 }
+
