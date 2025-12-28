@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import org.testng.Assert;
 import io.cucumber.java.en.Then;
@@ -22,22 +23,22 @@ public class StackStepDefinitions {
 	}
 	// ---------------- Background ----------------
 	
-	@Given("User clicks the Getting Started button in Stack Panel")
-	public void user_clicks_the_getting_started_button_in_stack_panel() {
+	@Given("User clicks Get Started button from Stack panel")
+	public void user_clicks_get_started_button_from_stack_panel() {
 		stackPage = (StackPage) homePage.clickGetStartedButtonOfGivenDsType("Stack");		
 	}
 
-	@Given("User is on {string} page")
-	public void user_is_on_stack_page(String panelName) {
-		Assert.assertTrue(stackPage.isOnStackPage(), "User is not on Stack page");
-	}
 	// ---------------- Non Functional -------------------------------------
 
-	@Then("user should see {string} header for Stack page")
-	public void user_should_see_header_for_stack_page(String expectedHeader) {
-		Assert.assertEquals(stackPage.getPageHeader(), expectedHeader);
+	@Then("User should see Stack header for Stack page")
+	public void user_should_see_stack_header_for_stack_page() {		
+		Assert.assertTrue(stackPage.isStackHeaderVisible());
 	}
-
+	 @Then("User should see Topics Covered header for Stack page")
+	    public void user_should_see_topics_covered_header_for_stack_page() {
+		 Assert.assertTrue(stackPage.isTopicsCoveredHeaderForStackVisible());
+	    }
+/*
 	@Then("user should see {string} link of Stack page")
 	public void user_should_see_link_of_stack_page(String topicName) {
 		switch (topicName) {
@@ -56,19 +57,18 @@ public class StackStepDefinitions {
 		}
 	}
 
-	@Then("user should see {string} header of the respective Stack page")
-	public void user_should_see_header_of_the_respective_stack_page(String header) {
-		Assert.assertEquals(stackPage.getTopicsCoveredHeader(), header);
-	}
+ */
+	
+	  @Then("User should see try here button on the Stack page")
+	    public void user_should_see_try_here_button_on_the_stack_page() {
+	        Assert.assertTrue(stackPage.isTryHereVisible());
+	    }
 
-	@Then("User should see {string} button on the Stack page")
-	public void user_should_see_try_here_button_on_the_stack_page() {
-		Assert.assertTrue(stackPage.isTryHereVisible(), "Try Here button not visible");
-	}
+	
 
 	// ---------------- Functional ---------------------------------------
 
-	@When("user clicks {string} link on the Stack page")
+	@When("User clicks {string} link on the Stack page")
 	public void user_clicks_link_on_the_stack_page(String topicName) {
 		switch (topicName) {
 		case "Operations in Stack":
@@ -84,10 +84,46 @@ public class StackStepDefinitions {
 			throw new RuntimeException("Topic not found: " + topicName);
 		}
 	}
-
-	@Then("user should be directed to {string} page of Stack page")
+	
+	
+	@Then("User should be directed to {string} page of Stack page")
 	public void user_should_be_directed_to_page_of_stack_page(String expectedPage) {
 		String currentURL = driver.getCurrentUrl();
 		Assert.assertTrue(currentURL.contains("tryEditor"));
 	}
+
+    @When("User clicks Try Here button in the respective Stack page")
+    public void userClicksTryHereButtonInTheRespectiveStackPage() {
+        stackPage.clickTryHereInStackLinkPage();
+    }
+    @Then("User should be redirected to try Editor page")
+    public void user_should_be_redirected_to_try_editor_page() {
+        String currentURL = driver.getCurrentUrl();
+        Assert.assertTrue(currentURL.contains("tryEditor"));
+    }
+
+    @Then("User should see {string} link of Stack page")
+    public void userShouldSeeLinkOfStackPage(String topicName) {
+        switch (topicName) {
+            case "Operations in Stack":
+                Assert.assertTrue(stackPage.isOperationsInStackDisplayed(),
+                        topicName + " link is NOT visible on Stack page");
+                break;
+            case "Implementation":
+                Assert.assertTrue(stackPage.isImplementationDisplayed(), topicName + " link is NOT visible on Stack page");
+                break;
+            case "Applications":
+                Assert.assertTrue(stackPage.IsApplicationsDisplayed(), topicName + " link is NOT visible on Stack page");
+                break;
+            default:
+                throw new RuntimeException("Topic not found: " + topicName);
+        }
+    }
+
+   
+    @Then("User should see {string} header of the respective Stack page")
+    public void userShouldSeeHeaderOfTheRespectiveStackPage(String expectedStackLinkHeader) {
+    	String actualHeader = stackPage.getTopicHeader();
+        Assert.assertEquals(actualHeader, expectedStackLinkHeader, "Header text mismatch");
+    }
 }

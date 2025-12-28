@@ -7,14 +7,15 @@ public class StackPage {
 	
 	WebDriver driver;	
 	
-	By pageHeader=By.tagName("h4");
-	By topicsCoveredHeader = By.xpath("//p[text()='Topics Covered']");
+	By pageHeader=By.xpath("//h4[normalize-space()='Stack']");
+	By topicsCoveredHeader = By.xpath("//p[@class='bg-secondary text-white']");
 	By operationstack=By.xpath("//a[contains(text(),'Operations in Stack')]");
 	By implementation=By.xpath("//a[contains(text(),'Implementation')]");
 	By applications=By.xpath("//a[contains(text(),'Applications')]");
 	By pracquest=By.xpath("//a[contains(text(),'Practice Questions')]");
 	By tryHereBtn=By.xpath ("//a[text()='Try here>>>']");
-
+	By btnTryHereStackLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+	
 	// Constructor
 		public StackPage(WebDriver driver)
 	    {
@@ -26,15 +27,17 @@ public class StackPage {
 	       // return driver.getCurrentUrl().contains("stack");
 	        return driver.getTitle().equalsIgnoreCase("stack");
 	    }
-
-	    public String getPageHeader() {
-	        return driver.findElement(pageHeader).getText();
-	    }
-
-	    public String getTopicsCoveredHeader() {
-	        return driver.findElement(topicsCoveredHeader).getText();
-	    }
-
+	    
+	    public boolean isStackHeaderVisible() {
+			
+			  return driver.findElement(pageHeader).isDisplayed();
+		}
+	    
+	    public boolean isTopicsCoveredHeaderForStackVisible() {
+	    	
+	    	return driver.findElement(topicsCoveredHeader).isDisplayed();
+		}
+	   
 	    public boolean isTryHereVisible() {
 	        return driver.findElement(tryHereBtn).isDisplayed();
 	    }
@@ -62,7 +65,6 @@ public class StackPage {
 
 // ================== Actions ===========================================================
 
-		   
 		void clickStack()
 		{
 			driver.findElement(pageHeader).click();
@@ -90,9 +92,16 @@ public class StackPage {
 		    }
 
 		public String getStackPageURL() {
-			// TODO Auto-generated method stub
-			return null;
+			return driver.getCurrentUrl();
 		}
+
+		public void clickTryHereInStackLinkPage() {
+			driver.findElement(btnTryHereStackLinkPage).click();
+		}
+
+		
+
+		
 		
 }
 

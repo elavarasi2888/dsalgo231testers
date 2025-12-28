@@ -109,8 +109,7 @@ public class ArrayPage {
     }
 
 	public String getArrayPageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return driver.getCurrentUrl();
 	}
 
        

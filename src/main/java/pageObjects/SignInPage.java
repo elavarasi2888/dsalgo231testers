@@ -135,7 +135,7 @@ public class SignInPage {
 	}
 
 	public String getSignInPageURL() {
-		  return "https://dsalgoportal.com/signin";
+		return driver.getCurrentUrl();
 		
 	}
 }

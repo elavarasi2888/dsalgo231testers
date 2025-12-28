@@ -12,9 +12,9 @@ import pageObjects.TreePage;
 
 public class TreeStepDefinitions {
 
-    WebDriver driver;
-    HomePage homePage;
-    TreePage treePage;
+    private WebDriver driver;
+    private HomePage homePage;
+    private TreePage treePage;
 
     public TreeStepDefinitions() {
         driver = DriverManager.getDriver();

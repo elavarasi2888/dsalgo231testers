@@ -16,18 +16,12 @@ import utils.ConfigReader;
 
 public class Hooks {
 
-    Properties prop;
-    ConfigReader configReader;
-    String browser;
-    WebDriver driver;
-    
-    @Before
-    public void setUp() {
-       DriverManager.getDriver();
-    	// DriverManager.initDriver();  
-    }
+    private Properties prop;
+    private ConfigReader configReader;
+    private String browser;
+    private WebDriver driver;
 
-    @Before("@DsAlgoPortal or @HomePage or @Register or @SignInPage or @HomePageSignIn")
+    @Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
     public void beforeScenario() throws IOException {
         configReader = new ConfigReader();
         prop = configReader.loadProperties();
@@ -42,7 +36,7 @@ public class Hooks {
     }
 
     @Before("@DataStructure")
-    public void preStep() throws IOException {
+    public void preStep() throws IOException, InterruptedException {
         configReader = new ConfigReader();
         prop = configReader.loadProperties();
 
@@ -62,15 +56,28 @@ public class Hooks {
         SignInPage signInPage = homePage.clickSignInLink();
         String username = "dsalgo231";
         String password = "automation2025#";
-        homePage = signInPage.login(username,password);
+        homePage = signInPage.login(username, password);
+    }
+
+    @Before("@TryEditor")
+    public void tryEditorpPreStep() {
+        configReader = new ConfigReader();
+        prop = configReader.loadProperties();
+
+        if (ConfigReader.getBrowserType() != null) {
+            browser = ConfigReader.getBrowserType();
+        } else {
+            browser = prop.getProperty("browser");
+        }
+
+        driver = DriverManager.initBrowser(browser);
     }
 
     @After
     public void tearDown() {
-    	if (DriverManager.getDriver() != null) {
+        if (DriverManager.getDriver() != null) {
             DriverManager.getDriver().quit();
         }
-       // DriverManager.getDriver().quit();
         LoggerFactory.getLogger().info("DONE tearDown()..");
     }
 }
