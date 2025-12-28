@@ -5,7 +5,7 @@ Feature: Stack test cases
     Given User is at the Home page after sign-in
     Given User clicks Get Started button from Stack panel
 
-# non functional test cases
+# Stack non functional test cases
 
   Scenario: Verify that user is able to see the Stack header
     Then User should see Stack header for Stack page
@@ -42,7 +42,7 @@ Feature: Stack test cases
       | Implementation      |
       | Applications        |
       
-# functional test cases
+# Stack functional test cases
 
   Scenario Outline: Verify user is able to navigate to respective Stack page
     When User clicks "<Stack topics>" link on the Stack page
@@ -50,9 +50,9 @@ Feature: Stack test cases
 
     Examples:
       | Stack topics        | topics in the stack page |
-      | Operations in Stack | Operations in Stack      |
-      | Implementation      | Implementation           |
-      | Applications        | Applications             |
+      | Operations in Stack | operations-in-stack      |
+      | Implementation      | implementation           |
+      | Applications        | stack-applications             |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<Stack topics>" link on the Stack page

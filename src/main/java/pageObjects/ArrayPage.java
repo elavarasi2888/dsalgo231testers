@@ -6,116 +6,58 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-
 public class ArrayPage {
-	WebDriver driver;
-	//WebElement arrayPageHeading;
-	//WebElement arrayHeader;
-	
-	// ================== By Locators ==================
-   
-    //By tryHereButton = By.xpath("//a[contains(text(),'Try here')]");
-    //By allLinks = By.tagName("a");	    
-   //	By arraylink=By.linkText("Array");
-	
-	By pageHeader = By.xpath("//h4[text()='Array']"); 
-	By tryHereButton=By.xpath ("//a[text()='Try here>>>']]");
-	By topicsCoveredHeader = By.xpath("//p[contains(text(),'Topics Covered')]"); 
-	 By arraysInPython = By.xpath("//a[contains(text(),'Arrays in Python')]");
-	 By arraysUsingList = By.xpath("//a[contains(text(),'Arrays Using List')]");
-	  By arraysBasicOperationInList = By.xpath("//a[contains(text(),'Basic Operations in Lists')]");
-	  By arraysApplicationOfArray = By.xpath("//a[contains(text(),'Applications of Array')]");
-	
-	     
-	// Constructor
-	public ArrayPage(WebDriver driver)
-    {
+
+    private WebDriver driver;
+
+    private By headerArray = By.xpath("//h4[normalize-space()='Array']");
+    private By headerTopicsCoveredArray = By.xpath("//p[@class='bg-secondary text-white']");
+    private By headerArrayLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
+    private By lnkArrayLinks = By.xpath("//a[@class='list-group-item']");
+    private By btnTryHereArrayLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+
+    // Constructor
+    public ArrayPage(WebDriver driver) {
         this.driver = driver;
     }
-	
-	// ================== Page Validations ==================
 
-    public boolean isOnArrayPage() {
-        return driver.getTitle().equalsIgnoreCase("Array");
+    public boolean isArrayHeaderVisible() {
+        return driver.findElement(headerArray).isDisplayed();
     }
 
-    public boolean isHeaderVisible() {
-        return driver.findElement(pageHeader).isDisplayed();
+    public boolean isTopicsCoveredHeaderForArrayVisible() {
+        return driver.findElement(headerTopicsCoveredArray).isDisplayed();
     }
 
-    public String getHeaderText() {
-        return driver.findElement(pageHeader).getText();
-    }
-
-    public boolean isTopicsCoveredHeaderVisible() {
-        return driver.findElement(topicsCoveredHeader).isDisplayed();
-    }
-    
-    public String getTopicsCoveredHeaderText() {
-        return driver.findElement(topicsCoveredHeader).getText();
+    public String getArrayLinksTopicHeader() {
+        return driver.findElement(headerArrayLinkTopic).getText();
     }
 
     public boolean isTryHereButtonVisible() {
-        return driver.findElement(tryHereButton).isDisplayed();
-    }
-    public boolean isArraysInPythonDisplayed() {
-        return driver.findElement(arraysInPython).isDisplayed();
+        return driver.findElement(btnTryHereArrayLinkPage).isDisplayed();
     }
 
-    public boolean isArraysUsingListDisplayed() {
-        return driver.findElement(arraysUsingList).isDisplayed();
+    public boolean isArrayLinkVisible(String arrayTopicLink) {
+        List<WebElement> arrayLinks = driver.findElements(lnkArrayLinks);
+
+        for (WebElement a : arrayLinks) {
+            if (a.getText().equals(arrayTopicLink))
+                return true;
+        }
+        return false;
     }
 
-    public boolean isBasicOperationsInListDisplayed() {
-        return driver.findElement(arraysBasicOperationInList).isDisplayed();
+    public void clickArrayTopicLink(String arrayTopicLink) {
+        By linkPath = By.xpath("//a[text() = '" + arrayTopicLink + "']");
+        driver.findElement(linkPath).click();
     }
 
-    public boolean isApplicationsOfArrayDisplayed() {
-        return driver.findElement(arraysApplicationOfArray).isDisplayed();
-    }
-   
-    public boolean isCurrentURLContains(String value) {
-        return driver.getCurrentUrl().contains(value);
+    public String getArrayPageURL() {
+        return driver.getCurrentUrl();
     }
 
- // ================== Actions ==================
-
-   
-   
-    public void clickArraysInPython() {
-        driver.findElement(arraysInPython).click();
-        clickTryHereButton();
+    public void clickTryHereInArrayLinkPage() {
+        driver.findElement(btnTryHereArrayLinkPage).click();
     }
 
-    public void clickArraysUsingList() {
-        driver.findElement(arraysUsingList).click();
-        clickTryHereButton();
-        
-    }
-
-    public void clickBasicOperationsInList() {
-        driver.findElement(arraysBasicOperationInList).click();
-        clickTryHereButton();
-    }
-
-    public void clickApplicationsOfArray() {
-        driver.findElement(arraysApplicationOfArray).click();
-        clickTryHereButton();
-    }
-
-    public void clickTryHereButton() {
-        driver.findElement(tryHereButton).click();
-    }
-
-	public String getArrayPageURL() {
-		return driver.getCurrentUrl();
-	}
-
-       
-}	
-	
-	
-
-
-
+}

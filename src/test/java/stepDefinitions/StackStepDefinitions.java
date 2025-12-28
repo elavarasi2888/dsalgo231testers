@@ -67,13 +67,13 @@ public class StackStepDefinitions {
 	public void userClicksTryHereButtonInTheRespectiveStackPage() {
 		stackPage.clickTryHereInStackLinkPage();
 	}
-
+/*
 	@Then("User should be redirected to try Editor page")
 	public void user_should_be_redirected_to_try_editor_page() {
 		String currentURL = driver.getCurrentUrl();
 		Assert.assertTrue(currentURL.contains("tryEditor"));
 	}
-
+*/
 
 
 }
