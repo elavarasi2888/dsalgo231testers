@@ -22,6 +22,7 @@ public class HomePage {
     private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
     private By msgUserLoggedIn = By.xpath("//div[@role='alert']");
     private By lblSignedInUser = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
+    private WebDriverWait wait;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -102,13 +103,13 @@ public class HomePage {
         String dataStructurePageName = dsPage.trim().toLowerCase();
 
         switch (dataStructurePageName) {
-            case "data-structures-introduction":
+            case "data structures-introduction":
                 pageObject = new DataStructurePage(driver);
                 break;
             case "array":
                 pageObject = new ArrayPage(driver);
                 break;
-            case "linked-list":
+            case "linked list":
                 pageObject = new LinkedListPage(driver);
                 break;
             case "stack":
@@ -155,7 +156,7 @@ public class HomePage {
             return false;
         }
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         String userNameCapitalizeFirstLetter = userName.trim().substring(0, 1).toUpperCase() + userName.trim().substring(1);
         By lblSignedInUserName = By.xpath("//a[normalize-space()='" + userNameCapitalizeFirstLetter + "']");
 

@@ -17,17 +17,17 @@ import utils.BrowserOptions;
     private static final BrowserOptions browserOptions = new BrowserOptions();
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-    public static ChromeOptions co = browserOptions.chromeOption();
-    public static EdgeOptions ed = browserOptions.edgeOption();
-    public static FirefoxOptions fo = browserOptions.firefoxOption();
+    private static ChromeOptions co = browserOptions.chromeOption();
+    private static EdgeOptions ed = browserOptions.edgeOption();
+    private static FirefoxOptions fo = browserOptions.firefoxOption();
 
     public static WebDriver initBrowser(String browser) {
         LoggerFactory.getLogger().info("In initBrowser(), browser value - {}", browser);
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.trim().equalsIgnoreCase("chrome")) {
             driver.set(new ChromeDriver(co));
-        } else if (browser.equalsIgnoreCase("edge")) {
+        } else if (browser.trim().equalsIgnoreCase("edge")) {
             driver.set(new EdgeDriver(ed));
-        } else if (browser.equalsIgnoreCase("firefox")) {
+        } else if (browser.trim().equalsIgnoreCase("firefox")) {
             driver.set(new FirefoxDriver(fo));
         }
 

@@ -14,6 +14,7 @@ public class DsAlgoPortalPage {
     private By lblDsPortalHeading = By.xpath("//h1[normalize-space()='Preparing for the Interviews']");
     private By lblDsPortalParagraph = By.xpath("//p[normalize-space()='You are at the right place']");
     private By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
+    private WebDriverWait wait;
 
     public DsAlgoPortalPage(WebDriver driver) {
         this.driver = driver;
@@ -32,7 +33,7 @@ public class DsAlgoPortalPage {
     }
 
     public HomePage clickDsPortalGetStarted() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(btnGetStartedDsPortal)).click();
         return new HomePage(driver);
     }
