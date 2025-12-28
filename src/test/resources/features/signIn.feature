@@ -6,7 +6,7 @@ Feature: Sign in functionality of DS Algo
     Given User enters the correct DS Algo portal URL
     Given User clicks the Get Started button on DS Algo portal page
     Given User clicks on the Sign in link in the home page
-    Given User is on Sign in Page
+   
     
 # non functional test case------------------------------------
 

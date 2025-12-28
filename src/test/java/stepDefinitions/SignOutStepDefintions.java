@@ -12,7 +12,7 @@ import pageObjects.SignInPage;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 
-public class SignOutSteps {
+public class SignOutStepDefintions {
 	 HomePage homePage = new HomePage(DriverManager.getDriver());
 
 	    SignInPage signInPage = new SignInPage(DriverManager.getDriver());
