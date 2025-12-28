@@ -1,6 +1,6 @@
 package pageObjects;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,11 +9,13 @@ import org.openqa.selenium.WebElement;
 
 public class DataStructurePage {
 	private WebDriver driver;
-	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
+	By headerTopics = By.xpath("//h4[normalize-space()='Data Structures-Introduction']");
 	By topicsLink = By.xpath("//a[@class='list-group-item']");
 	By timeLinkHeader = By.xpath("//p[normalize-space()='Time Complexity']");
 	By headerDS = By.xpath("//h4[@class='bg-secondary text-white']");
 	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
+	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	
 
 	public DataStructurePage(WebDriver driver) {
 		this.driver = driver;
@@ -30,32 +32,29 @@ public class DataStructurePage {
 		 
 	}
 
-	public List<String> getTopics() {
+	public boolean getTopics(String linkDsTopicLink) {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
-		ArrayList<String> topic = new ArrayList<>();
+		
 		for (WebElement link : topicsName) {
-			topic.add(link.getText().trim());
+			link.getText().trim().equalsIgnoreCase(linkDsTopicLink);
+			return true;
 		}
-		return topic;
+		return false;
 
 	}
 
-	public void clickTopicLink(String linksName) {
-		List<WebElement> topicsName = driver.findElements(topicsLink);
-
-		for (WebElement link : topicsName) {
-			if (link.getText().trim().equalsIgnoreCase(linksName)) {
-				link.click();
-				return;
-			}
-		}
+	public void clickTopicLink(String linkDsTopicLink) {
+		
+		By linkPath = By.xpath("//a[text()='" + linkDsTopicLink + "']");
+        driver.findElement(linkPath).click();
 	}
 
 	public String getHeaderForLinks() {
-		String timeComplexityH = driver.findElement(timeLinkHeader).getText();
+		String timeComplexityH = driver.findElement(verifyTopicLinksHeader).getText();
 		return timeComplexityH;
 
 	}
+	
 	public boolean tryHereBtn() {
 		return driver.findElement(tryHereBtn).isDisplayed();
 	

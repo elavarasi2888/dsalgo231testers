@@ -28,12 +28,13 @@ public class LinkedListStepDefinition {
 		linkedListPage = (LinkedListPage) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in LinkedList panel");
 	}
-
-	@Then("User should see the Linked List page header for Linkedlist page")
-	public void user_should_see_the_linked_list_page_header_for_linkedlist_page() {
+	@Then("User should see Linked List header for Linkedlist page")
+	public void user_should_see_linked_list_header_for_linkedlist_page() {
 		Assert.assertTrue(linkedListPage.HeaderTitleVisisble());
 		LoggerFactory.getLogger().info("User see the Linked List Header");
 	}
+
+	
 
 	@Then("User should see Topics Covered having link for Linked List page")
 	public void user_should_see_topics_covered_having_link_for_linked_list_page() {
@@ -42,8 +43,8 @@ public class LinkedListStepDefinition {
 	}
 
 	@Then("User should see {string} link of Linked List page")
-	public void user_should_see_link_of_linked_list_page(String expectedTopics) {
-		Assert.assertTrue(linkedListPage.TopicsLinkelistVisible().contains(expectedTopics));
+	public void user_should_see_link_of_linked_list_page(String string) {
+		Assert.assertTrue(linkedListPage.TopicsLinkelistVisible(string));
 		LoggerFactory.getLogger().info("User Can see Topics Covered For LinkedList");
 	}
 
@@ -73,7 +74,7 @@ public class LinkedListStepDefinition {
 
 	@Then("User should be redirected to {string} of linklist page")
 	public void user_should_be_redirected_to_of_linklist_page(String linklistTopicPage) {
-		Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains(linklistTopicPage));
+		Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains(linklistTopicPage.toLowerCase()));
 		LoggerFactory.getLogger().info("User verified the Url");
 	}
 

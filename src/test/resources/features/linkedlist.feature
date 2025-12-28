@@ -59,12 +59,12 @@ Feature: Linklist Functionality
     Examples:
       | linklist_topics                 | linklist_topics_page            |
       | Introduction                    | introduction                    |
-      | Creating Linked LIst            | creating-linked-lIst            |
+      | Creating Linked LIst            | creating-linked-list            |
       | Types of Linked List            | types-of-linked-list            |
-      | Implement Linked List in Python | implement-linked-list-in-Python |
+      | Implement Linked List in Python | implement-linked-list-in-python |
       | Traversal                       | traversal                       |
-      | Insertion                       | insertion                       |
-      | Deletion                        | deletion                        |
+      | Insertion                       | insertion-in-linked-list        |
+      | Deletion                        | deletion-in-linked-list         |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<linklist_topics>" link on the linklist page

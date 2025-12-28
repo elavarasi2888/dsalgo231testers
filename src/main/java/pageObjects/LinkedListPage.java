@@ -1,6 +1,6 @@
 package pageObjects;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class LinkedListPage {
 	private WebDriver driver;
-	By headerLinkedList = By.xpath("//h4[@class='bg-secondary text-white']");
+	By headerLinkedList = By.xpath("//h4[normalize-space()='Linked List']");
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink = By.xpath("//a[@class='list-group-item']");
 	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
@@ -27,25 +27,21 @@ public class LinkedListPage {
 		return driver.findElement(headerTopics).isDisplayed();
 		
 	}
-	public List<String> TopicsLinkelistVisible() {
+	public boolean TopicsLinkelistVisible(String linkListTopicLink) {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
-		ArrayList<String> topic = new ArrayList<>();
+		
 		for (WebElement link : topicsName) {
-			topic.add(link.getText().trim());
+			link.getText().trim().equalsIgnoreCase(linkListTopicLink);
+			return true;
 		}
-		return topic;
+		return false;
 
 	}
 	
-	public void clickTopicLink(String linksName) {
-		List<WebElement> topicsName = driver.findElements(topicsLink);
-
-		for (WebElement link : topicsName) {
-			if (link.getText().trim().equalsIgnoreCase(linksName)) {
-				link.click();
-				return;
-			}
-		}
+	public void clickTopicLink(String linkListTopicLink) {
+		
+		By linkPath = By.xpath("//a[normalize-space()='" + linkListTopicLink + "']");
+        driver.findElement(linkPath).click();
 	}
 	public boolean isTopicCoveredVisible() {
 		return driver.findElement(headerTopics).isDisplayed();

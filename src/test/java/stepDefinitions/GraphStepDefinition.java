@@ -33,7 +33,7 @@ public class GraphStepDefinition {
 	}
 
 	@Then("User should see Graph header for Graph page")
-	public void user_should_see_graph_header_for_graph_page(String expectedHeader) {
+	public void user_should_see_graph_header_for_graph_page() {
 
 		Assert.assertTrue(graphPage.HeaderTitleVisible());
 		LoggerFactory.getLogger().info("User see the Graph Header");

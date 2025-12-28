@@ -92,9 +92,10 @@ public class RegisterPage {
 
 	public String getRegisteredUserErrorMsg() {
 
-		 WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-	       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsg));
-	       return element.getText().trim();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebElement element = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'alert')]")));
+		return element.getText().trim();
 
 	}
 

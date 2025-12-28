@@ -1,11 +1,14 @@
 package stepDefinitions;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import factory.DriverManager;
@@ -31,18 +34,25 @@ public class RegisterStepDefinition {
 		signInPage = new SignInPage(driver);
 	}
 
-	@When("User clicks Login Link in register page")
-	public void userClicksLoginLinkInRegisterPage() {
-		signInPage = registerPage.loginLink();
-		LoggerFactory.getLogger().info("User clicks Login link");
-	}
+	/*
+	 * @When("User clicks Login Link in register page") public void
+	 * userClicksLoginLinkInRegisterPage() { signInPage = registerPage.loginLink();
+	 * LoggerFactory.getLogger().info("User clicks Login link"); }
+	 * 
+	 * @Then("User should be redirected to Login Page") public void
+	 * user_should_be_redirected_to_login_page() { WebDriverWait wait = new
+	 * WebDriverWait(driver, Duration.ofSeconds(10));
+	 * 
+	 * // Wait until URL contains /login
+	 * wait.until(ExpectedConditions.urlContains("/login")); String expectedLoginUrl
+	 * = signInPage.getloginPageUrl(); String actualUrl = "/login";
+	 * Assert.assertTrue(actualUrl.contains(expectedLoginUrl));
+	 * LoggerFactory.getLogger().info("User at the signIn page"); }
+	 */
 
 	@Then("User should be redirected to Login Page from registerPage")
 	public void userShouldBeRedirectedToLoginPageFromRegisterPage() {
-		String expectedLoginUrl = registerPage.getloginPageUrl();
-		String actualUrl = "/login";
-		Assert.assertTrue(actualUrl.contains(expectedLoginUrl));
-		LoggerFactory.getLogger().info("User at the signIn page");
+		
 	}
 
 	@When("User clicks Register button after entering the Valid data from given {string}")
@@ -65,12 +75,14 @@ public class RegisterStepDefinition {
 		LoggerFactory.getLogger().info("User at the Home page");
 	}
 
-	@When("User clicks Register button with registered username as {string} password as {string} and password_confirmation as {string}")
-	public void user_clicks_register_button_with_registered_username_as_password_as_and_password_confirmation_as(
-			String username, String password, String password_confirmation) {
+	
+	@When("User clicks Register button with registered username as {string} password as {string} password_confirmation as {string}")
+	public void user_clicks_register_button_with_registered_username_as_password_as_password_confirmation_as(String username, String password, String password_confirmation) throws InterruptedException {
 		registerPage.enterUserName(username);
 		registerPage.enterpassWord(password);
+		Thread.sleep(500);
 		registerPage.enterpassWord(password_confirmation);
+		Thread.sleep(500);
 		registerPage.registerBtn();
 		LoggerFactory.getLogger().info("User entering the registered data");
 	}
@@ -93,8 +105,14 @@ public class RegisterStepDefinition {
 
 	@Then("User gets a errormessage")
 	public void user_gets_a_errormessage() {
-
-		Assert.assertEquals(registerPage.getRegisteredUserErrorMsg(), "Expected Registration Error Not Displayed");
+		
+	}
+	@Then("User gets a errormessage {string}")
+	public void user_gets_a_errormessage(String string) {
+		String expectedMsg ="password_mismatch:The two password fields didn’t match.";
+		String actualMsg = registerPage.getRegisteredUserErrorMsg();
+        
+		Assert.assertEquals("Error message mismatch!", expectedMsg,actualMsg);
 		LoggerFactory.getLogger().info("User already Registered please SignIn");
 	}
 

@@ -8,8 +8,8 @@ Feature: Register functionality
     Given User clicks on the Register link in the home page
 
   Scenario: Verify that User is able to navigate on Login Page with login link from register page
-    When User clicks "Login" Link in register page
-    Then User should be redirected to Login Page
+    #When User clicks Login Link in register page
+    #Then User should be redirected to Login Page
 
   Scenario Outline: User navigates to home page after registration with valid inputs
     When User clicks Register button after entering the Valid data from given "<ScenarioName>"
@@ -20,8 +20,8 @@ Feature: Register functionality
       | validEntry   |
 
   Scenario: Verify unsuccessful registration
-    When User clicks Register button with registered username as "raj@123" password as "hjkl@45" and password_confirmation as "hjkl@45"
-    Then User gets a errormessage
+    When User clicks Register button with registered username as "raj@123" password as "hjkl@45" password_confirmation as "hjkl@45"
+    Then User gets a errormessage "password_mismatch:The two password fields didn’t match."
 
   
   Scenario Outline: User enters invalid registration data

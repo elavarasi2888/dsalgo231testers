@@ -31,8 +31,8 @@ public class DataStructureStepDefinition {
 	
 	@Given("User clicks Get Started button of Data Structures-Introduction panel")
 	public void user_clicks_get_started_button_of_data_structures_introduction_panel() {
-		String xyz ="Data Structures-Introduction";
-		dataStructurePage = (DataStructurePage)homePage.clickGetStartedButtonOfGivenDsType(xyz.trim());
+		//String xyz ="Data Structures-Introduction";
+		dataStructurePage = (DataStructurePage)homePage.clickGetStartedButtonOfGivenDsType("Data Structures-Introduction");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in DS-introduction panel");
 	}
 
@@ -52,8 +52,8 @@ public class DataStructureStepDefinition {
 	}
 
 	@Then("User should see {string} link of Data Structure page")
-	public void user_should_see_link_of_data_structure_page(String expectedTopics) {
-		Assert.assertTrue(dataStructurePage.getTopics().contains(expectedTopics));
+	public void user_should_see_link_of_data_structure_page(String string) {
+		Assert.assertTrue(dataStructurePage.getTopics(string));
 		LoggerFactory.getLogger().info("User Can see Time Complexity Link in Ds-introduction page");
 	}
 
@@ -91,7 +91,7 @@ public class DataStructureStepDefinition {
 	@Then("User should be redirected to {string} of DataStructure page")
 	public void user_should_be_redirected_to_of_data_structure_page(String dSTopicPage) {
 		
-		Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains(dSTopicPage));
+		Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains(dSTopicPage.toLowerCase()));
 		LoggerFactory.getLogger().info("User verified the Url");
 	}
 

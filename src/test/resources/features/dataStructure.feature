@@ -48,5 +48,5 @@ Feature: DataStruction Functionality
     Then User should be redirected to try Editor page
 
     Examples:
-      | Graph_topics    |
-      | time-complexity |
+      | DS_topics       |
+      | Time Complexity |

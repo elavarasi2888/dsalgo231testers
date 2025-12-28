@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class GraphPage {
 	private WebDriver driver;
-	By headerGraph = By.xpath("//h4[@class='bg-secondary text-white']");
+	By headerGraph = By.xpath("//h4[normalize-space()='Graph']");
 	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
 	By topicsLink  = By.xpath("//a[@class='list-group-item']");
 	By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
