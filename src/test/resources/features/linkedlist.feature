@@ -69,7 +69,7 @@ Feature: Linklist Functionality
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<linklist_topics>" link on the linklist page
     When User clicks Try Here button in the respective linklist page
-    Then User should be redirected to try Editor page
+    Then User should be redirected to try Editor page for respective linklist page
 
     Examples:
       | linklist_topics                 |

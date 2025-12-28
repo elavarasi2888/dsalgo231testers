@@ -10,24 +10,24 @@ import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.DataStructure;
+import pageObjects.DataStructurePage;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
 import pageObjects.QueuePage;
 
-public class GraphStepDef {
+public class GraphStepDefinition {
 	HomePage homePage;
 	GraphPage graphPage;
 	WebDriver driver;
 
-	public GraphStepDef() {
+	public GraphStepDefinition() {
 		driver = DriverManager.getDriver();
 		graphPage = new GraphPage(driver);
 	}
 
 	@Given("User clicks the Getting Started button in Graph Panel")
 	public void user_clicks_the_getting_started_button_in_graph_panel() {
-		graphPage = (GraphPage) homePage.clickGetStartedButtonOfGivenDsType("Queue");
+		graphPage = (GraphPage) homePage.clickGetStartedButtonOfGivenDsType("Graph");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in Graph panel");
 	}
 
@@ -91,12 +91,14 @@ public class GraphStepDef {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	@Then("User should be redirected to try Editor page")
-	public void user_should_be_redirected_to_try_editor_page() {
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertTrue(currentURL.contains("tryEditor"));
-		LoggerFactory.getLogger().info("User should be redirected to try Editor page");
-
-	}
+	/*
+	 * @Then("User should be redirected to try Editor page for respective Graph page"
+	 * ) public void
+	 * user_should_be_redirected_to_try_editor_page_for_respective_graph_page() {
+	 * String currentURL = driver.getCurrentUrl();
+	 * Assert.assertTrue(currentURL.contains("tryEditor"));
+	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
+	 * ); }
+	 */
 
 }

@@ -20,7 +20,7 @@ import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utils.ExcelReader;
 
-public class RegisterStepDef {
+public class RegisterStepDefinition {
 
 	WebDriver driver;
 	RegisterPage registerPage;
@@ -28,23 +28,25 @@ public class RegisterStepDef {
 	HomePage homePage;
 	
 
-	public RegisterStepDef() {
+	public RegisterStepDefinition() {
 		driver = DriverManager.getDriver();
 		registerPage = new RegisterPage(driver);
 	}
 	
-	@Given("User clicks on the Register link in the home page")
-	public void user_clicks_on_the_register_link_in_the_home_page() {
-		registerPage = homePage.clickRegisterLink();
-	}
+	/*
+	 * @Given("User clicks on the Register link in the home page") public void
+	 * user_clicks_on_the_register_link_in_the_home_page() { registerPage =
+	 * homePage.clickRegisterLink(); }
+	 */
 
-	@Given("User is at the Register page")
-	public void user_is_at_the_register_page() {
-		    String actualRegisterPageUrl = registerPage.getRegisterPageURL();
-	        String expectedUrlPart = "/register"; //keep this in constant class inside Utils package
-	        Assert.assertTrue(actualRegisterPageUrl.endsWith(expectedUrlPart));
-	        LoggerFactory.getLogger().info("User At the Register page");
-	}
+	/*
+	 * @Given("User is at the Register page") public void
+	 * user_is_at_the_register_page() { String actualRegisterPageUrl =
+	 * registerPage.getRegisterPageURL(); String expectedUrlPart = "/register";
+	 * //keep this in constant class inside Utils package
+	 * Assert.assertTrue(actualRegisterPageUrl.endsWith(expectedUrlPart));
+	 * LoggerFactory.getLogger().info("User At the Register page"); }
+	 */
 
 	@When("User clicks Register button after entering the Valid data from given {string}")
 	public void user_clicks_register_button_after_entering_the_valid_data_from_given(String ScenarioName) throws IOException {

@@ -10,27 +10,27 @@ import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.DataStructure;
+import pageObjects.DataStructurePage;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
 
-public class DataStructureStepDef {
+public class DataStructureStepDefinition {
 
    HomePage homePage;
-   DataStructure dataStructurePage;
+   DataStructurePage dataStructurePage;
 
 	WebDriver driver;
 
-	public DataStructureStepDef() {
+	public DataStructureStepDefinition() {
 
 		driver = DriverManager.getDriver();
-		dataStructurePage = new DataStructure(driver);
+		dataStructurePage = new DataStructurePage(driver);
 	}
 
 	
 	@Given("User clicks Get Started button of Data Structures-Introduction panel")
 	public void user_clicks_get_started_button_of_data_structures_introduction_panel() {
-		dataStructurePage = (DataStructure) homePage.clickGetStartedButtonOfGivenDsType("Data Structures-Introduction");
+		dataStructurePage = (DataStructurePage) homePage.clickGetStartedButtonOfGivenDsType("Data Structures-Introduction");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in DS-introduction panel");
 	}
 
@@ -105,13 +105,14 @@ public class DataStructureStepDef {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	@Then("User should be redirected to try Editor page")
-	public void user_should_be_redirected_to_try_editor_page() {
-		
-		Assert.assertTrue(driver.getCurrentUrl().contains("tryEditor"));
-		LoggerFactory.getLogger().info("User should be redirected to try Editor page");
-	}
-	
+	/*
+	 * @Then("User should be redirected to try Editor page for respective DataStructure page"
+	 * ) public void
+	 * user_should_be_redirected_to_try_editor_page_for_respective_data_structure_page
+	 * () { Assert.assertTrue(driver.getCurrentUrl().contains("tryEditor"));
+	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
+	 * ); }
+	 */
 
 	
 }
