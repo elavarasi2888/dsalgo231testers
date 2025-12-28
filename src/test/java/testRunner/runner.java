@@ -14,7 +14,9 @@ import java.io.IOException;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"hooks", "stepDefinitions"},
-        tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
+        //tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
+        tags="@Stack",
+        //tags="@Array",
         plugin = {"pretty", "html:reports/cucumber-reports.html"},
         dryRun = false,
         monochrome = true)

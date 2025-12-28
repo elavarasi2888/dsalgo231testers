@@ -1,98 +1,67 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class StackPage {
-	
-	WebDriver driver;	
-	
-	By pageHeader=By.tagName("h4");
-	By topicsCoveredHeader = By.xpath("//p[text()='Topics Covered']");
-	By operationstack=By.xpath("//a[contains(text(),'Operations in Stack')]");
-	By implementation=By.xpath("//a[contains(text(),'Implementation')]");
-	By applications=By.xpath("//a[contains(text(),'Applications')]");
-	By pracquest=By.xpath("//a[contains(text(),'Practice Questions')]");
-	By tryHereBtn=By.xpath ("//a[text()='Try here>>>']");
+
+	private WebDriver driver;
+
+	private By headerStack = By.xpath("//h4[normalize-space()='Stack']");
+	private By headerTopicsCoveredStack = By.xpath("//p[@class='bg-secondary text-white']");
+	private By headerStackLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
+	private By lnkStackLinks = By.xpath("//a[@class='list-group-item']");
+	private By btnTryHereStackLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+	// By pracquest=By.xpath("//a[contains(text(),'Practice Questions')]");
 
 	// Constructor
-		public StackPage(WebDriver driver)
-	    {
-	        this.driver = driver;
-	    }
-		 // ---------------- Actions ----------------
+	public StackPage(WebDriver driver) {
+		this.driver = driver;
+	}
 
-	    public boolean isOnStackPage() {
-	       // return driver.getCurrentUrl().contains("stack");
-	        return driver.getTitle().equalsIgnoreCase("stack");
-	    }
+	public boolean isStackHeaderVisible() {
 
-	    public String getPageHeader() {
-	        return driver.findElement(pageHeader).getText();
-	    }
+		return driver.findElement(headerStack).isDisplayed();
+	}
 
-	    public String getTopicsCoveredHeader() {
-	        return driver.findElement(topicsCoveredHeader).getText();
-	    }
+	public boolean isTopicsCoveredHeaderForStackVisible() {
 
-	    public boolean isTryHereVisible() {
-	        return driver.findElement(tryHereBtn).isDisplayed();
-	    }
+		return driver.findElement(headerTopicsCoveredStack).isDisplayed();
+	}
 
-	    public String getTopicHeader() {
-	        return driver.findElement(pageHeader).getText();
-	    }
+	public boolean isTryHereVisible() {
+		return driver.findElement(btnTryHereStackLinkPage).isDisplayed();
+	}
 
-	    public boolean isUrlContains(String text) {
-	        return driver.getCurrentUrl().contains(text.replace(" ", "").toLowerCase());
-	    }
-	    
-	    public boolean isOperationsInStackDisplayed() {
-	    	return driver.findElement(operationstack).isDisplayed();
+	public boolean isStackLinkVisible(String stackTopicLink) {
+		List<WebElement> stackLinks = driver.findElements(lnkStackLinks);
+
+		for (WebElement s : stackLinks) {
+			if (s.getText().equals(stackTopicLink))
+				return true;
 		}
 
-		public boolean isImplementationDisplayed() {
-		 	return driver.findElement(implementation).isDisplayed();
-		}
+		return false;
+	}
 
-		public boolean IsApplicationsDisplayed() {
-		 	return driver.findElement(applications).isDisplayed();
-		}
-	    
+	public void clickStackTopicLink(String stackTopicLink) {
+		By linkPath = By.xpath("//a[text() = '" + stackTopicLink + "']");
+		driver.findElement(linkPath).click();
+	}
 
-// ================== Actions ===========================================================
+	public String getStackPageURL() {
+		return driver.getCurrentUrl();
+	}
 
-		   
-		void clickStack()
-		{
-			driver.findElement(pageHeader).click();
-		}	
+	public void clickTryHereInStackLinkPage() {
+		driver.findElement(btnTryHereStackLinkPage).click();
+	}
 
-		public void clickOperations()
-		{
-			driver.findElement(operationstack).click();
-			clickTryHere();
-		}
-		public void clickImplementation()
-		{
-			driver.findElement(implementation).click();
-			clickTryHere();
-		}
-		public void clickApplications()
-		{
-			driver.findElement(applications).click();
-			clickTryHere();
-		}		
-		 
-		public void clickTryHere() 
-		 {
-		        driver.findElement(tryHereBtn).click();
-		    }
+	public String getStackLinksTopicHeader() {
+		return driver.findElement(headerStackLinkTopic).getText();
+	}
 
-		public String getStackPageURL() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
 }
-

@@ -1,55 +1,35 @@
 package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
-import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
-import utils.ConfigReader;
-import utils.ExcelReader;
 import utils.ExcelReader1;
 
-public class SignInSteps {
+public class SignInStepDefintions {
 	HomePage homePage;
 	SignInPage signinpage;
 	WebDriver driver;
 
-	public SignInSteps() {
+	public SignInStepDefintions() {
 		driver = DriverManager.getDriver();
 		signinpage = new SignInPage(driver);
 		homePage = new HomePage(driver);
 
 	}
-	@Given("User clicks on the Sign in link in the home page")
-	public void user_clicks_on_the_sign_in_link_in_the_home_page() {
-		  WebElement signInLink = driver.findElement(By.xpath("//a[normalize-space()='Sign in']"));
-	        signInLink.click();
-	}
-	@Given("User is on Sign in Page")
-	public void user_is_on_sign_in_page() {
-		 String pageTitle = driver.getTitle();
-	        Assert.assertTrue(pageTitle.contains("Sign in"), "User is not on Sign in page");
-		//Assert.assertTrue(signinpage.isLoginPageDisplayed());
-		LoggerFactory.getLogger().info("User is at the Sign in page");
-	}
-
+  
 	@Then("Username textbox should be visible")
 	public void username_textbox_should_be_visible() {
 		Assert.assertTrue(signinpage.isUsernameFieldVisible());
@@ -120,5 +100,4 @@ public class SignInSteps {
 	public void user_should_be_redirected_to_registration_page() {
 		Assert.assertTrue(signinpage.isRegistrationPageDisplayed());
 	}
-
 }
