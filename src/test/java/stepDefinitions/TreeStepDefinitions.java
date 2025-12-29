@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,6 +47,22 @@ public class TreeStepDefinitions {
     @Then("User should see {string} link of Tree page")
     public void userShouldSeeLinkOfTreePage(String string) {
         Assert.assertTrue(treePage.isTreeLinkVisible(string));
+    }
+
+    @When("User clicks PracticeQuestions link in the respective Tree page")
+    public void userClicksPracticeQuestionsLinkInTheRespectiveTreePage() {
+        treePage.clickPracticeQuestionsOnTree();
+    }
+
+    @Then("User should be redirected to Practice Questions page of Tree topics")
+    public void userShouldBeRedirectedToPracticeQuestionsPageOfTreeTopics() {
+        String currentURL = driver.getCurrentUrl();
+        Assert.assertTrue(currentURL.contains("tree/practice"));
+    }
+
+    @Then("User should see Practice Questions on the Tree topic page")
+    public void userShouldSeePracticeQuestionsOnTheTreeTopicPage() {
+        Assert.assertTrue(treePage.isPracticeQuestionsLinkOnTreeVisible());
     }
 
     @When("User clicks {string} link on the Tree page")
