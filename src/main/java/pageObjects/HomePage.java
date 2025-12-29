@@ -20,7 +20,7 @@ public class HomePage {
     private By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
     private By msgError = By.xpath("//div[@role='alert']");
     private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
-    private By msgUserLoggedIn = By.xpath("//div[@role='alert']");
+    private By msgUserLoggedIn = By.xpath("//*[contains(text(), 'You are logged in')]");
     private By lblSignedInUser = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
     private WebDriverWait wait;
 
@@ -147,7 +147,8 @@ public class HomePage {
     }
 
     public String getUserLoggedInMessage() {
-        return driver.findElement(msgUserLoggedIn).getText();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(msgUserLoggedIn)).getText();
     }
 
     public boolean isUserNameVisibleAfterSignIn(String userName) {
