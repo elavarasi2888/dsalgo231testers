@@ -84,9 +84,9 @@ public class RegisterPage {
 
 	}
 
-	public String getloginPageUrl() {
+	public boolean getloginPageUrl() {
 
-		return driver.getCurrentUrl();
+		return driver.getCurrentUrl().contains("login");
 
 	}
 

@@ -34,26 +34,21 @@ public class RegisterStepDefinition {
 		signInPage = new SignInPage(driver);
 	}
 
-	/*
-	 * @When("User clicks Login Link in register page") public void
-	 * userClicksLoginLinkInRegisterPage() { signInPage = registerPage.loginLink();
-	 * LoggerFactory.getLogger().info("User clicks Login link"); }
-	 * 
-	 * @Then("User should be redirected to Login Page") public void
-	 * user_should_be_redirected_to_login_page() { WebDriverWait wait = new
-	 * WebDriverWait(driver, Duration.ofSeconds(10));
-	 * 
-	 * // Wait until URL contains /login
-	 * wait.until(ExpectedConditions.urlContains("/login")); String expectedLoginUrl
-	 * = signInPage.getloginPageUrl(); String actualUrl = "/login";
-	 * Assert.assertTrue(actualUrl.contains(expectedLoginUrl));
-	 * LoggerFactory.getLogger().info("User at the signIn page"); }
-	 */
+	
+	  @When("User clicks Login Link in register page") 
+		public void userClicksLoginLinkInRegisterPage() {
+			registerPage.loginLink();
+			LoggerFactory.getLogger().info("User clicks Login link");
+		}
+	  
+	  @Then("User should be redirected to Login Page")
+	  public void user_should_be_redirected_to_login_page() {
+		  Assert.assertTrue(registerPage.getloginPageUrl());  
+	  LoggerFactory.getLogger().info("User at the signIn page"); 
+	  }
+	 
 
-	@Then("User should be redirected to Login Page from registerPage")
-	public void userShouldBeRedirectedToLoginPageFromRegisterPage() {
-		
-	}
+	
 
 	@When("User clicks Register button after entering the Valid data from given {string}")
 	public void user_clicks_register_button_after_entering_the_valid_data_from_given(String ScenarioName)
@@ -75,46 +70,26 @@ public class RegisterStepDefinition {
 		LoggerFactory.getLogger().info("User at the Home page");
 	}
 
-	
-	@When("User clicks Register button with registered username as {string} password as {string} password_confirmation as {string}")
-	public void user_clicks_register_button_with_registered_username_as_password_as_password_confirmation_as(String username, String password, String password_confirmation) throws InterruptedException {
-		registerPage.enterUserName(username);
-		registerPage.enterpassWord(password);
-		Thread.sleep(500);
-		registerPage.enterpassWord(password_confirmation);
-		Thread.sleep(500);
-		registerPage.registerBtn();
-		LoggerFactory.getLogger().info("User entering the registered data");
-	}
-
 	/*
-	 * @Then("User gets a errormessage {string}") public void
-	 * user_gets_a_errormessage(String string) { //String
-	 * expectedRegisterdUserErrormsg = "User already Registered please SignIn";
-	 * String actualRegisterdUserErrormsg =
-	 * registerPage.getRegisteredUserErrorMsg();
-	 * //Assert.assertEquals(actualRegisterdUserErrormsg.trim(),
-	 * expectedRegisterdUserErrormsg.trim(),
-	 * "User already Registered please SignIn");
-	 * Assert.assertEquals(actualRegisterdUserErrormsg.trim(),
-	 * "Expected Registration Error Not Displayed");
-	 * LoggerFactory.getLogger().info("User already Registered please SignIn");
+	 * @When("User clicks Register button after entering registered Data {string}")
+	 * public void user_clicks_register_button_after_entering_registered_data(String
+	 * ScenarioName) throws IOException { ExcelReader reader = new ExcelReader();
+	 * String sheetName = "Prregisterd_data"; Map<String, String> testData =
+	 * reader.getDataByScenarioName(sheetName, ScenarioName);
+	 * registerPage.enterUserName(testData.get("Username"));
+	 * registerPage.enterpassWord(testData.get("Password"));
+	 * registerPage.enterPasswordConfirmation(testData.get("Password confirmation"))
+	 * ; registerPage.registerBtn();
+	 * LoggerFactory.getLogger().info("User Entering registered Data"); }
 	 * 
-	 * }
-	 */
-
-	@Then("User gets a errormessage")
-	public void user_gets_a_errormessage() {
-		
-	}
-	@Then("User gets a errormessage {string}")
-	public void user_gets_a_errormessage(String string) {
-		String expectedMsg ="password_mismatch:The two password fields didn’t match.";
-		String actualMsg = registerPage.getRegisteredUserErrorMsg();
-        
-		Assert.assertEquals("Error message mismatch!", expectedMsg,actualMsg);
-		LoggerFactory.getLogger().info("User already Registered please SignIn");
-	}
+	 * @Then("User gets a errormessage {string}") public void
+	 * user_gets_a_errormessage(String string) { String expectedMsg
+	 * ="password_mismatch:The two password fields didn’t match."; String actualMsg
+	 * = registerPage.getRegisteredUserErrorMsg();
+	 * 
+	 * Assert.assertEquals("Error message mismatch!", expectedMsg,actualMsg);
+	 * LoggerFactory.getLogger().info("User already Registered please SignIn");
+	} */
 
 	@When("User clicks Register button after entering the data from given {string}")
 	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) throws IOException {
