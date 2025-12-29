@@ -71,6 +71,28 @@ Feature: Tree feature test cases
       | Applications of Binary trees   |
       | Binary Search Trees            |
       | Implementation Of BST          |
+
+  Scenario Outline: Verify user able to see Practice Questions on Tree topic pages
+    When User clicks "<tree-topic>" link on the Tree page
+    Then User should see Practice Questions on the Tree topic page
+
+    Examples:
+      | tree-topic                     |
+      | Overview of Trees              |
+      | Terminologies                  |
+      | Types of Trees                 |
+      | Tree Traversals                |
+      | Traversals-Illustration        |
+      | Binary Trees                   |
+      | Types of Binary Trees          |
+      | Implementation in Python       |
+      | Binary Tree Traversals         |
+      | Implementation of Binary Trees |
+      | Applications of Binary trees   |
+      | Binary Search Trees            |
+      | Implementation Of BST          |
+
+
 # Functional tests
 
   Scenario Outline: Verify user is able to navigate to respective Tree page
@@ -92,6 +114,28 @@ Feature: Tree feature test cases
       | Applications of Binary trees   | applications-of-binary-trees   |
       | Binary Search Trees            | binary-search-trees            |
       | Implementation Of BST          | implementation-of-bst          |
+
+  Scenario Outline: Verify user is able to navigate to Practice Questions page of Tree topics
+    When User clicks "<tree-topic>" link on the Tree page
+    When User clicks PracticeQuestions link in the respective Tree page
+    Then User should be redirected to Practice Questions page of Tree topics
+
+    Examples:
+      | tree-topic                     |
+      | Overview of Trees              |
+      | Terminologies                  |
+      | Types of Trees                 |
+      | Tree Traversals                |
+      | Traversals-Illustration        |
+      | Binary Trees                   |
+      | Types of Binary Trees          |
+      | Implementation in Python       |
+      | Binary Tree Traversals         |
+      | Implementation of Binary Trees |
+      | Applications of Binary trees   |
+      | Binary Search Trees            |
+      | Implementation Of BST          |
+
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<tree-topic>" link on the Tree page

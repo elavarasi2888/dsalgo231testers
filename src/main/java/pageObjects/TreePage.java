@@ -15,6 +15,7 @@ public class TreePage {
     private By lnkTreeLinks = By.xpath("//a[@class='list-group-item']");
     private By headerTreeLink = By.xpath("//div[@class='col-sm']//strong//p");
     private By btnTryHereTreeLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+    private By lnkPracticeQuestionsTreeTopics = By.xpath("//a[normalize-space()='Practice Questions']");
 
     public TreePage(WebDriver driver) {
         this.driver = driver;
@@ -53,6 +54,14 @@ public class TreePage {
 
     public void clickTryHereInTreeLinkPage() {
         driver.findElement(btnTryHereTreeLinkPage).click();
+    }
+
+    public boolean isPracticeQuestionsLinkOnTreeVisible() {
+        return driver.findElement(lnkPracticeQuestionsTreeTopics).isDisplayed();
+    }
+
+    public void clickPracticeQuestionsOnTree() {
+        driver.findElement(lnkPracticeQuestionsTreeTopics).click();
     }
 
     public String getTreePageURL() {

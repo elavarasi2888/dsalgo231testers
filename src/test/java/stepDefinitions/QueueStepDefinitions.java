@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import factory.DriverManager;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -39,6 +40,22 @@ public class QueueStepDefinitions {
     @Then("User should see {string} link of Queue page")
     public void user_should_see_link_of_queue_page(String string) {
         Assert.assertTrue(queuePage.isQueueLinkVisible(string));
+    }
+
+    @Then("User should see Practice Questions on the Queue topic page")
+    public void userShouldSeePracticeQuestionsOnTheQueueTopicPage() {
+        Assert.assertTrue(queuePage.isPracticeQuestionsLinkOnQueueVisible());
+    }
+
+    @When("User clicks PracticeQuestions link in the respective Queue page")
+    public void userClicksPracticeQuestionsLinkInTheRespectiveQueuePage() {
+        queuePage.clickPracticeQuestionsOnQueue();
+    }
+
+    @Then("User should be redirected to Practice Questions page of Queue topics")
+    public void userShouldBeRedirectedToPracticeQuestionsPageOfQueueTopics() {
+        String currentURL = driver.getCurrentUrl();
+        Assert.assertTrue(currentURL.contains("queue/practice"));
     }
 
     @When("User clicks {string} link on the Queue page")
