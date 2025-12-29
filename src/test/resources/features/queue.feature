@@ -43,6 +43,19 @@ Feature: Queue feature test cases
       | Implementation using collections.deque |
       | Implementation using array             |
       | Queue Operations                       |
+
+  Scenario Outline: Verify user able to see Practice Questions on Queue topic pages
+    When User clicks "<queue-topic>" link on the Queue page
+    Then User should see Practice Questions on the Queue topic page
+
+    Examples:
+      | queue-topic                            |
+      | Implementation of Queue in Python      |
+      | Implementation using collections.deque |
+      | Implementation using array             |
+      | Queue Operations                       |
+
+
 # Functional tests
 
   Scenario Outline: Verify user is able to navigate to respective Queue page
@@ -55,6 +68,19 @@ Feature: Queue feature test cases
       | Implementation using collections.deque | implementation-collections |
       | Implementation using array             | Implementation-array       |
       | Queue Operations                       | QueueOp                    |
+
+
+  Scenario Outline: Verify user is able to navigate to Practice Questions page of Queue topics
+    When User clicks "<queue-topic>" link on the Queue page
+    When User clicks PracticeQuestions link in the respective Queue page
+    Then User should be redirected to Practice Questions page of Queue topics
+
+    Examples:
+      | queue-topic                            |
+      | Implementation of Queue in Python      |
+      | Implementation using collections.deque |
+      | Implementation using array             |
+      | Queue Operations                       |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<queue-topic>" link on the Queue page

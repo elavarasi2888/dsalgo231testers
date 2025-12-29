@@ -14,11 +14,10 @@ import java.io.IOException;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"hooks", "stepDefinitions"},
-        //tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree",
-        tags="@Register",
+        //tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or @TryEditor",
+        tags="@Stack",
         //tags="@Array",
-        //plugin = {"pretty", "html:reports/cucumber-reports.html"},
-        plugin= {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
+        plugin = {"pretty", "html:reports/cucumber-reports.html"},
         dryRun = false,
         monochrome = true)
 public class Runner extends AbstractTestNGCucumberTests {
@@ -29,11 +28,10 @@ public class Runner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 
-	
-	  @BeforeClass
-	  
-	  @Parameters({"browserType"}) public void beforeClass(@Optional String
-	  browser) throws IOException { ConfigReader.setBrowserType(browser); }
-	 
+    @BeforeClass
+    @Parameters({"browserType"})
+    public void beforeClass(@Optional String browser) throws IOException {
+        ConfigReader.setBrowserType(browser);
+    }
 }
 

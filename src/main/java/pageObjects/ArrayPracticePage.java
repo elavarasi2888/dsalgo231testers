@@ -1,143 +1,50 @@
 package pageObjects;
 
-import org.openqa.selenium.Alert;
+
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ArrayPracticePage 
-{
-	WebDriver driver;
-	
 
-    // ------------------- Locators ----------------------------------------------------
-	// Practice Questions links
-	  By practiceQuestionsInArray = By.xpath("//a[contains(text(),'Practice Questions')]");
-	  By searchTheArrayLink = By.xpath("//a[contains(text(),'Search the array')]");
-	  By maxConsecutiveOnesLink = By.xpath("//a[contains(text(),'Max Consecutive Ones')]");
-	  By findNumbersWithEvenDigitsLink =
-	         By.xpath("//a[contains(text(),'Find Numbers with Even Number of Digits')]");
-	  By squaresOfSortedArrayLink =
-	         By.xpath("//a[contains(text(),'Squares of  a Sorted Array')]");
-	// Editor & buttons--------------------------------------------------------------------
-	 
-	  By editorTextArea = By.id("editor");
-	  By runButton = By.xpath("//button[contains(text(),'Run')]");
-	  By submitButton = By.xpath("//button[contains(text(),'Submit')]");
+public class ArrayPracticePage {
+    private WebDriver driver;
+    private WebDriverWait wait;
 
-	  // Output / error
-	    By outputArea = By.id("output");
-	    By errorMessage = By.id("error");
+    private By arrayTopicLink = By.xpath("//a[normalize-space()='Arrays in Python']");
+    private By practiceQuestionsTopicLink = By.xpath("//a[normalize-space()='Practice Questions']");
+    private By practiceQuestionsLinks = By.xpath("//a[@class='list-group-item']");
 
-	    // Question text
-	    private By questionText = By.xpath("//div[contains(@class,'question')]");
 
-	// Constructor
-	public ArrayPracticePage(WebDriver driver)
-    {
+    // Constructor
+    public ArrayPracticePage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(1));
     }
-	 // ------------------- Navigation------------------------------------
+    public boolean isPracticeQuestionLinkDisplayed(String expectedTopic) {
 
-    public boolean isOnPracticeQuestionsPage() 
-    {
-        return driver.getTitle().contains("Practice Questions"); 
-    }
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(practiceQuestionsLinks));
 
-    public boolean isCurrentURLContains(String partialLink) 
-    {
-        return driver.getCurrentUrl().contains(partialLink);
-    }
-    // ------------------- Link Display Checks -------------------
+        List<WebElement> links = driver.findElements(practiceQuestionsLinks);
 
-    public boolean isSearchTheArrayDisplayed() {
-        return driver.findElement(searchTheArrayLink).isDisplayed();
-    }
-
-    public boolean isMaxConsecutiveOnesDisplayed() {
-        return driver.findElement(maxConsecutiveOnesLink).isDisplayed();
-    }
-
-    public boolean isFindNumbersWithEvenNumberOfDigitsDisplayed() {
-        return driver.findElement(findNumbersWithEvenDigitsLink).isDisplayed();
-    }
-    public boolean isSquaresOfSortedArrayDisplayed() {
-        return driver.findElement(squaresOfSortedArrayLink).isDisplayed();
-    }
-
-    // ------------------- Link Click Actions -------------------
-
-    public void clickSearchTheArray() {
-        driver.findElement(searchTheArrayLink).click();
-    }
-
-    public void clickMaxConsecutiveOnes() {
-        driver.findElement(maxConsecutiveOnesLink).click();
-    }
-    public void clickFindNumbersWithEvenNumberOfDigits() {
-        driver.findElement(findNumbersWithEvenDigitsLink).click();
-    }
-
-    public void clickSquaresOfSortedArray() {
-        driver.findElement(squaresOfSortedArrayLink).click();
-    }
-
-    // ------------------- Editor & Buttons -------------------
-
-    public boolean isEditorVisible() {
-        return driver.findElement(editorTextArea).isDisplayed();
-    }
-    public void enterCode(String code) {
-        driver.findElement(editorTextArea).clear();
-        driver.findElement(editorTextArea).sendKeys(code);
-    }
-
-    public void clearEditor() {
-        driver.findElement(editorTextArea).clear();
-    }
-
-    public void clickRunButton() {
-        driver.findElement(runButton).click();
-    }
-
-    public boolean isRunButtonVisible() {
-        return driver.findElement(runButton).isDisplayed();
-    }
-    public boolean isSubmitButtonVisible() {
-        return driver.findElement(submitButton).isDisplayed();
-    }
-    public boolean isQuestionTextVisible() {
-        return driver.findElement(questionText).isDisplayed();
-    }
-
-    // ------------------- Output / Error Checks -------------------
-
-    public boolean isOutputVisible() {
-        return driver.findElement(outputArea).isDisplayed();
-    }
-
-    public boolean isErrorMessageVisible() {
-        return driver.findElement(errorMessage).isDisplayed();
-    }
-    public boolean isAlertPresent() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept(); // handle alert
-            return true;
-        } catch (Exception e) {
-            return false;
+        for (WebElement link : links) {
+            String actualText = link.getText().trim();
+            if (actualText.equalsIgnoreCase(expectedTopic.trim())) {
+                return true;
+            }
         }
-    }
-    // ------------------- Sample Code for Testing -------------------
-
-    public String getValidCode() {
-        return "print('Hello World')"; // example valid code
+        return false;
     }
 
-    public String getInvalidCode() {
-        return "print('Hello World'"; // example invalid code
+    public void clickPracticeQuestionsTopicLink() {        
+        wait.until(ExpectedConditions.elementToBeClickable(practiceQuestionsTopicLink)).click();
     }
 
+    public void clickArrayTopicLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(arrayTopicLink)).click();
+    }
 }
-
-
-  

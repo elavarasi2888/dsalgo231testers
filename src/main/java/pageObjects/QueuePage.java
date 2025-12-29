@@ -15,6 +15,7 @@ public class QueuePage {
     private By lnkQueueLinks = By.xpath("//a[@class='list-group-item']");
     private By headerQueueLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
     private By btnTryHereQueueLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
+    private By lnkPracticeQuestionsQueueTopics = By.xpath("//a[normalize-space()='Practice Questions']");
 
     public QueuePage(WebDriver driver) {
         this.driver = driver;
@@ -54,6 +55,14 @@ public class QueuePage {
 
     public void clickTryHereInQueueLinkPage() {
         driver.findElement(btnTryHereQueueLinkPage).click();
+    }
+
+    public boolean isPracticeQuestionsLinkOnQueueVisible() {
+        return driver.findElement(lnkPracticeQuestionsQueueTopics).isDisplayed();
+    }
+
+    public void clickPracticeQuestionsOnQueue() {
+        driver.findElement(lnkPracticeQuestionsQueueTopics).click();
     }
 
     public String getQueuePageURL() {
