@@ -19,13 +19,6 @@ Feature: Register functionality
       | ScenarioName |
       | validEntry   |
 
-  #Scenario Outline: Verify unsuccessful registration
-   # When User clicks Register button after entering registered Data "<ScenarioName>"
-    #Then User gets a errormessage "password_mismatch:The two password fields didn’t match."
-
-    #Examples:
-      #| ScenarioName         |
-      #| PrRegisteredUserData |
 
   Scenario Outline: User enters invalid registration data
     When User clicks Register button after entering the data from given "<ScenarioName>"

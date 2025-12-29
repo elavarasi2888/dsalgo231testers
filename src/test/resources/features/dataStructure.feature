@@ -1,5 +1,5 @@
 @DataStructure @dataStructure
-Feature: DataStruction Functionality
+Feature: DataStructure Functionality
 
   Background:
     Given User is at the Home page after sign-in

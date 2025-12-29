@@ -1,5 +1,5 @@
 @DataStructure @linklist
-Feature: Linklist Functionality
+Feature: Linked List Functionality
 
   Background:
     Given User is at the Home page after sign-in

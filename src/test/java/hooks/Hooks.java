@@ -1,14 +1,19 @@
 package hooks;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 import pageObjects.DsAlgoPortalPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
@@ -74,10 +79,24 @@ public class Hooks {
     }
 
     @After
-    public void tearDown() {
-        if (DriverManager.getDriver() != null) {
-            DriverManager.getDriver().quit();
+	public void tearDown(Scenario scenario) {
+
+		takeScreenShot(scenario);
+		if (DriverManager.getDriver() != null) {
+			DriverManager.getDriver().quit();
+		}
+		LoggerFactory.getLogger().info("DONE tearDown()..");
+	}
+    
+    private void takeScreenShot(Scenario scenario){
+        if (scenario.isFailed()){
+            TakesScreenshot takesScreenshot = (TakesScreenshot) DriverManager.getDriver();
+            byte[] screenShot = takesScreenshot.getScreenshotAs(OutputType.BYTES);
+            //scenario.attach(screenShot,"image/png",screenShot.toString());
+            Allure.addAttachment(scenario.getName(),new ByteArrayInputStream(screenShot));
+
+
         }
-        LoggerFactory.getLogger().info("DONE tearDown()..");
-    }
+    
 }
+    }

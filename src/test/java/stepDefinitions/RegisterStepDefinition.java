@@ -70,26 +70,7 @@ public class RegisterStepDefinition {
 		LoggerFactory.getLogger().info("User at the Home page");
 	}
 
-	/*
-	 * @When("User clicks Register button after entering registered Data {string}")
-	 * public void user_clicks_register_button_after_entering_registered_data(String
-	 * ScenarioName) throws IOException { ExcelReader reader = new ExcelReader();
-	 * String sheetName = "Prregisterd_data"; Map<String, String> testData =
-	 * reader.getDataByScenarioName(sheetName, ScenarioName);
-	 * registerPage.enterUserName(testData.get("Username"));
-	 * registerPage.enterpassWord(testData.get("Password"));
-	 * registerPage.enterPasswordConfirmation(testData.get("Password confirmation"))
-	 * ; registerPage.registerBtn();
-	 * LoggerFactory.getLogger().info("User Entering registered Data"); }
-	 * 
-	 * @Then("User gets a errormessage {string}") public void
-	 * user_gets_a_errormessage(String string) { String expectedMsg
-	 * ="password_mismatch:The two password fields didn’t match."; String actualMsg
-	 * = registerPage.getRegisteredUserErrorMsg();
-	 * 
-	 * Assert.assertEquals("Error message mismatch!", expectedMsg,actualMsg);
-	 * LoggerFactory.getLogger().info("User already Registered please SignIn");
-	} */
+
 
 	@When("User clicks Register button after entering the data from given {string}")
 	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) throws IOException {
