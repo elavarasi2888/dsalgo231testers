@@ -15,9 +15,10 @@ import java.io.IOException;
         features = "src/test/resources/features",
         glue = {"hooks", "stepDefinitions"},
         //tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or @TryEditor",
-        tags="@Stack",
+        tags="@Register",
         //tags="@Array",
-        plugin = {"pretty", "html:reports/cucumber-reports.html"},
+        //plugin = {"pretty", "html:reports/cucumber-reports.html"},
+        plugin= {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         dryRun = false,
         monochrome = true)
 public class Runner extends AbstractTestNGCucumberTests {

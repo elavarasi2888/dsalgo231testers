@@ -88,15 +88,17 @@ public class Hooks {
 		LoggerFactory.getLogger().info("DONE tearDown()..");
 	}
     
-    private void takeScreenShot(Scenario scenario){
-        if (scenario.isFailed()){
-            TakesScreenshot takesScreenshot = (TakesScreenshot) DriverManager.getDriver();
-            byte[] screenShot = takesScreenshot.getScreenshotAs(OutputType.BYTES);
-            //scenario.attach(screenShot,"image/png",screenShot.toString());
-            Allure.addAttachment(scenario.getName(),new ByteArrayInputStream(screenShot));
-
-
-        }
-    
-}
+	
+	  private void takeScreenShot(Scenario scenario){ if (scenario.isFailed()){
+	  TakesScreenshot takesScreenshot = (TakesScreenshot)
+	  DriverManager.getDriver(); byte[] screenShot =
+	  takesScreenshot.getScreenshotAs(OutputType.BYTES);
+	  Allure.addAttachment(scenario.getName(),new
+	  ByteArrayInputStream(screenShot));
+	  
+	  
+	  }
+	  
+	  }
+	 
     }
