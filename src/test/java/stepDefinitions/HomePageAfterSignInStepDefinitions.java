@@ -8,12 +8,12 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.*;
+import utils.ConfigReader;
 
 public class HomePageAfterSignInStepDefinitions {
 
     private HomePage homePage;
     private WebDriver driver;
-    private String userName;
 
     public HomePageAfterSignInStepDefinitions() {
         driver = DriverManager.getDriver();
@@ -23,16 +23,13 @@ public class HomePageAfterSignInStepDefinitions {
     @Given("User clicks login button after entering valid username and valid password")
     public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
         SignInPage signInPage = new SignInPage(driver);
-
-        userName = "dsalgo231";
-        String password = "automation2025#";
-        homePage = signInPage.login(userName, password);
+        homePage = signInPage.login(ConfigReader.getValidUserName(), ConfigReader.getValidPassword());
     }
 
     @Given("User is at the Home page after sign-in")
     public void user_is_at_the_home_page_after_sign_in() {
-        LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}", userName,
-                homePage.isUserNameVisibleAfterSignIn(userName));
+        LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}", ConfigReader.getValidUserName(),
+                homePage.isUserNameVisibleAfterSignIn(ConfigReader.getValidUserName()));
     }
 
     @When("User selects following {string} from the drop down after sign-in")

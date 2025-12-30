@@ -9,6 +9,8 @@ public class ConfigReader {
 
     private static String browserType = null;
     private static String applicationURL;
+    private static String validUserName;
+    private static String validPassword;
     Properties prop = null;
 
     public static String getAppUrl() {
@@ -17,6 +19,22 @@ public class ConfigReader {
 
     private void setAppUrl(String appURL) {
         applicationURL = appURL;
+    }
+
+    public static String getValidUserName() {
+        return validUserName;
+    }
+
+    private void setValidUserName(String userName) {
+        validUserName = userName;
+    }
+
+    public static String getValidPassword() {
+        return validPassword;
+    }
+
+    private void setValidPassword(String password) {
+        validPassword = password;
     }
 
     public static String getBrowserType() {
@@ -30,9 +48,11 @@ public class ConfigReader {
     public Properties loadProperties() {
         try {
             prop = new Properties();
-            FileReader file = new FileReader(System.getProperty("user.dir") + "\\src\\test\\resources\\config\\config.properties");
+            FileReader file = new FileReader(Constants.CONFIG_DATA_FILE);
             prop.load(file);
             setAppUrl(prop.getProperty("appURL"));
+            setValidUserName(prop.getProperty("validUserName"));
+            setValidPassword(prop.getProperty("validPassword"));
         } catch (Exception e) {
             LoggerFactory.getLogger().error("Unexcepted error occurred when loading configuration. {}", e.getMessage());
         }
