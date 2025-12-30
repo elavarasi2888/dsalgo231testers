@@ -14,12 +14,12 @@ import pageObjects.LinkedListPage;
 
 public class LinkedListStepDefinition {
 	private LinkedListPage linkedListPage;
-	WebDriver driver;
-	HomePage homePage;
+	private WebDriver driver;
+	private HomePage homePage;
 
 	public LinkedListStepDefinition() {
 		driver = DriverManager.getDriver();
-		homePage= new HomePage(driver);
+		homePage = new HomePage(driver);
 		linkedListPage = new LinkedListPage(driver);
 	}
 
@@ -28,13 +28,12 @@ public class LinkedListStepDefinition {
 		linkedListPage = (LinkedListPage) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in LinkedList panel");
 	}
+
 	@Then("User should see Linked List header for Linkedlist page")
 	public void user_should_see_linked_list_header_for_linkedlist_page() {
 		Assert.assertTrue(linkedListPage.HeaderTitleVisisble());
 		LoggerFactory.getLogger().info("User see the Linked List Header");
 	}
-
-	
 
 	@Then("User should see Topics Covered having link for Linked List page")
 	public void user_should_see_topics_covered_having_link_for_linked_list_page() {
@@ -64,6 +63,22 @@ public class LinkedListStepDefinition {
 	public void user_clicks_link_on_the_linklist_page(String expectedTryHereBtn) {
 		linkedListPage.clickTopicLink(expectedTryHereBtn);
 		LoggerFactory.getLogger().info("User clicks the Links to verify Try Here button");
+	}
+
+	@Then("User should see Practice Questions on the linklist topics page")
+	public void user_should_see_practice_questions_on_the_linklist_topics_page() {
+		Assert.assertTrue(linkedListPage.isPracticeQuestionsLinkOnLinkedlistTopicsVisible());
+		LoggerFactory.getLogger().info("User should see Practice Questions link");
+	}
+
+	@When("User clicks Practice Questions link in the respective linklist page")
+	public void user_clicks_practice_questions_link_in_the_respective_linklist_page() {
+		linkedListPage.clickPracticeQuestionsLinkOnLinklist();
+	}
+
+	@Then("User should be redirected to Practice Questions page of linklist topics")
+	public void user_should_be_redirected_to_practice_questions_page_of_linklist_topics() {
+		Assert.assertTrue(linkedListPage.getPracticePageURL().contains("practice"));
 	}
 
 	@Then("User should see Try here button for the respective linklist page")

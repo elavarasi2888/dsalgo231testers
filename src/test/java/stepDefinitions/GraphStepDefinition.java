@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -10,15 +8,13 @@ import factory.LoggerFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.DataStructurePage;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
-import pageObjects.QueuePage;
 
 public class GraphStepDefinition {
-	HomePage homePage;
-	GraphPage graphPage;
-	WebDriver driver;
+	private HomePage homePage;
+	private GraphPage graphPage;
+	private WebDriver driver;
 
 	public GraphStepDefinition() {
 		driver = DriverManager.getDriver();
@@ -70,6 +66,21 @@ public class GraphStepDefinition {
 	public void user_clicks_link_on_the_graph_page(String expectedLink) {
 		graphPage.clickTopicLink(expectedLink);
 		LoggerFactory.getLogger().info("User clicks the Links to verify Try Here button");
+	}
+	@Then("User should see Practice Questions on the Graph topics page")
+	public void user_should_see_practice_questions_on_the_graph_topics_page() {
+		Assert.assertTrue(graphPage.isPracticeQuestionsLinkOnGraphTopicsVisible());
+		LoggerFactory.getLogger().info("User should see Practice Questions link");
+	}
+
+	@When("User clicks Practice Questions link in the respective Graph page")
+	public void user_clicks_practice_questions_link_in_the_respective_graph_page() {
+	 graphPage.clickPracticeQuestionsLinkOnGraph();
+	}
+
+	@Then("User should be redirected to Practice Questions page of Graph topics")
+	public void user_should_be_redirected_to_practice_questions_page_of_graph_topics() {
+		Assert.assertTrue(graphPage.getPracticePageURL().contains("practice"));
 	}
 
 	@Then("User should see Try here button for the respective Graph page")

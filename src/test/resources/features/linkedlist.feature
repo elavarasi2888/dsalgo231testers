@@ -1,4 +1,4 @@
-@DataStructure @linklist
+@DataStructure @Linkedlist
 Feature: Linked List Functionality
 
   Background:
@@ -52,6 +52,20 @@ Feature: Linked List Functionality
       | Insertion                       |
       | Deletion                        |
 
+  Scenario Outline: Verify User able to see Practice Questions for linklist topics page
+    When User clicks "<linklist_topics>" link on the linklist page
+    Then User should see Practice Questions on the linklist topics page
+
+    Examples:
+      | linklist_topics                 |
+      | Introduction                    |
+      | Creating Linked LIst            |
+      | Types of Linked List            |
+      | Implement Linked List in Python |
+      | Traversal                       |
+      | Insertion                       |
+      | Deletion                        |
+
   Scenario Outline: Verify User is able to navigate to respective linklist page
     When User clicks "<linklist_topics>" link on the linklist page
     Then User should be redirected to "<linklist_topics_page>" of linklist page
@@ -65,6 +79,21 @@ Feature: Linked List Functionality
       | Traversal                       | traversal                       |
       | Insertion                       | insertion-in-linked-list        |
       | Deletion                        | deletion-in-linked-list         |
+
+  Scenario Outline: Verify User is able to navigate to Practice Questions page of linklist topics
+    When User clicks "<linklist_topics>" link on the linklist page
+    When User clicks Practice Questions link in the respective linklist page
+    Then User should be redirected to Practice Questions page of linklist topics
+
+    Examples:
+      | linklist_topics                 |
+      | Introduction                    |
+      | Creating Linked LIst            |
+      | Types of Linked List            |
+      | Implement Linked List in Python |
+      | Traversal                       |
+      | Insertion                       |
+      | Deletion                        |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<linklist_topics>" link on the linklist page

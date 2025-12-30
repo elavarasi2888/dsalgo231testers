@@ -9,23 +9,17 @@ import org.openqa.selenium.WebElement;
 
 public class GraphPage {
 	private WebDriver driver;
-	By headerGraph = By.xpath("//h4[normalize-space()='Graph']");
-	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
-	By topicsLink  = By.xpath("//a[@class='list-group-item']");
-	By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	By tryHereBtn = By.xpath("//a[normalize-space()='Try here>>>']");
+	private By headerGraph = By.xpath("//h4[normalize-space()='Graph']");
+	private By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
+	private By topicsLink  = By.xpath("//a[@class='list-group-item']");
+	private By verifyLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	private By tryHereBtn = By.xpath("//a[normalize-space()='Try here>>>']");
+	private By lnkPracticeQuesGraphTopics = By.xpath("//a[normalize-space()='Practice Questions']");
 	
 	public GraphPage(WebDriver driver){
 		this.driver = driver;
 	}
-	/*
-	 * public void clickGetStarted(String dsType) {
-	 * 
-	 * String xpathDef = "//a[@href='" + dsType + "']";
-	 * 
-	 * By getStartedBtn = By.xpath(xpathDef);
-	 * driver.findElement(getStartedBtn).click(); }
-	 */
+	
 	
 	public boolean HeaderTitleVisible() {
 		return  driver.findElement(headerGraph).isDisplayed();
@@ -71,6 +65,18 @@ public class GraphPage {
 
 	public String getGraphPageURL() {
 		
+		return driver.getCurrentUrl();
+	}
+	public boolean isPracticeQuestionsLinkOnGraphTopicsVisible() {
+		return driver.findElement(lnkPracticeQuesGraphTopics).isDisplayed();
+	}
+
+	public void clickPracticeQuestionsLinkOnGraph() {
+		driver.findElement(lnkPracticeQuesGraphTopics).click();
+	}
+
+	public String getPracticePageURL() {
+
 		return driver.getCurrentUrl();
 	}
 }

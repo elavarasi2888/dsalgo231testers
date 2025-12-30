@@ -1,4 +1,4 @@
-@DataStructure @graph
+@DataStructure @Graph
 Feature: Graph functionality
 
   Background:
@@ -37,6 +37,15 @@ Feature: Graph functionality
       | Graph                 |
       | Graph Representations |
 
+  Scenario Outline: Verify User able to see Practice Questions for Graph topics page
+    When User clicks "<Graph_topics>" link on the Graph page
+    Then User should see Practice Questions on the Graph topics page
+
+    Examples:
+      | Graph_topics          |
+      | Graph                 |
+      | Graph Representations |
+
   Scenario Outline: Verify User is able to navigate to respective Graph page
     When User clicks "<Graph_topics>" link on the Graph page
     Then User should be redirected to "<Graph_topics_page>"  of graph page
@@ -45,6 +54,16 @@ Feature: Graph functionality
       | Graph_topics          | Graph_topics_page     |
       | Graph                 | graph                 |
       | Graph Representations | graph-representations |
+
+  Scenario Outline: Verify User is able to navigate to Practice Questions page of Graph topics
+    When User clicks "<Graph_topics>" link on the Graph page
+    When User clicks Practice Questions link in the respective Graph page
+    Then User should be redirected to Practice Questions page of Graph topics
+
+    Examples:
+      | Graph_topics          |
+      | Graph                 |
+      | Graph Representations |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<Graph_topics>" link on the Graph page

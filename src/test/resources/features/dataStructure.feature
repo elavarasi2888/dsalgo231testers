@@ -1,4 +1,4 @@
-@DataStructure @dataStructure
+@DataStructure @DataStructures
 Feature: DataStructure Functionality
 
   Background:
@@ -34,6 +34,14 @@ Feature: DataStructure Functionality
       | DS_topics       |
       | Time Complexity |
 
+  Scenario Outline: Verify User able to see Practice Questions for Data Structures topics page
+    When User clicks "<DS_topics>" link on the Data Structures-Introduction page
+    Then User should see Practice Questions on the Data Structures topics page
+
+    Examples:
+      | DS_topics       |
+      | Time Complexity |
+
   Scenario Outline: Verify User is able to navigate to respective Data Structures-Introduction page
     When User clicks "<DS_topics>" link on the Ds-Introduction page
     Then User should be redirected to "<DS_topics_page>" of DataStructure page
@@ -41,6 +49,15 @@ Feature: DataStructure Functionality
     Examples:
       | DS_topics       | DS_topics_page  |
       | Time Complexity | time-complexity |
+
+  Scenario Outline: Verify User is able to navigate to Practice Questions page of Data Structure topics
+    When User clicks "<DS_topics>" link on the DataStructure page
+    When User clicks Practice Questions link in the respective DataStructure page
+    Then User should be redirected to Practice Questions page of Data Structure topics
+
+    Examples:
+      | DS_topics       |
+      | Time Complexity |
 
   Scenario Outline: Verify user is able to navigate to try Editor page
     When User clicks "<DS_topics>" link on the DataStructure page

@@ -1,6 +1,5 @@
 package pageObjects;
 
-
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -9,32 +8,30 @@ import org.openqa.selenium.WebElement;
 
 public class DataStructurePage {
 	private WebDriver driver;
-	By headerTopics = By.xpath("//h4[normalize-space()='Data Structures-Introduction']");
-	By topicsLink = By.xpath("//a[@class='list-group-item']");
-	By timeLinkHeader = By.xpath("//p[normalize-space()='Time Complexity']");
-	By headerDS = By.xpath("//h4[@class='bg-secondary text-white']");
-	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
-	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	
+	private By headerTopics = By.xpath("//h4[normalize-space()='Data Structures-Introduction']");
+	private By topicsLink = By.xpath("//a[@class='list-group-item']");
+    private By headerDS = By.xpath("//h4[@class='bg-secondary text-white']");
+	private By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
+	private By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	private By lnkPracticeQuestionsDsTopics = By.xpath("//a[normalize-space()='Practice Questions']");
 
 	public DataStructurePage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	
 	public boolean HeaderTitleVisible() {
 		return driver.findElement(headerDS).isDisplayed();
-		
+
 	}
 
 	public boolean TopicCoveredTitleForLinksVisisble() {
 		return driver.findElement(headerTopics).isDisplayed();
-		 
+
 	}
 
 	public boolean getTopics(String linkDsTopicLink) {
 		List<WebElement> topicsName = driver.findElements(topicsLink);
-		
+
 		for (WebElement link : topicsName) {
 			link.getText().trim().equalsIgnoreCase(linkDsTopicLink);
 			return true;
@@ -44,9 +41,9 @@ public class DataStructurePage {
 	}
 
 	public void clickTopicLink(String linkDsTopicLink) {
-		
+
 		By linkPath = By.xpath("//a[text()='" + linkDsTopicLink + "']");
-        driver.findElement(linkPath).click();
+		driver.findElement(linkPath).click();
 	}
 
 	public String getHeaderForLinks() {
@@ -54,23 +51,33 @@ public class DataStructurePage {
 		return timeComplexityH;
 
 	}
-	
+
 	public boolean tryHereBtn() {
 		return driver.findElement(tryHereBtn).isDisplayed();
-	
-		
+
 	}
+
 	public void tryHereBtnForLinks() {
-		 driver.findElement(tryHereBtn).click();
-		
+		driver.findElement(tryHereBtn).click();
+
 	}
 
 	public String getDataStructurePageURL() {
-		
+
 		return driver.getCurrentUrl();
 	}
 
-	
+	public boolean isPracticeQuestionsLinkOnDsTopicsVisible() {
+		return driver.findElement(lnkPracticeQuestionsDsTopics).isDisplayed();
+	}
+
+	public void clickPracticeQuestionsLinkOnDs() {
+		driver.findElement(lnkPracticeQuestionsDsTopics).click();
+	}
+
+	public String getPracticePageURL() {
+
+		return driver.getCurrentUrl();
+	}
+
 }
-
-

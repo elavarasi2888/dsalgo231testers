@@ -9,11 +9,12 @@ import org.openqa.selenium.WebElement;
 
 public class LinkedListPage {
 	private WebDriver driver;
-	By headerLinkedList = By.xpath("//h4[normalize-space()='Linked List']");
-	By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
-	By topicsLink = By.xpath("//a[@class='list-group-item']");
-	By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
-	By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
+	private By headerLinkedList = By.xpath("//h4[normalize-space()='Linked List']");
+	private By headerTopics = By.xpath("//p[@class='bg-secondary text-white']");
+	private By topicsLink = By.xpath("//a[@class='list-group-item']");
+	private By verifyTopicLinksHeader = By.xpath("//div[@class='col-sm']//strong//p");
+	private By tryHereBtn = By.xpath("//a[text()='Try here>>>']");
+	private By lnkPracticeQuesLinkedListTopics = By.xpath("//a[normalize-space()='Practice Questions']");
 	
 	public LinkedListPage(WebDriver driver) {
 		this.driver = driver;
@@ -62,6 +63,18 @@ public class LinkedListPage {
 	}
 	public String getLinkedListPageURL() {
 	return driver.getCurrentUrl();
+	}
+	public boolean isPracticeQuestionsLinkOnLinkedlistTopicsVisible() {
+		return driver.findElement(lnkPracticeQuesLinkedListTopics).isDisplayed();
+	}
+
+	public void clickPracticeQuestionsLinkOnLinklist() {
+		driver.findElement(lnkPracticeQuesLinkedListTopics).click();
+	}
+
+	public String getPracticePageURL() {
+
+		return driver.getCurrentUrl();
 	}
 
 }

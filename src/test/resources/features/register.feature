@@ -1,4 +1,4 @@
-@Register
+@Register @Regression
 Feature: Register functionality
 
   Background:
