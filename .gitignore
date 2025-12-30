@@ -6,3 +6,4 @@ logs/
 reports/
 test-output/
 .idea/
+allure-results/
