@@ -16,6 +16,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
+import utils.Constants;
+import utils.DataReader;
 import utils.ExcelReader1;
 
 public class SignInStepDefintions {
@@ -30,9 +32,8 @@ public class SignInStepDefintions {
 	}
 
 	@When("User clicks login button after entering valid data from the given {string}")
-	public void user_clicks_login_button_after_entering_valid_data_from_the_given(String ScenarioName)
-			throws InvalidFormatException, IOException {
-		ExcelReader1 reader = new ExcelReader1();
+	public void user_clicks_login_button_after_entering_valid_data_from_the_given(String ScenarioName) {
+        DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "login_invalid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		signinpage.enterUsername(testData.get("Username"));
@@ -48,9 +49,8 @@ public class SignInStepDefintions {
 	}
 
 	@When("User clicks login button after entering the data from given {string}")
-	public void user_clicks_login_button_after_entering_the_data_from_given(String ScenarioName)
-			throws InvalidFormatException, IOException {
-		ExcelReader1 reader = new ExcelReader1();
+	public void user_clicks_login_button_after_entering_the_data_from_given(String ScenarioName) {
+        DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "login_invalid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		signinpage.enterUsername(testData.get("Username"));

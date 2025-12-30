@@ -18,6 +18,8 @@ import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
+import utils.Constants;
+import utils.DataReader;
 import utils.ExcelReader;
 
 public class RegisterStepDefinition {
@@ -51,9 +53,8 @@ public class RegisterStepDefinition {
 	
 
 	@When("User clicks Register button after entering the Valid data from given {string}")
-	public void user_clicks_register_button_after_entering_the_valid_data_from_given(String ScenarioName)
-			throws IOException {
-		ExcelReader reader = new ExcelReader();
+	public void user_clicks_register_button_after_entering_the_valid_data_from_given(String ScenarioName) {
+        DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "Register_valid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		registerPage.enterUserName(testData.get("Username"));
@@ -73,8 +74,8 @@ public class RegisterStepDefinition {
 
 
 	@When("User clicks Register button after entering the data from given {string}")
-	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) throws IOException {
-		ExcelReader reader = new ExcelReader();
+	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) {
+        DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "Register_invalid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		registerPage.enterUserName(testData.get("Username"));
