@@ -1,14 +1,10 @@
 package stepDefinitions;
 
-import java.io.IOException;
-import java.time.Duration;
 import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import factory.DriverManager;
@@ -20,7 +16,7 @@ import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utils.Constants;
 import utils.DataReader;
-import utils.ExcelReader;
+
 
 public class RegisterStepDefinition {
 
@@ -74,7 +70,7 @@ public class RegisterStepDefinition {
 
 
 	@When("User clicks Register button after entering the data from given {string}")
-	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) {
+	public void user_clicks_register_button_after_entering_the_data_from_given(String ScenarioName) throws InterruptedException {
         DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "Register_invalid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
@@ -82,6 +78,8 @@ public class RegisterStepDefinition {
 		registerPage.enterpassWord(testData.get("Password"));
 		registerPage.enterPasswordConfirmation(testData.get("Password confirmation"));
 		registerPage.registerBtn();
+		Thread.sleep(3000);
+		LoggerFactory.getLogger().info("User entering the invalid data");
 	}
 
 	@Then("The error message {string} appears below the {string}")

@@ -1,4 +1,4 @@
-@DataStructure @DataStructures
+@DataStructure @DataStructureIntroduction
 Feature: DataStructure Functionality
 
   Background:

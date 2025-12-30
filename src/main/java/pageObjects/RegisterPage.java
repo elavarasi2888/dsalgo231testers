@@ -1,29 +1,20 @@
 package pageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import factory.LoggerFactory;
 
 public class RegisterPage {
 	private WebDriver driver;
-	By userTxt = By.name("username");
-	By passwordTxt = By.name("password1");
-	By confirmPasswrdTxt = By.name("password2");
-	By registerBtn = By.xpath("//input[@type='submit']");
-	By loginLink = By.xpath("//a[normalize-space()='Login']");
-	By registerLink = By.xpath("//a[normalize-space()='Register']");
-	By signInLink = By.xpath("//a[normalize-space()='Sign in']");
-	By successRegMsg = By.xpath("//div[@role='alert']");
-	By errorMsg = By.xpath("//div[@class='alert alert-primary']");
-	By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
+	private By userTxt = By.name("username");
+	private By passwordTxt = By.name("password1");
+	private By confirmPasswrdTxt = By.name("password2");
+	private By registerBtn = By.xpath("//input[@type='submit']");
+	private By loginLink = By.xpath("//a[normalize-space()='Login']");
+	private By registerLink = By.xpath("//a[normalize-space()='Register']");
+	private By successRegMsg = By.xpath("//div[@role='alert']");
+	private By errorMsg = By.xpath("//div[@role='alert']");
+	private By btnGetStartedDsPortal = By.xpath("//button[normalize-space()='Get Started']");
 
 	public RegisterPage(WebDriver driver) {
 
@@ -90,14 +81,6 @@ public class RegisterPage {
 
 	}
 
-	public String getRegisteredUserErrorMsg() {
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement element = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'alert')]")));
-		return element.getText().trim();
-
-	}
 
 	public String getRegisterPageURL() {
 		return driver.getCurrentUrl();
