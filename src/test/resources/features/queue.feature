@@ -1,4 +1,4 @@
-@DataStructure @Queue
+@DataStructure @Queue @Regression
 Feature: Queue feature test cases
 
   Background:
