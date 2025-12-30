@@ -1,23 +1,16 @@
 package pageObjects;
-
-
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
-
-
 import org.apache.logging.log4j.core.util.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import factory.LoggerFactory;
 import pageObjects.TryEditorPage.Result;
 import utils.ConfigReader;
-
-
 
 public class ArrayPracticePage {
     private WebDriver driver;
@@ -31,8 +24,14 @@ public class ArrayPracticePage {
     private By txtOutput = By.xpath("//pre[@id='output']");
     private By practiceQuestionsinArray=By.xpath("//a[contains(text(),'Practice Questions')]");
     private By searchArrayLink = By.xpath("//a[normalize-space(text())='Search the array']");
+    private By maxConsecutiveOnes=By.xpath("//a[normalize-space(text())='Max Consecutive Ones']");
+    private By findNumberwithEvenNumbereofDigits=
+            By.xpath("//a[normalize-space(text())='Find Numbers with Even Number of Digits']");
+    private By squaresofaSortedArray=By.xpath("//a[normalize-space(text())='Squares of a Sorted Array']");
     //private By enterPythontextArea=By.xpath( "//textarea[@id='editor']") ;
     private By arrayTopicsLinks=By.xpath("//a[normalize-space()='Arrays in Python']");
+    private By submitBtn=By.xpath("//input[@value='Submit']");
+
     // Constructor
     public ArrayPracticePage(WebDriver driver) {
         this.driver = driver;
@@ -222,6 +221,22 @@ public class ArrayPracticePage {
         }
     }
 
+    public void clickSubmit() {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement submit = wait.until(
+                ExpectedConditions.elementToBeClickable(submitBtn)
+        );
+
+        submit.click();
+        System.out.println("SUBMIT CLICKED");
+        /*
+        driver.findElement(submitBtn).click();
+        driver.findElement(txtOutput).getText();
+        String outputText = getOutputText();
+        LoggerFactory.getLogger().info("The output message is " +outputText);
+    */
+    }
+
     public record Result(boolean isAlertWindowVisible, String alertWindowMessage) {
     }
 
@@ -295,6 +310,18 @@ public class ArrayPracticePage {
 
     public String getArrayPracticePageURL() {
         return driver.getCurrentUrl();
+    }
+    public void clickMaxConsecutiveOnes() {
+        driver.getCurrentUrl().contains("array/practice");
+        driver.findElement(maxConsecutiveOnes).click();
+    }
+    public void clickFindNumberswithEvenNumberofDigits() {
+        driver.getCurrentUrl().contains("array/practice");
+        driver.findElement(findNumberwithEvenNumbereofDigits).click();
+    }
+    public void clickSquaresofaSortedArray() {
+        driver.getCurrentUrl().contains("array/practice");
+        driver.findElement(squaresofaSortedArray).click();
     }
 }
 

@@ -13,10 +13,9 @@ public class SignOutPage {
 
     // ================= Locators =================
 
-    By signOutLink = By.linkText("Sign out");
-
-   By logoutSuccessMessage = By.className("alert alert-primary");
-   By homePageIdentifier = By.xpath("//a[text()='Sign out']");
+   private By signOutLink = By.linkText("Sign out");
+   private By logoutSuccessMessage = By.className("alert alert-primary");
+   private By homePageIdentifier = By.xpath("//a[text()='Sign out']");
 
     // ================= Actions =================
 

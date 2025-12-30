@@ -1,4 +1,4 @@
-@SignIn
+@Regression @SignIn
 Feature: Sign in functionality of DS Algo
 
   Background: User clicks the Get Started button on DS Algo portal page

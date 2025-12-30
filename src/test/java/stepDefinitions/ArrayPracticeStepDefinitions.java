@@ -53,16 +53,15 @@ public class ArrayPracticeStepDefinitions {
 
     @Then("User should see {string} link on practice questions page")
     public void userShouldSeeLinkOnPracticeQuestionsPage(String topicName) {
-        Assert.assertTrue(
-                arrayPracticePage.isPracticeQuestionLinkDisplayed(topicName),
-                "Practice question link not visible: " + topicName
-        );
+        Assert.assertTrue(arrayPracticePage.isPracticeQuestionLinkDisplayed(topicName),
+                "Practice question link not visible: " + topicName);
     }
 
     @When("User clicks the Arrays in Python link on the Array page")
     public void userClicksTheArraysInPythonLinkOnTheArrayPage() {
         arrayPracticePage.clickArraysInPythonLink();
     }
+
     @When("User clicks PracticeQuestions link in the respective Array page")
     public void userClicksPracticeQuestionsLinkInTheRespectiveArrayPage() {
         arrayPracticePage.clickPracticeQuestionsFromArraysInPython();
@@ -74,7 +73,6 @@ public class ArrayPracticeStepDefinitions {
         Assert.assertTrue(currentURL.contains("array/practice"));
     }
 
-
     @Then("user clears the text in the editor area")
     public void userClearsTheTextInTheEditorArea() {
         arrayPracticePage.clearEditorText();
@@ -82,41 +80,23 @@ public class ArrayPracticeStepDefinitions {
 
     @When("User enters the python code for the following {string}")
     public void userEntersThePythonCodeForTheFollowing(String scenarioName) {
-
         DataReader dataReader = new DataReader(Constants.TEST_DATA_FILE);
-        Map<String, String> data = dataReader.getDataByScenarioName(Constants.TRY_EDITOR_PAGE_DATA_SHEET_NAME, scenarioName);
+        Map<String, String> data = dataReader.getDataByScenarioName(Constants.TRY_EDITOR_PAGE_DATA_SHEET_NAME,
+                scenarioName);
 
         expectedResult = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_RESULT);
         expectedMessage = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_MESSAGE);
         String inputCode = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_CODE);
-
-        // tryEditorPage.enterDataIntoEditor(inputCode);
         arrayPracticePage.enterDataIntoEditor(inputCode);
-        /*
-        String code = "";
-        switch (scenarioName) {
-            case "Valid Code":
-                code = "print('Hello World')";
-                break;
-            case "Invalid Code":
-                code = "print('Hello World'";
-                break;
-            case "No Code":
-                code = "";
-                break;
-        }
-        arrayPracticePage.enterCodeInEditor(code);
-        */
-
     }
+
     @When("User clicks Run button")
-    public void userClicksRunButton()
-    {
+    public void userClicksRunButton() {
         arrayPracticePage.clickRunButton();
     }
+
     @Then("User see the appropriate result")
-    public void userSeeTheAppropriateResult()
-    {
+    public void userSeeTheAppropriateResult() {
         if (expectedResult.equalsIgnoreCase("print")) {
             Assert.assertEquals(tryEditorPage.getPrintMessage(), expectedMessage);
         } else if (expectedResult.equalsIgnoreCase("alert")) {
@@ -128,17 +108,65 @@ public class ArrayPracticeStepDefinitions {
         }
     }
 
-
-    @When("User clicks {string} in the practice page")
-    public void user_clicks_in_the_practice_page(String problemName) {
-        //arrayPracticePage.clickPracticeQuestionByName(problemName);
-        arrayPracticePage.clickSearchTheArray();
-    }
-
     @When("User navigates to the Array Practice page")
     public void userNavigatesToTheArrayPracticePage() {
         arrayPracticePage.navigateToArrayPractice();
     }
 
-}
+    @When("User clicks {string} in practice page")
+    public void userClicksInPracticePage(String questionName) {
+        arrayPracticePage.navigateToArrayPractice();
+        arrayPracticePage.clickPracticeQuestionByName(questionName);
+    }
 
+    @When("User enters python code for the following {string}")
+    public void userEntersPythonCodeForTheFollowing(String scenarioName) {
+        DataReader dataReader = new DataReader(Constants.TEST_DATA_FILE);
+        Map<String, String> data = dataReader.getDataByScenarioName(Constants.TRY_EDITOR_PAGE_DATA_SHEET_NAME,
+                scenarioName);
+
+        expectedResult = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_RESULT);
+        expectedMessage = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_MESSAGE);
+        String inputCode = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_CODE);
+
+        arrayPracticePage.enterDataIntoEditor(inputCode);
+    }
+
+    @When("User clicks Search the array link in the practice page")
+    public void userClicksSearchTheArrayLinkInThePracticePage() {
+        arrayPracticePage.clickSearchTheArray();
+    }
+
+    @When("User clicks Max Consecutive Ones link in the practice page")
+    public void userClicksMaxConsecutiveOnesLinkInThePracticePage() {
+        arrayPracticePage.clickMaxConsecutiveOnes();
+    }
+
+    @When("User clicks Find Numbers with Even Number of Digits link in the practice page")
+    public void userClicksFindNumbersWithEvenNumberOfDigitsLinkInThePracticePage() {
+        arrayPracticePage.clickFindNumberswithEvenNumberofDigits();
+    }
+
+    @When("User clicks Squares of a Sorted Array link in the practice page")
+    public void userClicksSquaresOfASortedArrayLinkInThePracticePage() {
+        arrayPracticePage.clickSquaresofaSortedArray();
+    }
+
+    @Then("User clicks the Submit button and get output message")
+    public void userClicksTheSubmitButtonAndGetOutputMessage() {
+      //  arrayPracticePage.clickSubmit();
+       // arrayPracticePage.getOutputText();
+
+        // Submit should ONLY work for valid code
+        if ("print".equalsIgnoreCase(expectedResult)) {
+
+            arrayPracticePage.clickSubmit();
+
+            String output = arrayPracticePage.getOutputText();
+            Assert.assertNotNull(output, "Submit output message is null");
+
+        } else {
+            System.out.println("Submit skipped for non-valid code scenario");
+        }
+    }
+}

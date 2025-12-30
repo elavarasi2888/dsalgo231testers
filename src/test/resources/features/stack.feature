@@ -1,4 +1,4 @@
-@DataStructure @Stack
+@Regression @DataStructure @Stack
 Feature: Stack test cases
 
   Background:

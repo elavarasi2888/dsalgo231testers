@@ -30,10 +30,11 @@ public class Runner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 
-    @BeforeClass
+  /*  @BeforeClass
     @Parameters({"browserType"})
     public void beforeClass(@Optional String browser) throws IOException {
         ConfigReader.setBrowserType(browser);
     }
+    */
 }
 
