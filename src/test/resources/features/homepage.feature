@@ -1,4 +1,4 @@
-@HomePage
+@HomePage @Regression
 Feature: Home page test cases
 
   Background:
