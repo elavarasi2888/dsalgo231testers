@@ -1,4 +1,4 @@
-@DataStructure @Graph
+@DataStructure @Graph @Regression
 Feature: Graph functionality
 
   Background:

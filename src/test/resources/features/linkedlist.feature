@@ -1,4 +1,4 @@
-@DataStructure @Linkedlist
+@DataStructure @Linkedlist @Regression
 Feature: Linked List Functionality
 
   Background:

@@ -1,4 +1,4 @@
-@DataStructure @DataStructureIntroduction
+@DataStructure @DataStructureIntroduction @Regression
 Feature: DataStructure Functionality
 
   Background:
