@@ -10,9 +10,6 @@ import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
 		// tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or
-		// @TryEditor",
-		// tags="@Register",
-		// tags="@Array",
 		tags = "@DsAlgoPortal",
 		plugin = { "pretty", "html:cucumber-reports.html",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
