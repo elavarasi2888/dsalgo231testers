@@ -153,15 +153,9 @@ public class ArrayPracticeStepDefinitions {
     }
 
     @Then("User clicks the Submit button and get output message")
-    public void userClicksTheSubmitButtonAndGetOutputMessage() {
-      //  arrayPracticePage.clickSubmit();
-       // arrayPracticePage.getOutputText();
-
-        // Submit should ONLY work for valid code
+    public void userClicksTheSubmitButtonAndGetOutputMessage() {     
         if ("print".equalsIgnoreCase(expectedResult)) {
-
             arrayPracticePage.clickSubmit();
-
             String output = arrayPracticePage.getOutputText();
             Assert.assertNotNull(output, "Submit output message is null");
 

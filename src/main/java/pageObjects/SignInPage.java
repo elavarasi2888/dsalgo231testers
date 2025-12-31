@@ -14,7 +14,6 @@ public class SignInPage {
 	private By registerLink = By.xpath("//a[normalize-space()='Register']");
 	private By errorMsg = By.xpath("//div[contains(@class,'alert')]");
 
-	// Constructor
 	public SignInPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -32,39 +31,6 @@ public class SignInPage {
 			driver.findElement(txtPassword).sendKeys(password);
 		}
 	}
-	// -------------------- Page Chaining
-	// ---------------------------------------------------------
-
-	/* VALID LOGIN → Navigates to HomePage */
-	public HomePage login(String username, String password) {
-
-		driver.findElement(txtUsername).sendKeys(username);
-		driver.findElement(txtPassword).sendKeys(password);
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement a = driver.findElement(loginButton);
-		js.executeScript("arguments[0].click();", a);
-
-		return new HomePage(driver);
-	}
-
-	/* INVALID LOGIN → Stays on SignInPage */
-	public SignInPage clickSignIn() {
-		driver.findElement(loginButton).click();
-		return this;
-	}
-
-	/* Navigates to Register Page */
-	public RegisterPage clickRegister() {
-		driver.findElement(registerLink).click();
-		return new RegisterPage(driver);
-	}
-
-	// --------------- Registration Page
-	// Check----------------------------------------------------------
-	public boolean isRegistrationPageDisplayed() {
-		return driver.getCurrentUrl().contains("register");
-	}
 
 	public String getSignInPageURL() {
 		return driver.getCurrentUrl();
@@ -78,4 +44,32 @@ public class SignInPage {
 	public String getApplicationErrorMessage() {
 		return driver.findElement(errorMsg).getText();
 	}
+
+	// -------------------- Page Chaining-----------------------------------------
+	// VALID LOGIN → Navigates to HomePage
+	public HomePage login(String username, String password) {
+		driver.findElement(txtUsername).sendKeys(username);
+		driver.findElement(txtPassword).sendKeys(password);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement a = driver.findElement(loginButton);
+		js.executeScript("arguments[0].click();", a);
+		return new HomePage(driver);
+	}
+
+	// INVALID LOGIN → Stays on SignInPage
+	public SignInPage clickSignIn() {
+		driver.findElement(loginButton).click();
+		return this;
+	}
+
+	// Navigates to Register Page
+	public RegisterPage clickRegister() {
+		driver.findElement(registerLink).click();
+		return new RegisterPage(driver);
+	}
+
+	public boolean isRegistrationPageDisplayed() {
+		return driver.getCurrentUrl().contains("register");
+	}
+
 }
