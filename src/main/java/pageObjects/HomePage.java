@@ -16,7 +16,6 @@ public class HomePage {
     private By lnkNumpyNinja = By.xpath("//a[normalize-space()='NumpyNinja']");
     private By lnkRegister = By.xpath("//a[normalize-space()='Register']");
     private By lnkSignIn = By.xpath("//a[normalize-space()='Sign in']");
-    private By lnkSignOut=By.xpath("//a[normalize-space()='Sign out']");
     private By drpDataStructures = By.xpath("//a[normalize-space()='Data Structures']");
     private By drpDataStructureOptions = By.xpath("//div[@class='dropdown-menu show']//a");
     private By msgError = By.xpath("//div[@role='alert']");
@@ -87,14 +86,14 @@ public class HomePage {
     }
 
     public void clickGetStartedButton(String dsType) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
         element.click();
     }
 
     public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
         element.click();
@@ -161,7 +160,6 @@ public class HomePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         String userNameCapitalizeFirstLetter = userName.trim().substring(0, 1).toUpperCase() + userName.trim().substring(1);
         By lblSignedInUserName = By.xpath("//a[normalize-space()='" + userNameCapitalizeFirstLetter + "']");
-
         return wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).isDisplayed();
     }
 
