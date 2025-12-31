@@ -2,30 +2,27 @@ package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
-import java.io.IOException;
 import java.util.Map;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 import utils.Constants;
 import utils.DataReader;
-import utils.ExcelReader1;
 
-public class SignInStepDefintions {
+
+public class SignInStepDefinitions {
 	HomePage homePage;
 	SignInPage signinpage;
 	WebDriver driver;
 
-	public SignInStepDefintions() {
+	public SignInStepDefinitions() {
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
 		signinpage = new SignInPage(driver);
@@ -61,7 +58,6 @@ public class SignInStepDefintions {
 	@Then("User get the error message {string}")
 	public void user_get_the_error_message(String expectedErrMsg) {
 		String actualErrMsg;
-
 		if (expectedErrMsg.equals("Please fill out this field.")) {
 			// HTML5 browser validation
 			actualErrMsg = signinpage.getBrowserValidationMessage();
@@ -69,7 +65,6 @@ public class SignInStepDefintions {
 			// Server-side application validation
 			actualErrMsg = signinpage.getApplicationErrorMessage();
 		}
-
 		Assert.assertEquals(actualErrMsg, expectedErrMsg);
 	}
 

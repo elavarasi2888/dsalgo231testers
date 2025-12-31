@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import factory.DriverManager;
 import factory.LoggerFactory;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
@@ -21,84 +22,79 @@ import utils.ConfigReader;
 
 public class Hooks {
 
-    private Properties prop;
-    private ConfigReader configReader;
-    private String browser;
-    private WebDriver driver;
+	private Properties prop;
+	private ConfigReader configReader;
+	private String browser;
+	private WebDriver driver;
 
-    @Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
-    public void beforeScenario() throws IOException {
-        configReader = new ConfigReader();
-        prop = configReader.loadProperties();
+	@Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
+	public void beforeScenario() throws IOException {
+		configReader = new ConfigReader();
+		prop = configReader.loadProperties();
 
-        if (ConfigReader.getBrowserType() != null) {
-            browser = ConfigReader.getBrowserType();
-        } else {
-            browser = prop.getProperty("browser");
-        }
+		if (ConfigReader.getBrowserType() != null) {
+			browser = ConfigReader.getBrowserType();
+		} else {
+			browser = prop.getProperty("browser");
+		}
 
-        driver = DriverManager.initBrowser(browser);
-    }
+		driver = DriverManager.initBrowser(browser);
+	}
 
-    @Before("@DataStructure")
-    public void preStep() throws IOException, InterruptedException {
-        configReader = new ConfigReader();
-        prop = configReader.loadProperties();
+	@Before("@DataStructure")
+	public void preStep() throws IOException, InterruptedException {
+		configReader = new ConfigReader();
+		prop = configReader.loadProperties();
 
-        if (ConfigReader.getBrowserType() != null) {
-            browser = ConfigReader.getBrowserType();
-        } else {
-            browser = prop.getProperty("browser");
-        }
+		if (ConfigReader.getBrowserType() != null) {
+			browser = ConfigReader.getBrowserType();
+		} else {
+			browser = prop.getProperty("browser");
+		}
 
-        driver = DriverManager.initBrowser(browser);
+		driver = DriverManager.initBrowser(browser);
 
-        String appURL = ConfigReader.getAppUrl();
-        driver.get(appURL);
+		String appURL = ConfigReader.getAppUrl();
+		driver.get(appURL);
 
-        DsAlgoPortalPage dsAlgoPortal = new DsAlgoPortalPage(driver);
-        HomePage homePage = dsAlgoPortal.clickDsPortalGetStarted();
-        SignInPage signInPage = homePage.clickSignInLink();
-        String username = "dsalgo231";
-        String password = "automation2025#";
-        homePage = signInPage.login(username, password);
-    }
+		DsAlgoPortalPage dsAlgoPortal = new DsAlgoPortalPage(driver);
+		HomePage homePage = dsAlgoPortal.clickDsPortalGetStarted();
+		SignInPage signInPage = homePage.clickSignInLink();
+		String username = "dsalgo231";
+		String password = "automation2025#";
+		homePage = signInPage.login(username, password);
+	}
 
-    @Before("@TryEditor")
-    public void tryEditorpPreStep() {
-        configReader = new ConfigReader();
-        prop = configReader.loadProperties();
+	@Before("@TryEditor")
+	public void tryEditorpPreStep() {
+		configReader = new ConfigReader();
+		prop = configReader.loadProperties();
 
-        if (ConfigReader.getBrowserType() != null) {
-            browser = ConfigReader.getBrowserType();
-        } else {
-            browser = prop.getProperty("browser");
-        }
+		if (ConfigReader.getBrowserType() != null) {
+			browser = ConfigReader.getBrowserType();
+		} else {
+			browser = prop.getProperty("browser");
+		}
 
-        driver = DriverManager.initBrowser(browser);
-    }
+		driver = DriverManager.initBrowser(browser);
+	}
 
-    @After
+	@After
 	public void tearDown(Scenario scenario) {
-
-		takeScreenShot(scenario);
 		if (DriverManager.getDriver() != null) {
 			DriverManager.getDriver().quit();
 		}
 		LoggerFactory.getLogger().info("DONE tearDown()..");
 	}
-    
-	
-	  private void takeScreenShot(Scenario scenario){ if (scenario.isFailed()){
-	  TakesScreenshot takesScreenshot = (TakesScreenshot)
-	  DriverManager.getDriver(); byte[] screenShot =
-	  takesScreenshot.getScreenshotAs(OutputType.BYTES);
-	  Allure.addAttachment(scenario.getName(),new
-	  ByteArrayInputStream(screenShot));
-	  
-	  
-	  }
-	  
-	  }
-	 
-    }
+
+	@AfterStep
+	public void takeScreenShot(Scenario scenario) {
+		if (scenario.isFailed()) {
+			TakesScreenshot takesScreenshot = (TakesScreenshot) DriverManager.getDriver();
+			byte[] screenShot = takesScreenshot.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenShot, "image/png", scenario.getName());
+			Allure.addAttachment(scenario.getName(), new ByteArrayInputStream(screenShot));
+		}
+	}
+
+}

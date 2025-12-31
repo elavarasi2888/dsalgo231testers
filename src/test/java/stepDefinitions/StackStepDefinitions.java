@@ -1,14 +1,14 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.Given;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import factory.DriverManager;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import factory.DriverManager;
 import pageObjects.HomePage;
 import pageObjects.StackPage;
-
-import org.openqa.selenium.WebDriver;
 
 public class StackStepDefinitions {
 	StackPage stackPage;
@@ -67,13 +67,21 @@ public class StackStepDefinitions {
 	public void userClicksTryHereButtonInTheRespectiveStackPage() {
 		stackPage.clickTryHereInStackLinkPage();
 	}
-/*
-	@Then("User should be redirected to try Editor page")
-	public void user_should_be_redirected_to_try_editor_page() {
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertTrue(currentURL.contains("tryEditor"));
-	}
-*/
 
+    @Then("User should see Practice Questions on the Stack topic page")
+    public void userShouldSeePracticeQuestionsOnTheStackTopicPage() {
+        Assert.assertTrue(stackPage.isPracticeQuestionsLinkOnStackVisible());
 
+    }
+
+    @When("User clicks PracticeQuestions link in the respective Stack page")
+    public void userClicksPracticeQuestionsLinkInTheRespectiveStackPage() {
+        stackPage.clickPracticeQuestionsOnStack();
+    }
+
+    @Then("User should be redirected to Practice Questions page of Stack topics")
+    public void userShouldBeRedirectedToPracticeQuestionsPageOfStackTopics() {
+        String currentURL = driver.getCurrentUrl();
+        Assert.assertTrue(currentURL.contains("stack/practice"));
+    }
 }

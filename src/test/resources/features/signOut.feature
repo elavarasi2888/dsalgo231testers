@@ -1,10 +1,12 @@
-@SignOutPage
+@Regression @DataStructure @SignOut
 Feature: Sign out functionality
-# Functional test case
 
   Background:
-    Given User is in the Home page after Sign in
+    Given User is at Home page after Sign in
 
-  Scenario: Verify that user able to sign out successfully
-    When User clicks "Sign out"
-    Then User should be redirected to home page with message "Logged out successfully"
+  Scenario: Verify user can sign out successfully
+    When User clicks the Sign out link 
+    Then User should be logged out with a message Logged out successfully
+    Then User should see the Sign in link
+
+   

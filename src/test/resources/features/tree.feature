@@ -1,4 +1,4 @@
-@DataStructure @Tree
+@DataStructure @Tree @Regression
 Feature: Tree feature test cases
 
   Background:

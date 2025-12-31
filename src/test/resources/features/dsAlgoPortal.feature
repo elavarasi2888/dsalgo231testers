@@ -1,4 +1,4 @@
-@DsAlgoPortal
+@DsAlgoPortal @Regression
 Feature: Ds Algo portal test cases
 
   Background:
