@@ -1,10 +1,8 @@
-
 package stepDefinitions;
 
-import io.cucumber.java.PendingException;
+import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import factory.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,9 +13,6 @@ import pageObjects.HomePage;
 import pageObjects.TryEditorPage;
 import utils.Constants;
 import utils.DataReader;
-
-import java.io.IOException;
-import java.util.Map;
 
 public class ArrayPracticeStepDefinitions {
     WebDriver driver;

@@ -15,8 +15,8 @@ public class StackPage {
 	private By headerStackLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
 	private By lnkStackLinks = By.xpath("//a[@class='list-group-item']");
 	private By btnTryHereStackLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
-    private By lnkPracticeQuestionsStackTopics=By.xpath("//a[normalize-space()='Practice Questions']");
-	
+	private By lnkPracticeQuestionsStackTopics = By.xpath("//a[normalize-space()='Practice Questions']");
+
 	public StackPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -60,11 +60,11 @@ public class StackPage {
 		return driver.findElement(headerStackLinkTopic).getText();
 	}
 
-    public boolean isPracticeQuestionsLinkOnStackVisible() {
-        return driver.findElement(lnkPracticeQuestionsStackTopics).isDisplayed();
-    }
+	public boolean isPracticeQuestionsLinkOnStackVisible() {
+		return driver.findElement(lnkPracticeQuestionsStackTopics).isDisplayed();
+	}
 
-    public void clickPracticeQuestionsOnStack() {
-        driver.findElement(lnkPracticeQuestionsStackTopics).click();
-    }
+	public void clickPracticeQuestionsOnStack() {
+		driver.findElement(lnkPracticeQuestionsStackTopics).click();
+	}
 }

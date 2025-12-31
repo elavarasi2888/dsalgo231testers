@@ -1,17 +1,17 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
 import pageObjects.SignOutPage;
 import utils.ConfigReader;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class SignOutStepDefinitions {
 

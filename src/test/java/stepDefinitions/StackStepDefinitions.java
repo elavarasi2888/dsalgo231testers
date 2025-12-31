@@ -1,15 +1,14 @@
 package stepDefinitions;
 
-import io.cucumber.java.PendingException;
-import io.cucumber.java.en.Given;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import factory.DriverManager;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import factory.DriverManager;
 import pageObjects.HomePage;
 import pageObjects.StackPage;
-
-import org.openqa.selenium.WebDriver;
 
 public class StackStepDefinitions {
 	StackPage stackPage;

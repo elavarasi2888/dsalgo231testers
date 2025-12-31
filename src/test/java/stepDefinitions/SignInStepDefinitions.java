@@ -2,16 +2,13 @@ package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
-import java.io.IOException;
 import java.util.Map;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
