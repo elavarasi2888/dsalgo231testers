@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 import utils.ConfigReader;
 import java.io.IOException;
 
+
 @CucumberOptions(features = "src/test/resources/features", 
 		glue = { "hooks", "stepDefinitions" },
 		// tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or
@@ -21,6 +22,7 @@ import java.io.IOException;
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 		dryRun = false, monochrome = true)
+
 public class Runner extends AbstractTestNGCucumberTests {
 
 	@Override

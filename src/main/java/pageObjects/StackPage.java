@@ -15,20 +15,17 @@ public class StackPage {
 	private By headerStackLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
 	private By lnkStackLinks = By.xpath("//a[@class='list-group-item']");
 	private By btnTryHereStackLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
-	// By pracquest=By.xpath("//a[contains(text(),'Practice Questions')]");
-
-	// Constructor
+    private By lnkPracticeQuestionsStackTopics=By.xpath("//a[normalize-space()='Practice Questions']");
+	
 	public StackPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public boolean isStackHeaderVisible() {
-
 		return driver.findElement(headerStack).isDisplayed();
 	}
 
 	public boolean isTopicsCoveredHeaderForStackVisible() {
-
 		return driver.findElement(headerTopicsCoveredStack).isDisplayed();
 	}
 
@@ -43,7 +40,6 @@ public class StackPage {
 			if (s.getText().equals(stackTopicLink))
 				return true;
 		}
-
 		return false;
 	}
 
@@ -64,4 +60,11 @@ public class StackPage {
 		return driver.findElement(headerStackLinkTopic).getText();
 	}
 
+    public boolean isPracticeQuestionsLinkOnStackVisible() {
+        return driver.findElement(lnkPracticeQuestionsStackTopics).isDisplayed();
+    }
+
+    public void clickPracticeQuestionsOnStack() {
+        driver.findElement(lnkPracticeQuestionsStackTopics).click();
+    }
 }
