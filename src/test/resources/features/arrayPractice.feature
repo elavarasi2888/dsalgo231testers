@@ -1,4 +1,4 @@
-@DataStructure @ArrayPractice
+@Regression @DataStructure @ArrayPractice
 Feature: Array Practice
 
   Background:
