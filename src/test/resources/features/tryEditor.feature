@@ -1,4 +1,4 @@
-@TryEditor
+@TryEditor @Regression
 Feature: Try Editor test cases
 
   Background:
