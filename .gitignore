@@ -7,3 +7,5 @@ reports/
 test-output/
 .idea/
 allure-results/
+allure-report/
+/*.html
