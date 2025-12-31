@@ -20,10 +20,10 @@ import utils.DataReader;
 
 public class RegisterStepDefinition {
 
-	WebDriver driver;
-	RegisterPage registerPage;
-	SignInPage signInPage;
-	HomePage homePage;
+	private WebDriver driver;
+	private RegisterPage registerPage;
+	private SignInPage signInPage;
+	private HomePage homePage;
 
 	public RegisterStepDefinition() {
 		driver = DriverManager.getDriver();
