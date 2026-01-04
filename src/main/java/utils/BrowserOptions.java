@@ -34,6 +34,7 @@ public class BrowserOptions {
         options.setScriptTimeout(Duration.ofSeconds(40));
         options.addArguments("start-maximized");
         options.addArguments("--incognito");
+        options.addArguments("--headless=new");
 
         return options;
     }
