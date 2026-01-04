@@ -45,7 +45,7 @@ public class BrowserOptions {
         options.setPageLoadTimeout(Duration.ofSeconds(40));
         options.setAcceptInsecureCerts(true);
         options.setScriptTimeout(Duration.ofSeconds(40));
-        options.addArguments("start-maximized");
+        //options.addArguments("start-maximized");
         options.addArguments("--incognito");
 
         return options;

@@ -29,6 +29,7 @@ public class DriverManager {
         } else if (browser.trim().equalsIgnoreCase("firefox")) {
             driver.set(new FirefoxDriver(fo));
         }
+        getDriver().manage().window().maximize();
 
         return getDriver();
     }
