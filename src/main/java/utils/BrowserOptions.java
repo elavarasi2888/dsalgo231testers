@@ -19,6 +19,7 @@ public class BrowserOptions {
         chromeOptions.setScriptTimeout(Duration.ofSeconds(40));
         chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--incognito");
+        
 
         return chromeOptions;
     }
