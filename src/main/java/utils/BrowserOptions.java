@@ -37,9 +37,9 @@ public class BrowserOptions {
 
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
        // options.addArguments("--disk-cache-size=0");
-        options.setPageLoadTimeout(Duration.ofSeconds(40));
+        options.setPageLoadTimeout(Duration.ofSeconds(60));
         options.setAcceptInsecureCerts(true);
-        options.setScriptTimeout(Duration.ofSeconds(40));
+        options.setScriptTimeout(Duration.ofSeconds(60));
         options.addArguments("start-maximized");
         //options.addArguments("--incognito");
         //options.addArguments("--headless=new");
