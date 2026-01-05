@@ -1,3 +1,4 @@
+#Owner: Ela
 @Regression @DataStructure @Array
 Feature: Array - non functional test case
 
