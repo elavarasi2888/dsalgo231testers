@@ -40,7 +40,7 @@ public class BrowserOptions {
         options.setScriptTimeout(Duration.ofSeconds(40));
         options.addArguments("start-maximized");
         //options.addArguments("--incognito");
-        options.addArguments("--headless=new");
+        //options.addArguments("--headless=new");
         options.addArguments("disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
