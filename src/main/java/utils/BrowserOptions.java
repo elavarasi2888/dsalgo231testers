@@ -35,7 +35,10 @@ public class BrowserOptions {
         options.addArguments("start-maximized");
         options.addArguments("--incognito");
         options.addArguments("--headless=new");
-        options.addArguments("--disk-cache-size=0");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-debugging-port=9222");
+        
 
         return options;
     }
