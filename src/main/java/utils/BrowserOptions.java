@@ -9,45 +9,57 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserOptions {
 
-    public ChromeOptions chromeOption() {
-        ChromeOptions chromeOptions = new ChromeOptions();
+	public ChromeOptions chromeOption() {
+		ChromeOptions chromeOptions = new ChromeOptions();
 
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        chromeOptions.addArguments("--disk-cache-size=0");
-        chromeOptions.setPageLoadTimeout(Duration.ofSeconds(40));
-        chromeOptions.setAcceptInsecureCerts(true);
-        chromeOptions.setScriptTimeout(Duration.ofSeconds(40));
-        chromeOptions.addArguments("start-maximized");
-        chromeOptions.addArguments("--incognito");
+		chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		chromeOptions.addArguments("--disk-cache-size=0");
+		chromeOptions.setPageLoadTimeout(Duration.ofSeconds(40));
+		chromeOptions.setAcceptInsecureCerts(true);
+		chromeOptions.setScriptTimeout(Duration.ofSeconds(40));
+		chromeOptions.addArguments("start-maximized");
+		chromeOptions.addArguments("--incognito");
+		chromeOptions.addArguments("--headless=new");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+		chromeOptions.addArguments("--remote-debugging-port=9222");
 
-        return chromeOptions;
-    }
+		return chromeOptions;
+	}
 
-    public EdgeOptions edgeOption() {
-        EdgeOptions options = new EdgeOptions();
+	public EdgeOptions edgeOption() {
+		// System.setProperty("webdriver.edge.driver","C:/mydrivers/edgedriver_win64.exe");
+		EdgeOptions options = new EdgeOptions();
 
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.addArguments("--disk-cache-size=0");
-        options.setPageLoadTimeout(Duration.ofSeconds(40));
-        options.setAcceptInsecureCerts(true);
-        options.setScriptTimeout(Duration.ofSeconds(40));
-        options.addArguments("start-maximized");
-        options.addArguments("--incognito");
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		// options.addArguments("--disk-cache-size=0");
+		options.setPageLoadTimeout(Duration.ofSeconds(60));
+		options.setAcceptInsecureCerts(true);
+		options.setScriptTimeout(Duration.ofSeconds(60));
+		options.addArguments("start-maximized");
+		// options.addArguments("--incognito");
+		// options.addArguments("--headless=new");
+		options.addArguments("disable-gpu");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		// options.addArguments("--remote-debugging-port=9222");
 
-        return options;
-    }
+		return options;
+	}
 
-    public FirefoxOptions firefoxOption() {
-        FirefoxOptions options = new FirefoxOptions();
+	public FirefoxOptions firefoxOption() {
+		FirefoxOptions options = new FirefoxOptions();
 
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.addArguments("--disk-cache-size=0");
-        options.setPageLoadTimeout(Duration.ofSeconds(40));
-        options.setAcceptInsecureCerts(true);
-        options.setScriptTimeout(Duration.ofSeconds(40));
-        options.addArguments("start-maximized");
-        options.addArguments("--incognito");
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		options.addArguments("--disk-cache-size=0");
+		options.setPageLoadTimeout(Duration.ofSeconds(40));
+		options.setAcceptInsecureCerts(true);
+		options.setScriptTimeout(Duration.ofSeconds(40));
+		options.addArguments("--incognito");
+		options.addArguments("--headless=new");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
 
-        return options;
-    }
+		return options;
+	}
 }

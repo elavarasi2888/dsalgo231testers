@@ -9,9 +9,8 @@ import utils.ConfigReader;
 import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
-		// tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or
-		//tags = "@DsAlgoPortal",
-		tags="@Regression",
+		tags = "@DsAlgoPortal",
+		//tags="@Regression",
 		plugin = { "pretty", "html:cucumber-reports.html",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
@@ -22,8 +21,7 @@ public class Runner extends AbstractTestNGCucumberTests {
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
-	
-	
+		
 	@BeforeClass
 	@Parameters({ "browserType" })
 	public void beforeClass(@Optional String browser) throws IOException {

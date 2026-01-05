@@ -24,12 +24,12 @@
                     <version>3.1.2</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <!--     <suiteXmlFile>testng.xml</suiteXmlFile>-->
+                                <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         <properties>
                             <property>
                                 <name>dataproviderthreadcount</name>
-                                <value>2</value>
+                                <value>5</value>
                             </property>
                         </properties>
                     </configuration>
