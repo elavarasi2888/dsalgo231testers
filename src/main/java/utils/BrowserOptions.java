@@ -31,7 +31,7 @@ public class BrowserOptions {
     }
 
     public EdgeOptions edgeOption() {
-    	System.setProperty("webdriver.edge.driver", "C:\\mydrivers\\edgedriver_win64.exe");
+    	//System.setProperty("webdriver.edge.driver", "C:\\mydrivers\\edgedriver_win64.exe");
         EdgeOptions options = new EdgeOptions();
         
 
