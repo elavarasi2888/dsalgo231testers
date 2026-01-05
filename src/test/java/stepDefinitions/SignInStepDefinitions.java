@@ -1,12 +1,9 @@
 package stepDefinitions;
 
 import static org.testng.Assert.assertEquals;
-
 import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import factory.DriverManager;
 import factory.LoggerFactory;
 import io.cucumber.java.en.Then;
@@ -15,7 +12,6 @@ import pageObjects.HomePage;
 import pageObjects.SignInPage;
 import utils.Constants;
 import utils.DataReader;
-
 
 public class SignInStepDefinitions {
 	HomePage homePage;
@@ -58,11 +54,9 @@ public class SignInStepDefinitions {
 	@Then("User get the error message {string}")
 	public void user_get_the_error_message(String expectedErrMsg) {
 		String actualErrMsg;
-		if (expectedErrMsg.equals("Please fill out this field.")) {
-			// HTML5 browser validation
+		if (expectedErrMsg.equals("Please fill out this field.")) {		
 			actualErrMsg = signinpage.getBrowserValidationMessage();
 		} else {
-			// Server-side application validation
 			actualErrMsg = signinpage.getApplicationErrorMessage();
 		}
 		Assert.assertEquals(actualErrMsg, expectedErrMsg);
