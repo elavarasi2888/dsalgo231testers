@@ -31,7 +31,9 @@ public class BrowserOptions {
     }
 
     public EdgeOptions edgeOption() {
+    	System.setProperty("webdriver.edge.driver", "C://mydrivers//edgedriver_win64");
         EdgeOptions options = new EdgeOptions();
+        
 
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
        // options.addArguments("--disk-cache-size=0");
