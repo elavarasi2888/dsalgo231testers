@@ -35,6 +35,7 @@ public class BrowserOptions {
         options.addArguments("start-maximized");
         options.addArguments("--incognito");
         options.addArguments("--headless=new");
+        options.addArguments("--disk-cache-size=0");
 
         return options;
     }
