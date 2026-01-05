@@ -44,7 +44,7 @@ public class BrowserOptions {
         options.addArguments("disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--remote-debugging-port=9222");
+        //options.addArguments("--remote-debugging-port=9222");
         
 
         return options;
