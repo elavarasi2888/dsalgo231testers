@@ -53,7 +53,8 @@ public class RegisterStepDefinition {
         DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
 		String sheetName = "Register_valid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
-		registerPage.enterUserName(testData.get("Username"));
+		String username = testData.get("Username") + System.currentTimeMillis();
+		registerPage.enterUserName(username);
 		registerPage.enterpassWord(testData.get("Password"));
 		registerPage.enterPasswordConfirmation(testData.get("Password confirmation"));
 		registerPage.registerBtn();
