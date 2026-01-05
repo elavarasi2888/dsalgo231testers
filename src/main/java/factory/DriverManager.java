@@ -10,30 +10,29 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import utils.BrowserOptions;
 
-
 public class DriverManager {
 
-    private static final BrowserOptions browserOptions = new BrowserOptions();
-    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	private static final BrowserOptions browserOptions = new BrowserOptions();
+	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-    private static ChromeOptions co = browserOptions.chromeOption();
-    private static EdgeOptions ed = browserOptions.edgeOption();
-    private static FirefoxOptions fo = browserOptions.firefoxOption();
+	private static ChromeOptions co = browserOptions.chromeOption();
+	private static EdgeOptions ed = browserOptions.edgeOption();
+	private static FirefoxOptions fo = browserOptions.firefoxOption();
 
-    public static WebDriver initBrowser(String browser) {
-        LoggerFactory.getLogger().info("In initBrowser(), browser value - {}", browser);
-        if (browser.trim().equalsIgnoreCase("chrome")) {
-            driver.set(new ChromeDriver(co));
-        } else if (browser.trim().equalsIgnoreCase("edge")) {
-            driver.set(new EdgeDriver(ed));
-        } else if (browser.trim().equalsIgnoreCase("firefox")) {
-            driver.set(new FirefoxDriver(fo));
-        }
+	public static WebDriver initBrowser(String browser) {
+		LoggerFactory.getLogger().info("In initBrowser(), browser value - {}", browser);
+		if (browser.trim().equalsIgnoreCase("chrome")) {
+			driver.set(new ChromeDriver(co));
+		} else if (browser.trim().equalsIgnoreCase("edge")) {
+			driver.set(new EdgeDriver(ed));
+		} else if (browser.trim().equalsIgnoreCase("firefox")) {
+			driver.set(new FirefoxDriver(fo));
+		}
+		getDriver().manage().window().maximize();
+		return getDriver();
+	}
 
-        return getDriver();
-    }
-
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+	public static WebDriver getDriver() {
+		return driver.get();
+	}
 }
