@@ -19,6 +19,12 @@ public class BrowserOptions {
         chromeOptions.setScriptTimeout(Duration.ofSeconds(40));
         chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--incognito");
+        chromeOptions.addArguments("--headless=new");
+        
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--remote-debugging-port=9222");
+        
         
 
         return chromeOptions;
@@ -28,13 +34,14 @@ public class BrowserOptions {
         EdgeOptions options = new EdgeOptions();
 
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.addArguments("--disk-cache-size=0");
+       // options.addArguments("--disk-cache-size=0");
         options.setPageLoadTimeout(Duration.ofSeconds(40));
         options.setAcceptInsecureCerts(true);
         options.setScriptTimeout(Duration.ofSeconds(40));
         options.addArguments("start-maximized");
-        options.addArguments("--incognito");
+        //options.addArguments("--incognito");
         options.addArguments("--headless=new");
+       
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-debugging-port=9222");
