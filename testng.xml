@@ -6,13 +6,13 @@
         <classes>
             <class name="testRunner.Runner"/>
         </classes>
-    </test>
+    </test>-->
    <test name="ChromeTests">
          <parameter name="browserType" value="chrome"/>
          <classes>
              <class name="testRunner.Runner"/>
          </classes>
-     </test>-->
+     </test>
    <test name="FirefoxTests">
         <parameter name="browserType" value="firefox"/>
         <classes>
