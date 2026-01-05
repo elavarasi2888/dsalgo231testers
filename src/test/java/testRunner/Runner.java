@@ -9,7 +9,6 @@ import utils.ConfigReader;
 import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
-		// tags = "@DsAlgoPortal or @HomePage or @HomePageSignIn or @Queue or @Tree or
 		tags = "@DsAlgoPortal",
 		//tags="@Regression",
 		plugin = { "pretty", "html:cucumber-reports.html",
@@ -18,12 +17,11 @@ import java.io.IOException;
 		dryRun = false, monochrome = true)
 public class Runner extends AbstractTestNGCucumberTests {
 	@Override
-	@DataProvider(parallel = false)
+	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
-	
-	
+		
 	@BeforeClass
 	@Parameters({ "browserType" })
 	public void beforeClass(@Optional String browser) throws IOException {
