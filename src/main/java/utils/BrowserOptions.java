@@ -30,7 +30,16 @@ public class BrowserOptions {
 	public EdgeOptions edgeOption() {
 		// System.setProperty("webdriver.edge.driver","C:/mydrivers/edgedriver_win64.exe");
 		EdgeOptions options = new EdgeOptions();
-
+		options.addArguments(
+			    "--headless",
+			    "--disable-gpu",
+			    "--window-size=1920,1080",
+			    "--no-sandbox",
+			    "--disable-extensions"
+			);
+		return options;
+	}
+/*
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		// options.addArguments("--disk-cache-size=0");
 		options.setPageLoadTimeout(Duration.ofSeconds(60));
@@ -53,7 +62,8 @@ public class BrowserOptions {
 	    	    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
 	    	);
 		return options;
-	}
+		*/
+	
 		
 
 	public FirefoxOptions firefoxOption() {
