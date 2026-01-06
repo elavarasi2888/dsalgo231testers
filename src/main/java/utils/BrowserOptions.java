@@ -30,15 +30,20 @@ public class BrowserOptions {
 	public EdgeOptions edgeOption() {
 		// System.setProperty("webdriver.edge.driver","C:/mydrivers/edgedriver_win64.exe");
 		EdgeOptions options = new EdgeOptions();
-		options.addArguments(
-			    "--headless",
-			    "--disable-gpu",
-			    "--window-size=1920,1080",
-			    "--no-sandbox",
-			    "--disable-extensions"
-			);
-		return options;
+		 options.addArguments(
+			        "--headless",
+			        "--disable-gpu",
+			        "--window-size=1920,1080",
+			        "--no-sandbox",
+			        "--disable-extensions",
+			        "--disable-dev-shm-usage"
+			    );
+
+			    options.setAcceptInsecureCerts(true);
+			    return options;
 	}
+			    
+	
 /*
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		// options.addArguments("--disk-cache-size=0");
