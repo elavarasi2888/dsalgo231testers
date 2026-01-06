@@ -39,7 +39,7 @@ public class BrowserOptions {
 		//options.addArguments("start-maximized");
 		// options.addArguments("--incognito");
 		
-		options.addArguments("--headless=new");
+		//options.addArguments("--headless=new");
 		options.addArguments("disable-gpu");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
@@ -55,14 +55,6 @@ public class BrowserOptions {
 		return options;
 	}
 		
-	       
-/*WebDriver driver = new EdgeDriver(options);	       
-	        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-	        return driver;
-	    }
-	    return null;
-	}*/
-	
 
 	public FirefoxOptions firefoxOption() {
 		FirefoxOptions options = new FirefoxOptions();
