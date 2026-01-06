@@ -38,10 +38,13 @@ public class BrowserOptions {
 		options.setScriptTimeout(Duration.ofSeconds(60));
 		options.addArguments("start-maximized");
 		// options.addArguments("--incognito");
-		// options.addArguments("--headless=new");
+		 options.addArguments("--headless");
 		options.addArguments("disable-gpu");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
+		 options.addArguments("--window-size=1920,1080"); 
+		 options.addArguments("enable-automation");
+		 //options.addArguments("--dns-prefetch-disable");
 		// options.addArguments("--remote-debugging-port=9222");
 
 		return options;

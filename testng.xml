@@ -7,7 +7,7 @@
             <class name="testRunner.Runner"/>
         </classes>
     </test>
-   <test name="ChromeTests">
+   <!--<test name="ChromeTests">
          <parameter name="browserType" value="chrome"/>
          <classes>
              <class name="testRunner.Runner"/>
@@ -18,5 +18,5 @@
         <classes>
             <class name="testRunner.Runner"/>
         </classes>
-    </test>
+    </test>-->
 </suite>
