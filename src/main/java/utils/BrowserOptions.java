@@ -48,7 +48,7 @@ public class BrowserOptions {
 	    options.addArguments("--window-size=1920,1080");
 
 	    options.setAcceptInsecureCerts(true);
-        
+	    options.addArguments("--user-data-dir=C:\\Jenkins\\edge-profile");
         options.setBinary(
         		  "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
         		);
