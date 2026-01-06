@@ -49,9 +49,9 @@ public class BrowserOptions {
 
 	    options.setAcceptInsecureCerts(true);
 	    options.addArguments("--user-data-dir=C:\\Jenkins\\edge-profile");
-        options.setBinary(
-        		  "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
-        		);
+	    options.setBinary(
+	    	    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+	    	);
 		return options;
 	}
 		
