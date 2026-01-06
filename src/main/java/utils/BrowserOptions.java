@@ -10,21 +10,21 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BrowserOptions {
 
 	public ChromeOptions chromeOption() {
-		ChromeOptions chromeOptions = new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();
 
-		chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-		chromeOptions.addArguments("--disk-cache-size=0");
-		chromeOptions.setPageLoadTimeout(Duration.ofSeconds(40));
-		chromeOptions.setAcceptInsecureCerts(true);
-		chromeOptions.setScriptTimeout(Duration.ofSeconds(40));
-		chromeOptions.addArguments("start-maximized");
-		chromeOptions.addArguments("--incognito");
-		chromeOptions.addArguments("--headless=new");
-		chromeOptions.addArguments("--no-sandbox");
-		chromeOptions.addArguments("--disable-dev-shm-usage");
-		chromeOptions.addArguments("--remote-debugging-port=9222");
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		options.addArguments("--disk-cache-size=0");
+		options.setPageLoadTimeout(Duration.ofSeconds(40));
+		options.setAcceptInsecureCerts(true);
+		options.setScriptTimeout(Duration.ofSeconds(40));
+		options.addArguments("start-maximized");
+		options.addArguments("--incognito");
+		options.addArguments("--headless=new");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		//options.addArguments("--remote-debugging-port=9222");
 
-		return chromeOptions;
+		return options;
 	}
 
 	public EdgeOptions edgeOption() {
@@ -41,7 +41,7 @@ public class BrowserOptions {
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--window-size=1920,1080");
 		options.addArguments("--remote-allow-origins=*");
-		options.addArguments("--remote-debugging-port=9777");
+		//options.addArguments("--remote-debugging-port=9777");
 
 		return options;
 
