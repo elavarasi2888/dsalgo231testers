@@ -36,16 +36,33 @@ public class BrowserOptions {
 		options.setPageLoadTimeout(Duration.ofSeconds(60));
 		options.setAcceptInsecureCerts(true);
 		options.setScriptTimeout(Duration.ofSeconds(60));
-		options.addArguments("start-maximized");
+		//options.addArguments("start-maximized");
 		// options.addArguments("--incognito");
-		// options.addArguments("--headless=new");
+		
+		options.addArguments("--headless=new");
 		options.addArguments("disable-gpu");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
-		// options.addArguments("--remote-debugging-port=9222");
+		options.addArguments("--remote-debugging-port=9222");
+
+	    options.addArguments("--window-size=1920,1080");
+
+	    options.setAcceptInsecureCerts(true);
+
+        // ✅ Explicit binary path (important)
+        options.setBinary("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
 
 		return options;
 	}
+		
+	       
+/*WebDriver driver = new EdgeDriver(options);	       
+	        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+	        return driver;
+	    }
+	    return null;
+	}*/
+	
 
 	public FirefoxOptions firefoxOption() {
 		FirefoxOptions options = new FirefoxOptions();
