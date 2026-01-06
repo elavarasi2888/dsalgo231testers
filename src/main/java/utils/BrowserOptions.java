@@ -48,10 +48,10 @@ public class BrowserOptions {
 	    options.addArguments("--window-size=1920,1080");
 
 	    options.setAcceptInsecureCerts(true);
-
-        // ✅ Explicit binary path (important)
-        options.setBinary("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
-
+        
+        options.setBinary(
+        		  "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"
+        		);
 		return options;
 	}
 		
