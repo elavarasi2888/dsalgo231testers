@@ -61,17 +61,12 @@ options.addArguments("--height=1080");
 return options;*/
 		
 		 FirefoxOptions options = new FirefoxOptions();
-		 options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-		
+		 options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 			options.setAcceptInsecureCerts(true);
-			
-			//options.addArguments("--incognito");
-			//options.addArguments("--disable-dev-shm-usage");
-			
+				
 			options.addArguments("--width=1920");
 			options.addArguments("--height=1080");
-			options.setPageLoadTimeout(Duration.ofSeconds(40));
-			options.setScriptTimeout(Duration.ofSeconds(40));
+			//options.addArguments("--headless");
 			
 			return options;
 		
