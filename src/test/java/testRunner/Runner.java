@@ -18,7 +18,7 @@ import java.io.IOException;
 		dryRun = false, monochrome = true)
 public class Runner extends AbstractTestNGCucumberTests {
 	@Override
-	@DataProvider(parallel = false)
+	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
@@ -28,4 +28,5 @@ public class Runner extends AbstractTestNGCucumberTests {
 	public void beforeClass(@Optional String browser) throws IOException {
 		ConfigReader.setBrowserType(browser);
 	}
+	
 }
