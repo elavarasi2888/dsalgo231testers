@@ -46,7 +46,6 @@ public class BrowserOptions {
 
 	public FirefoxOptions firefoxOption() {
 		FirefoxOptions options = new FirefoxOptions();
-
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.addArguments("--disk-cache-size=0");
 		options.setPageLoadTimeout(Duration.ofSeconds(40));
@@ -56,7 +55,6 @@ public class BrowserOptions {
 		options.addArguments("--headless=new");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
-
 		return options;
 	}
 }
