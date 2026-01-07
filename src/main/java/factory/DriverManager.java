@@ -1,5 +1,7 @@
 package factory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,20 +17,32 @@ public class DriverManager {
 	private static final BrowserOptions browserOptions = new BrowserOptions();
 	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-	private static ChromeOptions co = browserOptions.chromeOption();
-	private static EdgeOptions ed = browserOptions.edgeOption();
-	private static FirefoxOptions fo = browserOptions.firefoxOption();
+	private static ChromeOptions chromeOptions = browserOptions.chromeOption();
+	private static EdgeOptions edgeOptions = browserOptions.edgeOption();
+	private static FirefoxOptions firefoxOptions = browserOptions.firefoxOption();
 
 	public static WebDriver initBrowser(String browser) {
-		LoggerFactory.getLogger().info("In initBrowser(), browser value - {}", browser);
-		if (browser.trim().equalsIgnoreCase("chrome")) {
-			driver.set(new ChromeDriver(co));
-		} else if (browser.trim().equalsIgnoreCase("edge")) {
-			driver.set(new EdgeDriver(ed));
-		} else if (browser.trim().equalsIgnoreCase("firefox")) {
-			driver.set(new FirefoxDriver(fo));
+		LoggerFactory.getLogger().info("In initBrowser(), browser type - {}", browser);
+
+		String browserType = browser.trim().toLowerCase();
+
+		switch (browserType) {
+		case "chrome":
+			driver.set(new ChromeDriver(chromeOptions));
+			break;
+		case "edge":
+			driver.set(new EdgeDriver(edgeOptions));
+			break;
+		case "firefox":
+			driver.set(new FirefoxDriver(firefoxOptions));
+			break;
+		default:
+			driver.set(new EdgeDriver(edgeOptions));
+			break;
 		}
+
 		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		return getDriver();
 	}
 
