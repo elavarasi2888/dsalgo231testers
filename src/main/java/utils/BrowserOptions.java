@@ -46,12 +46,15 @@ public class BrowserOptions {
 
 	public FirefoxOptions firefoxOption() {
 		FirefoxOptions options = new FirefoxOptions();
-
-        options.setPageLoadTimeout(Duration.ofSeconds(40));
-        options.setAcceptInsecureCerts(true);
-        options.setScriptTimeout(Duration.ofSeconds(40));
-         //options.addArguments("start-maximized");
-        options.addArguments("--incognito");
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		options.addArguments("--disk-cache-size=0");
+		options.setPageLoadTimeout(Duration.ofSeconds(40));
+		options.setAcceptInsecureCerts(true);
+		options.setScriptTimeout(Duration.ofSeconds(40));
+		options.addArguments("--incognito");
+		options.addArguments("--headless=new");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
 		return options;
 	}
 }
