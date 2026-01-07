@@ -1,7 +1,5 @@
 package factory;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -42,7 +40,6 @@ public class DriverManager {
 		}
 
 		getDriver().manage().window().maximize();
-		//getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		return getDriver();
 	}
 

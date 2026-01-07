@@ -9,9 +9,7 @@ import utils.ConfigReader;
 import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
-		//tags="@Regression",
-				//tags="@DsAlgoPortal",
-		tags="@Queue",
+		tags="@Regression",
 		plugin = { "pretty", 
 				"html:cucumber-reports.html",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
