@@ -51,6 +51,8 @@ public class BrowserOptions {
 	        options.setAcceptInsecureCerts(true);
 	        options.setScriptTimeout(Duration.ofSeconds(40));
 	         options.addArguments("--incognito");
+	         options.addArguments("--no-sandbox");
+	 		options.addArguments("--disable-dev-shm-usage");
 	        
 	       
 		
