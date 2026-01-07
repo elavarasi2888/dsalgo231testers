@@ -62,12 +62,12 @@ return options;*/
 		
 		 FirefoxOptions options = new FirefoxOptions();
 		 options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-			// options.addArguments("--disk-cache-size=0");
-			options.setPageLoadTimeout(Duration.ofSeconds(40));
+		options.setPageLoadTimeout(Duration.ofSeconds(40));
 			options.setAcceptInsecureCerts(true);
 			options.setScriptTimeout(Duration.ofSeconds(40));
-			options.addArguments("start-maximized");
-			options.addArguments("--incognito");
+			//options.addArguments("--incognito");
+			//options.addArguments("--disable-dev-shm-usage");
+			
 			return options;
 		
        
