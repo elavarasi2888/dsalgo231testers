@@ -60,8 +60,8 @@ public class Hooks {
 		DsAlgoPortalPage dsAlgoPortal = new DsAlgoPortalPage(driver);
 		HomePage homePage = dsAlgoPortal.clickDsPortalGetStarted();
 		SignInPage signInPage = homePage.clickSignInLink();
-		String username = "dsalgo231";
-		String password = "automation2025#";
+		String username = ConfigReader.getValidUserName();
+		String password = ConfigReader.getValidPassword();
 		homePage = signInPage.login(username, password);
 	}
 

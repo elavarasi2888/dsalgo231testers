@@ -9,9 +9,8 @@ import utils.ConfigReader;
 import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
-		//tags="@SignIn",
-		//tags = "@DsAlgoPortal",
-		tags="@Queue",
+		//tags="@Regression",
+				tags="@DsAlgoPortal",
 		plugin = { "pretty", 
 				"html:cucumber-reports.html",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
@@ -20,7 +19,7 @@ import java.io.IOException;
 		dryRun = false, monochrome = true)
 public class Runner extends AbstractTestNGCucumberTests {
 	@Override
-	@DataProvider(parallel = false)
+	@DataProvider(parallel = true)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
