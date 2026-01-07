@@ -45,7 +45,7 @@ public class BrowserOptions {
 	}
 
 	public FirefoxOptions firefoxOption() {
-		FirefoxOptions options = new FirefoxOptions();
+	/*	FirefoxOptions options = new FirefoxOptions();
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.addArguments("--disk-cache-size=0");
 		options.setPageLoadTimeout(Duration.ofSeconds(40));
@@ -55,6 +55,22 @@ public class BrowserOptions {
 		options.addArguments("--headless=new");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
-		return options;
+		
+		options.addArguments("--width=1920");
+options.addArguments("--height=1080");
+return options;*/
+		
+		 FirefoxOptions options = new FirefoxOptions();
+		 options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			// options.addArguments("--disk-cache-size=0");
+			options.setPageLoadTimeout(Duration.ofSeconds(40));
+			options.setAcceptInsecureCerts(true);
+			options.setScriptTimeout(Duration.ofSeconds(40));
+			options.addArguments("start-maximized");
+			options.addArguments("--incognito");
+			return options;
+		
+       
+
 	}
 }
