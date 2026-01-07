@@ -47,15 +47,11 @@ public class BrowserOptions {
 	public FirefoxOptions firefoxOption() {
 		FirefoxOptions options = new FirefoxOptions();
 
-		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-		options.setPageLoadTimeout(Duration.ofSeconds(40));
-		options.setAcceptInsecureCerts(true);
-		options.setScriptTimeout(Duration.ofSeconds(40));
-		options.addArguments("--incognito");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--remote-allow-origins=*");
-
+        options.setPageLoadTimeout(Duration.ofSeconds(40));
+        options.setAcceptInsecureCerts(true);
+        options.setScriptTimeout(Duration.ofSeconds(40));
+         //options.addArguments("start-maximized");
+        options.addArguments("--incognito");
 		return options;
 	}
 }
