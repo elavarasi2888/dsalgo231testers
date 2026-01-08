@@ -34,6 +34,7 @@ public class Hooks {
 
 		if (ConfigReader.getBrowserType() != null) {
 			browser = ConfigReader.getBrowserType();
+
 		} else {
 			browser = prop.getProperty("browser");
 		}
@@ -51,7 +52,6 @@ public class Hooks {
 		} else {
 			browser = prop.getProperty("browser");
 		}
-
 		driver = DriverManager.initBrowser(browser);
 
 		String appURL = ConfigReader.getAppUrl();
