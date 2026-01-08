@@ -52,8 +52,8 @@ public class BrowserOptions {
 		}
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.setAcceptInsecureCerts(true);
-		options.setScriptTimeout(Duration.ofSeconds(30));
-		options.setPageLoadTimeout(Duration.ofMillis(30000));
+	//	options.setScriptTimeout(Duration.ofSeconds(30));
+	//	options.setPageLoadTimeout(Duration.ofMillis(30000));
 
 		return options;
 
