@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BrowserOptions {
 
 	public ChromeOptions chromeOption() {
+
 		ChromeOptions options = new ChromeOptions();
 
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -52,9 +53,6 @@ public class BrowserOptions {
 		}
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.setAcceptInsecureCerts(true);
-	//	options.setScriptTimeout(Duration.ofSeconds(30));
-	//	options.setPageLoadTimeout(Duration.ofMillis(30000));
-	
 		return options;
 
 	}
