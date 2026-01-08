@@ -1,5 +1,7 @@
 package factory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -19,10 +21,12 @@ public class DriverManager {
 		switch (browserType) {
 		case "chrome":
 			driver.set(new ChromeDriver(browserOptions.chromeOption()));
+			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			break;
 
 		case "edge":
 			driver.set(new EdgeDriver(browserOptions.edgeOption()));
+			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			break;
 
 		case "firefox":
