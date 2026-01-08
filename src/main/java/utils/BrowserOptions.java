@@ -46,7 +46,7 @@ public class BrowserOptions {
 
 
 	public FirefoxOptions firefoxOption() {
-
+/*
 		FirefoxOptions options = new FirefoxOptions();
 		options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 		options.setAcceptInsecureCerts(true);
@@ -55,8 +55,21 @@ public class BrowserOptions {
 		//options.addArguments("--headless=new");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
+
 		// options.addArguments("--headless");
 
+		return options;
+		*/
+
+		System.out.println("Entered Firefox Options");
+		FirefoxOptions options = new FirefoxOptions();
+		if (System.getenv("JENKINS_URL") != null) {
+		    options.addArguments("--headless");
+		}
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		options.setAcceptInsecureCerts(true);
+		options.setScriptTimeout(Duration.ofSeconds(30));
+		options.setPageLoadTimeout(Duration.ofMillis(30000));
 		return options;
 
 	}

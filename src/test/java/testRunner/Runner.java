@@ -10,7 +10,7 @@ import java.io.IOException;
 @CucumberOptions(features = "src/test/resources/features",
 		glue = { "hooks", "stepDefinitions" },
 		//tags="@Regression",
-				tags="@Stack",
+				tags="@Queue",
 		//tags="@Regression",
 
 		plugin = { "pretty", 
