@@ -3,7 +3,7 @@
 Feature: Sign out functionality
 
   Background:
-    Given User is at Home page after Sign in
+    Given User is at the Home page after sign-in
 
   Scenario: Verify user can sign out successfully
     When User clicks the Sign out link 

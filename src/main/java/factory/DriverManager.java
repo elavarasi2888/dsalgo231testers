@@ -40,9 +40,8 @@ public class DriverManager {
 			driver.set(new EdgeDriver(edgeOptions));
 			break;
 		}
-
 		getDriver().manage().window().maximize();
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		//getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		return getDriver();
 	}
 
