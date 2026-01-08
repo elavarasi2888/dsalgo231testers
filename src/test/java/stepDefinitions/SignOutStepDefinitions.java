@@ -27,13 +27,6 @@ public class SignOutStepDefinitions {
 		signOutPage = new SignOutPage(driver);
 	}
 
-	@Given("User is at Home page after Sign in")
-	public void userIsAtHomePageAfterSignIn() {
-		LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}",
-				ConfigReader.getValidUserName(),
-				homePage.isUserNameVisibleAfterSignIn(ConfigReader.getValidUserName()));
-	}
-
 	@When("User clicks the Sign out link")
 	public void userClicksTheSignOutLink() {
 		signOutPage.clickSignOut();
