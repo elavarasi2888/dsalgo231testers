@@ -11,6 +11,8 @@ import java.io.IOException;
 		glue = { "hooks", "stepDefinitions" },
 		//tags="@Regression",
 				tags="@Stack",
+		//tags="@Regression",
+
 		plugin = { "pretty", 
 				"html:cucumber-reports.html",
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
