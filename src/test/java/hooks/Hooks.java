@@ -26,7 +26,6 @@ public class Hooks {
 	private ConfigReader configReader;
 	private String browser;
 	private WebDriver driver;
-	DriverManager driverManager;
 
 	@Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
 	public void beforeScenario() throws IOException {
