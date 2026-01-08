@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import utils.BrowserOptions;
 
-/*public class DriverManager {
+public class DriverManager {
 
 	private static final BrowserOptions browserOptions = new BrowserOptions();
 	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
@@ -48,34 +48,4 @@ import utils.BrowserOptions;
 	public static WebDriver getDriver() {
 		return driver.get();
 	}
-}
-*/
-public class DriverManager {
-    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    public static WebDriver initBrowser(String browser) {
-        BrowserOptions browserOptions = new BrowserOptions();
-        String browserType = browser.trim().toLowerCase();
-        switch (browserType) {
-            case "chrome":
-                driver.set(new ChromeDriver(browserOptions.chromeOption()));
-                System.out.println("Launching Chrome");
-                break;
-            case "edge":
-                driver.set(new EdgeDriver(browserOptions.edgeOption()));
-                break;
-            case "firefox":
-                driver.set(new FirefoxDriver(browserOptions.firefoxOption()));
-                System.out.println("Launching Firefox");
-                break;
-            default:
-                driver.set(new EdgeDriver(browserOptions.edgeOption()));
-                break;
-        }
-        getDriver().manage().window().maximize();
-        getDriver().manage().deleteAllCookies();
-        return getDriver();
-    }
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
 }
