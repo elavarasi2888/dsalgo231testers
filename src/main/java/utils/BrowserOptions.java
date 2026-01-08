@@ -54,6 +54,9 @@ public class BrowserOptions {
 		options.setAcceptInsecureCerts(true);
 	//	options.setScriptTimeout(Duration.ofSeconds(30));
 	//	options.setPageLoadTimeout(Duration.ofMillis(30000));
+		options.addArguments("--width=1920");
+		options.addArguments("--height=1080");
+
 
 		return options;
 
