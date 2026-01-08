@@ -26,6 +26,7 @@ public class Hooks {
 	private ConfigReader configReader;
 	private String browser;
 	private WebDriver driver;
+	DriverManager driverManager;
 
 	@Before("@DsAlgoPortal or @HomePage or @Register or @SignIn or @HomePageSignIn")
 	public void beforeScenario() throws IOException {
@@ -34,6 +35,7 @@ public class Hooks {
 
 		if (ConfigReader.getBrowserType() != null) {
 			browser = ConfigReader.getBrowserType();
+
 		} else {
 			browser = prop.getProperty("browser");
 		}
@@ -51,7 +53,6 @@ public class Hooks {
 		} else {
 			browser = prop.getProperty("browser");
 		}
-
 		driver = DriverManager.initBrowser(browser);
 
 		String appURL = ConfigReader.getAppUrl();

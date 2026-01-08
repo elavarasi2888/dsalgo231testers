@@ -45,11 +45,15 @@ public class BrowserOptions {
 	}
 
 	public FirefoxOptions firefoxOption() {
-
 		FirefoxOptions options = new FirefoxOptions();
-		options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
+		if (System.getenv("JENKINS_URL") != null) {
+			options.addArguments("--headless");
+		}
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.setAcceptInsecureCerts(true);
-		// options.addArguments("--headless");
+		options.setScriptTimeout(Duration.ofSeconds(30));
+		options.setPageLoadTimeout(Duration.ofMillis(30000));
 
 		return options;
 
