@@ -27,7 +27,7 @@ public class SignInStepDefinitions {
 	@When("User clicks login button after entering valid data from the given {string}")
 	public void user_clicks_login_button_after_entering_valid_data_from_the_given(String ScenarioName) {
         DataReader reader = new DataReader(Constants.TEST_DATA_FILE);
-		String sheetName = "login_invalid";
+		String sheetName = "login_valid";
 		Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
 		signinpage.enterUsername(testData.get("Username"));
 		signinpage.enterPassword(testData.get("Password"));
