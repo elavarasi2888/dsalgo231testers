@@ -15,11 +15,11 @@
 		</classes>
 	</test>
 
-	<!--<test name="FirefoxTests">
+	<test name="FirefoxTests">
 		<parameter name="browserType" value="firefox" />
 		<classes>
 			<class name="testRunner.Runner" />
 		</classes>
-	</test>-->
+	</test>
 
 </suite>
