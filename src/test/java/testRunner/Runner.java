@@ -11,8 +11,8 @@ import java.io.IOException;
 
 @CucumberOptions(features = "src/test/resources/features", 
 				glue = { "hooks","stepDefinitions" }, 
-				//tags = "@Regression",
-				tags = "@Queue", 				
+				tags = "@Regression",
+				//tags = "@Queue", 				
 				plugin = { "pretty",
 						   "html:cucumber-reports.html",
 						   "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
