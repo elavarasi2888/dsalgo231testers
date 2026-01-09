@@ -31,5 +31,4 @@ Feature: Sign in functionality of DS Algo
   Scenario: Verify that user is able to enter the register page if the user does not have an account
     When User clicks register button in the login page
     Then User should be redirected to Registration page
-# application and testers123 are valid username and password
-# dsalgo231 and automation2025# are valid username and password
+
