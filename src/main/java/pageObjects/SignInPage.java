@@ -12,8 +12,8 @@ public class SignInPage {
 	private By txtPassword = By.xpath("//input[@id='id_password']");
 	private By loginButton = By.xpath("//input[@value='Login']");
 	private By registerLink = By.xpath("//a[normalize-space()='Register']");
-	private By errorMsg = By.xpath("//div[contains(@class,'alert')]");
-
+	//private By errorMsg = By.xpath("//div[contains(@class,'alert')]");
+	private By errorMsg = By.xpath("//div[@role='alert' and contains(text(),'Invalid Username and Password')]");
 	public SignInPage(WebDriver driver) {
 		this.driver = driver;
 	}
