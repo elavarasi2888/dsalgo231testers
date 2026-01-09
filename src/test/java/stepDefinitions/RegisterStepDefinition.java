@@ -11,9 +11,7 @@ import factory.DriverManager;
 import factory.LoggerFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.HomePage;
 import pageObjects.RegisterPage;
-import pageObjects.SignInPage;
 import utils.Constants;
 import utils.DataReader;
 
@@ -22,14 +20,12 @@ public class RegisterStepDefinition {
 
 	private WebDriver driver;
 	private RegisterPage registerPage;
-	private SignInPage signInPage;
-	private HomePage homePage;
+	
 
 	public RegisterStepDefinition() {
 		driver = DriverManager.getDriver();
-		homePage = new HomePage(driver);
-		registerPage = new RegisterPage(driver);
-		signInPage = new SignInPage(driver);
+        registerPage = new RegisterPage(driver);
+
 	}
 
 	
