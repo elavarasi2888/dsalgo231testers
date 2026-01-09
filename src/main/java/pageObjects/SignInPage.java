@@ -49,10 +49,10 @@ public class SignInPage {
 	// VALID LOGIN → Navigates to HomePage
 	public HomePage login(String username, String password) {
 		driver.findElement(txtUsername).sendKeys(username);
-		driver.findElement(txtPassword).sendKeys(password);
+		driver.findElement(txtPassword).sendKeys(password);		
+		WebElement loginButtonWebElement = driver.findElement(loginButton);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement a = driver.findElement(loginButton);
-		js.executeScript("arguments[0].click();", a);
+		js.executeScript("arguments[0].click();", loginButtonWebElement);
 		return new HomePage(driver);
 	}
 
