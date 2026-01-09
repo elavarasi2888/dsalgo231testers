@@ -86,16 +86,18 @@ public class HomePage {
     }
 
     public void clickGetStartedButton(String dsType) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
+        WebElement element=driver.findElement(btnGetStarted);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
     }
 
     public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnGetStarted));
+        WebElement element=driver.findElement(btnGetStarted);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
 
         Object pageObject = null;
