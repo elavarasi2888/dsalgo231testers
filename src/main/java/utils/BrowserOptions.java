@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserOptions {
+
 	public ChromeOptions chromeOption() {
 
 		ChromeOptions options = new ChromeOptions();
@@ -45,18 +46,13 @@ public class BrowserOptions {
 	}
 
 	public FirefoxOptions firefoxOption() {
-
 		FirefoxOptions options = new FirefoxOptions();
-		options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
+		if (System.getenv("JENKINS_URL") != null) {
+			options.addArguments("--headless");
+		}
+		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		options.setAcceptInsecureCerts(true);
-		options.setScriptTimeout(Duration.ofSeconds(40));
-		options.addArguments("--incognito");
-		// options.addArguments("--headless=new");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-
-		// options.addArguments("--headless");
-
 		return options;
 
 	}
