@@ -19,7 +19,6 @@ public class GraphStepDefinition {
 	public GraphStepDefinition() {
 		driver = DriverManager.getDriver();
 		homePage=new HomePage(driver);
-		graphPage = new GraphPage(driver);
 	}
 
 	@Given("User clicks the Getting Started button in Graph Panel")

@@ -2,9 +2,8 @@ package utils;
 
 import factory.LoggerFactory;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,8 +14,8 @@ public class DataReader {
 
     public DataReader(String filename) {
         try {
-            FileInputStream fis = new FileInputStream(filename);
-            workbook = new XSSFWorkbook(fis);
+            InputStream fileResourceInputStream = getClass().getResourceAsStream(filename);
+            workbook = WorkbookFactory.create(fileResourceInputStream);
         } catch (Exception e) {
             LoggerFactory.getLogger().error("Error while reading data {} file - {}", filename, e.getMessage());
         }

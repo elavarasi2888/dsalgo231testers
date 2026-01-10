@@ -19,7 +19,6 @@ public class LinkedListStepDefinition {
 	public LinkedListStepDefinition() {
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
-		linkedListPage = new LinkedListPage(driver);
 	}
 
 	@Given("User clicks the Getting Started button in Linked List Panel")

@@ -46,6 +46,18 @@ Feature: Array test cases
       | Basic Operations in Lists |
       | Applications of Array     |
 
+  Scenario Outline: Verify user is able to navigate to practice questions page
+    Given User clicks Array topics link on the Array page for the Practice Questions
+    When User clicks the practice questions from the topics in the array page
+    Then User should see "<practice questions topics>" link on practice questions page
+
+    Examples:
+      | practice questions topics               |
+      | Search the array                        |
+      | Max Consecutive Ones                    |
+      | Find Numbers with Even Number of Digits |
+      | Squares of a Sorted Array               |
+
 # Array pages functional test case
 
   Scenario Outline: Verify user is able to navigate to respective Array page
@@ -70,3 +82,68 @@ Feature: Array test cases
       | Arrays Using List         |
       | Basic Operations in Lists |
       | Applications of Array     |
+
+  Scenario: Verify user is able to navigate to Practice Questions page of Array topics
+    When User clicks the Arrays in Python link on the Array page
+    Then User clicks PracticeQuestions link in the respective Array page
+    Then User should be redirected to Practice Questions page of Array topics
+
+  Scenario Outline: User navigates to practice question one
+    When User navigates to the Array Practice page
+    When User clicks Search the array link in the practice page
+    Then user clears the text in the editor area
+    When User enters the python code for the following "<scenario>"
+    When User clicks Run button
+    Then User see the appropriate result
+    Then User clicks the Submit button and get output message
+
+    Examples:
+      | scenario     |
+      | Valid Code   |
+      | Invalid Code |
+      | No Code      |
+
+  Scenario Outline: User navigates to practice question two
+    When User navigates to the Array Practice page
+    When User clicks Max Consecutive Ones link in the practice page
+    Then user clears the text in the editor area
+    When User enters the python code for the following "<scenario>"
+    When User clicks Run button
+    Then User see the appropriate result
+    Then User clicks the Submit button and get output message
+
+    Examples:
+      | scenario     |
+      | Valid Code   |
+      | Invalid Code |
+      | No Code      |
+
+  Scenario Outline: User navigates to practice question three
+    When User navigates to the Array Practice page
+    When User clicks Find Numbers with Even Number of Digits link in the practice page
+    Then user clears the text in the editor area
+    When User enters the python code for the following "<scenario>"
+    When User clicks Run button
+    Then User see the appropriate result
+    Then User clicks the Submit button and get output message
+
+    Examples:
+      | scenario     |
+      | Valid Code   |
+      | Invalid Code |
+      | No Code      |
+
+  Scenario Outline: User navigates to practice question four
+    When User navigates to the Array Practice page
+    When User clicks Squares of a Sorted Array link in the practice page
+    Then user clears the text in the editor area
+    When User enters the python code for the following "<scenario>"
+    When User clicks Run button
+    Then User see the appropriate result
+    Then User clicks the Submit button and get output message
+
+    Examples:
+      | scenario     |
+      | Valid Code   |
+      | Invalid Code |
+      | No Code      |

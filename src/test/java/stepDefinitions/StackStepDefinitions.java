@@ -18,7 +18,6 @@ public class StackStepDefinitions {
 	public StackStepDefinitions() {
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
-		stackPage = new StackPage(driver);
 	}
 
 	@Given("User clicks Get Started button from Stack panel")

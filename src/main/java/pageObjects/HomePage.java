@@ -21,7 +21,8 @@ public class HomePage {
     private By msgError = By.xpath("//div[@role='alert']");
     private By pnlDataStructureItems = By.xpath("//h5[@class='card-title']");
     private By msgUserLoggedIn = By.xpath("//*[contains(text(), 'You are logged in')]");
-    private By lblSignedInUser = By.xpath("//div[@class='navbar-nav']//ul//a[2]");
+    private By msgSignOut = By.xpath("//div[@class='alert alert-primary' and @role='alert']");
+    private By lnkSignOut = By.xpath("//a[normalize-space()='Sign out']");
     private WebDriverWait wait;
 
     public HomePage(WebDriver driver) {
@@ -87,17 +88,17 @@ public class HomePage {
 
     public void clickGetStartedButton(String dsType) {
         By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
-        WebElement element=driver.findElement(btnGetStarted);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+        WebElement element = driver.findElement(btnGetStarted);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
     }
 
     public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
         By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
-        WebElement element=driver.findElement(btnGetStarted);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+        WebElement element = driver.findElement(btnGetStarted);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
 
         Object pageObject = null;
@@ -165,11 +166,16 @@ public class HomePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(lblSignedInUserName)).isDisplayed();
     }
 
-    public String getCurrentSignedInUserName() {
-        return driver.findElement(lblSignedInUser).getText();
-    }
-
     public String getHomePageURL() {
         return driver.getCurrentUrl();
+    }
+
+    public void clickSignOut() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(lnkSignOut)).click();
+    }
+
+    public String getLoggedOutMsg() {
+        return driver.findElement(msgSignOut).getText();
     }
 }

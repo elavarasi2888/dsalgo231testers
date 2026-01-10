@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import java.util.List;
 
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -10,20 +11,29 @@ import factory.LoggerFactory;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.DsAlgoPortalPage;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
+import utils.ConfigReader;
 
 public class HomePageStepDefinitions {
 
     private HomePage homePage;
+    private DsAlgoPortalPage dsAlgoPortal;
     private RegisterPage registerPage;
     private SignInPage signInPage;
     private WebDriver driver;
 
     public HomePageStepDefinitions() {
         driver = DriverManager.getDriver();
-        homePage = new HomePage(driver);
+        driver.get(ConfigReader.getAppUrl());
+        dsAlgoPortal = new DsAlgoPortalPage(driver);
+    }
+
+    @Given("User clicks Get Started button on the DS Algo portal page")
+    public void userClicksGetStartedButtonOnTheDSAlgoPortalPage() {
+        homePage = dsAlgoPortal.clickDsPortalGetStarted();
     }
 
     @Then("NumpyNinja heading should be visible")
