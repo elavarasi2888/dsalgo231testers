@@ -1,6 +1,6 @@
 #Owner: Ela
 @Regression @DataStructure @Array
-Feature: Array - non functional test case
+Feature: Array test cases
 
   Background:
     Given User is at the Home page after sign-in

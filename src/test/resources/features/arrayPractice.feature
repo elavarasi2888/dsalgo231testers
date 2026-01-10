@@ -1,8 +1,9 @@
 #Owner: Ela
 @Regression @DataStructure @ArrayPractice
-Feature: Array Practice
+Feature: Array Practice test cases
 
   Background:
+    Given User is at the Home page after sign-in
     Given User clicks the Get Started button from the Array panel
 
   Scenario Outline: Verify user is able to navigate to practice questions page
