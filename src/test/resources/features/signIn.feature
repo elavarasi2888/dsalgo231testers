@@ -2,11 +2,8 @@
 @Regression @SignIn
 Feature: Sign in functionality of DS Algo
 
-  Background: User clicks the Get Started button on DS Algo portal page
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User clicks on the Sign in link in the home page
+  Background:
+    Given User clicks the Sign in link on the home page
 
   Scenario Outline: Verify that user able to land on Home page after entering valid Username and Password fields
     When User clicks login button after entering valid data from the given "<ScenarioName>"

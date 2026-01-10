@@ -3,9 +3,7 @@
 Feature: Home page test cases
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
+    Given User clicks Get Started button on the DS Algo portal page
 # Non-Functional tests
 
   Scenario: Verify NumpyNinja heading in homepage is visible

@@ -3,10 +3,7 @@
 Feature: Register functionality
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User clicks on the Register link in the home page
+    Given User clicks the Register link button on the home page
 
   Scenario: Verify that User is able to navigate on Login Page with login link from register page
     When User clicks Login Link in register page

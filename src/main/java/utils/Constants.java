@@ -2,10 +2,9 @@ package utils;
 
 public class Constants {
 
-    public final static String CONFIG_DATA_FILE = System.getProperty("user.dir") + "/src/test/resources/config/config.properties";
+    public final static String CONFIG_DATA_FILE_NAME = "config.properties";
 
-    public final static String TEST_DATA_FILE = System.getProperty("user.dir") + "/src/test/resources/testData/TestData.xlsx";
-    
+    public final static String TEST_DATA_FILE_NAME = "TestData.xlsx";
 
     public final static String TRY_EDITOR_PAGE_DATA_SHEET_NAME = "TryEditorPage_Data";
    

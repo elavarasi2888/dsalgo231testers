@@ -19,7 +19,6 @@ public class QueueStepDefinitions {
     public QueueStepDefinitions() {
         driver = DriverManager.getDriver();
         homePage = new HomePage(driver);
-        queuePage = new QueuePage(driver);
     }
 
     @Given("User clicks Get Started button from Queue panel")

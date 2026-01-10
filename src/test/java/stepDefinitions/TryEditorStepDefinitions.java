@@ -13,6 +13,8 @@ import utils.DataReader;
 
 import java.util.Map;
 
+import static utils.Constants.TEST_DATA_FILE_NAME;
+
 public class TryEditorStepDefinitions {
 
     private WebDriver driver;
@@ -39,7 +41,7 @@ public class TryEditorStepDefinitions {
 
     @When("User write the code for following {string} in the try editor page")
     public void userWriteTheCodeForFollowingInTheTryEditorPage(String scenarioName) {
-        DataReader dataReader = new DataReader(Constants.TEST_DATA_FILE);
+        DataReader dataReader = new DataReader("/testData/" + TEST_DATA_FILE_NAME);
         Map<String, String> data = dataReader.getDataByScenarioName(Constants.TRY_EDITOR_PAGE_DATA_SHEET_NAME, scenarioName);
 
         expectedResult = data.get(Constants.TRY_EDITOR_PAGE_DATA_COL_RESULT);

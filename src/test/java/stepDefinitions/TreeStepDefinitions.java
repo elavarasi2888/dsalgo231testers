@@ -20,7 +20,6 @@ public class TreeStepDefinitions {
     public TreeStepDefinitions() {
         driver = DriverManager.getDriver();
         homePage = new HomePage(driver);
-        treePage = new TreePage(driver);
     }
 
     @Given("User clicks Get Started button from Tree panel")

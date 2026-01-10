@@ -7,43 +7,43 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
 import utils.BrowserOptions;
 
 public class DriverManager {
 
-	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	public static WebDriver initBrowser(String browser) {
+    public static WebDriver initBrowser(String browser) {
 
-		BrowserOptions browserOptions = new BrowserOptions();
-		String browserType = browser.trim().toLowerCase();
+        BrowserOptions browserOptions = new BrowserOptions();
+        String browserType = browser.trim().toLowerCase();
 
-		switch (browserType) {
-		case "chrome":
-			driver.set(new ChromeDriver(browserOptions.chromeOption()));
-			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			break;
+        switch (browserType) {
+            case "chrome":
+                driver.set(new ChromeDriver(browserOptions.chromeOption()));
+                break;
+            case "edge":
+                driver.set(new EdgeDriver(browserOptions.edgeOption()));
+                break;
+            case "firefox":
+                driver.set(new FirefoxDriver(browserOptions.firefoxOption()));
+                break;
+            default:
+                LoggerFactory.logger.error("Unexpected value for browser: {}", browserType);
+                throw new IllegalStateException("Unexpected value for browserType: " + browserType);
+        }
 
-		case "edge":
-			driver.set(new EdgeDriver(browserOptions.edgeOption()));
-			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			break;
+        if (!browserType.equalsIgnoreCase("firefox"))
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
-		case "firefox":
-			driver.set(new FirefoxDriver(browserOptions.firefoxOption()));
-			break;
+        getDriver().manage().window().maximize();
+        getDriver().manage().deleteAllCookies();
 
-		default:
-			driver.set(new EdgeDriver(browserOptions.edgeOption()));
-			break;
-		}
+        return getDriver();
+    }
 
-		getDriver().manage().window().maximize();
-		getDriver().manage().deleteAllCookies();
-		return getDriver();
-	}
-
-	public static WebDriver getDriver() {
-		return driver.get();
-	}
+    public static WebDriver getDriver() {
+        return driver.get();
+    }
 }
