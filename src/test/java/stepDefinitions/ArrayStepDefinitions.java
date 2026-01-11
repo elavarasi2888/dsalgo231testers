@@ -31,7 +31,7 @@ public class ArrayStepDefinitions {
         tryEditorPage = new TryEditorPage(driver);
     }
 
-    @Given("User clicks Get Started button from Array panel")
+    @When("User clicks Get Started button from Array panel")
     public void user_clicks_get_started_button_from_array_panel() {
         arrayPage = (ArrayPage) homePage.clickGetStartedButtonOfGivenDsType("Array");
     }

@@ -21,7 +21,7 @@ public class LinkedListStepDefinition {
 		homePage = new HomePage(driver);
 	}
 
-	@Given("User clicks the Getting Started button in Linked List Panel")
+	@When("User clicks the Getting Started button in Linked List Panel")
 	public void user_clicks_the_getting_started_button_in_linked_list_panel() {
 		linkedListPage = (LinkedListPage) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in LinkedList panel");

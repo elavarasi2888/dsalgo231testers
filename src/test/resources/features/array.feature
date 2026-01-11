@@ -4,7 +4,7 @@ Feature: Array test cases
 
   Background:
     Given User is at the Home page after sign-in
-    Given User clicks Get Started button from Array panel
+    When User clicks Get Started button from Array panel
 
 # non functional test cases
 

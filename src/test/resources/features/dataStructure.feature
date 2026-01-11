@@ -4,7 +4,7 @@ Feature: DataStructure Functionality
 
   Background:
     Given User is at the Home page after sign-in
-    Given User clicks Get Started button of Data Structures-Introduction panel
+    When User clicks Get Started button of Data Structures-Introduction panel
 
   Scenario: Verify that User is able to see the Data Structures-Introduction header
     Then User should see Data Structures Introduction header for Data Structures-Introduction page
