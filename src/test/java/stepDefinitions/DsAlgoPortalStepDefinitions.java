@@ -25,7 +25,7 @@ public class DsAlgoPortalStepDefinitions {
         driver = DriverManager.getDriver();
     }
 
-    @Given("User enters the correct DS Algo portal URL")
+    @When("User enters the correct DS Algo portal URL")
     public void user_enters_the_correct_ds_algo_portal_url() {
         appURL = ConfigReader.getAppUrl();
         driver.get(appURL);

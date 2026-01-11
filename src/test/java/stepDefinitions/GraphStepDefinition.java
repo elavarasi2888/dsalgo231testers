@@ -21,7 +21,7 @@ public class GraphStepDefinition {
 		homePage=new HomePage(driver);
 	}
 
-	@Given("User clicks the Getting Started button in Graph Panel")
+	@When("User clicks the Getting Started button in Graph Panel")
 	public void user_clicks_the_getting_started_button_in_graph_panel() {
 		graphPage = (GraphPage)homePage.clickGetStartedButtonOfGivenDsType("Graph");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in Graph panel");

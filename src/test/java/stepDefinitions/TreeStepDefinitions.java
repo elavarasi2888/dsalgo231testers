@@ -22,7 +22,7 @@ public class TreeStepDefinitions {
         homePage = new HomePage(driver);
     }
 
-    @Given("User clicks Get Started button from Tree panel")
+    @When("User clicks Get Started button from Tree panel")
     public void userClicksGetStartedButtonFromTreePanel() {
         treePage = (TreePage) homePage.clickGetStartedButtonOfGivenDsType("Tree");
     }

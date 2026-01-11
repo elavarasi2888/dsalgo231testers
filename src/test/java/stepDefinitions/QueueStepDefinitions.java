@@ -21,7 +21,7 @@ public class QueueStepDefinitions {
         homePage = new HomePage(driver);
     }
 
-    @Given("User clicks Get Started button from Queue panel")
+    @When("User clicks Get Started button from Queue panel")
     public void userClicksGetStartedButtonFromQueuePanel() {
         queuePage = (QueuePage) homePage.clickGetStartedButtonOfGivenDsType("Queue");
     }
