@@ -1,24 +1,22 @@
 package pageObjects;
 
-import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ArrayPage {
+import java.time.Duration;
+import java.util.List;
 
-	private WebDriver driver;
+public class ArrayPage {
+    private WebDriver driver;
     private WebDriverWait wait;
 
-	private By headerArray = By.xpath("//h4[normalize-space()='Array']");
-	private By headerTopicsCoveredArray = By.xpath("//p[@class='bg-secondary text-white']");
-	private By headerArrayLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
-	private By lnkArrayLinks = By.xpath("//a[@class='list-group-item']");
-	private By btnTryHereArrayLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
-
+    private By headerArray = By.xpath("//h4[normalize-space()='Array']");
+    private By headerTopicsCoveredArray = By.xpath("//p[@class='bg-secondary text-white']");
+    private By headerArrayLinkTopic = By.xpath("//div[@class='col-sm']//strong//p");
+    private By lnkArrayLinks = By.xpath("//a[@class='list-group-item']");
+    private By btnTryHereArrayLinkPage = By.xpath("//a[normalize-space()='Try here>>>']");
     private By arrayInPythonTopicLink = By.xpath("//a[normalize-space()='Arrays in Python']");
     private By practiceQuestionsTopicLink = By.xpath("//a[normalize-space()='Practice Questions']");
     private By practiceQuestionsLinks = By.xpath("//a[@class='list-group-item']");
@@ -30,50 +28,49 @@ public class ArrayPage {
     private By squaresofaSortedArray = By.xpath("//a[normalize-space(text())='Squares of a Sorted Array']");
     private By submitBtn = By.xpath("//input[@value='Submit']");
 
-	public ArrayPage(WebDriver driver) {
+    public ArrayPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	}
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-	public boolean isArrayHeaderVisible() {
-		return driver.findElement(headerArray).isDisplayed();
-	}
+    public boolean isArrayHeaderVisible() {
+        return driver.findElement(headerArray).isDisplayed();
+    }
 
-	public boolean isTopicsCoveredHeaderForArrayVisible() {
-		return driver.findElement(headerTopicsCoveredArray).isDisplayed();
-	}
+    public boolean isTopicsCoveredHeaderForArrayVisible() {
+        return driver.findElement(headerTopicsCoveredArray).isDisplayed();
+    }
 
-	public String getArrayLinksTopicHeader() {
-		return driver.findElement(headerArrayLinkTopic).getText();
-	}
+    public String getArrayLinksTopicHeader() {
+        return driver.findElement(headerArrayLinkTopic).getText();
+    }
 
-	public boolean isTryHereButtonVisible() {
-		return driver.findElement(btnTryHereArrayLinkPage).isDisplayed();
-	}
+    public boolean isTryHereButtonVisible() {
+        return driver.findElement(btnTryHereArrayLinkPage).isDisplayed();
+    }
 
-	public boolean isArrayLinkVisible(String arrayTopicLink) {
-		List<WebElement> arrayLinks = driver.findElements(lnkArrayLinks);
+    public boolean isArrayLinkVisible(String arrayTopicLink) {
+        List<WebElement> arrayLinks = driver.findElements(lnkArrayLinks);
 
-		for (WebElement a : arrayLinks) {
-			if (a.getText().equals(arrayTopicLink))
-				return true;
-		}
-		return false;
-	}
+        for (WebElement a : arrayLinks) {
+            if (a.getText().equals(arrayTopicLink))
+                return true;
+        }
+        return false;
+    }
 
-	public void clickArrayTopicLink(String arrayTopicLink) {
-		By linkPath = By.xpath("//a[text() = '" + arrayTopicLink + "']");
-		driver.findElement(linkPath).click();
-	}
+    public void clickArrayTopicLink(String arrayTopicLink) {
+        By linkPath = By.xpath("//a[text() = '" + arrayTopicLink + "']");
+        driver.findElement(linkPath).click();
+    }
 
-	public String getArrayPageURL() {
-		return driver.getCurrentUrl();
-	}
+    public String getArrayPageURL() {
+        return driver.getCurrentUrl();
+    }
 
-	public void clickTryHereInArrayLinkPage() {
-		driver.findElement(btnTryHereArrayLinkPage).click();
-	}
-
+    public void clickTryHereInArrayLinkPage() {
+        driver.findElement(btnTryHereArrayLinkPage).click();
+    }
     public boolean isPracticeQuestionLinkDisplayed(String expectedTopic) {
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(practiceQuestionsLinks));
@@ -177,5 +174,4 @@ public class ArrayPage {
         driver.getCurrentUrl().contains("array/practice");
         driver.findElement(squaresofaSortedArray).click();
     }
-
 }
