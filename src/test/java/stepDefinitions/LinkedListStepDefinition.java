@@ -19,10 +19,9 @@ public class LinkedListStepDefinition {
 	public LinkedListStepDefinition() {
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
-		linkedListPage = new LinkedListPage(driver);
 	}
 
-	@Given("User clicks the Getting Started button in Linked List Panel")
+	@When("User clicks the Getting Started button in Linked List Panel")
 	public void user_clicks_the_getting_started_button_in_linked_list_panel() {
 		linkedListPage = (LinkedListPage) homePage.clickGetStartedButtonOfGivenDsType("Linked List");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in LinkedList panel");
@@ -98,14 +97,5 @@ public class LinkedListStepDefinition {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	/*
-	 * @Then("User should be redirected to try Editor page for respective linklist page"
-	 * ) public void
-	 * user_should_be_redirected_to_try_editor_page_for_respective_linklist_page() {
-	 * Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("tryEditor"))
-	 * ;
-	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
-	 * ); }
-	 */
 
 }

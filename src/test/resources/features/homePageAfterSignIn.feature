@@ -3,11 +3,6 @@
 Feature: Home page functional test cases after user sign-in
 
   Background:
-    Given User opens the browser
-    Given User enters the correct DS Algo portal URL
-    Given User clicks the Get Started button on DS Algo portal page
-    Given User clicks on the Sign in link in the home page
-    Given User clicks login button after entering valid username and valid password
     Given User is at the Home page after sign-in
 
   Scenario Outline: Verify that user able to navigate to respective page from drop down
@@ -35,3 +30,7 @@ Feature: Home page functional test cases after user sign-in
       | Queue                        | queue                        |
       | Tree                         | tree                         |
       | Graph                        | graph                        |
+
+  Scenario: Verify user can sign out successfully
+    When User clicks the Sign out link
+    Then User should be logged out with a message "Logged out successfully"

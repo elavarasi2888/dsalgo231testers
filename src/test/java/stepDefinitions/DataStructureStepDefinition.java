@@ -21,10 +21,9 @@ public class DataStructureStepDefinition {
 
 		driver = DriverManager.getDriver();
 		homePage = new HomePage(driver);
-		dataStructurePage = new DataStructurePage(driver);
 	}
 
-	@Given("User clicks Get Started button of Data Structures-Introduction panel")
+	@When("User clicks Get Started button of Data Structures-Introduction panel")
 	public void user_clicks_get_started_button_of_data_structures_introduction_panel() {
 
 		dataStructurePage = (DataStructurePage) homePage

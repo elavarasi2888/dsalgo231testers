@@ -4,7 +4,7 @@ Feature: Queue feature test cases
 
   Background:
     Given User is at the Home page after sign-in
-    Given User clicks Get Started button from Queue panel
+    When User clicks Get Started button from Queue panel
 # Non-Functional tests
 
   Scenario: Verify that user is able to see the Queue header

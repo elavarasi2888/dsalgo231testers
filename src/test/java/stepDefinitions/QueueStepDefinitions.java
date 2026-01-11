@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
@@ -19,10 +18,9 @@ public class QueueStepDefinitions {
     public QueueStepDefinitions() {
         driver = DriverManager.getDriver();
         homePage = new HomePage(driver);
-        queuePage = new QueuePage(driver);
     }
 
-    @Given("User clicks Get Started button from Queue panel")
+    @When("User clicks Get Started button from Queue panel")
     public void userClicksGetStartedButtonFromQueuePanel() {
         queuePage = (QueuePage) homePage.clickGetStartedButtonOfGivenDsType("Queue");
     }

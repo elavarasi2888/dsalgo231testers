@@ -19,10 +19,9 @@ public class GraphStepDefinition {
 	public GraphStepDefinition() {
 		driver = DriverManager.getDriver();
 		homePage=new HomePage(driver);
-		graphPage = new GraphPage(driver);
 	}
 
-	@Given("User clicks the Getting Started button in Graph Panel")
+	@When("User clicks the Getting Started button in Graph Panel")
 	public void user_clicks_the_getting_started_button_in_graph_panel() {
 		graphPage = (GraphPage)homePage.clickGetStartedButtonOfGivenDsType("Graph");
 		LoggerFactory.getLogger().info("User clicks the Getting Started button in Graph panel");
@@ -103,14 +102,6 @@ public class GraphStepDefinition {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	/*
-	 * @Then("User should be redirected to try Editor page for respective Graph page"
-	 * ) public void
-	 * user_should_be_redirected_to_try_editor_page_for_respective_graph_page() {
-	 * String currentURL = driver.getCurrentUrl();
-	 * Assert.assertTrue(currentURL.contains("tryEditor"));
-	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
-	 * ); }
-	 */
+	
 
 }

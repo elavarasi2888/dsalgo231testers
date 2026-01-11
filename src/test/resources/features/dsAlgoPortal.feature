@@ -4,7 +4,7 @@ Feature: Ds Algo portal test cases
 
   Background:
     Given User opens the browser
-    Given User enters the correct DS Algo portal URL
+    When User enters the correct DS Algo portal URL
 # Non-Functional tests
 
   Scenario: Verify that User is able to open the DS Algo Portal

@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
-import factory.LoggerFactory;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
@@ -20,18 +18,11 @@ public class TreeStepDefinitions {
     public TreeStepDefinitions() {
         driver = DriverManager.getDriver();
         homePage = new HomePage(driver);
-        treePage = new TreePage(driver);
     }
 
-    @Given("User clicks Get Started button from Tree panel")
+    @When("User clicks Get Started button from Tree panel")
     public void userClicksGetStartedButtonFromTreePanel() {
         treePage = (TreePage) homePage.clickGetStartedButtonOfGivenDsType("Tree");
-    }
-
-    @Given("User is on the Tree page")
-    public void user_is_on_the_tree_page() {
-        LoggerFactory.getLogger().info("Currently user is at {}",
-                driver.getCurrentUrl());
     }
 
     @Then("User should see Tree header for Tree page")

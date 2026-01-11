@@ -4,7 +4,7 @@ Feature: Linked List Functionality
 
   Background:
     Given User is at the Home page after sign-in
-    Given User clicks the Getting Started button in Linked List Panel
+    When User clicks the Getting Started button in Linked List Panel
 
   Scenario: Verify that User is able to see the Linked List page header
     Then User should see Linked List header for Linkedlist page

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.*;
 import utils.ConfigReader;
+import utils.ValidCredentialDataReader;
 
 public class HomePageAfterSignInStepDefinitions {
 
@@ -17,19 +18,28 @@ public class HomePageAfterSignInStepDefinitions {
 
     public HomePageAfterSignInStepDefinitions() {
         driver = DriverManager.getDriver();
-        homePage = new HomePage(driver);
     }
 
     @Given("User clicks login button after entering valid username and valid password")
     public void userClicksLoginButtonAfterEnteringValidUsernameAndValidPassword() throws InterruptedException {
         SignInPage signInPage = new SignInPage(driver);
-        homePage = signInPage.login(ConfigReader.getValidUserName(), ConfigReader.getValidPassword());
+        homePage = signInPage.login(ValidCredentialDataReader.getValidUserName(), ValidCredentialDataReader.getValidPassword());
     }
 
     @Given("User is at the Home page after sign-in")
     public void user_is_at_the_home_page_after_sign_in() {
-        LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}", ConfigReader.getValidUserName(),
-                homePage.isUserNameVisibleAfterSignIn(ConfigReader.getValidUserName()));
+        String appURL = ConfigReader.getAppUrl();
+        driver.get(appURL);
+
+        DsAlgoPortalPage dsAlgoPortal = new DsAlgoPortalPage(driver);
+        homePage = dsAlgoPortal.clickDsPortalGetStarted();
+        SignInPage signInPage = homePage.clickSignInLink();
+        String username = ValidCredentialDataReader.getValidUserName();
+        String password = ValidCredentialDataReader.getValidPassword();
+        homePage = signInPage.login(username, password);
+
+        LoggerFactory.getLogger().info("Signed user \"{}\" is displayed on home page? {}", username,
+                homePage.isUserNameVisibleAfterSignIn(username));
     }
 
     @When("User selects following {string} from the drop down after sign-in")
@@ -75,5 +85,15 @@ public class HomePageAfterSignInStepDefinitions {
     @When("User clicks Get Started button of {string} from panel after sign-in")
     public void userClicksGetStartedButtonOfFromPanelAfterSignIn(String panelItem) {
         homePage.clickGetStartedButton(panelItem);
+    }
+
+    @When("User clicks the Sign out link")
+    public void userClicksTheSignOutLink() {
+        homePage.clickSignOut();
+    }
+
+    @Then("User should be logged out with a message {string}")
+    public void userShouldBeLoggedOutWithAMessage(String loggedOutMessage) {
+        Assert.assertEquals(homePage.getLoggedOutMsg(), loggedOutMessage);
     }
 }
