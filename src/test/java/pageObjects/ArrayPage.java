@@ -122,8 +122,7 @@ public class ArrayPage {
 		actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
 	}
 
-	public void clickRunButton() {
-		// driver.findElement(By.xpath("//button[normalize-space()='Run']")).click();
+	public void clickRunButton() {		
 		driver.findElement(runBtn).click();
 	}
 
@@ -146,13 +145,6 @@ public class ArrayPage {
 
 	public void navigateToArrayPractice() {
 		driver.navigate().to("https://dsportalapp.herokuapp.com/array/practice");
-	}
-
-	public void clickSubmit() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement submit = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-		submit.click();
-		System.out.println("SUBMIT CLICKED");
 	}
 
 	public void enterDataIntoEditor(String inputData) {
