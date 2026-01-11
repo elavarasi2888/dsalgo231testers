@@ -102,14 +102,6 @@ public class GraphStepDefinition {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	/*
-	 * @Then("User should be redirected to try Editor page for respective Graph page"
-	 * ) public void
-	 * user_should_be_redirected_to_try_editor_page_for_respective_graph_page() {
-	 * String currentURL = driver.getCurrentUrl();
-	 * Assert.assertTrue(currentURL.contains("tryEditor"));
-	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
-	 * ); }
-	 */
+	
 
 }
