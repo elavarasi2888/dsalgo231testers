@@ -106,13 +106,6 @@ public class ArrayStepDefinitions {
         Assert.assertTrue(currentURL.contains("array/practice"));
     }
 
-    @Then("User clicks Practice Questions link in the respective Array page and User should be redirected to Practice Questions page of Array topics")
-    public void userClicksPracticeQuestionsLinkInTheRespectiveArrayPageAndUserShouldBeRedirectedToPracticeQuestionsPageOfArrayTopics() {
-        arrayPage.clickPracticeQuestionsFromArraysInPython();
-        String currentURL = driver.getCurrentUrl();
-        Assert.assertTrue(currentURL.contains("array/practice"));
-    }
-
     @Given("User navigates to the Array Practice page")
     public void userNavigatesToTheArrayPracticePage() {
         arrayPage.navigateToArrayPractice();
