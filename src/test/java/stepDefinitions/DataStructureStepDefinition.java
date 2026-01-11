@@ -5,7 +5,6 @@ import org.testng.Assert;
 
 import factory.DriverManager;
 import factory.LoggerFactory;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.DataStructurePage;
