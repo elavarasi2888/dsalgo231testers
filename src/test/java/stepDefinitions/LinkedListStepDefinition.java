@@ -97,14 +97,5 @@ public class LinkedListStepDefinition {
 		LoggerFactory.getLogger().info("User clicks the Try Here button For the respective page");
 	}
 
-	/*
-	 * @Then("User should be redirected to try Editor page for respective linklist page"
-	 * ) public void
-	 * user_should_be_redirected_to_try_editor_page_for_respective_linklist_page() {
-	 * Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("tryEditor"))
-	 * ;
-	 * LoggerFactory.getLogger().info("User should be redirected to try Editor page"
-	 * ); }
-	 */
 
 }
