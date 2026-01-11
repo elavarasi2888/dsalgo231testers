@@ -27,7 +27,6 @@ public class ArrayPage {
 			.xpath("//a[normalize-space(text())='Find Numbers with Even Number of Digits']");
 	private By squaresofaSortedArray = By.xpath("//a[normalize-space(text())='Squares of a Sorted Array']");
 	private By runBtn = By.xpath("//button[normalize-space()='Run']");
-	private By submitBtn = By.xpath("//input[@value='Submit']");
 	private By output = By.id("output");
 
 	public ArrayPage(WebDriver driver) {
