@@ -26,7 +26,7 @@ public class ArrayPage {
 	private By findNumberwithEvenNumbereofDigits = By
 			.xpath("//a[normalize-space(text())='Find Numbers with Even Number of Digits']");
 	private By squaresofaSortedArray = By.xpath("//a[normalize-space(text())='Squares of a Sorted Array']");
-	private By submitBtn = By.xpath("//input[@value='Submit']");
+	private By runBtn = By.xpath("//button[normalize-space()='Run']");
 	private By output = By.id("output");
 
 	public ArrayPage(WebDriver driver) {
@@ -121,8 +121,8 @@ public class ArrayPage {
 		actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
 	}
 
-	public void clickRunButton() {
-		driver.findElement(By.xpath("//button[normalize-space()='Run']")).click();
+	public void clickRunButton() {		
+		driver.findElement(runBtn).click();
 	}
 
 	public String getOutputText() {
@@ -144,13 +144,6 @@ public class ArrayPage {
 
 	public void navigateToArrayPractice() {
 		driver.navigate().to("https://dsportalapp.herokuapp.com/array/practice");
-	}
-
-	public void clickSubmit() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement submit = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-		submit.click();
-		System.out.println("SUBMIT CLICKED");
 	}
 
 	public void enterDataIntoEditor(String inputData) {

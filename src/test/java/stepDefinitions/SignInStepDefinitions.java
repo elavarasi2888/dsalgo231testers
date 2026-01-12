@@ -9,7 +9,6 @@ import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import factory.DriverManager;
-import factory.LoggerFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.DsAlgoPortalPage;
@@ -19,10 +18,10 @@ import utils.ConfigReader;
 import utils.DataReader;
 
 public class SignInStepDefinitions {
-    HomePage homePage;
-    SignInPage signinpage;
-    DsAlgoPortalPage dsAlgoPortal;
-    WebDriver driver;
+    private HomePage homePage;
+    private SignInPage signinpage;
+    private DsAlgoPortalPage dsAlgoPortal;
+    private WebDriver driver;
 
     public SignInStepDefinitions() {
         driver = DriverManager.getDriver();
@@ -36,31 +35,31 @@ public class SignInStepDefinitions {
         signinpage = homePage.clickSignInLink();
     }
 
-    @When("User clicks login button after entering valid data from the given {string}")
-    public void user_clicks_login_button_after_entering_valid_data_from_the_given(String ScenarioName) {
+    @When("User clicks login button after entering valid credentials")
+    public void userClicksLoginButtonAfterEnteringValidCredentials() {
+        String ScenarioName = "valid username and valid password";
         DataReader reader = new DataReader("/testData/" + TEST_DATA_FILE_NAME);
         String sheetName = "login_valid";
         Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
         signinpage.enterUsername(testData.get("Username"));
         signinpage.enterPassword(testData.get("Password"));
         signinpage.clickSignIn();
-        LoggerFactory.getLogger().info("User entering the Valid data");
     }
 
-    @Then("User should land in Home Page with message {string}")
-    public void user_should_land_in_home_page_with_message(String expectedMessage) {
-        String actualMessage = homePage.getUserLoggedInMessage();
-        assertEquals(actualMessage, expectedMessage);
-    }
-
-    @When("User clicks login button after entering the data from given {string}")
-    public void user_clicks_login_button_after_entering_the_data_from_given(String ScenarioName) {
+    @When("User clicks login button after entering data from the given {string}")
+    public void userClicksLoginButtonAfterEnteringDataFromTheGiven(String ScenarioName) {
         DataReader reader = new DataReader("/testData/" + TEST_DATA_FILE_NAME);
         String sheetName = "login_invalid";
         Map<String, String> testData = reader.getDataByScenarioName(sheetName, ScenarioName);
         signinpage.enterUsername(testData.get("Username"));
         signinpage.enterPassword(testData.get("Password"));
         signinpage.clickSignIn();
+    }
+
+    @Then("User should land in Home Page with message {string}")
+    public void user_should_land_in_home_page_with_message(String expectedMessage) {
+        String actualMessage = homePage.getUserLoggedInMessage();
+        assertEquals(actualMessage, expectedMessage);
     }
 
     @Then("User get the error message {string}")

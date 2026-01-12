@@ -1,6 +1,6 @@
 # Owner: Ela
 @Regression @DataStructure @Array
-Feature: Array - non functional test case
+Feature: Array test cases
 
   Background:
     Given User is at the Home page after sign-in
@@ -81,15 +81,14 @@ Feature: Array - non functional test case
       | Find Numbers with Even Number of Digits |
       | Squares of a Sorted Array               |
 
-  # Functional test cases
   Scenario: Verify user is able to navigate to Practice Questions page of Array topics
-    When User clicks the Arrays in Python link on the Array page
-    Then User clicks Practice Questions link in the respective Array page and User should be redirected to Practice Questions page of Array topics
+    When User clicks Practice Questions link in the Arrays in Python page
+    Then User should be redirected to Practice Questions page of Array topics
 
   Scenario Outline: User navigates to practice question one
     Given User navigates to the Array Practice page
-    When User clicks Search the array link in the practice page and user clears the text in the editor area
-    When User enters the python code for the following "<scenario>" and User clicks Run button
+    When User clicks Search the array link in the practice page
+    When User runs the following python code "<scenario>"
     Then User see the appropriate result
 
     Examples:
@@ -100,8 +99,8 @@ Feature: Array - non functional test case
 
   Scenario Outline: User navigates to practice question two
     Given User navigates to the Array Practice page
-    When User clicks Max Consecutive Ones link in the practice page and user clears the text in the editor area
-    When User enters the python code for the following "<scenario>" and User clicks Run button
+    When User clicks Max Consecutive Ones link in the practice page
+    When User runs the following python code "<scenario>"
     Then User see the appropriate result
 
     Examples:
@@ -112,8 +111,8 @@ Feature: Array - non functional test case
 
   Scenario Outline: User navigates to practice question three
     Given User navigates to the Array Practice page
-    When User clicks Find Numbers with Even Number of Digits link in the practice page and user clears the text in the editor area
-    When User enters the python code for the following "<scenario>" and User clicks Run button
+    When User clicks Find Numbers with Even Number of Digits link in the practice page
+    When User runs the following python code "<scenario>"
     Then User see the appropriate result
 
     Examples:
@@ -124,8 +123,8 @@ Feature: Array - non functional test case
 
   Scenario Outline: User navigates to practice question four
     Given User navigates to the Array Practice page
-    When User clicks Squares of a Sorted Array link in the practice page and user clears the text in the editor area
-    When User enters the python code for the following "<scenario>" and User clicks Run button
+    When User clicks Squares of a Sorted Array link in the practice page
+    When User runs the following python code "<scenario>"
     Then User see the appropriate result
 
     Examples:
