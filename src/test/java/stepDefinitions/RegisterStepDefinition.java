@@ -83,7 +83,6 @@ public class RegisterStepDefinition {
         registerPage.enterpassWord(testData.get("Password"));
         registerPage.enterPasswordConfirmation(testData.get("Password confirmation"));
         registerPage.registerBtn();
-        Thread.sleep(3000);
         LoggerFactory.getLogger().info("User entering the invalid data");
     }
 
