@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import utils.BrowserOptions;
+import utils.LoggerFactory;
 
 public class DriverManager {
 
@@ -29,7 +29,7 @@ public class DriverManager {
                 driver.set(new FirefoxDriver(browserOptions.firefoxOption()));
                 break;
             default:
-                LoggerFactory.logger.error("Unexpected value for browser: {}", browserType);
+                LoggerFactory.getLogger().error("Unexpected value for browser: {}", browserType);
                 throw new IllegalStateException("Unexpected value for browserType: " + browserType);
         }
 

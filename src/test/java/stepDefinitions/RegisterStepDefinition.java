@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import factory.DriverManager;
-import factory.LoggerFactory;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.DsAlgoPortalPage;
@@ -17,6 +17,7 @@ import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import utils.ConfigReader;
 import utils.DataReader;
+import utils.LoggerFactory;
 
 import static utils.Constants.TEST_DATA_FILE_NAME;
 

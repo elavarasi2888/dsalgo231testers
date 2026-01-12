@@ -4,11 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import factory.DriverManager;
-import factory.LoggerFactory;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
+import utils.LoggerFactory;
 
 public class GraphStepDefinition {
 	private HomePage homePage;

@@ -1,10 +1,10 @@
 package testRunner;
 
-import factory.LoggerFactory;
 import org.testng.annotations.*;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import utils.ConfigReader;
+import utils.LoggerFactory;
 import utils.ValidCredentialDataReader;
 
 @CucumberOptions(features = "src/test/resources/features",

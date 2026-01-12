@@ -1,6 +1,5 @@
 package utils;
 
-import factory.LoggerFactory;
 
 import java.util.Map;
 

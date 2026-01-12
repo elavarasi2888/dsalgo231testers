@@ -1,7 +1,7 @@
 package stepDefinitions;
 
 import factory.DriverManager;
-import factory.LoggerFactory;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pageObjects.*;
 import utils.ConfigReader;
+import utils.LoggerFactory;
 import utils.ValidCredentialDataReader;
 
 public class HomePageAfterSignInStepDefinitions {

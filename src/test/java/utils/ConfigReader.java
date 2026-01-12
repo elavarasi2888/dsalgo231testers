@@ -1,7 +1,5 @@
 package utils;
 
-import factory.LoggerFactory;
-
 import java.io.InputStream;
 import java.util.Properties;
 

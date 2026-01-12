@@ -1,7 +1,7 @@
 package stepDefinitions;
 
 import factory.DriverManager;
-import factory.LoggerFactory;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,6 +10,7 @@ import org.testng.Assert;
 import pageObjects.DsAlgoPortalPage;
 import pageObjects.HomePage;
 import utils.ConfigReader;
+import utils.LoggerFactory;
 
 import java.io.IOException;
 
