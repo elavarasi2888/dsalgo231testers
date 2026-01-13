@@ -1,20 +1,22 @@
 package stepDefinitions;
 
+import static utils.Constants.TEST_DATA_FILE_NAME;
+
+import java.util.Map;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import factory.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import pageObjects.ArrayPage;
 import pageObjects.HomePage;
 import pageObjects.TryEditorPage;
+import utils.ConfigReader;
 import utils.Constants;
 import utils.DataReader;
-
-import static utils.Constants.TEST_DATA_FILE_NAME;
-
-import java.util.Map;
 
 public class ArrayStepDefinitions {
     private WebDriver driver;
@@ -23,6 +25,7 @@ public class ArrayStepDefinitions {
     private TryEditorPage tryEditorPage;
     private String expectedResult = null;
     private String expectedMessage = null;
+    private String appURL = null;    
 
     public ArrayStepDefinitions() {
         driver = DriverManager.getDriver();
@@ -74,7 +77,6 @@ public class ArrayStepDefinitions {
 
     @When("User clicks Try Here button in the respective Array page")
     public void userClicksTryHereButtonInTheRespectiveArrayPage() {
-
         arrayPage.clickTryHereInArrayLinkPage();
     }
 
@@ -108,7 +110,8 @@ public class ArrayStepDefinitions {
 
     @Given("User navigates to the Array Practice page")
     public void userNavigatesToTheArrayPracticePage() {
-        arrayPage.navigateToArrayPractice();
+    	appURL = ConfigReader.getAppUrl();
+        driver.get(appURL + "array/practice");       
     }
 
     @When("User clicks Search the array link in the practice page")
