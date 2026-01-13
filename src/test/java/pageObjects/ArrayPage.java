@@ -142,10 +142,6 @@ public class ArrayPage {
 		driver.findElement(practiceQuestionsTopicLink).click();
 	}
 
-	public void navigateToArrayPractice() {
-		driver.navigate().to("https://dsportalapp.herokuapp.com/array/practice");
-	}
-
 	public void enterDataIntoEditor(String inputData) {
 		WebElement txtDsCode = driver.findElement(codeEditor);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -169,4 +165,5 @@ public class ArrayPage {
 		driver.getCurrentUrl().contains("array/practice");
 		driver.findElement(squaresofaSortedArray).click();
 	}
+
 }
