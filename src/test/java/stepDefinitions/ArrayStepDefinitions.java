@@ -110,7 +110,7 @@ public class ArrayStepDefinitions {
 
     @Given("User navigates to the Array Practice page")
     public void userNavigatesToTheArrayPracticePage() {
-    	appURL = ConfigReader.getAppUrl();
+    		appURL = ConfigReader.getAppUrl();
         driver.get(appURL + "array/practice");       
     }
 

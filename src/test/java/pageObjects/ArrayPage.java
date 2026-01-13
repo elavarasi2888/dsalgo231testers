@@ -1,12 +1,16 @@
 package pageObjects;
 
-import org.openqa.selenium.*;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.List;
 
 public class ArrayPage {
 	private WebDriver driver;
@@ -27,7 +31,6 @@ public class ArrayPage {
 			.xpath("//a[normalize-space(text())='Find Numbers with Even Number of Digits']");
 	private By squaresofaSortedArray = By.xpath("//a[normalize-space(text())='Squares of a Sorted Array']");
 	private By runBtn = By.xpath("//button[normalize-space()='Run']");
-	private By output = By.id("output");
 
 	public ArrayPage(WebDriver driver) {
 		this.driver = driver;
@@ -97,22 +100,6 @@ public class ArrayPage {
 		driver.findElement(searchArrayLink).click();
 	}
 
-	public void clickPracticeQuestions() {
-		try {
-			WebElement link = wait.until(ExpectedConditions.elementToBeClickable(practiceQuestionsLinks));
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", link);
-			link.click();
-		} catch (TimeoutException e) {
-			throw new NoSuchElementException("Practice Questions link not found or not clickable.");
-		}
-	}
-
-	public void clickPracticeQuestionByName(String questionName) {
-		By questionLink = By.xpath("//a[contains(text(),'" + questionName + "')]");
-		WebElement link = wait.until(ExpectedConditions.elementToBeClickable(questionLink));
-		link.click();
-	}
-
 	public void clearEditorText() {
 		WebElement editor = wait.until(ExpectedConditions.visibilityOfElementLocated(codeEditor));
 		editor.click();
@@ -121,12 +108,8 @@ public class ArrayPage {
 		actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
 	}
 
-	public void clickRunButton() {		
+	public void clickRunButton() {
 		driver.findElement(runBtn).click();
-	}
-
-	public String getOutputText() {
-		return driver.findElement(output).getText();
 	}
 
 	public void clickArrayTopicLink1() {
