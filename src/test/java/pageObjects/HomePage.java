@@ -26,6 +26,7 @@ public class HomePage {
     private By msgSignOut = By.xpath("//div[@class='alert alert-primary' and @role='alert']");
     private By lnkSignOut = By.xpath("//a[normalize-space()='Sign out']");
     private WebDriverWait wait;
+    private JavascriptExecutor js;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -88,18 +89,18 @@ public class HomePage {
         }
     }
 
-    public void clickGetStartedButton(String dsType) {
-        By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
-        WebElement element = driver.findElement(btnGetStarted);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-        element.click();
-    }
+	public void clickGetStartedButton(String dsType) {
+		By btnGetStarted = By.xpath("//h5[text()='" + dsType + "']/following-sibling::a");
+		WebElement element = driver.findElement(btnGetStarted);
+		js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		element.click();
+	}
 
     public Object clickGetStartedButtonOfGivenDsType(String dsPage) {
         By btnGetStarted = By.xpath("//h5[text()='" + dsPage + "']/following-sibling::a");
         WebElement element = driver.findElement(btnGetStarted);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
 
